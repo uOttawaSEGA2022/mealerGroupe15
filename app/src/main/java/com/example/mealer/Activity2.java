@@ -20,7 +20,7 @@ public class Activity2 extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), SignUpActivity.class);
         startActivityForResult(intent, 0);}
     public void OnClickAsClient(View view) {
-        Intent intent = new Intent(getApplicationContext(), SignUpActivity.class);
+        Intent intent = new Intent(getApplicationContext(), SignUpClientActivity.class);
         startActivityForResult(intent, 0);}
 
 }
