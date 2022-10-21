@@ -5,35 +5,55 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainAccueil2Activity">
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Bienvenue vous êtes connecté en tant que Cuisinier."
-        android:textColor="@color/black"
-        android:textSize="25dp"
-        android:typeface="serif"
+
+    <LinearLayout
+        android:layout_width="313dp"
+        android:layout_height="144dp"
+        android:layout_marginBottom="308dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/button"
+        tools:layout_editor_absoluteX="64dp">
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MEALER"
+            android:textColor="@color/black"
+            android:textSize="60dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="140dp"
+        android:orientation="horizontal"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="270dp" />
+        tools:layout_editor_absoluteY="234dp">
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="MEALER"
-        android:textColor="@color/black"
-        android:textSize="60dp"
-        tools:layout_editor_absoluteX="78dp"
-        tools:layout_editor_absoluteY="48dp" />
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bienvenue vous êtes connecté en tant que Cuisinier."
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:typeface="serif" />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Se déconnecter"
-        tools:layout_editor_absoluteX="121dp"
-        tools:layout_editor_absoluteY="544dp"
-        android:background="@android:color/white"
-        android:textColor="@android:color/white"/>
+    <LinearLayout
+        android:layout_width="210dp"
+        android:layout_height="130dp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="433dp">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:text="Se déconnecter"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
