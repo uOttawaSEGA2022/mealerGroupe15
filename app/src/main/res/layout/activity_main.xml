@@ -41,7 +41,7 @@
                     android:id="@+id/textView3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="C'est bon de te revoir"
+                    android:text="C'est bon de te revoir!"
                     android:textColor="@color/white"
                     android:textSize="40dp" />
 
