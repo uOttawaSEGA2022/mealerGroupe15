@@ -19,7 +19,6 @@ public class SignUpClientActivity extends AppCompatActivity {
         startActivityForResult(intent, 0);
     }
     public void OnClickinscrire(View view) {
-        Intent intent = new Intent(getApplicationContext(), MainAccueil3Activity.class);
         //quand on clique sur s'inscrire, on store les données dans des variables pour permettre la reconnection
 
         EditText fNameBox = findViewById(R.id.FirstNameField);
@@ -40,10 +39,9 @@ public class SignUpClientActivity extends AppCompatActivity {
         //appeler la classe client (constructor) et entrer les infos pour 'creer' le compte
 
         Client c = new Client(firstName,lastName,email,password,creditCard);
-        c.connect(email,password);
-        if (c.isConnected()&& ) {
-            startActivityForResult(intent, 0);
-        }
+        c.connected = true;
+        Intent intent = new Intent(getApplicationContext(), MainAccueil3Activity.class);
+        startActivityForResult(intent, 0);
 
     }
 }

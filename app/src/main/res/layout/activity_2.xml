@@ -34,13 +34,17 @@
                     android:id="@+id/imageView2"
                     android:layout_width="match_parent"
                     android:layout_height="292dp"
-                    app:srcCompat="@drawable/CUISTO" />
+                    android:onClick="OnClickAsCuisinier"
+                    app:srcCompat="@drawable/cuisto"
+                    tools:ignore="SpeakableTextPresentCheck" />
 
                 <ImageView
                     android:id="@+id/imageView3"
                     android:layout_width="match_parent"
                     android:layout_height="292dp"
-                    app:srcCompat="@drawable/CUSTOMER" />
+                    android:onClick="OnClickAsClient"
+                    app:srcCompat="@drawable/customer"
+                    tools:ignore="SpeakableTextPresentCheck" />
 
                 <TextView
                     android:id="@+id/retour2"

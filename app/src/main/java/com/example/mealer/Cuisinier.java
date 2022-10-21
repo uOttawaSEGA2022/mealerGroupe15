@@ -8,10 +8,11 @@ public class Cuisinier extends User{
     static ArrayList<String> passwords;
     String firstName;
     String lastName;
+    String addresse;
     String email;
     String password;
     String description;
-    String cheque;
+    //String cheque;
     Boolean connected;
     int id;
     int orderID;
@@ -20,13 +21,14 @@ public class Cuisinier extends User{
         connected =  false;
     }
 
-    public Cuisinier(String firstName, String lastName, String email, String password, String description, String cheque){
+    public Cuisinier(String firstName, String lastName, String addresse, String email, String password, String description){
         this.firstName = firstName;
         this.lastName = lastName;
+        this.addresse = addresse;
         this.email = email;
         this.password = password;
         this.description = description;
-        this.cheque = cheque;
+        //this.cheque = cheque;
         connected = false;
         id = 0;
         emails.add(id, email);

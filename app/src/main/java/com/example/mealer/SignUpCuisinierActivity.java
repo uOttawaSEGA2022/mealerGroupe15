@@ -36,8 +36,15 @@ public class SignUpCuisinierActivity extends AppCompatActivity {
         EditText passwordBox = findViewById(R.id.editTextTextPassword2);
         String password = passwordBox.getText().toString();
 
+        EditText descriptionBox = findViewById(R.id.editTextTextPersonName);
+        String description = descriptionBox.getText().toString();
+
         //si tous les champs sont remplis, on change de page.
-        if (c.isConnected()&& ) {
+        Cuisinier cook = new Cuisinier(firstName, lastName, address, email, password, description);
+        cook.connect(email, password);
+        if (cook.isConnected() && (!(email.equals("")) || !(email.equals(" "))) && (!(password.equals("")) || !(password.equals(" ")))) {
             startActivityForResult(intent, 0);
+        }
     }
-}
+
+    }
