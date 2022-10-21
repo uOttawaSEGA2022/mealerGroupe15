@@ -1,4 +1,5 @@
 package com.example.mealer;
 
-public class User {
+public abstract class User implements Account{
+
 }

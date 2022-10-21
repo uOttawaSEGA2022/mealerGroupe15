@@ -8,7 +8,7 @@ public interface Account {
     String password = new String();
     Boolean connected = false;
 
-    public void connect(String usrnm, String pswd);
+    public void connect(String email, String pswd);
     public void disconnect();
     public Boolean isConnected();
 

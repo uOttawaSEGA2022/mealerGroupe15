@@ -33,8 +33,10 @@ public class MainActivity extends AppCompatActivity {
     public void OnSeconnecter(View view) {
         EditText editEmail = findViewById(R.id.loginEmail);
         EditText editPassword = findViewById(R.id.loginPassword);
+
         String email = editEmail.getText().toString();
         String password = editPassword.getText().toString();
+
         TextView connectionState = findViewById(R.id.stateAfterConnection);
 
         Log.println(Log.DEBUG, "INFO", "email : " + email+ " passeword : " + password);

@@ -12,4 +12,5 @@
     <string name="login_failed">"Login failed"</string>
     <string name="entrer_votre_mot_de_passe">Entrer votre mot de passe:</string>
     <string name="entrer_votre_addresse_e_mail">Entrer votre addresse e-mail:</string>
+    <string name="etes_vous">Etes-vous...</string>
 </resources>
