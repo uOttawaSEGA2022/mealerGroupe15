@@ -16,4 +16,8 @@ public class Activity2 extends AppCompatActivity {
     public void OnClickReturnMain(View view) {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivityForResult(intent, 0);}
+    public void OnClickAsCuisinier(View view) {
+        Intent intent = new Intent(getApplicationContext(), Activity_sign_up.class);
+        startActivityForResult(intent, 0);}
+
 }
