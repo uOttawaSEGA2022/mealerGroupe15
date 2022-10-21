@@ -70,6 +70,13 @@
                     android:inputType="textPassword"
                     android:password="true" />
 
+                <TextView
+                    android:id="@+id/stateAfterConnection"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textAlignment="center" />
+
                 <Space
                     android:layout_width="match_parent"
                     android:layout_height="58dp" />
