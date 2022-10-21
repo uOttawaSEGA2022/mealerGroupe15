@@ -19,6 +19,10 @@ public class SignUpClientActivity extends AppCompatActivity {
     }
     public void OnClickinscrire(View view) {
         Intent intent = new Intent(getApplicationContext(), MainAccueil3Activity.class);
+        //quand on clique s'inscrire, on store les données dans des variables pour permettre la reconnection
+        //creer des variables pour garder les infos entrées
+        //appeler la classe client (constructor) et entrer les infos pour 'creer' le compte
         startActivityForResult(intent, 0);
+
     }
 }
