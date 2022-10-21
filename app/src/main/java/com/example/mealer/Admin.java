@@ -3,8 +3,8 @@ package com.example.mealer;
 
 public class Admin implements Account{
 
-    protected static String[] emails = new String[]{"test1", "voldigotcodes"};
-    protected static String[] passwords = new String[]{"test1", "voldi002"};
+    protected static String[] emails = new String[]{"test1"};
+    protected static String[] passwords = new String[]{"test1"};
     private String[] firstNames;
     private String[] lastNames;
     private String[] usernames;
