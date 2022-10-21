@@ -193,6 +193,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:insetLeft="10dp"
+                    android:onClick="OnClickReturnEntantque"
                     android:text="Retour" />
 
                 <Space
