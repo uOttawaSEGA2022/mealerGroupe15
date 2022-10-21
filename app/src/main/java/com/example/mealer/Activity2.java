@@ -17,7 +17,7 @@ public class Activity2 extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivityForResult(intent, 0);}
     public void OnClickAsCuisinier(View view) {
-        Intent intent = new Intent(getApplicationContext(), SignUpActivity.class);
+        Intent intent = new Intent(getApplicationContext(), SignUpCuisinierActivity.class);
         startActivityForResult(intent, 0);}
     public void OnClickAsClient(View view) {
         Intent intent = new Intent(getApplicationContext(), SignUpClientActivity.class);
