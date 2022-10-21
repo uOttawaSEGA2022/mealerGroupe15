@@ -26,29 +26,29 @@
                     android:layout_height="46dp"
                     android:layout_marginStart="70dp"
                     android:layout_marginTop="20dp"
-                    android:text="Êtes-vous..."
+                    android:text="@string/etes_vous"
                     android:textSize="40dp"
                     android:textStyle="bold" />
 
                 <Button
                     android:id="@+id/cuisinier_sign"
-                    android:layout_width="364dp"
-                    android:layout_height="273dp"
+                    android:layout_width="365dp"
+                    android:layout_height="288dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
+                    android:background="@drawable/cuisinier"
                     android:clickable="true"
-                    android:onClick="OnClickAsCuisinier"
-                    android:text="Cuisinier" />
+                    android:onClick="OnClickAsCuisinier" />
 
                 <Button
                     android:id="@+id/Client_sign"
-                    android:layout_width="364dp"
-                    android:layout_height="273dp"
+                    android:layout_width="365dp"
+                    android:layout_height="288dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
+                    android:background="@drawable/client"
                     android:clickable="true"
-                    android:onClick="OnClickAsClient"
-                    android:text="Client" />
+                    android:onClick="OnClickAsClient" />
 
                 <TextView
                     android:id="@+id/retour2"
