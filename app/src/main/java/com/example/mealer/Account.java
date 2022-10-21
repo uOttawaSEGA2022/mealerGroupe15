@@ -1,8 +1,16 @@
 package com.example.mealer;
 
-public abstract class Account {
-    String firstName;
-    String lastName;
-    String email;
-    String password;
+public interface Account {
+    String username = new String();
+    String firstName = new String();
+    String lastName = new String();
+    String email = new String();
+    String password = new String();
+    Boolean connected = false;
+
+    public void connect(String usrnm, String pswd);
+    public void disconnect();
+    public Boolean isConnected();
+
+
 }
