@@ -40,7 +40,7 @@
                 android:outlineSpotShadowColor="#F80303"
                 android:progressBackgroundTint="#CF1515"
                 android:progressTint="#F80303"
-                android:scrollbarSize="10dp" />
+                android:scrollbarSize="9dp" />
         </LinearLayout>
     </ScrollView>
 
