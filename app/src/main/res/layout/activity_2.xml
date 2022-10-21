@@ -30,25 +30,17 @@
                     android:textSize="40dp"
                     android:textStyle="bold" />
 
-                <Button
-                    android:id="@+id/cuisinier_sign"
-                    android:layout_width="365dp"
-                    android:layout_height="288dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:background="@drawable/cuisinier"
-                    android:clickable="true"
-                    android:onClick="OnClickAsCuisinier" />
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="292dp"
+                    app:srcCompat="@drawable/CUISTO" />
 
-                <Button
-                    android:id="@+id/Client_sign"
-                    android:layout_width="365dp"
-                    android:layout_height="288dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:background="@drawable/client"
-                    android:clickable="true"
-                    android:onClick="OnClickAsClient" />
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="292dp"
+                    app:srcCompat="@drawable/CUSTOMER" />
 
                 <TextView
                     android:id="@+id/retour2"
