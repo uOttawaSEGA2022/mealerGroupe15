@@ -18,7 +18,7 @@
         <EditText
             android:id="@+id/SignUp"
             android:layout_width="match_parent"
-            android:layout_height="139dp"
+            android:layout_height="115dp"
             android:ems="10"
             android:inputType="textPersonName"
             android:singleLine="false"
@@ -28,7 +28,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="25dp" />
+            android:layout_height="15dp" />
 
         <LinearLayout
             android:id="@+id/FirstNameLayout"
@@ -59,7 +59,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="25dp" />
+            android:layout_height="15dp" />
 
         <LinearLayout
             android:id="@+id/LastNameLayout"
@@ -89,7 +89,34 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="25dp" />
+            android:layout_height="15dp" />
+
+        <LinearLayout
+            android:id="@+id/AdressLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Adresse"
+                android:textAlignment="center"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/editTextTextPostalAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Veuillez entrer votre adresse postale"
+                android:inputType="textPostalAddress" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
 
         <LinearLayout
             android:id="@+id/EmailLayout"
@@ -101,7 +128,7 @@
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Adresse courriel"
+                android:text="E-mail"
                 android:textAlignment="center"
                 android:textSize="24sp" />
 
@@ -110,13 +137,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Ex: someone@domain.ca"
+                android:hint="Ex: personne@domaine.ca"
                 android:inputType="textEmailAddress" />
         </LinearLayout>
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="25dp" />
+            android:layout_height="15dp" />
 
         <LinearLayout
             android:id="@+id/PasswordLayout"
@@ -144,7 +171,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="50dp" />
+            android:layout_height="40dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
