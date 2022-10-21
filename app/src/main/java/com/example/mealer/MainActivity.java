@@ -19,4 +19,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), Activity2.class);
         startActivityForResult(intent, 0);
     }
+    public void OnSeconnecter(View view) {
+        Intent intent = new Intent(getApplicationContext(), MainAccueilActivity.class);
+        startActivityForResult(intent, 0);
+    }
+
 }

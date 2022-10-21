@@ -14,8 +14,8 @@
         android:textColor="@color/black"
         android:textSize="25dp"
         android:typeface="serif"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="270dp" />
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="269dp" />
 
     <TextView
         android:id="@+id/textView7"
@@ -31,9 +31,11 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Se déconnecter"
-        tools:layout_editor_absoluteX="121dp"
-        tools:layout_editor_absoluteY="544dp"
         android:background="@android:color/white"
-        android:textColor="@android:color/white"/>
+        android:clickable="true"
+        android:onClick="OnDeconnecter"
+        android:text="Se déconnecter"
+        android:textColor="@android:color/white"
+        tools:layout_editor_absoluteX="121dp"
+        tools:layout_editor_absoluteY="544dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

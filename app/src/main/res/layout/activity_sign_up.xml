@@ -111,7 +111,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Veuillez entrer votre adresse postale"
-                android:inputType="textPostalAddress" />
+                android:inputType="textPostalAddress"
+                android:minHeight="48dp" />
         </LinearLayout>
 
         <Space
@@ -138,7 +139,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Ex: personne@domaine.ca"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:minHeight="48dp" />
         </LinearLayout>
 
         <Space
@@ -165,7 +167,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Créez votre mot de passe"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:minHeight="48dp" />
 
         </LinearLayout>
 
