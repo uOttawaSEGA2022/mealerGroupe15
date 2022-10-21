@@ -6,80 +6,87 @@
     android:layout_height="match_parent"
     tools:context=".Activity2">
 
-    <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="729dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/inscriptitle"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="46dp"
-            android:layout_marginStart="70dp"
-            android:layout_marginTop="20dp"
-            android:text="INSCRIPTION"
-            android:textSize="40dp"
-            android:textStyle="bold" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
-        <TextView
-            android:id="@+id/entantque"
-            android:layout_width="match_parent"
-            android:layout_height="99dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="80dp"
-            android:text="S'inscrire en tant que: "
-            android:textSize="38dp"
-            android:textStyle="bold" />
+            <LinearLayout
+                android:layout_width="409dp"
+                android:layout_height="729dp"
+                android:orientation="vertical">
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="61dp" />
+                <TextView
+                    android:id="@+id/inscriptitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:layout_marginStart="70dp"
+                    android:layout_marginTop="20dp"
+                    android:text="INSCRIPTION"
+                    android:textSize="40dp"
+                    android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/cuisinier_sign"
-            android:layout_width="366dp"
-            android:layout_height="91dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:clickable="true"
-            android:onClick="OnClickAsCuisinier"
-            android:text="Cuisinier" />
+                <TextView
+                    android:id="@+id/entantque"
+                    android:layout_width="match_parent"
+                    android:layout_height="99dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="80dp"
+                    android:text="S'inscrire en tant que: "
+                    android:textSize="38dp"
+                    android:textStyle="bold" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="71dp" />
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="61dp" />
 
-        <Button
-            android:id="@+id/Client_sign"
-            android:layout_width="358dp"
-            android:layout_height="91dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:clickable="true"
-            android:onClick="OnClickAsClient"
-            android:text="Client" />
+                <Button
+                    android:id="@+id/cuisinier_sign"
+                    android:layout_width="366dp"
+                    android:layout_height="91dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:clickable="true"
+                    android:onClick="OnClickAsCuisinier"
+                    android:text="Cuisinier" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="56dp" />
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="71dp" />
 
-        <TextView
-            android:id="@+id/retour2"
-            android:layout_width="wrap_content"
-            android:layout_height="68dp"
-            android:layout_marginStart="20dp"
-            android:background="#0C8B9DAC"
-            android:clickable="true"
-            android:onClick="OnClickReturnMain"
-            android:text="⬅️Retour"
-            android:textAllCaps="true"
-            android:textSize="30dp"
-            android:textStyle="bold" />
+                <Button
+                    android:id="@+id/Client_sign"
+                    android:layout_width="358dp"
+                    android:layout_height="91dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:clickable="true"
+                    android:onClick="OnClickAsClient"
+                    android:text="Client" />
 
-    </LinearLayout>
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp" />
+
+                <TextView
+                    android:id="@+id/retour2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="68dp"
+                    android:layout_marginStart="20dp"
+                    android:background="#0C8B9DAC"
+                    android:clickable="true"
+                    android:onClick="OnClickReturnMain"
+                    android:text="⬅️Retour"
+                    android:textAllCaps="true"
+                    android:textSize="30dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
