@@ -3,8 +3,8 @@ package com.example.mealer;
 
 public class Admin implements Account{
 
-    protected static String[] emails = new String[]{"test1", "voldigotcodes"};
-    protected static String[] passwords = new String[]{"test1", "voldi002"};
+    protected static String[] emails = new String[]{"test1","MORFALLSYLLA"};
+    protected static String[] passwords = new String[]{"test1","PMS11"};
     private String[] firstNames;
     private String[] lastNames;
     private String[] usernames;
@@ -26,7 +26,7 @@ public class Admin implements Account{
 
     @Override
     public void connect(String email, String pswd) {
-        for (int i =0; i>emails.length; i++) {
+        for (int i =0; i<emails.length; i++) {
             if (email.equalsIgnoreCase(emails[i])) {
                 id = i;
             }
