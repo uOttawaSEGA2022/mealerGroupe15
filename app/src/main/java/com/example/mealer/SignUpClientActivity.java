@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import com.google.android.material.textfield.TextInputEditText;
+
 public class SignUpClientActivity extends AppCompatActivity {
 
     @Override
@@ -21,10 +23,10 @@ public class SignUpClientActivity extends AppCompatActivity {
     public void OnClickinscrire(View view) {
         //quand on clique sur s'inscrire, on store les données dans des variables pour permettre la reconnection
 
-        EditText fNameBox = findViewById(R.id.FirstNameField);
+        TextInputEditText fNameBox = findViewById(R.id.FirstNameField);
         String firstName = fNameBox.getText().toString();
 
-        EditText lNameBox = findViewById(R.id.LastNameField);
+        TextInputEditText lNameBox = findViewById(R.id.LastNameField);
         String lastName = lNameBox.getText().toString();
 
         EditText emailBox = findViewById(R.id.editTextTextEmailAddress);
@@ -40,6 +42,7 @@ public class SignUpClientActivity extends AppCompatActivity {
 
         Client c = new Client(firstName,lastName,email,password,creditCard);
         c.connected = true;
+
         Intent intent = new Intent(getApplicationContext(), MainAccueil3Activity.class);
         startActivityForResult(intent, 0);
 

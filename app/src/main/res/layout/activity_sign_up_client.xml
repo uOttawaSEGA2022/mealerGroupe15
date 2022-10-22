@@ -53,11 +53,11 @@
                         android:textSize="24sp" />
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/FirstNameField"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/FirstNameField"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="Ex: Roxy" />
@@ -84,11 +84,11 @@
                         android:textSize="24sp" />
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/LastNameField"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/LastNameField"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="Ex: Wendaabo" />
@@ -206,7 +206,8 @@
                         android:hint="Entrer votre numéro de carte:"
 
                         android:inputType="number"
-                        android:minHeight="48dp" />
+                        android:minHeight="48dp"
+                        android:onClick="OnClickReturnEntantque" />
 
                     <Space
                         android:layout_width="match_parent"
