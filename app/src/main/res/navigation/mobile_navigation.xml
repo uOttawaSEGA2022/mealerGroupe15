@@ -3,9 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
+    android:name="androidx.navigation.fragment.NavHostFragment"
+
     app:startDestination="@+id/navigation_home">
 
     <fragment
+
         android:id="@+id/navigation_home"
         android:name="com.example.mealer.ui.home.HomeFragment"
         android:label="@string/title_home"
