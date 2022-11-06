@@ -22,26 +22,26 @@ public class SignUpClientActivity extends AppCompatActivity {
     }
     public void OnClickinscrire(View view) {
         //quand on clique sur s'inscrire, on store les données dans des variables pour permettre la reconnection
-//
-//        TextInputEditText fNameBox = findViewById(R.id.FirstNameField);
-//        String firstName = fNameBox.getText().toString();
-//
-//        TextInputEditText lNameBox = findViewById(R.id.LastNameField);
-//        String lastName = lNameBox.getText().toString();
-//
-//        EditText emailBox = findViewById(R.id.editTextTextEmailAddress);
-//        String email = emailBox.getText().toString();
-//
-//        EditText passwordBox = findViewById(R.id.editTextTextPassword2);
-//        String password = passwordBox.getText().toString();
-//
-//        EditText creditInfo = findViewById(R.id.editTextNumber);
-//        String creditCard = creditInfo.getText().toString();
-//
-//        //appeler la classe client (constructor) et entrer les infos pour 'creer' le compte
-//
-//        Client c = new Client(firstName,lastName,email,password,creditCard);
-//        c.connected = true;
+
+        TextInputEditText fNameBox = findViewById(R.id.FirstNameField);
+        String firstName = fNameBox.getText().toString();
+
+        TextInputEditText lNameBox = findViewById(R.id.LastNameField);
+        String lastName = lNameBox.getText().toString();
+
+        EditText emailBox = findViewById(R.id.editTextTextEmailAddress);
+        String email = emailBox.getText().toString();
+
+        EditText passwordBox = findViewById(R.id.editTextTextPassword2);
+        String password = passwordBox.getText().toString();
+
+        EditText creditInfo = findViewById(R.id.editTextNumber);
+        String creditCard = creditInfo.getText().toString();
+
+        //appeler la classe client (constructor) et entrer les infos pour 'creer' le compte
+
+        Client c = new Client(firstName,lastName,email,password,creditCard);
+        c.connected = true;
 
         Intent intent = new Intent(getApplicationContext(), MainAccueil3Activity.class);
         startActivityForResult(intent, 0);

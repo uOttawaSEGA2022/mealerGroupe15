@@ -1,6 +1,18 @@
 package com.example.mealer;
 
 
+import static android.content.ContentValues.TAG;
+
+import android.util.Log;
+
+import androidx.annotation.NonNull;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 public class Admin implements Account{
 
     protected static String[] emails = new String[]{"test1","MORFALLSYLLA","KHADYAMATH","BABA"};
@@ -10,6 +22,8 @@ public class Admin implements Account{
     private String[] usernames;
     private Boolean connected;
     private static int id;
+    FirebaseDatabase database;
+    DatabaseReference myRef;
 
     public Admin(){
         id = 0;
@@ -17,6 +31,24 @@ public class Admin implements Account{
         lastNames = new String[1];
         usernames = new String[1];
         connected = false;
+        database = FirebaseDatabase.getInstance();
+        myRef = database.getReference("Admin");
+        // Read from the database
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                String value = dataSnapshot.getValue(String.class);
+                Log.d(TAG, "Value is: " + value);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w(TAG, "Failed to read value.", error.toException());
+            }
+        });
 
     }
     public void setInfo(String email, String password){
