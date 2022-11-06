@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
             connectionState.setText("Connected");
             connectionState.setTextColor(Color.green(255));
             admin.setInfo(email, password);
-            Intent intent = new Intent(getApplicationContext(), MainAccueilActivity.class);
+            Intent intent = new Intent(getApplicationContext(), ADMINACCEUIL.class);
             startActivityForResult(intent, 0);
         }else{
             connectionState.setText("Veuillez verifier votre mot de passe ou votre adresse email");

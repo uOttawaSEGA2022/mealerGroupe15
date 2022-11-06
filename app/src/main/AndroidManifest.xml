@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
+        android:enabled="true"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -12,6 +13,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mealer"
         tools:targetApi="31">
+        <activity
+            android:name=".ADMINACCEUIL"
+            android:exported="false"
+            android:label="@string/title_activity_adminacceuil">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".SplashActivity"
             android:exported="true">
@@ -47,13 +56,6 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainAccueilActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".Activity2"
             android:exported="false">
             <meta-data
@@ -67,8 +69,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
-
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
