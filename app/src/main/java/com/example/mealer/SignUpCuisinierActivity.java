@@ -44,7 +44,7 @@ public class SignUpCuisinierActivity extends AppCompatActivity {
 
         //si tous les champs sont remplis, on change de page.
         Cuisinier cook = new Cuisinier(firstName, lastName, address, email, password, description);
-        cook.connect(email, password);
+        //cook.connect(email, password);
         startActivityForResult(intent, 0);
 
         // Write a message to the database

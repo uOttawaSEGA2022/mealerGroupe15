@@ -1,5 +1,6 @@
 package com.example.mealer;
 
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -80,7 +81,7 @@ public class Client extends User{
     }
 
     @Override
-    public void connect(String email, String pswd) {
+    public void connect(String email, String pswd, DataSnapshot snapshot) {
 //        for (int i =0; i>emails.size(); i++) {
 //            if (email.equalsIgnoreCase(emails.get(i))) {
 //                id = i;

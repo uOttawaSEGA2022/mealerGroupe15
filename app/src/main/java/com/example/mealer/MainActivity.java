@@ -3,7 +3,6 @@ package com.example.mealer;
 import static android.content.ContentValues.TAG;
 
 import android.content.Intent;
-import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,21 +10,23 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.function.Consumer;
+
 public class MainActivity extends AppCompatActivity {
 
     static Admin admin;
-    public enum connectionStates{WAITING, CONNECTED, DISCONNECTED, FAILED};
-    connectionStates state = connectionStates.WAITING;
+    public enum ConnectionStates{WAITING, CONNECTED, DISCONNECTED, FAILED};
+    public enum AccountType{ADMIN, CUISINIER, CLIENT, DISCONNECTED};
+    ConnectionStates state = ConnectionStates.WAITING;
+    AccountType accountType = AccountType.DISCONNECTED;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference();
 
@@ -52,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
         TextView connectionState = findViewById(R.id.stateAfterConnection);
 
         Log.println(Log.DEBUG, "INFO", "email : " + email+ " passeword : " + password);
-        admin.connect(email, password);
         // Read from the database
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -61,18 +61,37 @@ public class MainActivity extends AppCompatActivity {
                 // whenever data at this location is updated.
                 //String value = dataSnapshot.getValue(String.class);
 
-                //for(int i=0; i< dataSnapshot.getChildrenCount(); i++){
-
-                while(dataSnapshot.getChildren().iterator().hasNext()){
-                    String key = dataSnapshot.getChildren().iterator().next().getKey();
-                    if( key == "Admin"){
-                        Log.d(TAG, "FOUND ADMIN");
-                    }else{
-                        Log.d(TAG, key);
+                for(DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    // while (snap.getChildren().iterator().hasNext()) {
+                    String key = snapshot.getRef().getKey().toString();
+                    if (key.equals("Admin")) {
+                            admin.connect(email, password, snapshot);
+                        if(admin.isConnected()){
+                            state = ConnectionStates.CONNECTED;
+                            Log.println(Log.DEBUG, "INFO", "SUCCESS: VOUS ETES CONNECTE");
+                            connectionState.setText("Connected");
+                            connectionState.setTextColor(Color.green(255));
+                            admin.setInfo(email, password);
+                            Intent intent = new Intent(getApplicationContext(), ADMINACCEUIL.class);
+                            startActivityForResult(intent, 0);
+                        }else{
+                        connectionState.setText("Veuillez verifier votre mot de passe ou votre adresse email");
+                        connectionState.setTextColor(Color.parseColor("#FF0000"));
+                        Log.println(Log.DEBUG, "INFO", "PROBLEM: VOUS AVEZ RENTREZ UN MAUVAIS MOT DE PASSE");
+                        state = ConnectionStates.FAILED;
+                    }
+                    } else if (key.equals("Client")) {
+                        //accountType = AccountType.CLIENT;
+                        //client.connect(email, password);
+                    } else if (key.equals("Cuisinier")) {
+                        //accountType = AccountType.CUISINIER;
+                        //cuisinier.connect(email, password);
+                    } else {
+                        Log.d(TAG, "ON NE PEUT PAS TROUVER L'INFORMATION DANS " + key);
                     }
 
-                    dataSnapshot = dataSnapshot.getChildren().iterator().next();
                 }
+
 
             }
 
@@ -83,20 +102,28 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        if(admin.isConnected()){
-            state = connectionStates.CONNECTED;
-            Log.println(Log.DEBUG, "INFO", "SUCCESS: VOUS ETES CONNECTE");
-            connectionState.setText("Connected");
-            connectionState.setTextColor(Color.green(255));
-            admin.setInfo(email, password);
-            Intent intent = new Intent(getApplicationContext(), ADMINACCEUIL.class);
-            startActivityForResult(intent, 0);
-        }else{
-            connectionState.setText("Veuillez verifier votre mot de passe ou votre adresse email");
-            connectionState.setTextColor(Color.parseColor("#FF0000"));
-            Log.println(Log.DEBUG, "INFO", "SUCCESS: VOUS AVEZ RENTREZ UN MAUVAIS MOT DE PASSE");
-            state = connectionStates.FAILED;
-        }
+        Log.println(Log.DEBUG, "TEST", "Valeur de connected :" + admin.isConnected().toString());
+
+//        if(admin.isConnected()){
+//                state = ConnectionStates.CONNECTED;
+//                Log.println(Log.DEBUG, "INFO", "SUCCESS: VOUS ETES CONNECTE");
+//                connectionState.setText("Connected");
+//                connectionState.setTextColor(Color.green(255));
+//                admin.setInfo(email, password);
+//                Intent intent = new Intent(getApplicationContext(), ADMINACCEUIL.class);
+//                startActivityForResult(intent, 0);
+//        }else if(accountType == AccountType.CLIENT){
+//
+//
+//        }else if(accountType == AccountType.CUISINIER){
+//
+//        }else{
+//                connectionState.setText("Veuillez verifier votre mot de passe ou votre adresse email");
+//                connectionState.setTextColor(Color.parseColor("#FF0000"));
+//                Log.println(Log.DEBUG, "INFO", "PROBLEM: VOUS AVEZ RENTREZ UN MAUVAIS MOT DE PASSE");
+//                state = ConnectionStates.FAILED;
+//        }
+
 
     }
 

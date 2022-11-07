@@ -13,6 +13,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Iterator;
+import java.util.function.Consumer;
+
 public class Admin implements Account{
 
     protected static String[] emails = new String[]{"test1","MORFALLSYLLA","KHADYAMATH","BABA"};
@@ -21,6 +24,7 @@ public class Admin implements Account{
     private String[] lastNames;
     private String[] usernames;
     private Boolean connected;
+    private Boolean found;
     private static int id;
     FirebaseDatabase database;
     DatabaseReference myRef;
@@ -31,26 +35,9 @@ public class Admin implements Account{
         lastNames = new String[1];
         usernames = new String[1];
         connected = false;
+        found = false;
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference("Admin");
-        // Read from the database
-        myRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                //String value = dataSnapshot.getValue(String.class);
-               //Log.d(TAG, "Value is: " + value);
-
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-                Log.w(TAG, "Failed to read value.", error.toException());
-            }
-        });
 
     }
     public void setInfo(String email, String password){
@@ -59,19 +46,31 @@ public class Admin implements Account{
     }
 
     @Override
-    public void connect(String email, String pswd) {
-        for (int i =0; i<emails.length; i++) {
-            if (email.equalsIgnoreCase(emails[i])) {
-                id = i;
+    public void connect(String email, String pswd, DataSnapshot snapshot) {
+        for (Iterator<DataSnapshot> it = snapshot.getChildren().iterator().next().getChildren().iterator(); it.hasNext();) {
+            DataSnapshot snap =  it.next();
+            if(snap.getKey().toString().equalsIgnoreCase("mail")
+                    && snap.getValue().toString().equalsIgnoreCase(email)){
+                found = true;
             }
+
+            if(found){
+                if(snap.getKey().toString().equalsIgnoreCase("motdepass")){
+                    if(snap.getValue().toString().equalsIgnoreCase(pswd)) {
+                        connected = true;
+                        // Connect to the user
+                    }else{
+                        connected = false;
+                    }
+                }
+
+            }
+            Log.println(Log.DEBUG, "TEST", "key : " + snap.getKey().toString() + " Value : " + snap.getValue().toString()
+                    + "Valeur de connected :" + connected.toString());
         }
 
-        if(pswd.equals(passwords[id])) {
-            connected = true;
-            // Connect to the user
-        }else{
-            connected = false;
-        }
+
+
 
     }
 

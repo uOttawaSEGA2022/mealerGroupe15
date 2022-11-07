@@ -1,5 +1,7 @@
 package com.example.mealer;
 
+import com.google.firebase.database.DataSnapshot;
+
 import java.util.ArrayList;
 
 public class Cuisinier extends User{
@@ -45,7 +47,7 @@ public class Cuisinier extends User{
     }
 
     @Override
-    public void connect(String email, String pswd) {
+    public void connect(String email, String pswd, DataSnapshot snapshot) {
         for (int i =0; i>emails.size(); i++) {
             if (email.equalsIgnoreCase(emails.get(i))) {
                 id = i;
