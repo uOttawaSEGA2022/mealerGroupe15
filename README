@@ -2,8 +2,11 @@ Projet : MEALER
 Groupe : 15
 
 Compte Admin {
-  email : test1
-  password : test1
+  email : Admin1@gmail.com
+  password : Admin1
 }
+
+Pour Cuisinier et Client, on peut s'inscrire et les données seront enregistré dans la base de données
+et peuvent nous permettre de nous re connecter par la suite.
 
 
