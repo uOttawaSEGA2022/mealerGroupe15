@@ -10,8 +10,6 @@ import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputEditText;
 
-import java.util.Locale;
-
 public class SignUpClientActivity extends AppCompatActivity {
 
     @Override
@@ -47,18 +45,23 @@ public class SignUpClientActivity extends AppCompatActivity {
         TextView incTextView = findViewById(R.id.incompleteInfoText);
 
 
-        //appeler la classe client (constructor) et entrer les infos pour 'creer' le compte
+        //On crée une nouvelle instance client
         Client c = new Client();
+
+        //On vérifie que aucun champs n'es null, soit que l'utilisateur a bien rentrer quelque chose dans tout les champs
         if(email.isEmpty() || email == null ||
         password.isEmpty() || password == null ||
         usr.isEmpty() || usr == null ||
         lastName.isEmpty() || lastName == null ||
                 adress.isEmpty() || adress == null ||
                 cardNumber.isEmpty() || cardNumber == null){
+            // sinon on affiche ce message dans incTextView qui est un TextView au juste
+            // en dessous du grand Sign up label
             incTextView.setText("Veuillez entrez toutes les informations s'il vous plait!");
         }else{
+            // Si tout est respecter on peut entamer la création du compte
             c.signUp(email, password, usr, lastName, adress, cardNumber);
-            Intent intent = new Intent(getApplicationContext(), MainAccueil3Activity.class);
+            Intent intent = new Intent(getApplicationContext(), AcceuilClient.class);
             startActivityForResult(intent, 0);
         }
 

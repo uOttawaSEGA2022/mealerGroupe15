@@ -42,14 +42,14 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainAccueil3Activity"
+            android:name=".AcceuilClient"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainAccueil2Activity"
+            android:name=".AccueilCuisinier"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

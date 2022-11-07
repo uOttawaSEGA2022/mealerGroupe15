@@ -68,10 +68,6 @@ public class Admin implements Account{
             Log.println(Log.DEBUG, "TEST", "key : " + snap.getKey().toString() + " Value : " + snap.getValue().toString()
                     + "Valeur de connected :" + connected.toString());
         }
-
-
-
-
     }
 
     @Override

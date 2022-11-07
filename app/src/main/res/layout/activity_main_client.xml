@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainAccueil2Activity">
-
+    tools:context=".AcceuilClient">
     <LinearLayout
 
         android:layout_width="413dp"
@@ -38,7 +37,7 @@
                 android:layout_height="77dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="80dp"
-                android:text="Bienvenue vous êtes connecté en tant que cuisinier."
+                android:text="Bienvenue vous êtes connecté en tant que client."
                 android:textColor="@color/black"
                 android:textSize="25dp"
                 android:typeface="serif" />
@@ -63,8 +62,10 @@
                 android:onClick="OnDeconnecter"
                 android:text="Se déconnecter"
                 android:textColor="@color/white"
-                android:textColorLink="@color/white" />
+                android:textColorLink="@color/white"
+                tools:ignore="TextContrastCheck" />
         </LinearLayout>
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

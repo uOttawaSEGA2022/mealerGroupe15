@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -22,7 +23,6 @@ public class SignUpCuisinierActivity extends AppCompatActivity {
         startActivityForResult(intent, 0);
     }
     public void OnClickinscrire(View view) {
-        Intent intent = new Intent(getApplicationContext(), MainAccueil2Activity.class);
 
         EditText fNameBox = findViewById(R.id.FirstNameField);
         String firstName = fNameBox.getText().toString();
@@ -42,15 +42,27 @@ public class SignUpCuisinierActivity extends AppCompatActivity {
         EditText descriptionBox = findViewById(R.id.editTextTextPersonName);
         String description = descriptionBox.getText().toString();
 
-        //si tous les champs sont remplis, on change de page.
-        Cuisinier cook = new Cuisinier(firstName, lastName, address, email, password, description);
-        //cook.connect(email, password);
-        startActivityForResult(intent, 0);
+        TextView incTextView = findViewById(R.id.incTextView);
 
-        // Write a message to the database
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("Client");
-        myRef.setValue("nouveau");
+        //On crée une nouvelle instance client
+        Cuisinier c = new Cuisinier();
+
+        //On vérifie que aucun champs n'es null, soit que l'utilisateur a bien rentrer quelque chose dans tout les champs
+        if(email.isEmpty() || email == null ||
+                password.isEmpty() || password == null ||
+                firstName.isEmpty() || firstName == null ||
+                lastName.isEmpty() || lastName == null ||
+                address.isEmpty() || address == null ||
+                description.isEmpty() || description == null){
+            // sinon on affiche ce message dans incTextView qui est un TextView au juste
+            // en dessous du grand Sign up label
+            incTextView.setText("Veuillez entrez toutes les informations s'il vous plait!");
+        }else{
+            // Si tout est respecter on peut entamer la création du compte
+            c.signUp(email, password, firstName, lastName, address, description);
+            Intent intent = new Intent(getApplicationContext(), AccueilCuisinier.class);
+            startActivityForResult(intent, 0);
+        }
     }
 
     }

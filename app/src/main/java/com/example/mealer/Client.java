@@ -1,10 +1,14 @@
 package com.example.mealer;
 
+import android.provider.ContactsContract;
+import android.util.Log;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Client extends User{
 
@@ -15,14 +19,16 @@ public class Client extends User{
     String adress;
     String creditCardInfo;
     Boolean connected;
+    Boolean found;
     int id;
     int orderID;
-    static FirebaseDatabase database = FirebaseDatabase.getInstance();
-    static DatabaseReference myRef = database.getReference("Client");
+    private static FirebaseDatabase database = FirebaseDatabase.getInstance();
+    private static DatabaseReference myRef = database.getReference("Client");
 
 
     public Client(){
         connected =  false;
+        found = false;
     }
 
 //    public Client(String firstName, String lastName, String email, String password, String creditCardInfo){
@@ -82,18 +88,53 @@ public class Client extends User{
 
     @Override
     public void connect(String email, String pswd, DataSnapshot snapshot) {
-//        for (int i =0; i>emails.size(); i++) {
-//            if (email.equalsIgnoreCase(emails.get(i))) {
-//                id = i;
-//            }
-//        }
-//
-//        if(pswd.equals(passwords.get(id))) {
-//            connected = true;
-//            // Connect to the user
-//        }else{
-//            connected = false;
-//        }
+        connected = false;
+        found = false;
+        for(DataSnapshot children : snapshot.getChildren()) {
+            for (Iterator<DataSnapshot> it = children.getChildren().iterator(); it.hasNext(); ) {
+                DataSnapshot snap = it.next();
+                if (snap.getKey().toString().equalsIgnoreCase("email")
+                        && snap.getValue().toString().equalsIgnoreCase(email)) {
+                    found = true;
+                }
+
+                if (found) {
+                    if (snap.getKey().toString().equalsIgnoreCase("password")) {
+                        if (snap.getValue().toString().equalsIgnoreCase(pswd)) {
+                            connected = true;
+                            for (Iterator<DataSnapshot> it2 = snapshot.getChildren().iterator().next().getChildren().iterator(); it2.hasNext(); ) {
+                                DataSnapshot snap2 = it2.next();
+                                if (snap2.getKey().toString().equalsIgnoreCase("email")) {
+                                    email = snap2.getValue().toString();
+                                }
+                                if (snap2.getKey().toString().equalsIgnoreCase("password")) {
+                                    password = snap2.getValue().toString();
+                                }
+                                if (snap2.getKey().toString().equalsIgnoreCase("firstName")) {
+                                    firstName = snap2.getValue().toString();
+                                }
+                                if (snap2.getKey().toString().equalsIgnoreCase("lastName")) {
+                                    lastName = snap2.getValue().toString();
+                                }
+                                if (snap2.getKey().toString().equalsIgnoreCase("adress")) {
+                                    adress = snap2.getValue().toString();
+                                }
+                                if (snap2.getKey().toString().equalsIgnoreCase("cardNumber")) {
+                                    creditCardInfo = snap2.getValue().toString();
+                                }
+
+                            }
+                            // Connect to the user
+                        } else {
+                            connected = false;
+                        }
+                    }
+                }
+                Log.println(Log.DEBUG, "TEST", "key : " + snap.getKey().toString() + " Value : " + snap.getValue().toString()
+                        + " Valeur de connected :" + connected.toString());
+            }
+            Log.println(Log.INFO, "TEST", "adress is : " + adress);
+        }
     }
 
     @Override

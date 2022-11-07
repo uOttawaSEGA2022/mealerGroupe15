@@ -23,6 +23,8 @@ import java.util.function.Consumer;
 public class MainActivity extends AppCompatActivity {
 
     static Admin admin;
+    static Client client;
+    static Cuisinier cuisinier;
     public enum ConnectionStates{WAITING, CONNECTED, DISCONNECTED, FAILED};
     public enum AccountType{ADMIN, CUISINIER, CLIENT, DISCONNECTED};
     ConnectionStates state = ConnectionStates.WAITING;
@@ -37,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
         TextView connectionState = findViewById(R.id.stateAfterConnection);
         connectionState.setText("");
         admin = new Admin();
+        client = new Client();
+        cuisinier = new Cuisinier();
 
     }
     public void OnLogin(View view) {
@@ -65,31 +69,51 @@ public class MainActivity extends AppCompatActivity {
                     // while (snap.getChildren().iterator().hasNext()) {
                     String key = snapshot.getRef().getKey().toString();
                     if (key.equals("Admin")) {
-                            admin.connect(email, password, snapshot);
-                        if(admin.isConnected()){
-                            state = ConnectionStates.CONNECTED;
-                            Log.println(Log.DEBUG, "INFO", "SUCCESS: VOUS ETES CONNECTE");
-                            connectionState.setText("Connected");
-                            connectionState.setTextColor(Color.green(255));
-                            admin.setInfo(email, password);
-                            Intent intent = new Intent(getApplicationContext(), ADMINACCEUIL.class);
-                            startActivityForResult(intent, 0);
-                        }else{
-                        connectionState.setText("Veuillez verifier votre mot de passe ou votre adresse email");
-                        connectionState.setTextColor(Color.parseColor("#FF0000"));
-                        Log.println(Log.DEBUG, "INFO", "PROBLEM: VOUS AVEZ RENTREZ UN MAUVAIS MOT DE PASSE");
-                        state = ConnectionStates.FAILED;
-                    }
+                        admin.connect(email, password, snapshot);
                     } else if (key.equals("Client")) {
-                        //accountType = AccountType.CLIENT;
-                        //client.connect(email, password);
+                        client.connect(email, password, snapshot);
                     } else if (key.equals("Cuisinier")) {
-                        //accountType = AccountType.CUISINIER;
-                        //cuisinier.connect(email, password);
+                        cuisinier.connect(email, password, snapshot);
                     } else {
                         Log.d(TAG, "ON NE PEUT PAS TROUVER L'INFORMATION DANS " + key);
                     }
 
+                }
+
+
+                // ON VERIFIE QUI EST CONNECTÉ PUIS ON LOAD LA NOUVELLE PAGE EN FONCTION DE SI C'EST UN CLIENT, UN ADMIN OU UN CUISINIER
+                if(admin.isConnected()
+                        && !client.isConnected()
+                        && !cuisinier.isConnected()){
+                    state = ConnectionStates.CONNECTED;
+                    Log.println(Log.DEBUG, "INFO", "SUCCESS: VOUS ETES CONNECTE");
+                    connectionState.setText("Connected");
+                    connectionState.setTextColor(Color.green(255));
+                    Intent intent = new Intent(getApplicationContext(), ADMINACCEUIL.class);
+                    startActivityForResult(intent, 0);
+                }else if(client.isConnected()
+                && !admin.isConnected()
+                && !cuisinier.isConnected()){
+                    state = ConnectionStates.CONNECTED;
+                    Log.println(Log.DEBUG, "INFO", "SUCCESS: VOUS ETES CONNECTE");
+                    connectionState.setText("Connected");
+                    connectionState.setTextColor(Color.green(255));
+                    Intent intent = new Intent(getApplicationContext(), AcceuilClient.class);
+                    startActivityForResult(intent, 0);
+                }else if(cuisinier.isConnected()
+                && !admin.isConnected()
+                && !client.isConnected()){
+                    state = ConnectionStates.CONNECTED;
+                    Log.println(Log.DEBUG, "INFO", "SUCCESS: VOUS ETES CONNECTE");
+                    connectionState.setText("Connected");
+                    connectionState.setTextColor(Color.green(255));
+                    Intent intent = new Intent(getApplicationContext(), AccueilCuisinier.class);
+                    startActivityForResult(intent, 0);
+                }else{
+                    connectionState.setText("Veuillez verifier votre mot de passe ou votre adresse email");
+                    connectionState.setTextColor(Color.parseColor("#FF0000"));
+                    Log.println(Log.DEBUG, "INFO", "PROBLEM: VOUS AVEZ RENTREZ UN MAUVAIS MOT DE PASSE");
+                    state = ConnectionStates.FAILED;
                 }
 
 
