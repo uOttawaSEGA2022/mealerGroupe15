@@ -6,8 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputEditText;
+
+import java.util.Locale;
 
 public class SignUpClientActivity extends AppCompatActivity {
 
@@ -23,28 +26,41 @@ public class SignUpClientActivity extends AppCompatActivity {
     public void OnClickinscrire(View view) {
         //quand on clique sur s'inscrire, on store les données dans des variables pour permettre la reconnection
 
-        TextInputEditText fNameBox = findViewById(R.id.FirstNameField);
-        String firstName = fNameBox.getText().toString();
-
-        TextInputEditText lNameBox = findViewById(R.id.LastNameField);
-        String lastName = lNameBox.getText().toString();
-
         EditText emailBox = findViewById(R.id.editTextTextEmailAddress);
         String email = emailBox.getText().toString();
 
         EditText passwordBox = findViewById(R.id.editTextTextPassword2);
         String password = passwordBox.getText().toString();
 
-        EditText creditInfo = findViewById(R.id.editTextNumber);
-        String creditCard = creditInfo.getText().toString();
+        TextInputEditText nameBox = findViewById(R.id.FirstNameField);
+        String usr = nameBox.getText().toString().toLowerCase();
+
+        TextInputEditText lastNameBox =  findViewById(R.id.LastNameField);
+        String lastName = lastNameBox.getText().toString().toLowerCase();
+
+        TextView adressEditText = findViewById(R.id.editTextTextPostalAddress);
+        String adress = adressEditText.getText().toString();
+
+        TextView cardTextView = findViewById(R.id.editTextNumber);
+        String cardNumber = cardTextView.getText().toString();
+
+        TextView incTextView = findViewById(R.id.incompleteInfoText);
+
 
         //appeler la classe client (constructor) et entrer les infos pour 'creer' le compte
-
-        Client c = new Client(firstName,lastName,email,password,creditCard);
-        c.connected = true;
-
-        Intent intent = new Intent(getApplicationContext(), MainAccueil3Activity.class);
-        startActivityForResult(intent, 0);
+        Client c = new Client();
+        if(email.isEmpty() || email == null ||
+        password.isEmpty() || password == null ||
+        usr.isEmpty() || usr == null ||
+        lastName.isEmpty() || lastName == null ||
+                adress.isEmpty() || adress == null ||
+                cardNumber.isEmpty() || cardNumber == null){
+            incTextView.setText("Veuillez entrez toutes les informations s'il vous plait!");
+        }else{
+            c.signUp(email, password, usr, lastName, adress, cardNumber);
+            Intent intent = new Intent(getApplicationContext(), MainAccueil3Activity.class);
+            startActivityForResult(intent, 0);
+        }
 
     }
 }

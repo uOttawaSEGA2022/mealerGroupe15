@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class SignUpCuisinierActivity extends AppCompatActivity {
 
     @Override
@@ -43,6 +46,11 @@ public class SignUpCuisinierActivity extends AppCompatActivity {
         Cuisinier cook = new Cuisinier(firstName, lastName, address, email, password, description);
         cook.connect(email, password);
         startActivityForResult(intent, 0);
+
+        // Write a message to the database
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("Client");
+        myRef.setValue("nouveau");
     }
 
     }

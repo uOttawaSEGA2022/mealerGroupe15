@@ -26,7 +26,7 @@
                 <EditText
                     android:id="@+id/SignUp"
                     android:layout_width="match_parent"
-                    android:layout_height="93dp"
+                    android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="textPersonName"
                     android:singleLine="false"
@@ -37,6 +37,13 @@
                 <Space
                     android:layout_width="match_parent"
                     android:layout_height="15dp" />
+
+                <TextView
+                    android:id="@+id/incompleteInfoText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textColor="#FF0000" />
 
                 <LinearLayout
                     android:id="@+id/FirstNameLayout"
