@@ -61,7 +61,7 @@ public class SignUpClientActivity extends AppCompatActivity {
         }else{
             // Si tout est respecter on peut entamer la création du compte
             c.signUp(email, password, usr, lastName, adress, cardNumber);
-            Intent intent = new Intent(getApplicationContext(), AcceuilClient.class);
+            Intent intent = new Intent(getApplicationContext(), MainActivityClient.class);
             startActivityForResult(intent, 0);
         }
 

@@ -4,20 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#CDB260"
-    tools:context=".ui.notifications.NotificationsFragment">
+    tools:context=".PlainteActivity">
 
-    <TextView
-        android:id="@+id/VoiciPlainte"
-        android:layout_width="407dp"
-        android:layout_height="721dp"
-        android:layout_marginStart="20dp"
-        android:text="Voici la liste des plaintes"
-        android:textSize="30dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/myRecycleView"
+        android:layout_width="409dp"
+        android:layout_height="729dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,9 +8,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
 public class SignUpCuisinierActivity extends AppCompatActivity {
 
     @Override
@@ -60,7 +57,7 @@ public class SignUpCuisinierActivity extends AppCompatActivity {
         }else{
             // Si tout est respecter on peut entamer la création du compte
             c.signUp(email, password, firstName, lastName, address, description);
-            Intent intent = new Intent(getApplicationContext(), AccueilCuisinier.class);
+            Intent intent = new Intent(getApplicationContext(), MainActivityCuisinier.class);
             startActivityForResult(intent, 0);
         }
     }

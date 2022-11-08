@@ -18,8 +18,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.function.Consumer;
-
 public class MainActivity extends AppCompatActivity {
 
     static Admin admin;
@@ -89,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                     Log.println(Log.DEBUG, "INFO", "SUCCESS: VOUS ETES CONNECTE");
                     connectionState.setText("Connected");
                     connectionState.setTextColor(Color.green(255));
-                    Intent intent = new Intent(getApplicationContext(), ADMINACCEUIL.class);
+                    Intent intent = new Intent(getApplicationContext(), MainActivityAdmin.class);
                     startActivityForResult(intent, 0);
                 }else if(client.isConnected()
                 && !admin.isConnected()
@@ -98,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
                     Log.println(Log.DEBUG, "INFO", "SUCCESS: VOUS ETES CONNECTE");
                     connectionState.setText("Connected");
                     connectionState.setTextColor(Color.green(255));
-                    Intent intent = new Intent(getApplicationContext(), AcceuilClient.class);
+                    Intent intent = new Intent(getApplicationContext(), MainActivityClient.class);
                     startActivityForResult(intent, 0);
                 }else if(cuisinier.isConnected()
                 && !admin.isConnected()
@@ -107,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
                     Log.println(Log.DEBUG, "INFO", "SUCCESS: VOUS ETES CONNECTE");
                     connectionState.setText("Connected");
                     connectionState.setTextColor(Color.green(255));
-                    Intent intent = new Intent(getApplicationContext(), AccueilCuisinier.class);
+                    Intent intent = new Intent(getApplicationContext(), MainActivityCuisinier.class);
                     startActivityForResult(intent, 0);
                 }else{
                     connectionState.setText("Veuillez verifier votre mot de passe ou votre adresse email");

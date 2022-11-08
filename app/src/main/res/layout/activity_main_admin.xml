@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivityCuisinier">
-
+    tools:context=".MainActivityClient">
     <LinearLayout
 
         android:layout_width="413dp"
@@ -23,7 +22,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView7"
+                android:id="@+id/textViewww"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="80dp"
@@ -32,13 +31,13 @@
                 android:textSize="60dp" />
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/textVieww"
 
                 android:layout_width="wrap_content"
                 android:layout_height="77dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="80dp"
-                android:text="Bienvenue vous êtes connecté en tant que cuisinier."
+                android:text="Bienvenue vous êtes connecté en tant qu' admin."
                 android:textColor="@color/black"
                 android:textSize="25dp"
                 android:typeface="serif" />
@@ -55,16 +54,30 @@
             android:orientation="vertical">
 
             <Button
+                android:id="@+id/ToComplaints"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:text="Voir les plaintes"
+                android:onClick="OnGotoComplains"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <Button
                 android:id="@+id/buttonD"
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/white"
-                android:onClick="OnDeconnecter"
+                android:onClick="OnAdDeconnecter"
                 android:text="Se déconnecter"
                 android:textColor="@color/white"
-                android:textColorLink="@color/white" />
+                android:textColorLink="@color/white"
+                tools:ignore="TextContrastCheck" />
         </LinearLayout>
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
