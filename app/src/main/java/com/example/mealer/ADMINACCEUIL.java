@@ -2,22 +2,22 @@ package com.example.mealer;
 
 import static com.example.mealer.MainActivity.admin;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
-
-import com.example.mealer.databinding.ActivityAdminacceuilBinding;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+
+import com.example.mealer.databinding.ActivityAdminacceuilBinding;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class ADMINACCEUIL extends AppCompatActivity {
 
@@ -58,4 +58,22 @@ public class ADMINACCEUIL extends AppCompatActivity {
         startActivityForResult(intent, 0);
     }
 
+
+    private void showUpdateDeleteDialog() {
+
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = getLayoutInflater();
+        final View dialogView = inflater.inflate(R.layout.activity_dialogue, null);
+        dialogBuilder.setView(dialogView);
+
+
+        final Button button1 = (Button) dialogView.findViewById(R.id.button);
+        final Button button2 = (Button) dialogView.findViewById(R.id.button2);
+        final Button button3 = (Button) dialogView.findViewById(R.id.button3);
+        final Button button4 = (Button) dialogView.findViewById(R.id.datePickerButton);
+
+        ;
+        final AlertDialog b = dialogBuilder.create();
+        b.show();
+    }
 }
