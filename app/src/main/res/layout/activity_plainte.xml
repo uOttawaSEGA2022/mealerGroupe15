@@ -7,11 +7,40 @@
     tools:context=".PlainteActivity">
 
     <androidx.recyclerview.widget.RecyclerView
+
         android:id="@+id/myRecycleView"
-        android:layout_width="409dp"
-        android:layout_height="729dp"
+        android:layout_width="400dp"
+        android:layout_height="605dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Voici la liste des plaintes:"
+            android:textSize="30dp"
+            android:textStyle="bold|italic" />
+
+        <Button
+            android:id="@+id/buttonRetPlainte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@android:drawable/ic_menu_revert"
+            android:drawableLeft="@android:drawable/ic_menu_revert"
+            android:text="Retour"
+            android:onClick="OnReturnToAdmin"/>
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -44,4 +44,8 @@ public class PlainteActivity extends AppCompatActivity implements RecyclerViewIn
         startActivity(intent);
 
     }
+    public void OnReturnToAdmin(View view) {
+        Intent intent = new Intent(getApplicationContext(), MainActivityAdmin.class);
+        startActivityForResult(intent, 0);
+    }
 }
