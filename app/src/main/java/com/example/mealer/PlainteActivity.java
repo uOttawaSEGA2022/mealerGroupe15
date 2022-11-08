@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +16,7 @@ import android.os.Bundle;
 
 import java.util.ArrayList;
 
-public class PlainteActivity extends AppCompatActivity {
+public class PlainteActivity extends AppCompatActivity implements RecyclerViewInterface{
     ArrayList<PlainteModel> modeeldeplainte=new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +24,7 @@ public class PlainteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_plainte);
         RecyclerView recyclerView=findViewById(R.id.myRecycleView);
         setupModeeldeplainte();
-        RecyclerViewAdapter adapter=new RecyclerViewAdapter(this,modeeldeplainte);
+        RecyclerViewAdapter adapter=new RecyclerViewAdapter(this,modeeldeplainte,this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
@@ -37,4 +38,10 @@ public class PlainteActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void OnItemClick(int position) {
+        Intent intent=new Intent(PlainteActivity.this,dialogue.class);
+        startActivity(intent);
+
+    }
 }

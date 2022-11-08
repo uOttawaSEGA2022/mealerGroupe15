@@ -48,6 +48,13 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".dialogue"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".MainActivityClient"
             android:exported="false">
             <meta-data
