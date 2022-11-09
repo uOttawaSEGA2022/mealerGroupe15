@@ -69,6 +69,7 @@ public class PlainteActivity extends AppCompatActivity implements RecyclerViewIn
         for (int i=0; i<ClientNamess.length;i++){
             modeeldeplainte.add(new PlainteModel(ClientNamess[i],CuisiniersNames[i],Descrip[i]));
 
+
         }
     }*/
 
