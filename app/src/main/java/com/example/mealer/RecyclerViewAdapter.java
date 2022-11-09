@@ -33,6 +33,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewAdapter.MyViewHolder holder, int position) {
+
         holder.textVClientName.setText(modeeldeplainte.get(position).getNameOfClient());
         holder.textVCuisiName.setText(modeeldeplainte.get(position).getNameOfCuisinier());
         holder.textVDescrip.setText(modeeldeplainte.get(position).getDescription());

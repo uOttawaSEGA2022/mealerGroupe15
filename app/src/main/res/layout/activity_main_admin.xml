@@ -59,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/white"
                 android:text="Voir les plaintes"
-                android:onClick="OnGotoComplains"/>
+                />
 
             <Space
                 android:layout_width="match_parent"

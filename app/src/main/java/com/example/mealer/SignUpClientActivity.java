@@ -21,7 +21,7 @@ public class SignUpClientActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), Activity2.class);
         startActivityForResult(intent, 0);
     }
-    public void OnClickinscrire(View view) {
+    public void OnClickinscrireClient(View view) {
         //quand on clique sur s'inscrire, on store les données dans des variables pour permettre la reconnection
 
         EditText emailBox = findViewById(R.id.editTextTextEmailAddress);
@@ -66,4 +66,7 @@ public class SignUpClientActivity extends AppCompatActivity {
         }
 
     }
+
+
+
 }

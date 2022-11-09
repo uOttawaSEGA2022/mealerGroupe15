@@ -246,7 +246,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:insetRight="10dp"
-                            android:onClick="OnClickinscrire"
+                            android:onClick="OnClickinscrireClient"
                             android:text="S'inscrire" />
 
                     </LinearLayout>
