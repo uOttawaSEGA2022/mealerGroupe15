@@ -48,7 +48,7 @@ public class PlainteActivity extends AppCompatActivity implements RecyclerViewIn
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for(DataSnapshot dataSnapshot:snapshot.getChildren()){
+                for(DataSnapshot dataSnapshot:snapshot.getChildren( )){
                     PlainteModel user=dataSnapshot.getValue(PlainteModel.class);
                     modeeldeplainte.add(user);
 

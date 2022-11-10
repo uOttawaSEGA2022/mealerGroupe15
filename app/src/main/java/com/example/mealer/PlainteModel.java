@@ -14,7 +14,7 @@ public class PlainteModel {
         private String nameOfCuisinier;
         private String Description;
 
-        public PlainteModel(String nameOfClient, String nameOfCuisinier, String Description){
+        public PlainteModel(String nameOfClient, String nameOfCuisinier,String Description ){
             this.nameOfClient=nameOfClient;
             this.nameOfCuisinier=nameOfCuisinier;
             this.Description=Description;
@@ -37,12 +37,12 @@ public class PlainteModel {
             return Description;
         }
 
-        public void setNameOfClient(String nameOfClient) {
-            this.nameOfClient = nameOfClient;
+        public void setNameOfClient(String NameClientt) {
+            nameOfClient= NameClientt;
         }
 
-        public void setNameOfCuisinier(String nameOfCuisinier) {
-            this.nameOfCuisinier = nameOfCuisinier;
+        public void setNameOfCuisinier(String nameOfCuisinierr) {
+            nameOfCuisinier = nameOfCuisinierr;
         }
 
         public void setDescription(String description) {

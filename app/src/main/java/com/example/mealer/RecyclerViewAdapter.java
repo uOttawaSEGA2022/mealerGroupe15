@@ -16,6 +16,7 @@ import java.util.ArrayList;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
     private final RecyclerViewInterface recyclerViewInterface;
     Context context;
+
     ArrayList<PlainteModel> modeeldeplainte;
     public RecyclerViewAdapter(Context context, ArrayList<PlainteModel> modeeldeplainte, RecyclerViewInterface recyclerViewInterface) {
         this.context=context;

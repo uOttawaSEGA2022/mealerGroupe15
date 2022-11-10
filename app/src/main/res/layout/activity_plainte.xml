@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/customercomplaint"
     tools:context=".PlainteActivity">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -33,14 +34,14 @@
             android:textSize="30dp"
             android:textStyle="bold|italic" />
 
-        <Button
+        <ImageButton
             android:id="@+id/buttonRetPlainte"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableStart="@android:drawable/ic_menu_revert"
-            android:drawableLeft="@android:drawable/ic_menu_revert"
-            android:text="Retour"
-            android:onClick="OnReturnToAdmin"/>
+            android:layout_width="96dp"
+            android:layout_height="49dp"
+            android:foreground="@drawable/leftarrow"
+            android:onClick="OnReturnToAdmin"
+            android:src="@drawable/leftarrow"
+            android:text="Retour" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
