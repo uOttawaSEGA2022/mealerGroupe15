@@ -1,5 +1,6 @@
 package com.example.mealer;
 
+import android.content.Context;
 import android.provider.ContactsContract;
 import android.util.Log;
 
@@ -87,7 +88,7 @@ public class Client extends User{
     }
 
     @Override
-    public void connect(String email, String pswd, DataSnapshot snapshot) {
+    public void connect(String email, String pswd, DataSnapshot snapshot, Context applicationContext) {
         connected = false;
         found = false;
         for(DataSnapshot children : snapshot.getChildren()) {

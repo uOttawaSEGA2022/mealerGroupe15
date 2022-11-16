@@ -68,11 +68,11 @@ public class MainActivity extends AppCompatActivity {
                     // while (snap.getChildren().iterator().hasNext()) {
                     String key = snapshot.getRef().getKey().toString();
                     if (key.equals("Admin")) {
-                        admin.connect(email, password, snapshot);
+                        admin.connect(email, password, snapshot, getApplicationContext());
                     } else if (key.equals("Client")) {
-                        client.connect(email, password, snapshot);
+                        client.connect(email, password, snapshot, getApplicationContext());
                     } else if (key.equals("Cuisinier")) {
-                        cuisinier.connect(email, password, snapshot);
+                        cuisinier.connect(email, password, snapshot, getApplicationContext());
                     } else {
                         Log.d(TAG, "ON NE PEUT PAS TROUVER L'INFORMATION DANS " + key);
                     }
@@ -106,6 +106,9 @@ public class MainActivity extends AppCompatActivity {
                     Log.println(Log.DEBUG, "INFO", "SUCCESS: VOUS ETES CONNECTE");
                     connectionState.setText("Connected");
                     connectionState.setTextColor(Color.green(255));
+
+                    MainActivityCuisinier.setCuisinier(cuisinier);
+
                     Intent intent = new Intent(getApplicationContext(), MainActivityCuisinier.class);
                     startActivityForResult(intent, 0);
                 }else{

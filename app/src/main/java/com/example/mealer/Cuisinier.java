@@ -1,10 +1,16 @@
 package com.example.mealer;
 
+import android.content.Context;
 import android.util.Log;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.net.HttpCookie;
 import java.util.ArrayList;
@@ -21,6 +27,8 @@ public class Cuisinier extends User{
     //String cheque;
     Boolean connected;
     Boolean found;
+    boolean suspended;
+    int suspensionTime;
     int id;
     int orderID;
     private static FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -29,6 +37,8 @@ public class Cuisinier extends User{
     public Cuisinier(){
         found = false;
         connected =  false;
+        suspensionTime = 0;
+        suspended = false;
     }
 
 //    public Cuisinier(String firstName, String lastName, String addresse, String email, String password, String description){
@@ -84,11 +94,17 @@ public class Cuisinier extends User{
         //Enregistrer le card number dans la database
         myRef = database.getReference("Cuisinier/"+usr+"/description");
         myRef.setValue(description);
+
+        //Information par rapport a la suspension
+        myRef = database.getReference("Cuisinier/"+usr+"/suspended");
+        myRef.setValue(suspended);
+        myRef = database.getReference("Cuisinier/"+usr+"/suspensionTime");
+        myRef.setValue(suspensionTime);
         setInfo(email, password, usr, lastName, adress, description);
     }
     
     @Override
-    public void connect(String email, String pswd, DataSnapshot snapshot) {
+    public void connect(String email, String pswd, DataSnapshot snapshot, Context applicationContext) {
         connected = false;
         found = false;
         for(DataSnapshot children : snapshot.getChildren()){
@@ -138,8 +154,32 @@ public class Cuisinier extends User{
         }
 
         Log.println(Log.INFO, "TEST", "addresse is : " + addresse + " descrition : "+ description);
+
+        listenForSuspension(firstName);
     }
 
+    private void listenForSuspension(String a){
+        myRef = database.getReference("Cuisinier/"+a);
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot snap : snapshot.getChildren()){
+                    if(snap.getKey() == "suspended"){
+                        suspended = (Boolean) snap.getValue();
+                    }
+                    if(snap.getKey() == "suspensionTime"){
+                        suspensionTime = (int) snap.getValue();
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
     @Override
     public void disconnect() {
         connected = false;
@@ -149,4 +189,6 @@ public class Cuisinier extends User{
     public Boolean isConnected() {
         return connected;
     }
+
+    public boolean isSuspended(){return suspended;};
 }

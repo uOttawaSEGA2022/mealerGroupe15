@@ -27,6 +27,7 @@
                 android:id="@+id/button"
                 android:layout_width="match_parent"
                 android:layout_height="79dp"
+                android:onClick="onReject"
                 android:text="Rejeter la plainte"
                 app:cornerRadius="40dp" />
         </LinearLayout>
@@ -40,6 +41,7 @@
                 android:id="@+id/button2"
                 android:layout_width="match_parent"
                 android:layout_height="84dp"
+                android:onClick="onDefinitiveSusupension"
                 android:text="Suspendre définitivement"
                 app:cornerRadius="40dp" />
         </LinearLayout>

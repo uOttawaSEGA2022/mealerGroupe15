@@ -13,6 +13,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -75,6 +76,8 @@ public class PlainteActivity extends AppCompatActivity implements RecyclerViewIn
 
     @Override
     public void OnItemClick(int position) {
+        dialogue.setPlainteid(modeeldeplainte.get(position).getId());
+        Toast.makeText(getApplicationContext(), "PlaintId is "+ modeeldeplainte.get(position).getId(), Toast.LENGTH_LONG).show();
         Intent intent=new Intent(PlainteActivity.this,dialogue.class);
         startActivity(intent);
 

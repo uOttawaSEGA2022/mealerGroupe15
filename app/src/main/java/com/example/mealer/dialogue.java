@@ -3,13 +3,24 @@ package com.example.mealer;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.DatabaseErrorHandler;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Calendar;
 
@@ -17,6 +28,9 @@ public class dialogue extends AppCompatActivity {
 
     private DatePickerDialog datePickerDialog;
     private Button dateButton;
+    private static String plainteid;
+    private boolean found;
+    private String nameOfCuisinier;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -27,6 +41,10 @@ public class dialogue extends AppCompatActivity {
         initDatePicker();
         dateButton = findViewById(R.id.datePickerButton);
         dateButton.setText(getTodaysDate());
+        plainteid = "";
+        found = false;
+        nameOfCuisinier = "";
+
     }
 
     private String getTodaysDate()
@@ -103,10 +121,63 @@ public class dialogue extends AppCompatActivity {
     public void openDatePicker(View view)
     {
         datePickerDialog.show();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            datePickerDialog.setOnDateSetListener(new DatePickerDialog.OnDateSetListener() {
+                @Override
+                public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
+                    onListe(view);
+                }
+            });
+        }
+
     }
-public void onListe(View view){
-    Intent intent = new Intent(getApplicationContext(), PlainteActivity.class);
-    startActivityForResult(intent, 0);
-}
+    public void onListe(View view){
+        Intent intent = new Intent(getApplicationContext(), PlainteActivity.class);
+        startActivityForResult(intent, 0);
+    }
+
+    public void onReject(View view){
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference(plainteid);
+        if(!plainteid.isEmpty()){
+            ref.removeValue();
+        }
+        onListe(view);
+
+    }
+
+    public void onDefinitiveSusupension(View view){
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Plainte/"+plainteid);
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String nameOfCuisinier = "";
+                for(DataSnapshot snap : snapshot.getChildren()){
+                    if(snap.getKey().toString().equals("nameOfCuisinier")){
+                        if(!snap.getValue().toString().isEmpty()){
+                            nameOfCuisinier = snap.getValue().toString();
+                        }
+
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+        if(plainteid != "" && nameOfCuisinier != ""){
+            Toast.makeText(getApplicationContext(), "name is " + nameOfCuisinier, Toast.LENGTH_SHORT).show();
+            FirebaseDatabase.getInstance().getReference("Cuisinier/"+nameOfCuisinier+"/suspended").setValue(true);
+            FirebaseDatabase.getInstance().getReference("Cuisinier/"+nameOfCuisinier+"/suspensionTime").setValue(-1);
+            FirebaseDatabase.getInstance().getReference("Plainte/"+plainteid).removeValue();
+            plainteid = "";
+            nameOfCuisinier = "";
+            onListe(view);
+        }
+
+    }
+
+    public static void setPlainteid(String id){
+        plainteid = id;
+    }
 
 }

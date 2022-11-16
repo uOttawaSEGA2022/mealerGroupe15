@@ -3,6 +3,7 @@ package com.example.mealer;
 
 import static android.content.ContentValues.TAG;
 
+import android.content.Context;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -46,7 +47,7 @@ public class Admin implements Account{
     }
 
     @Override
-    public void connect(String email, String pswd, DataSnapshot snapshot) {
+    public void connect(String email, String pswd, DataSnapshot snapshot, Context applicationContext) {
         for (Iterator<DataSnapshot> it = snapshot.getChildren().iterator().next().getChildren().iterator(); it.hasNext();) {
             DataSnapshot snap =  it.next();
             if(snap.getKey().toString().equalsIgnoreCase("mail")
