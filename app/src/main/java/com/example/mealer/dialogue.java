@@ -119,12 +119,39 @@ public class dialogue extends AppCompatActivity {
 
     public void openDatePicker(View view)
     {
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Cuisinier/");
         datePickerDialog.show();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             datePickerDialog.setOnDateSetListener(new DatePickerDialog.OnDateSetListener() {
                 @Override
                 public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                    onListe(view);
+                    DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Plainte/"+plainteid);
+                    ref.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            String nameOfCuisinier = "";
+                            for(DataSnapshot snap : snapshot.getChildren()){
+                                if(snap.getKey().toString().equals("nameOfCuisinier")){
+                                    if(!snap.getValue().toString().isEmpty()){
+                                        nameOfCuisinier = snap.getValue().toString();
+                                    }
+
+                                }
+                            }
+                            if(!plainteid.isEmpty() && !nameOfCuisinier.isEmpty()){
+                                Toast.makeText(getApplicationContext(), "name is " + nameOfCuisinier, Toast.LENGTH_SHORT).show();
+                                FirebaseDatabase.getInstance().getReference("Cuisinier/"+nameOfCuisinier+"/suspended").setValue(true);
+                                FirebaseDatabase.getInstance().getReference("Cuisinier/"+nameOfCuisinier+"/suspensionTime").setValue(makeDateString(i, i1, i2));
+                                ref.removeValue();
+                                plainteid = "";
+                                nameOfCuisinier = "";
+                                onListe(view);
+                            }
+                        }
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+                        }
+                    });
                 }
             });
         }
@@ -158,20 +185,21 @@ public class dialogue extends AppCompatActivity {
 
                     }
                 }
+                if(!plainteid.isEmpty() && !nameOfCuisinier.isEmpty()){
+                    Toast.makeText(getApplicationContext(), "name is " + nameOfCuisinier, Toast.LENGTH_SHORT).show();
+                    FirebaseDatabase.getInstance().getReference("Cuisinier/"+nameOfCuisinier+"/suspended").setValue(true);
+                    FirebaseDatabase.getInstance().getReference("Cuisinier/"+nameOfCuisinier+"/suspensionTime").setValue("-1");
+                    ref.removeValue();
+                    plainteid = "";
+                    nameOfCuisinier = "";
+                    onListe(view);
+                }
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
             }
         });
-        if(plainteid != "" && nameOfCuisinier != ""){
-            Toast.makeText(getApplicationContext(), "name is " + nameOfCuisinier, Toast.LENGTH_SHORT).show();
-            FirebaseDatabase.getInstance().getReference("Cuisinier/"+nameOfCuisinier+"/suspended").setValue(true);
-            FirebaseDatabase.getInstance().getReference("Cuisinier/"+nameOfCuisinier+"/suspensionTime").setValue(-1);
-            FirebaseDatabase.getInstance().getReference("Plainte/"+plainteid).removeValue();
-            plainteid = "";
-            nameOfCuisinier = "";
-            onListe(view);
-        }
+
 
     }
 

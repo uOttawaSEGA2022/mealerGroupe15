@@ -53,6 +53,7 @@
         android:layout_width="347dp"
         android:layout_height="76dp"
 
+        android:onClick="onDefinitiveSusupension"
         android:text="Suspendre définitivement"
         app:cornerRadius="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
