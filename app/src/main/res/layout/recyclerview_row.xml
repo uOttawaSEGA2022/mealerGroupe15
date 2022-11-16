@@ -21,93 +21,114 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="127dp"
-            android:background="@drawable/redgrad"
-            >
+            android:layout_height="match_parent"
+            android:background="@drawable/redgrad">
 
             <TableLayout
-                android:layout_marginLeft="25dp"
-                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="20dp">
 
                 <TableRow
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" >
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
                     <TextView
-                        style="@style/Base.CardView"
-
-                        android:id="@+id/textView9"
-                        android:layout_width="121dp"
-                        android:layout_height="match_parent"
-                        android:text="Nom Client : "
-                        android:textSize="20dp"
+                        android:id="@+id/plainteid"
+                        android:text="Plainte Id: "
                         android:textColor="@color/white"
-                        android:textStyle="bold" />
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                         />
 
                     <TextView
-                        style="@style/Base.CardView"
-
-                        android:textSize="20dp"
-
-                        android:id="@+id/NomClient"
-                        android:layout_width="115dp"
-                        android:layout_height="wrap_content"
+                        android:id="@+id/id"
                         android:text="TextView"
                         android:textColor="@color/white"
-                        />
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
                 </TableRow>
 
                 <TableRow
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" >
+                    android:layout_height="wrap_content">
 
                     <TextView
-                        android:textColor="@color/white"
+                        android:id="@+id/textView9"
 
-                        android:textSize="20dp"
                         style="@style/Base.CardView"
-
-                        android:layout_marginTop="5dp"
-
-                        android:id="@+id/textView15"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Nom Cuisinier: "
+                        android:layout_width="121dp"
+                        android:layout_height="match_parent"
+                        android:text="Nom Client : "
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:textColor="@color/white"
+                        android:id="@+id/NomClient"
 
                         style="@style/Base.CardView"
 
-                        android:id="@+id/NomCuisinier"
-
-                        android:layout_width="54dp"
-
+                        android:layout_width="115dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
                         android:text="TextView"
+                        android:textColor="@color/white"
                         android:textSize="20dp" />
                 </TableRow>
 
                 <TableRow
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" >
+                    android:layout_height="wrap_content">
 
                     <TextView
-                        android:textColor="@color/white"
+                        android:id="@+id/textView15"
 
-                        android:textSize="20dp"
                         style="@style/Base.CardView"
+                        android:layout_width="wrap_content"
 
+                        android:layout_height="wrap_content"
 
                         android:layout_marginTop="5dp"
-                        android:id="@+id/textView13"
-                        android:layout_width="wrap_content"
+                        android:text="Nom Cuisinier: "
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/NomCuisinier"
+
+                        style="@style/Base.CardView"
+
+                        android:layout_width="54dp"
+
                         android:layout_height="wrap_content"
+
+                        android:layout_marginTop="5dp"
+                        android:text="TextView"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textView13"
+
+                        style="@style/Base.CardView"
+                        android:layout_width="wrap_content"
+
+
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
                         android:text="Description: "
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
                         android:textStyle="bold" />
 
                     <TextView

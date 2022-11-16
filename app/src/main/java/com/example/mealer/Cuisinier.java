@@ -34,6 +34,7 @@ public class Cuisinier extends User{
     private static FirebaseDatabase database = FirebaseDatabase.getInstance();
     private DatabaseReference myRef = database.getReference();
 
+
     public Cuisinier(){
         found = false;
         connected =  false;
@@ -62,6 +63,12 @@ public class Cuisinier extends User{
 
     public void suspend(){
 
+    }
+    public void setTextPlainte(){
+       // if/ (SuspenduDefi){
+
+
+        //}
     }
 
     public void setInfo(String email, String password, String usr,
@@ -182,6 +189,7 @@ public class Cuisinier extends User{
     }
     @Override
     public void disconnect() {
+
         connected = false;
     }
 
