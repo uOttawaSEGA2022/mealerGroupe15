@@ -37,11 +37,10 @@ public class dialogue extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dialogue);
+        setContentView(R.layout.popup_suspension);
         initDatePicker();
         dateButton = findViewById(R.id.datePickerButton);
         dateButton.setText(getTodaysDate());
-        plainteid = "";
         found = false;
         nameOfCuisinier = "";
 
@@ -137,7 +136,7 @@ public class dialogue extends AppCompatActivity {
     }
 
     public void onReject(View view){
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference(plainteid);
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Plainte/" + plainteid);
         if(!plainteid.isEmpty()){
             ref.removeValue();
         }

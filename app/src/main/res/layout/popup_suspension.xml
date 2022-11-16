@@ -39,6 +39,7 @@
         android:layout_width="354dp"
         android:layout_height="77dp"
 
+        android:onClick="onReject"
         android:text="Rejeter la plainte"
         app:cornerRadius="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
