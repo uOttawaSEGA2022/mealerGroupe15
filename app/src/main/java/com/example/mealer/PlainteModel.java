@@ -9,12 +9,15 @@ import com.google.firebase.database.IgnoreExtraProperties;
 
 
 public class PlainteModel {
-
+         String id;
         private String nameOfClient;
         private String nameOfCuisinier;
         private String Description;
 
-        public PlainteModel(String nameOfClient, String nameOfCuisinier,String Description ){
+
+
+    public PlainteModel(String id, String nameOfClient, String nameOfCuisinier, String Description ){
+            this.id=id;
             this.nameOfClient=nameOfClient;
             this.nameOfCuisinier=nameOfCuisinier;
             this.Description=Description;
@@ -24,7 +27,9 @@ public class PlainteModel {
 
 
 
-
+    public String getId() {
+        return id;
+    }
         public String getNameOfClient() {
             return nameOfClient;
         }

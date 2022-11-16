@@ -8,6 +8,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.Toast;
+import java.util.ArrayList;
+import android.app.Dialog;
+
+import android.os.Bundle;
+import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,16 +30,21 @@ public class dialogue extends AppCompatActivity {
 
     private DatePickerDialog datePickerDialog;
     private Button dateButton;
+    //private Button rejeterBtn, DefSus, TempSus;
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dialogue);
+        setContentView(R.layout.popup_suspension);
         initDatePicker();
         dateButton = findViewById(R.id.datePickerButton);
         dateButton.setText(getTodaysDate());
+
+        //rejeterBtn=findViewById(R.id.buttonRej);
+       // DefSus=findViewById(R.id.buttonSusDef);
+        //this.TempSus=findViewById(R.id.buttonSUSTemp);
     }
 
     private String getTodaysDate()
@@ -109,4 +127,20 @@ public void onListe(View view){
     startActivityForResult(intent, 0);
 }
 
+    public void RejeterPlainte(View view) {
+
+
+        Intent intent = new Intent(getApplicationContext(), PlainteActivity.class);
+        Toast.makeText(getApplicationContext(), "Plainte Réjetée", Toast.LENGTH_SHORT).show();
+        startActivityForResult(intent, 0);
+
+    }
+
+
+   /* public void SuspendreDefinitivement(View view) {
+        Intent intent = new Intent(getApplicationContext(), PlainteActivity.class);
+        Toast.makeText(getApplicationContext(), "Client suspendu définitivement", Toast.LENGTH_SHORT).show();
+        startActivityForResult(intent, 0);
+
+    }*/
 }
