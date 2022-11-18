@@ -81,10 +81,6 @@ public class MainActivityCuisinier extends AppCompatActivity {
                 //return true;
             //}
        // });
-    }
-
-
-
-
+    //}
 
 }

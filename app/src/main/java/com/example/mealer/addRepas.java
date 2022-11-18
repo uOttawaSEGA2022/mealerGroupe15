@@ -18,33 +18,30 @@ public class addRepas extends AppCompatActivity {
     public void onClickAdd(View view){
 
         MenuModel menu = MenuModel.getInstance();
-        RepasModel repas = new RepasModel();
-        menu.addToMenu(repas);
 
         EditText mealname = findViewById(R.id.mealname);
-        String Name = mealname.getText().toString();
+        String name = mealname.getText().toString();
 
         EditText mealtype = findViewById(R.id.mealtype);
-        String TypeRepas = mealtype.getText().toString();
+        String typeRepas = mealtype.getText().toString();
 
         EditText cuisinetype = findViewById(R.id.cuisinetype);
-        String TypeCuisine = cuisinetype.getText().toString();
+        String typeCuisine = cuisinetype.getText().toString();
 
         EditText ingredients = findViewById(R.id.ingredients);
-        String Ingredients = ingredients.getText().toString();
+        String ingredient = ingredients.getText().toString();
 
         EditText allergenes = findViewById(R.id.allergenes);
-        String Allergenes = allergenes.getText().toString();
+        String allergene = allergenes.getText().toString();
 
         EditText prix = findViewById(R.id.prix);
-        String Prix = prix.getText().toString();
+        Double price = Double.parseDouble(prix.getText().toString());
 
         EditText description = findViewById(R.id.description);
-        String Description = description.getText().toString();
+        String foodDescription = description.getText().toString();
 
-        //creer des variables pour stocker l'entree des utilisateurs dans addrepas
-        //ajouter ces references dans la database
-        //retourner dans la page de menuactivity
+        RepasModel repas = new RepasModel(name,typeRepas,typeCuisine,ingredient,allergene,price,foodDescription);
+        menu.addToMenu(repas);
 
         Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
         startActivityForResult(intent, 0);
