@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:onClick="OnClickinscrire"
+    android:background="@drawable/backgroundk"
     tools:context=".SignUpCuisinierActivity">
 
     <ScrollView
@@ -71,16 +72,15 @@
                         android:textAlignment="center"
                         android:textSize="24sp" />
 
-                    <com.google.android.material.textfield.TextInputLayout
+                    <EditText
+                        android:id="@+id/FirstNameField"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="Ex: Roxy"
+                        android:background="#30ffffff"
+                        android:minHeight="48dp"/>
 
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/FirstNameField"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="Ex: Roxy" />
-                    </com.google.android.material.textfield.TextInputLayout>
 
                 </LinearLayout>
 
@@ -102,16 +102,15 @@
                         android:textAlignment="center"
                         android:textSize="24sp" />
 
-                    <com.google.android.material.textfield.TextInputLayout
+                    <EditText
+                        android:id="@+id/LastNameField"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="Ex: Wendaabo"
+                        android:background="#30ffffff"
+                        android:minHeight="48dp"/>
 
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/LastNameField"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="Ex: Wendaabo" />
-                    </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
 
                 <Space
@@ -138,6 +137,7 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
                         android:hint="Veuillez entrer votre adresse postale"
+                        android:background="#30ffffff"
                         android:inputType="textPostalAddress"
                         android:minHeight="48dp" />
                 </LinearLayout>
@@ -166,6 +166,7 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
                         android:hint="Ex: personne@domaine.ca"
+                        android:background="#30ffffff"
                         android:inputType="textEmailAddress"
                         android:minHeight="48dp" />
                 </LinearLayout>
@@ -194,6 +195,7 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
                         android:hint="Créez votre mot de passe"
+                        android:background="#30ffffff"
                         android:inputType="textPassword"
                         android:minHeight="48dp" />
 
@@ -229,6 +231,7 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
                         android:hint="Qui êtes vous?"
+                        android:background="#30ffffff"
                         android:inputType="textPersonName" />
 
                     <LinearLayout
