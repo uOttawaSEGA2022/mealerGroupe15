@@ -125,7 +125,7 @@ public class Cuisinier extends User{
 
                 if(found){
                     if(snap.getKey().toString().equalsIgnoreCase("password")){
-                        if(snap.getValue().toString().equalsIgnoreCase(pswd)) {
+                        if(snap.getValue().toString().equals(pswd)) {
                             connected = true;
                             for (Iterator<DataSnapshot> it2 = snapshot.getChildren().iterator().next().getChildren().iterator(); it2.hasNext();) {
                                 DataSnapshot snap2 =  it2.next();
@@ -150,8 +150,6 @@ public class Cuisinier extends User{
 
                             }
                             // Connect to the user
-                        }else{
-                            connected = false;
                         }
                     }
                 }
@@ -162,6 +160,7 @@ public class Cuisinier extends User{
 
         Log.println(Log.INFO, "TEST", "addresse is : " + addresse + " descrition : "+ description);
 
+        Toast.makeText(applicationContext, "BRAVO ! L'utilisateur : " + firstName + "s'est connecté", Toast.LENGTH_SHORT).show();
         listenForSuspension(firstName);
     }
 

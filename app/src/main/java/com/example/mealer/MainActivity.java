@@ -107,8 +107,6 @@ public class MainActivity extends AppCompatActivity {
                     connectionState.setText("Connected");
                     connectionState.setTextColor(Color.green(255));
 
-                    MainActivityCuisinier.setCuisinier(cuisinier);
-
                     Intent intent = new Intent(getApplicationContext(), MainActivityCuisinier.class);
                     startActivityForResult(intent, 0);
                 }else{

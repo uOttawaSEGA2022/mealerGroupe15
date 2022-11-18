@@ -20,17 +20,15 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivityCuisinier extends AppCompatActivity {
     
-    static Cuisinier c;
+    Cuisinier c;
     
     FirebaseDatabase database;
     DatabaseReference myREf;
 
-    public static void setCuisinier(Cuisinier cuisinier) {
-        c = cuisinier;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        c = MainActivity.cuisinier;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_cuisinier);
         if(c.connected) {

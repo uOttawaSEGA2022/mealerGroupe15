@@ -9,7 +9,7 @@ public class MenuModel {
 
     ArrayList<RepasModel> menuArray;
     ArrayList<RepasModel> menuDuJourArray;
-    private static MenuModel menu = new MenuModel();
+    private static final MenuModel menu = new MenuModel();
 
     String cuisinierId;
 
@@ -23,7 +23,7 @@ public class MenuModel {
     }
 
     public void addToMenu(RepasModel r){
-        assert !cuisinierId.isEmpty() && cuisinierId == null;
+        assert !cuisinierId.isEmpty();
 
         // Adding to the array
         menuArray.add(r);
@@ -35,6 +35,7 @@ public class MenuModel {
         String key = myRef.push().getKey();
         r.setRepasId(key);
         // Adding the repas to the database
+        assert key != null;
         myRef.child(key).setValue(r);
 
 
@@ -43,7 +44,7 @@ public class MenuModel {
 
     public void deleteFromMenu(RepasModel r){
         assert !r.isInRepasDuJour();
-        assert !cuisinierId.isEmpty() && cuisinierId == null;
+        assert !cuisinierId.isEmpty();
 
         // Deleting from the Array
         menuArray.remove(r);
@@ -66,6 +67,7 @@ public class MenuModel {
 
     public void deleteFromMenuDuJour(RepasModel r){
         //TODO Implement this method
+
 
     }
 
