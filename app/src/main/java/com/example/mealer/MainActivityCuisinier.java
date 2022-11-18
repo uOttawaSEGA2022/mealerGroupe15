@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,9 +34,14 @@ public class MainActivityCuisinier extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_cuisinier);
         if(c.connected) {
-            @SuppressLint("MissingInflatedId")
+            @SuppressLint({"MissingInflatedId", "LocalSuppress"})
             TextView welcome = findViewById(R.id.welcomText);
             welcome.setText("Bienvenue," + c.firstName + " vous êtes connecté en tant que cuisinier.");
+
+            if(c.isSuspended()){
+                LinearLayout linearLayout = (LinearLayout) findViewById(R.id.optLayout);
+                linearLayout.setVisibility(View.INVISIBLE);
+            }
 
         }
 
