@@ -88,7 +88,7 @@ public class MenuModel {
         cuisinierId = id;
     }
 
-    private static MenuModel getInstance(){
+    public static MenuModel getInstance(){
         return menu;
     }
 
