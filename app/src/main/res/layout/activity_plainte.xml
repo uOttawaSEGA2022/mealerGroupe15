@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/customercomplaint"
+    android:background="@drawable/backgroundk"
     tools:context=".PlainteActivity">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -38,6 +38,7 @@
             android:id="@+id/buttonRetPlainte"
             android:layout_width="96dp"
             android:layout_height="49dp"
+            android:background="@drawable/backgroundk"
             android:foreground="@drawable/leftarrow"
             android:onClick="OnReturnToAdmin"
             android:src="@drawable/leftarrow"
