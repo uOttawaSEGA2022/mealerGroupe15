@@ -39,22 +39,20 @@ public class dialogue extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.popup_suspension);
         initDatePicker();
-        dateButton = findViewById(R.id.datePickerButton);
-        dateButton.setText(getTodaysDate());
         found = false;
         nameOfCuisinier = "";
 
     }
 
-    private String getTodaysDate()
-    {
-        Calendar cal = Calendar.getInstance();
-        int year = cal.get(Calendar.YEAR);
-        int month = cal.get(Calendar.MONTH);
-        month = month + 1;
-        int day = cal.get(Calendar.DAY_OF_MONTH);
-        return makeDateString(day, month, year);
-    }
+//    private String getTodaysDate()
+//    {
+//        Calendar cal = Calendar.getInstance();
+//        int year = cal.get(Calendar.YEAR);
+//        int month = cal.get(Calendar.MONTH);
+//        month = month + 1;
+//        int day = cal.get(Calendar.DAY_OF_MONTH);
+//        return makeDateString(day, month, year);
+//    }
 
     private void initDatePicker()
     {
@@ -83,7 +81,7 @@ public class dialogue extends AppCompatActivity {
 
     private String makeDateString(int day, int month, int year)
     {
-        return getMonthFormat(month) + " " + day + " " + year;
+        return day + "/"+getMonthFormat(month) + "/" + year;
     }
 
     private String getMonthFormat(int month)
@@ -124,7 +122,7 @@ public class dialogue extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             datePickerDialog.setOnDateSetListener(new DatePickerDialog.OnDateSetListener() {
                 @Override
-                public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
+                public void onDateSet(DatePicker datePicker, int year, int month, int day) {
                     DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Plainte/"+plainteid);
                     ref.addValueEventListener(new ValueEventListener() {
                         @Override
@@ -141,7 +139,7 @@ public class dialogue extends AppCompatActivity {
                             if(!plainteid.isEmpty() && !nameOfCuisinier.isEmpty()){
                                 Toast.makeText(getApplicationContext(), "name is " + nameOfCuisinier, Toast.LENGTH_SHORT).show();
                                 FirebaseDatabase.getInstance().getReference("Cuisinier/"+nameOfCuisinier+"/suspended").setValue(true);
-                                FirebaseDatabase.getInstance().getReference("Cuisinier/"+nameOfCuisinier+"/suspensionTime").setValue(makeDateString(i, i1, i2));
+                                FirebaseDatabase.getInstance().getReference("Cuisinier/"+nameOfCuisinier+"/suspensionTime").setValue(makeDateString(day, month, year));
                                 ref.removeValue();
                                 plainteid = "";
                                 nameOfCuisinier = "";
