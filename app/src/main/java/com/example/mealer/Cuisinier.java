@@ -28,7 +28,7 @@ public class Cuisinier extends User{
     Boolean connected;
     Boolean found;
     boolean suspended;
-    int suspensionTime;
+    String suspensionTime;
     int id;
     int orderID;
     private static FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -38,7 +38,7 @@ public class Cuisinier extends User{
     public Cuisinier(){
         found = false;
         connected =  false;
-        suspensionTime = 0;
+        suspensionTime = "0";
         suspended = false;
     }
 
@@ -115,46 +115,48 @@ public class Cuisinier extends User{
         connected = false;
         found = false;
         for(DataSnapshot children : snapshot.getChildren()){
-            Log.println(Log.INFO, "TEST", " KEYSTONE : " + children.getKey());
-            for (Iterator<DataSnapshot> it = children.getChildren().iterator(); it.hasNext();) {
-                DataSnapshot snap =  it.next();
-                if(snap.getKey().toString().equalsIgnoreCase("email")
-                        && snap.getValue().toString().equalsIgnoreCase(email)){
-                    found = true;
-                }
+            if(!connected){
+                Log.println(Log.INFO, "TEST", " KEYSTONE : " + children.getKey());
+                for (Iterator<DataSnapshot> it = children.getChildren().iterator(); it.hasNext();) {
+                    DataSnapshot snap =  it.next();
+                    if(snap.getKey().toString().equalsIgnoreCase("email")
+                            && snap.getValue().toString().equalsIgnoreCase(email)){
+                        found = true;
+                    }
 
-                if(found){
-                    if(snap.getKey().toString().equalsIgnoreCase("password")){
-                        if(snap.getValue().toString().equals(pswd)) {
-                            connected = true;
-                            for (Iterator<DataSnapshot> it2 = snapshot.getChildren().iterator().next().getChildren().iterator(); it2.hasNext();) {
-                                DataSnapshot snap2 =  it2.next();
-                                if(snap2.getKey().toString().equalsIgnoreCase("email")){
-                                    email = snap2.getValue().toString();
-                                }
-                                if(snap2.getKey().toString().equalsIgnoreCase("password")){
-                                    password = snap2.getValue().toString();
-                                }
-                                if(snap2.getKey().toString().equalsIgnoreCase("firstName")){
-                                    firstName = snap2.getValue().toString();
-                                }
-                                if(snap2.getKey().toString().equalsIgnoreCase("lastName")){
-                                    lastName = snap2.getValue().toString();
-                                }
-                                if(snap2.getKey().toString().equalsIgnoreCase("addresse")){
-                                    addresse = snap2.getValue().toString();
-                                }
-                                if(snap2.getKey().toString().equalsIgnoreCase("description")){
-                                    description = snap2.getValue().toString();
-                                }
+                    if(found){
+                        if(snap.getKey().toString().equals("password")){
+                            if(snap.getValue().toString().equals(pswd)) {
+                                connected = true;
+                                for (Iterator<DataSnapshot> it2 = snapshot.getChildren().iterator().next().getChildren().iterator(); it2.hasNext();) {
+                                    DataSnapshot snap2 =  it2.next();
+                                    if(snap2.getKey().toString().equalsIgnoreCase("email")){
+                                        email = snap2.getValue().toString();
+                                    }
+                                    if(snap2.getKey().toString().equalsIgnoreCase("password")){
+                                        password = snap2.getValue().toString();
+                                    }
+                                    if(snap2.getKey().toString().equalsIgnoreCase("firstName")){
+                                        firstName = snap2.getValue().toString();
+                                    }
+                                    if(snap2.getKey().toString().equalsIgnoreCase("lastName")){
+                                        lastName = snap2.getValue().toString();
+                                    }
+                                    if(snap2.getKey().toString().equalsIgnoreCase("addresse")){
+                                        addresse = snap2.getValue().toString();
+                                    }
+                                    if(snap2.getKey().toString().equalsIgnoreCase("description")){
+                                        description = snap2.getValue().toString();
+                                    }
 
+                                }
+                                // Connect to the user
                             }
-                            // Connect to the user
                         }
                     }
+                    Log.println(Log.DEBUG, "TEST", "key : " + snap.getKey().toString() + " Value : " + snap.getValue().toString()
+                            + " Valeur de connected :" + connected.toString());
                 }
-                Log.println(Log.DEBUG, "TEST", "key : " + snap.getKey().toString() + " Value : " + snap.getValue().toString()
-                        + " Valeur de connected :" + connected.toString());
             }
         }
 
@@ -174,7 +176,7 @@ public class Cuisinier extends User{
                         suspended = (Boolean) snap.getValue();
                     }
                     if(snap.getKey() == "suspensionTime"){
-                        suspensionTime = (int) snap.getValue();
+                        suspensionTime = snap.getValue().toString();
                     }
                 }
             }
