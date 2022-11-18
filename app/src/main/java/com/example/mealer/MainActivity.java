@@ -67,15 +67,18 @@ public class MainActivity extends AppCompatActivity {
                 for(DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     // while (snap.getChildren().iterator().hasNext()) {
                     String key = snapshot.getRef().getKey().toString();
-                    if (key.equals("Admin")) {
-                        admin.connect(email, password, snapshot, getApplicationContext());
-                    } else if (key.equals("Client")) {
-                        client.connect(email, password, snapshot, getApplicationContext());
-                    } else if (key.equals("Cuisinier")) {
-                        cuisinier.connect(email, password, snapshot, getApplicationContext());
-                    } else {
-                        Log.d(TAG, "ON NE PEUT PAS TROUVER L'INFORMATION DANS " + key);
+                    if(!admin.isConnected() && !cuisinier.isConnected() && !client.isConnected()){
+                        if (key.equals("Admin")) {
+                            admin.connect(email, password, snapshot, getApplicationContext());
+                        } else if (key.equals("Client")) {
+                            client.connect(email, password, snapshot, getApplicationContext());
+                        } else if (key.equals("Cuisinier")) {
+                            cuisinier.connect(email, password, snapshot, getApplicationContext());
+                        } else {
+                            Log.d(TAG, "ON NE PEUT PAS TROUVER L'INFORMATION DANS " + key);
+                        }
                     }
+
 
                 }
 
