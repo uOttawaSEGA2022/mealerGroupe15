@@ -20,7 +20,7 @@ public class Cuisinier extends User{
 
     String firstName;
     String lastName;
-    String addresse;
+    String adresse;
     String email;
     String password;
     String description;
@@ -77,7 +77,7 @@ public class Cuisinier extends User{
         this.password = password;
         this.firstName = usr;
         this.lastName = lastName;
-        this.addresse = addresse;
+        this.adresse = addresse;
         this.description = description;
     }
 
@@ -117,77 +117,29 @@ public class Cuisinier extends User{
         for(DataSnapshot children : snapshot.getChildren()){
             if(!connected){
                 Log.println(Log.INFO, "TEST", " KEYSTONE : " + children.getKey());
-                for (Iterator<DataSnapshot> it = children.getChildren().iterator(); it.hasNext();) {
-                    DataSnapshot snap =  it.next();
-                    if(snap.getKey().toString().equalsIgnoreCase("email")
-                            && snap.getValue().toString().equalsIgnoreCase(email)){
+                    if(children.child("email").getValue().toString().equals(email)){
                         found = true;
-                    }
-
-                    if(found){
-                        if(snap.getKey().toString().equals("password")){
-                            if(snap.getValue().toString().equals(pswd)) {
-                                connected = true;
-                                for (Iterator<DataSnapshot> it2 = snapshot.getChildren().iterator().next().getChildren().iterator(); it2.hasNext();) {
-                                    DataSnapshot snap2 =  it2.next();
-                                    if(snap2.getKey().toString().equalsIgnoreCase("email")){
-                                        email = snap2.getValue().toString();
-                                    }
-                                    if(snap2.getKey().toString().equalsIgnoreCase("password")){
-                                        password = snap2.getValue().toString();
-                                    }
-                                    if(snap2.getKey().toString().equalsIgnoreCase("firstName")){
-                                        firstName = snap2.getValue().toString();
-                                    }
-                                    if(snap2.getKey().toString().equalsIgnoreCase("lastName")){
-                                        lastName = snap2.getValue().toString();
-                                    }
-                                    if(snap2.getKey().toString().equalsIgnoreCase("addresse")){
-                                        addresse = snap2.getValue().toString();
-                                    }
-                                    if(snap2.getKey().toString().equalsIgnoreCase("description")){
-                                        description = snap2.getValue().toString();
-                                    }
-
-                                }
-                                // Connect to the user
-                            }
+                        if(children.child("password").getValue().toString().equals(pswd)) {
+                            connected = true;
+                            this.email = children.child("email").getValue().toString();
+                            this.password = children.child("password").getValue().toString();
+                            firstName = children.child("firstName").getValue().toString();
+                            lastName = children.child("lastName").getValue().toString();
+                            adresse = children.child("adresse").getValue().toString();
+                            description = children.child("description").getValue().toString();
+                            suspended = (boolean) children.child("suspended").getValue();
+                            suspensionTime = children.child("suspensionTime").getValue().toString();
                         }
                     }
-                    Log.println(Log.DEBUG, "TEST", "key : " + snap.getKey().toString() + " Value : " + snap.getValue().toString()
-                            + " Valeur de connected :" + connected.toString());
-                }
+                    Log.println(Log.DEBUG, "TEST", " Valeur de connected :" + connected.toString());
             }
         }
 
-        Log.println(Log.INFO, "TEST", "addresse is : " + addresse + " descrition : "+ description);
+        Log.println(Log.INFO, "TEST", "addresse is : " + adresse + " descrition : "+ description);
 
         Toast.makeText(applicationContext, "BRAVO ! L'utilisateur : " + firstName + "s'est connecté", Toast.LENGTH_SHORT).show();
-        listenForSuspension(firstName);
     }
 
-    private void listenForSuspension(String a){
-        myRef = database.getReference("Cuisinier/"+a);
-        myRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for(DataSnapshot snap : snapshot.getChildren()){
-                    if(snap.getKey() == "suspended"){
-                        suspended = (Boolean) snap.getValue();
-                    }
-                    if(snap.getKey() == "suspensionTime"){
-                        suspensionTime = snap.getValue().toString();
-                    }
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
-    }
     @Override
     public void disconnect() {
 
