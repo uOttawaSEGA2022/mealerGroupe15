@@ -1,7 +1,17 @@
 package com.example.mealer;
 
+import android.content.Context;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -18,6 +28,7 @@ public class MenuModel {
     DatabaseReference myRef;
 
     private MenuModel(){
+        cuisinierId = MainActivity.cuisinier.id;
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference("Cuisinier");
     }
@@ -38,8 +49,6 @@ public class MenuModel {
         assert key != null;
         myRef.child(key).setValue(r);
 
-
-
     }
 
     public void deleteFromMenu(RepasModel r){
@@ -57,35 +66,83 @@ public class MenuModel {
     }
 
     public void addToRepasDujour(RepasModel r){
-        //TODO Implement this method
+        //Putting it in repas du jour in the database
         myRef = database.getReference("Cuisinier/" + cuisinierId + "/menu");
         myRef.child(r.repasId).child("inRepasDuJour").setValue(true);
+
+        //Putting it to the repas du jour in the array and in the object
         r.setInRepasDuJour("true");
         menuDuJourArray.add(r);
+    }
+
+
+
+    public void deleteFromMenuDuJour(@NonNull RepasModel r){
+        //setting inRepasDuJour false in the database
+        myRef = database.getReference("Cuisinier/" + cuisinierId + "/menu/" + r.repasId);
+        myRef.child("inRepasDuJour").setValue(false);
+
+        //Setting inRepasDuJour false in the array and in the object
+        r.setInRepasDuJour("false");
+        menuDuJourArray.remove(r);
 
     }
 
-    public void deleteFromMenuDuJour(RepasModel r){
-        //TODO Implement this method
+    public void ShowMenu(Context context, RecyclerViewInterface repasRecycleView, AppCompatActivity activity){
 
+        //show the repas
+        RecyclerView recyclerView= activity.findViewById(R.id.repasRecycleView);
+        myRef= FirebaseDatabase.getInstance().getReference("Cuisinier/" + getCuisinierId() + "menu");
+        RepasRecyclerViewAdapter adapter=new RepasRecyclerViewAdapter(context,menuArray,repasRecycleView);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(context));
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot dataSnapshot:snapshot.getChildren( )){
+                    RepasModel repas=dataSnapshot.getValue(RepasModel.class);
+                    menuArray.add(repas);
 
+                }
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
-    public void ShowMenu(){
-        //TODO Implement this method
-    }
+    public void ShowMenuDuJour(Context context, RecyclerViewInterface repasDuJourRecycleView, AppCompatActivity activity){
 
-    public void ShowMenuDuJour(){
-        //TODO Implement this method
+        //shows the repas du jour
+        RecyclerView recyclerView= activity.findViewById(R.id.RecyclerMenuJour);
+        myRef= FirebaseDatabase.getInstance().getReference("Cuisinier/" + getCuisinierId() + "menu");
+        RepasDuJourRecyclerViewAdapter adapter=new RepasDuJourRecyclerViewAdapter(context,menuDuJourArray,repasDuJourRecycleView);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(context));
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot dataSnapshot:snapshot.getChildren( )){
+                    RepasModel repas=dataSnapshot.getValue(RepasModel.class);
+                    if(repas.isInRepasDuJour()){
+                        menuDuJourArray.add(repas);
+                    }
+                }
+                adapter.notifyDataSetChanged();
+            }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
     public String getCuisinierId(){
         return cuisinierId;
-    }
-
-    public void setCuisinierId(String id){
-        cuisinierId = id;
     }
 
     public static MenuModel getInstance(){

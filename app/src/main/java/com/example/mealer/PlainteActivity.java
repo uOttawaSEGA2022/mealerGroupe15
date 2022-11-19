@@ -3,15 +3,12 @@ package com.example.mealer;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import android.content.Context;
+
 import android.content.Intent;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
+
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -40,7 +37,7 @@ public class PlainteActivity extends AppCompatActivity implements RecyclerViewIn
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plainte);
-        RecyclerView recyclerView=findViewById(R.id.myRecycleView);
+        RecyclerView recyclerView=findViewById(R.id.repasRecycleView);
         databaseReference= FirebaseDatabase.getInstance().getReference("Plainte");
         //setupModeeldeplainte();
         RecyclerViewAdapter adapter=new RecyclerViewAdapter(this,modeeldeplainte,this);

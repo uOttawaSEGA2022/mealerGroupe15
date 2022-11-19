@@ -12,12 +12,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class RepasRecyclerViewAdapter extends RecyclerView.Adapter<RepasRecyclerViewAdapter.MyViewHolder> {
+public class RepasDuJourRecyclerViewAdapter extends RecyclerView.Adapter<RepasDuJourRecyclerViewAdapter.MyViewHolder> {
     private final RecyclerViewInterface recyclerViewInterface;
     Context context;
 
     static ArrayList<RepasModel> menuArray;
-    public RepasRecyclerViewAdapter(Context context, ArrayList<RepasModel> menuArray, RecyclerViewInterface recyclerViewInterface) {
+    public RepasDuJourRecyclerViewAdapter(Context context, ArrayList<RepasModel> menuArray, RecyclerViewInterface recyclerViewInterface) {
         this.context=context;
         this.menuArray=menuArray;
         this.recyclerViewInterface=recyclerViewInterface;
@@ -25,14 +25,14 @@ public class RepasRecyclerViewAdapter extends RecyclerView.Adapter<RepasRecycler
 
     @NonNull
     @Override
-    public RepasRecyclerViewAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RepasDuJourRecyclerViewAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater=LayoutInflater.from(context);
         View view=inflater.inflate(R.layout.daily_meal_model,parent,false);
-        return new RepasRecyclerViewAdapter.MyViewHolder(view,recyclerViewInterface);
+        return new RepasDuJourRecyclerViewAdapter.MyViewHolder(view,recyclerViewInterface);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RepasRecyclerViewAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RepasDuJourRecyclerViewAdapter.MyViewHolder holder, int position) {
 
         holder.textViewRepasName.setText(menuArray.get(position).getNom());
         holder.textViewRepasPrix.setText(String.valueOf(menuArray.get(position).getPrix()));

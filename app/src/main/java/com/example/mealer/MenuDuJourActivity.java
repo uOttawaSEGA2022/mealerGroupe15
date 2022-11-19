@@ -1,10 +1,12 @@
 
 package com.example.mealer;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -17,15 +19,17 @@ import com.google.firebase.database.DatabaseReference;
 import java.util.ArrayList;
 
 public class MenuDuJourActivity extends AppCompatActivity {
-    ArrayList<MenuModel> ListeDesPlats=new ArrayList<>();
-    DatabaseReference databaseRef;
-
+    MenuModel menu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_du_jour);
+        menu = MenuModel.getInstance();
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"})
+        RecyclerViewInterface repasDuJourRecycleView= findViewById(R.id.RecyclerMenuJour);
+        menu.ShowMenuDuJour(this.getApplicationContext(), repasDuJourRecycleView, this);
     }
-    public  void GotoAdmin(View view){
+    public  void goBack(View view){
         Intent intent = new Intent(getApplicationContext(), MainActivityCuisinier.class);
         startActivityForResult(intent, 0);
     }

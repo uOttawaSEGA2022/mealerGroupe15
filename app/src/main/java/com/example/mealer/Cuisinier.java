@@ -29,7 +29,7 @@ public class Cuisinier extends User{
     Boolean found;
     boolean suspended;
     String suspensionTime;
-    int id;
+    String id;
     int orderID;
     private static FirebaseDatabase database = FirebaseDatabase.getInstance();
     private DatabaseReference myRef = database.getReference();
@@ -129,6 +129,7 @@ public class Cuisinier extends User{
                             description = children.child("description").getValue().toString();
                             suspended = (boolean) children.child("suspended").getValue();
                             suspensionTime = children.child("suspensionTime").getValue().toString();
+                            id = children.getKey().toString();
                         }
                     }
                     Log.println(Log.DEBUG, "TEST", " Valeur de connected :" + connected.toString());
