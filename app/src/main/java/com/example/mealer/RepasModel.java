@@ -89,7 +89,7 @@ public class RepasModel {
     }
 
     public boolean isInRepasDuJour(){
-        return inRepasDuJour == "true";
+        return inRepasDuJour.equals("true");
     }
 
     public void setPrix(double prix) {

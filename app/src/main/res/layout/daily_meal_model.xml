@@ -54,18 +54,36 @@
                 app:layout_constraintVertical_bias="0.153" />
 
             <TextView
-                android:id="@+id/PrixPlat"
+                android:id="@+id/prixLabel"
                 style="@style/TextAppearance.MaterialComponents.Subtitle1"
-                android:layout_width="220dp"
-                android:layout_height="51dp"
-                android:text="Prix"
+                android:layout_width="89dp"
+                android:layout_height="43dp"
+                android:text="Prix :"
                 android:textSize="35dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.245"
+                app:layout_constraintHorizontal_bias="0.162"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.813" />
+                app:layout_constraintVertical_bias="0.817" />
+
+            <TextView
+                android:id="@+id/PrixPlat"
+                android:layout_width="47dp"
+                android:layout_height="32dp"
+                android:text="0.00"
+                android:textSize="24sp"
+                tools:layout_editor_absoluteX="145dp"
+                tools:layout_editor_absoluteY="150dp" />
+
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$"
+                android:textSize="24sp"
+                tools:layout_editor_absoluteX="192dp"
+                tools:layout_editor_absoluteY="150dp" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
