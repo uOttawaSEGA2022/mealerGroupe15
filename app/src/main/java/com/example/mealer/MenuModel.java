@@ -47,6 +47,7 @@ public class MenuModel {
         //Getting an id
         String key = myRef.push().getKey();
         r.setRepasId(key);
+
         // Adding the repas to the database
         assert key != null;
         myRef.child(key).setValue(r);
