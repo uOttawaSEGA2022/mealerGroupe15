@@ -25,9 +25,6 @@ import com.google.firebase.database.ValueEventListener;
 public class MainActivityCuisinier extends AppCompatActivity {
     
     Cuisinier c;
-    
-    FirebaseDatabase database;
-    DatabaseReference myREf;
 
 
     @Override
