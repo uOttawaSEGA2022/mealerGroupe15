@@ -60,27 +60,34 @@ public class MainActivityCuisinier extends AppCompatActivity {
     }
 
     ////code pour creer un popup
-    //public void onClickMenuComplet(View view){
-        //// inflate the layout of the popup window
-        //LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
-        //View popupView = inflater.inflate(R.layout.popup_select, null);
+    //// inflate the layout of the popup window
+    //LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
+    //View popupView = inflater.inflate(R.layout.popup_select, null);
 
-        //// create the popup window
-        //int width = LinearLayout.LayoutParams.MATCH_PARENT;
-        //int height = LinearLayout.LayoutParams.MATCH_PARENT;
-        //final PopupWindow popupWindow = new PopupWindow(popupView, width, height);
+    //// create the popup window
+    //int width = LinearLayout.LayoutParams.MATCH_PARENT;
+    //int height = LinearLayout.LayoutParams.MATCH_PARENT;
+    //final PopupWindow popupWindow = new PopupWindow(popupView, width, height);
 
-        ////show the popup window
-        //popupWindow.showAtLocation(view, Gravity.CENTER, 0,0);
+    ////show the popup window
+    //popupWindow.showAtLocation(view, Gravity.CENTER, 0,0);
 
-        //// dismiss the popup window when touched
-        //popupView.setOnTouchListener(new View.OnTouchListener() {
-            //@Override
-            //public boolean onTouch(View view, MotionEvent motionEvent) {
-                //popupWindow.dismiss();
-                //return true;
-            //}
-       // });
+    //// dismiss the popup window when touched
+    //popupView.setOnTouchListener(new View.OnTouchListener() {
+    //@Override
+    //public boolean onTouch(View view, MotionEvent motionEvent) {
+    //popupWindow.dismiss();
+    //return true;
     //}
+    // });
+    public void OnClickMenuComplet(View view){
+        Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
+        startActivityForResult(intent, 0);
+    }
+
+    public void OnClickMenuDuJour(View view){
+        Intent intent = new Intent(getApplicationContext(), MenuDuJourActivity.class);
+        startActivityForResult(intent, 0);
+    }
 
 }

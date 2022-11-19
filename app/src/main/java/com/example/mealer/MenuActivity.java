@@ -8,7 +8,7 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class MenuActivity extends AppCompatActivity {
+public class MenuActivity extends AppCompatActivity implements RecyclerViewInterface{
 
     MenuModel menu;
 
@@ -16,9 +16,7 @@ public class MenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
         menu = MenuModel.getInstance();
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"})
-        RecyclerViewInterface repasRecycleView= findViewById(R.id.repasRecycleView);
-        menu.ShowMenu(this.getApplicationContext(), repasRecycleView, this);
+        menu.ShowMenu(this.getApplicationContext(), this, this);
     }
 
     public void onClickAdd(View view){
@@ -29,5 +27,10 @@ public class MenuActivity extends AppCompatActivity {
     public void onClickBack(View view){
         Intent intent = new Intent(getApplicationContext(), MainActivityCuisinier.class);
         startActivityForResult(intent, 0);
+    }
+
+    @Override
+    public void OnItemClick(int position) {
+
     }
 }

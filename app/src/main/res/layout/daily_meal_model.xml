@@ -2,13 +2,13 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="375dp"
-        android:layout_height="214dp"
+        android:layout_width="357dp"
+        android:layout_height="96dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="15dp"
         app:cardCornerRadius="25dp"
@@ -21,14 +21,14 @@
         tools:ignore="MissingConstraints">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="216dp"
             android:background="#C9FB8C00">
 
             <ImageView
                 android:id="@+id/Image_plat"
-                android:layout_width="87dp"
-                android:layout_height="118dp"
+                android:layout_width="62dp"
+                android:layout_height="67dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/chicken"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -41,17 +41,17 @@
             <TextView
                 android:id="@+id/NomPlat"
                 style="@style/TextAppearance.MaterialComponents.Subtitle1"
-                android:layout_width="275dp"
-                android:layout_height="112dp"
+                android:layout_width="196dp"
+                android:layout_height="41dp"
                 android:text="Nom du plat"
-                android:textSize="50dp"
+                android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintHorizontal_bias="0.583"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.153" />
+                app:layout_constraintVertical_bias="0.034" />
 
             <TextView
                 android:id="@+id/prixLabel"
@@ -62,28 +62,44 @@
                 android:textSize="35dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.162"
+                app:layout_constraintHorizontal_bias="0.35"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.817" />
+                app:layout_constraintVertical_bias="0.265" />
 
             <TextView
                 android:id="@+id/PrixPlat"
-                android:layout_width="47dp"
-                android:layout_height="32dp"
+                android:layout_width="65dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="132dp"
                 android:text="0.00"
-                android:textSize="24sp"
-                tools:layout_editor_absoluteX="145dp"
-                tools:layout_editor_absoluteY="150dp" />
+                android:textAlignment="center"
+                android:textColor="#E3276F"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/textView24"
+                app:layout_constraintStart_toEndOf="@+id/prixLabel"
+                app:layout_constraintTop_toBottomOf="@+id/NomPlat"
+                app:layout_constraintVertical_bias="0.0" />
 
             <TextView
                 android:id="@+id/textView24"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="41dp"
+                android:layout_height="37dp"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="86dp"
+                android:layout_marginBottom="132dp"
                 android:text="$"
-                android:textSize="24sp"
-                tools:layout_editor_absoluteX="192dp"
-                tools:layout_editor_absoluteY="150dp" />
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/PrixPlat"
+                app:layout_constraintTop_toBottomOf="@+id/NomPlat"
+                app:layout_constraintVertical_bias="0.0" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -28,6 +28,8 @@ public class MenuModel {
     DatabaseReference myRef;
 
     private MenuModel(){
+        menuArray = new ArrayList<RepasModel>();
+        menuDuJourArray = new ArrayList<RepasModel>();
         cuisinierId = MainActivity.cuisinier.id;
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference("Cuisinier");

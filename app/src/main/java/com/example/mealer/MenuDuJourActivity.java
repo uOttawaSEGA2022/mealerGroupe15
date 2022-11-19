@@ -13,12 +13,13 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.database.DatabaseReference;
 
 import java.util.ArrayList;
 
-public class MenuDuJourActivity extends AppCompatActivity {
+public class MenuDuJourActivity extends AppCompatActivity implements RecyclerViewInterface{
     MenuModel menu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +27,8 @@ public class MenuDuJourActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu_du_jour);
         menu = MenuModel.getInstance();
         @SuppressLint({"MissingInflatedId", "LocalSuppress"})
-        RecyclerViewInterface repasDuJourRecycleView= findViewById(R.id.RecyclerMenuJour);
-        menu.ShowMenuDuJour(this.getApplicationContext(), repasDuJourRecycleView, this);
+        RecyclerView repasDuJourRecycleView= findViewById(R.id.RecyclerMenuJour);
+        menu.ShowMenuDuJour(this.getApplicationContext(), this, this);
     }
     public  void goBack(View view){
         Intent intent = new Intent(getApplicationContext(), MainActivityCuisinier.class);
@@ -56,5 +57,9 @@ public class MenuDuJourActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void OnItemClick(int position) {
+
+    }
 }
 
