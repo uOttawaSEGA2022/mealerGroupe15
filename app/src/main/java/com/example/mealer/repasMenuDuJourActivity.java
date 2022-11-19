@@ -10,14 +10,13 @@ import android.widget.Toast;
 
 public class repasMenuDuJourActivity extends AppCompatActivity {
 
-    RepasModel repas;
-    MenuModel menu;
+    RepasModel repas = MenuDuJourActivity.getRepas();
+    MenuModel menu = MenuModel.getInstance();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_repas_menu_du_jour);
-        menu = MenuModel.getInstance();
-        repas = MenuDuJourActivity.getRepas();
 
     }
 
@@ -26,7 +25,7 @@ public class repasMenuDuJourActivity extends AppCompatActivity {
         startActivityForResult(intent, 0);
     }
 
-    public void onDelelte(View view){
+    public void onDelete(View view){
         if(repas != null){
             menu.deleteFromMenuDuJour(repas);
             Intent intent = new Intent(getApplicationContext(), MenuDuJourActivity.class);
