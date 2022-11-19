@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class RepasMenuActivity extends AppCompatActivity{
 
     RepasModel repas = new RepasModel();
+    MenuModel menu = MenuModel.getInstance();
 
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -45,11 +46,11 @@ public class RepasMenuActivity extends AppCompatActivity{
     }
 
     public void onClickSave(View view){
-
+        menu.addToMenu(repas);
     }
 
     public void onClickDelete(View view){
-
+        menu.deleteFromMenu(repas);
     }
 
 }
