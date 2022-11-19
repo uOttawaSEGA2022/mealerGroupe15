@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.view.View;
 
@@ -37,7 +38,7 @@ public class PlainteActivity extends AppCompatActivity implements RecyclerViewIn
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plainte);
-        RecyclerView recyclerView=findViewById(R.id.repasRecycleView);
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) RecyclerView recyclerView=findViewById(R.id.RecycleView);
         databaseReference= FirebaseDatabase.getInstance().getReference("Plainte");
         //setupModeeldeplainte();
         RecyclerViewAdapter adapter=new RecyclerViewAdapter(this,modeeldeplainte,this);

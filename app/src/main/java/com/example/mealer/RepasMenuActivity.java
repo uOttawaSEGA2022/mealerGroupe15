@@ -21,7 +21,6 @@ public class RepasMenuActivity extends AppCompatActivity{
     EditText foodDescription = findViewById(R.id.foodDescr);
 
 
-
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);

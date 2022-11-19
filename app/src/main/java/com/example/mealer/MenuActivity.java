@@ -16,7 +16,7 @@ public class MenuActivity extends AppCompatActivity implements RecyclerViewInter
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
         menu = MenuModel.getInstance();
-        menu.ShowMenu(this.getApplicationContext(), this, this);
+        menu.ShowMenu(this, this);
     }
 
     public void onClickAdd(View view){
@@ -31,6 +31,8 @@ public class MenuActivity extends AppCompatActivity implements RecyclerViewInter
 
     @Override
     public void OnItemClick(int position) {
+        Intent intent = new Intent(getApplicationContext(), RepasMenuActivity.class);
+        startActivityForResult(intent, 0);
 
     }
 }

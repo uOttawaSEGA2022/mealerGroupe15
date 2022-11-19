@@ -21,6 +21,20 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".repasMenuDuJourActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".RepasMenuActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".addRepas"
             android:exported="false">
             <meta-data

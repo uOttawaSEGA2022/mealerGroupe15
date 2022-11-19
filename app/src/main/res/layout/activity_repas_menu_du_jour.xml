@@ -23,7 +23,7 @@
 
             <TextView
                 android:id="@+id/textView6"
-                android:layout_width="match_parent"
+                android:layout_width="113dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="30dp"
                 android:text="Nom:"
@@ -32,7 +32,7 @@
 
             <TextView
                 android:id="@+id/textView12"
-                android:layout_width="match_parent"
+                android:layout_width="174dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="30dp"
                 android:text="Description:"
@@ -41,21 +41,13 @@
 
             <TextView
                 android:id="@+id/textView14"
-                android:layout_width="match_parent"
+                android:layout_width="87dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="30dp"
                 android:text="Prix:"
                 android:textColor="@color/black"
                 android:textSize="30dp" />
 
-            <TextView
-                android:id="@+id/textView16"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="30dp"
-                android:text="Temps de préparation:"
-                android:textColor="@color/black"
-                android:textSize="30dp" />
         </LinearLayout>
 
         <RelativeLayout
@@ -67,6 +59,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
+                android:onClick="onBack"
                 android:text="Back" />
 
             <Button
@@ -74,6 +67,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
+                android:onClick="onDelelte"
                 android:text="Delete" />
         </RelativeLayout>
 

@@ -17,7 +17,7 @@ public class popupSelect extends AppCompatActivity implements RecyclerViewInterf
         super.onCreate(savedInstanceState);
         setContentView(R.layout.popup_select);
         menu = MenuModel.getInstance();
-        menu.ShowMenu(this.getApplicationContext(), this, this);
+        menu.ShowMenu(this, this);
 
     }
 
@@ -31,8 +31,9 @@ public class popupSelect extends AppCompatActivity implements RecyclerViewInterf
             menu.addToRepasDujour(repas);
             Intent intent = new Intent(getApplicationContext(), MenuDuJourActivity.class);
             startActivityForResult(intent, 0);
+        }else{
+            Toast.makeText(this, "Vous n'avez pas selectionnez de repas", Toast.LENGTH_SHORT).show();
         }
-        Toast.makeText(this, "Vous n'avez pas selectionnez de repas", Toast.LENGTH_SHORT).show();
 
     }
     @Override

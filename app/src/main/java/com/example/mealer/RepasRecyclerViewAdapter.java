@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 
@@ -14,10 +15,10 @@ import java.util.ArrayList;
 
 public class RepasRecyclerViewAdapter extends RecyclerView.Adapter<RepasRecyclerViewAdapter.MyViewHolder> {
     private final RecyclerViewInterface recyclerViewInterface;
-    Context context;
+    AppCompatActivity context;
 
     static ArrayList<RepasModel> menuArray;
-    public RepasRecyclerViewAdapter(Context context, ArrayList<RepasModel> menuArray, RecyclerViewInterface recyclerViewInterface) {
+    public RepasRecyclerViewAdapter(AppCompatActivity context, ArrayList<RepasModel> menuArray, RecyclerViewInterface recyclerViewInterface) {
         this.context=context;
         this.menuArray=menuArray;
         this.recyclerViewInterface=recyclerViewInterface;

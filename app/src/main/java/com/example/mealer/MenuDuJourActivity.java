@@ -21,6 +21,7 @@ import java.util.ArrayList;
 
 public class MenuDuJourActivity extends AppCompatActivity implements RecyclerViewInterface{
     MenuModel menu;
+    static RepasModel repas;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,7 +65,14 @@ public class MenuDuJourActivity extends AppCompatActivity implements RecyclerVie
 
     @Override
     public void OnItemClick(int position) {
+        repas = menu.menuArray.get(position);
+        Intent intent = new Intent(getApplicationContext(), repasMenuDuJourActivity.class);
+        startActivityForResult(intent, 0);
 
+    }
+
+    public static RepasModel getRepas(){
+        return repas;
     }
 }
 

@@ -1,6 +1,8 @@
 package com.example.mealer;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,7 +34,6 @@ public class MenuModel {
         menuDuJourArray = new ArrayList<RepasModel>();
         cuisinierId = MainActivity.cuisinier.id;
         database = FirebaseDatabase.getInstance();
-        myRef = database.getReference("Cuisinier");
     }
 
     public void addToMenu(RepasModel r){
@@ -91,20 +92,23 @@ public class MenuModel {
 
     }
 
-    public void ShowMenu(Context context, RecyclerViewInterface repasRecycleView, AppCompatActivity activity){
+    public void ShowMenu(RecyclerViewInterface repasRecycleView, AppCompatActivity activity){
 
+        Toast.makeText(activity, "added", Toast.LENGTH_SHORT).show();
         //show the repas
         RecyclerView recyclerView= activity.findViewById(R.id.repasRecycleView);
         myRef= FirebaseDatabase.getInstance().getReference("Cuisinier/" + getCuisinierId() + "menu");
-        RepasRecyclerViewAdapter adapter=new RepasRecyclerViewAdapter(context,menuArray,repasRecycleView);
+        RepasRecyclerViewAdapter adapter=new RepasRecyclerViewAdapter(activity,menuArray,repasRecycleView);
         recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(context));
+        recyclerView.setLayoutManager(new LinearLayoutManager(activity));
         myRef.addValueEventListener(new ValueEventListener() {
+            @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot dataSnapshot:snapshot.getChildren( )){
                     RepasModel repas=dataSnapshot.getValue(RepasModel.class);
                     menuArray.add(repas);
+
 
                 }
                 adapter.notifyDataSetChanged();
