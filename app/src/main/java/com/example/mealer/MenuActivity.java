@@ -13,6 +13,11 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
     }
 
+    public void onClickAdd(View view){
+        Intent intent = new Intent(getApplicationContext(), addRepas.class);
+        startActivityForResult(intent, 0);
+    }
+
     public void onClickBack(View view){
         Intent intent = new Intent(getApplicationContext(), MainActivityCuisinier.class);
         startActivityForResult(intent, 0);
