@@ -9,16 +9,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class RepasMenuActivity extends AppCompatActivity{
 
+    public static int position = 0;
+
     RepasModel repas = new RepasModel();
     MenuModel menu = MenuModel.getInstance();
 
-    EditText foodName = findViewById(R.id.foodName);
-    EditText typeRepas = findViewById(R.id.foodType);
-    EditText typeCuisine = findViewById(R.id.cookingType);
-    EditText ingredientList = findViewById(R.id.ingredientsList);
-    EditText allergene = findViewById(R.id.allergenes);
-    EditText foodPrice = findViewById(R.id.foodPrice);
-    EditText foodDescription = findViewById(R.id.foodDescr);
+    EditText foodName;
+    EditText typeRepas;
+    EditText typeCuisine;
+    EditText ingredientList;
+    EditText allergene;
+    EditText foodPrice;
+    EditText foodDescription;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,20 +28,26 @@ public class RepasMenuActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_repas_menu);
 
+
+        foodName = findViewById(R.id.foodName);
+        typeRepas = findViewById(R.id.foodType);
+        typeCuisine = findViewById(R.id.cookingType);
+        ingredientList = findViewById(R.id.ingredientsList);
+        allergene = findViewById(R.id.allergenes);
+        foodPrice = findViewById(R.id.foodPrice);
+        foodDescription = findViewById(R.id.foodDescr);
+
+
+        repas = menu.menuArray.get(position);
+
+
         foodName.setText(repas.getNom());
-
         typeRepas.setText(repas.getTypeDeRepas());
-
         typeCuisine.setText(repas.getTypeDeCuisine());
-
         ingredientList.setText(repas.getIngredients());
-
         allergene.setText(repas.getAllergenes());
-
         foodPrice.setText(String.valueOf(repas.getPrix()));
-
         foodDescription.setText(repas.getDescription());
-
     }
 
     public void onClickBack(View view){
@@ -56,9 +64,9 @@ public class RepasMenuActivity extends AppCompatActivity{
         Double prixRepas = Double.parseDouble(foodPrice.getText().toString());
         String descrRepas = foodDescription.getText().toString();
 
-        RepasModel repas = new RepasModel(nomRepas,foodType,cookingType,listeIngredients,allergenes,prixRepas,descrRepas);
-
-        menu.addToMenu(repas);
+        RepasModel nouveauRepas = new RepasModel(nomRepas,foodType,cookingType,listeIngredients,allergenes,prixRepas,descrRepas);
+        menu.deleteFromMenu(repas);
+        menu.addToMenu(nouveauRepas);
     }
 
     public void onClickDelete(View view){

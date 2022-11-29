@@ -29,7 +29,7 @@ public class popupSelect extends AppCompatActivity implements RecyclerViewInterf
     public void onAdd(View view){
         if(repas != null){
             menu.addToRepasDujour(repas);
-            Intent intent = new Intent(getApplicationContext(), MenuDuJourActivity.class);
+            Intent intent = new Intent(getApplicationContext(), MainActivityCuisinier.class);
             startActivityForResult(intent, 0);
         }else{
             Toast.makeText(this, "Vous n'avez pas selectionnez de repas", Toast.LENGTH_SHORT).show();

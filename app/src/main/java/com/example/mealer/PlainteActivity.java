@@ -38,7 +38,7 @@ public class PlainteActivity extends AppCompatActivity implements RecyclerViewIn
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plainte);
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) RecyclerView recyclerView=findViewById(R.id.RecycleView);
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) RecyclerView recyclerView=findViewById(R.id.RecyclerView);
         databaseReference= FirebaseDatabase.getInstance().getReference("Plainte");
         //setupModeeldeplainte();
         RecyclerViewAdapter adapter=new RecyclerViewAdapter(this,modeeldeplainte,this);

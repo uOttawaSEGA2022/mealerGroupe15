@@ -4,6 +4,7 @@ package com.example.mealer;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.ContextMenu;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -56,8 +57,9 @@ public class MenuDuJourActivity extends AppCompatActivity implements RecyclerVie
 //            }
 //        });
 //
+//
 //        if(popupView.isShown()){
-//            menu.ShowMenu(popupView.getContext(), (RecyclerViewInterface) popupView.findViewById(R.id.repasRecycleViewPopup) , this);
+//            menu.ShowMenu(this, this);
 //        }
         Intent intent = new Intent(getApplicationContext(), popupSelect.class);
         startActivityForResult(intent, 0);

@@ -43,7 +43,7 @@ public class addRepas extends AppCompatActivity {
         RepasModel repas = new RepasModel(name,typeRepas,typeCuisine,ingredient,allergene,price,foodDescription);
         menu.addToMenu(repas);
 
-        Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
+        Intent intent = new Intent(getApplicationContext(), MainActivityCuisinier.class);
         startActivityForResult(intent, 0);
     }
 

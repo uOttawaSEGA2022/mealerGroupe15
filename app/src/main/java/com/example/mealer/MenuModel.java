@@ -95,7 +95,7 @@ public class MenuModel {
 
         Toast.makeText(activity, "added", Toast.LENGTH_SHORT).show();
         //show the repas
-        RecyclerView recyclerView= activity.findViewById(R.id.repasRecycleView);
+        RecyclerView recyclerView= activity.findViewById(R.id.RecyclerView);
         myRef= FirebaseDatabase.getInstance().getReference("Cuisinier/" + getCuisinierId() + "menu");
         RepasRecyclerViewAdapter adapter=new RepasRecyclerViewAdapter(activity,menuArray,repasRecycleView);
         recyclerView.setAdapter(adapter);
@@ -123,7 +123,7 @@ public class MenuModel {
     public void ShowMenuDuJour(Context context, RecyclerViewInterface repasDuJourRecycleView, AppCompatActivity activity){
 
         //shows the repas du jour
-        RecyclerView recyclerView= activity.findViewById(R.id.RecyclerMenuJour);
+        RecyclerView recyclerView= activity.findViewById(R.id.RecyclerView);
         myRef= FirebaseDatabase.getInstance().getReference("Cuisinier/" + getCuisinierId() + "menu");
         RepasDuJourRecyclerViewAdapter adapter=new RepasDuJourRecyclerViewAdapter(context,menuDuJourArray,repasDuJourRecycleView);
         recyclerView.setAdapter(adapter);

@@ -10,13 +10,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class MenuActivity extends AppCompatActivity implements RecyclerViewInterface{
 
-    MenuModel menu;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-        menu = MenuModel.getInstance();
-        menu.ShowMenu(this, this);
+        MenuModel.getInstance().ShowMenu(this, this);
     }
 
     public void onClickAdd(View view){
@@ -31,6 +29,7 @@ public class MenuActivity extends AppCompatActivity implements RecyclerViewInter
 
     @Override
     public void OnItemClick(int position) {
+        RepasMenuActivity.position = position;
         Intent intent = new Intent(getApplicationContext(), RepasMenuActivity.class);
         startActivityForResult(intent, 0);
 

@@ -23,7 +23,7 @@
             android:textSize="30dp"/>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/RecyclerMenuJour"
+            android:id="@+id/RecyclerView"
             android:layout_width="match_parent"
             android:layout_height="458dp"
             android:layout_marginBottom="140dp"
