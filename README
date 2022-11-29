@@ -6,6 +6,11 @@ Compte Admin {
   password : Admin1
 }
 
+compte cuisinier{
+  email : roger@gmail.com
+  password : roger
+}
+
 Pour Cuisinier et Client, on peut s'inscrire et les données seront enregistré dans la base de données
 et peuvent nous permettre de nous re connecter par la suite.
 
