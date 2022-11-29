@@ -30,10 +30,10 @@ public class SignUpClientActivity extends AppCompatActivity {
         EditText passwordBox = findViewById(R.id.editTextTextPassword2);
         String password = passwordBox.getText().toString();
 
-        TextInputEditText nameBox = findViewById(R.id.FirstNameField);
+        EditText nameBox = findViewById(R.id.FirstNameField);
         String usr = nameBox.getText().toString().toLowerCase();
 
-        TextInputEditText lastNameBox =  findViewById(R.id.LastNameField);
+       EditText lastNameBox =  findViewById(R.id.LastNameField);
         String lastName = lastNameBox.getText().toString().toLowerCase();
 
         TextView adressEditText = findViewById(R.id.editTextTextPostalAddress);
