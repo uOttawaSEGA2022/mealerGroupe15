@@ -18,8 +18,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="243dp"
-            android:layout_marginBottom="308dp"
+            android:layout_height="200dp"
             android:orientation="vertical">
 
             <TextView
@@ -29,30 +28,62 @@
                 android:layout_marginLeft="80dp"
                 android:text="MEALER"
                 android:textColor="@color/black"
-                android:textSize="60dp" />
+                android:textSize="50dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="25dp" />
 
             <TextView
                 android:id="@+id/welcomText"
 
                 android:layout_width="wrap_content"
                 android:layout_height="77dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="80dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:text="Bienvenue vous êtes connecté en tant que client."
                 android:textColor="@color/black"
                 android:textSize="25dp"
                 android:typeface="serif" />
 
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="Voici la liste des cuisiniers: "
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:typeface="serif" />
+
         </LinearLayout>
 
-        <Space
+        <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="400dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="175dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:orientation="vertical">
+
+            <Button
+                android:id="@+id/buttonC"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:text="Mes commandes"
+                android:textColor="@color/white"
+                android:textColorLink="@color/white"
+                tools:ignore="TextContrastCheck" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
 
             <Button
                 android:id="@+id/buttonD"
@@ -65,6 +96,7 @@
                 android:textColor="@color/white"
                 android:textColorLink="@color/white"
                 tools:ignore="TextContrastCheck" />
+
         </LinearLayout>
 
     </LinearLayout>
