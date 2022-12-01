@@ -3,7 +3,8 @@ package com.example.mealer;
 public class RepasModel {
 
     String repasId, nom, typeDeRepas, typeDeCuisine,
-            ingredients, allergenes, description, inRepasDuJour;
+            ingredients, allergenes, description;
+    boolean inRepasDuJour;
     double prix;
 
 
@@ -21,7 +22,7 @@ public class RepasModel {
         this.allergenes = allergenes;
         this.prix = prix;
         this.description = description;
-        this.inRepasDuJour = "false";
+        this.inRepasDuJour = false;
 
     }
 
@@ -84,12 +85,12 @@ public class RepasModel {
         this.description = description;
     }
 
-    public void setInRepasDuJour(String boolValue){
-        inRepasDuJour = boolValue;
+    public void setInRepasDuJour(boolean v){
+        inRepasDuJour = v;
     }
 
     public boolean isInRepasDuJour(){
-        return inRepasDuJour.equals("true");
+            return inRepasDuJour;
     }
 
     public void setPrix(double prix) {

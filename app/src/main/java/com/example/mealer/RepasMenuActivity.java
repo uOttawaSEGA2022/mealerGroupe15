@@ -1,5 +1,6 @@
 package com.example.mealer;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -23,6 +24,7 @@ public class RepasMenuActivity extends AppCompatActivity{
     EditText foodDescription;
 
 
+    @SuppressLint("MissingInflatedId")
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
@@ -65,12 +67,11 @@ public class RepasMenuActivity extends AppCompatActivity{
         String descrRepas = foodDescription.getText().toString();
 
         RepasModel nouveauRepas = new RepasModel(nomRepas,foodType,cookingType,listeIngredients,allergenes,prixRepas,descrRepas);
-        menu.deleteFromMenu(repas);
-        menu.addToMenu(nouveauRepas);
+        menu.save(repas, nouveauRepas, this);
     }
 
     public void onClickDelete(View view){
-        menu.deleteFromMenu(repas);
+        menu.deleteFromMenu(repas, this);
     }
 
 }

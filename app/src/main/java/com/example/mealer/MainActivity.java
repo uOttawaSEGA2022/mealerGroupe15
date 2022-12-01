@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
     public void OnLogin(View view) {
         Intent intent = new Intent(getApplicationContext(), Activity2.class);
         startActivityForResult(intent, 0);
+        finish();
     }
     public void OnSeconnecter(View view) {
         EditText editEmail = findViewById(R.id.loginEmail);
@@ -93,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
                     connectionState.setTextColor(Color.green(255));
                     Intent intent = new Intent(getApplicationContext(), MainActivityAdmin.class);
                     startActivityForResult(intent, 0);
+                    finish();
                 }else if(client.isConnected()
                 && !admin.isConnected()
                 && !cuisinier.isConnected()){
@@ -102,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
                     connectionState.setTextColor(Color.green(255));
                     Intent intent = new Intent(getApplicationContext(), MainActivityClient.class);
                     startActivityForResult(intent, 0);
+                    finish();
                 }else if(cuisinier.isConnected()
                 && !admin.isConnected()
                 && !client.isConnected()){
@@ -112,6 +115,7 @@ public class MainActivity extends AppCompatActivity {
 
                     Intent intent = new Intent(getApplicationContext(), MainActivityCuisinier.class);
                     startActivityForResult(intent, 0);
+                    finish();
                 }else{
                     connectionState.setText("Veuillez verifier votre mot de passe ou votre adresse email");
                     connectionState.setTextColor(Color.parseColor("#FF0000"));

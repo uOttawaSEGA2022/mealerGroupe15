@@ -28,7 +28,8 @@ public class MenuDuJourActivity extends AppCompatActivity implements RecyclerVie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_du_jour);
         menu = MenuModel.getInstance();
-        menu.ShowMenuDuJour(this.getApplicationContext(), this, this);
+        menu.refresh();
+        menu.ShowMenuDuJour(this, this);
     }
     public  void goBack(View view){
         Intent intent = new Intent(getApplicationContext(), MainActivityCuisinier.class);
@@ -48,6 +49,7 @@ public class MenuDuJourActivity extends AppCompatActivity implements RecyclerVie
 //        //show the popup window
 //        popupWindow.showAtLocation(view, Gravity.CENTER, 0,0);
 //
+//
 //        // dismiss the popup window when touched
 //        popupView.setOnTouchListener(new View.OnTouchListener() {
 //            @Override
@@ -58,8 +60,9 @@ public class MenuDuJourActivity extends AppCompatActivity implements RecyclerVie
 //        });
 //
 //
+//
 //        if(popupView.isShown()){
-//            menu.ShowMenu(this, this);
+//            menu.ShowMenu((RecyclerViewInterface) popupView, this);
 //        }
         Intent intent = new Intent(getApplicationContext(), popupSelect.class);
         startActivityForResult(intent, 0);
@@ -67,7 +70,7 @@ public class MenuDuJourActivity extends AppCompatActivity implements RecyclerVie
 
     @Override
     public void OnItemClick(int position) {
-        repas = menu.menuArray.get(position);
+        repas = menu.menuDuJourArray.get(position);
         Intent intent = new Intent(getApplicationContext(), repasMenuDuJourActivity.class);
         startActivityForResult(intent, 0);
 
