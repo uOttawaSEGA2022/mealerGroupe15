@@ -1,7 +1,6 @@
 package com.example.mealer;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -25,7 +24,7 @@ public class MenuModel {
 
     String cuisinierId = MainActivity.cuisinier.id;
 
-    // databade reference and others
+    // database reference and others
     FirebaseDatabase database;
     DatabaseReference myRef;
 

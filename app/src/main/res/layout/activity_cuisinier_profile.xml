@@ -48,7 +48,6 @@
                     android:layout_weight="1"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:text="Nom"
                     tools:ignore="TouchTargetSizeCheck" />
             </LinearLayout>
 
@@ -72,7 +71,6 @@
                     android:layout_weight="1"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:text="Prénom"
                     tools:ignore="TouchTargetSizeCheck" />
             </LinearLayout>
 
@@ -96,7 +94,6 @@
                     android:layout_weight="1"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:text="Adresse courriel"
                     tools:ignore="TouchTargetSizeCheck" />
             </LinearLayout>
 
@@ -120,7 +117,6 @@
                     android:layout_weight="1"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:text="Mot de passe"
                     tools:ignore="TouchTargetSizeCheck" />
             </LinearLayout>
 
@@ -144,7 +140,6 @@
                     android:layout_weight="1"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:text="Adresse"
                     tools:ignore="TouchTargetSizeCheck" />
             </LinearLayout>
 
@@ -168,7 +163,6 @@
                     android:layout_weight="1"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:text="Description de soi"
                     tools:ignore="TouchTargetSizeCheck" />
             </LinearLayout>
 
@@ -202,6 +196,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:minHeight="50dip"
+                    android:onClick="OnBack"
                     android:text="BACK" />
 
                 <Space
@@ -215,6 +210,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:minHeight="50dip"
+                    android:onClick="OnSave"
                     android:text="SAVE" />
 
             </LinearLayout>

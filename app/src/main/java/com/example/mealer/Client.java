@@ -3,6 +3,7 @@ package com.example.mealer;
 import android.content.Context;
 import android.provider.ContactsContract;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
@@ -21,7 +22,7 @@ public class Client extends User{
     String creditCardInfo;
     Boolean connected;
     Boolean found;
-    int id;
+    String id;
     int orderID;
     private static FirebaseDatabase database = FirebaseDatabase.getInstance();
     private static DatabaseReference myRef = database.getReference("Client");
@@ -91,52 +92,28 @@ public class Client extends User{
     public void connect(String email, String pswd, DataSnapshot snapshot, Context applicationContext) {
         connected = false;
         found = false;
-        for(DataSnapshot children : snapshot.getChildren()) {
-            for (Iterator<DataSnapshot> it = children.getChildren().iterator(); it.hasNext(); ) {
-                DataSnapshot snap = it.next();
-                if (snap.getKey().toString().equalsIgnoreCase("email")
-                        && snap.getValue().toString().equalsIgnoreCase(email)) {
+        for(DataSnapshot children : snapshot.getChildren()){
+            if(!connected){
+                Log.println(Log.INFO, "TEST", " KEYSTONE : " + children.getKey());
+                if(children.child("email").getValue().toString().equals(email)){
                     found = true;
-                }
-
-                if (found) {
-                    if (snap.getKey().toString().equalsIgnoreCase("password")) {
-                        if (snap.getValue().toString().equalsIgnoreCase(pswd)) {
-                            connected = true;
-                            for (Iterator<DataSnapshot> it2 = snapshot.getChildren().iterator().next().getChildren().iterator(); it2.hasNext(); ) {
-                                DataSnapshot snap2 = it2.next();
-                                if (snap2.getKey().toString().equalsIgnoreCase("email")) {
-                                    email = snap2.getValue().toString();
-                                }
-                                if (snap2.getKey().toString().equalsIgnoreCase("password")) {
-                                    password = snap2.getValue().toString();
-                                }
-                                if (snap2.getKey().toString().equalsIgnoreCase("firstName")) {
-                                    firstName = snap2.getValue().toString();
-                                }
-                                if (snap2.getKey().toString().equalsIgnoreCase("lastName")) {
-                                    lastName = snap2.getValue().toString();
-                                }
-                                if (snap2.getKey().toString().equalsIgnoreCase("adress")) {
-                                    adress = snap2.getValue().toString();
-                                }
-                                if (snap2.getKey().toString().equalsIgnoreCase("cardNumber")) {
-                                    creditCardInfo = snap2.getValue().toString();
-                                }
-
-                            }
-                            // Connect to the user
-                        } else {
-                            connected = false;
-                        }
+                    if(children.child("password").getValue().toString().equals(pswd)) {
+                        connected = true;
+                        this.email = children.child("email").getValue().toString();
+                        this.password = children.child("password").getValue().toString();
+                        firstName = children.child("firstName").getValue().toString();
+                        lastName = children.child("lastName").getValue().toString();
+                        adress = children.child("address").getValue().toString();
+                        creditCardInfo = children.child("creditCard").getValue().toString();
+                        id = children.getKey().toString();
                     }
                 }
-                Log.println(Log.DEBUG, "TEST", "key : " + snap.getKey().toString() + " Value : " + snap.getValue().toString()
-                        + " Valeur de connected :" + connected.toString());
+                Log.println(Log.DEBUG, "TEST", " Valeur de connected :" + connected.toString());
             }
-            Log.println(Log.INFO, "TEST", "adress is : " + adress);
         }
+        Toast.makeText(applicationContext, "BRAVO ! L'utilisateur : " + firstName + "s'est connecté", Toast.LENGTH_SHORT).show();
     }
+
 
     @Override
     public void disconnect() {
@@ -147,4 +124,12 @@ public class Client extends User{
     public Boolean isConnected() {
         return connected;
     }
+
+    public String getFirstName(){return firstName;}
+    public String getLastName(){return lastName;}
+    public String getEmail(){return email;}
+    public String getPassword(){return password;}
+    public String getAdress(){return adress;}
+    public String getCreditCardInfo(){return creditCardInfo;}
+
 }

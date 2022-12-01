@@ -35,6 +35,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="60dp"
                     android:drawableRight="@drawable/user224"
+                    android:onClick="OnProfile"
                     android:text="MEALER    "
                     android:textColor="@color/black"
                     android:textSize="60sp" />
@@ -100,6 +101,7 @@
                 android:minHeight="50dp"
                 android:text="DEMANDES D'ACHATS"
                 tools:ignore="TouchTargetSizeCheck" />
+
         </LinearLayout>
 
     </LinearLayout>

@@ -87,4 +87,14 @@ public class MainActivityCuisinier extends AppCompatActivity {
         startActivityForResult(intent, 0);
     }
 
+    public void OnProfile(View view){
+        Intent intent = new Intent(getApplicationContext(), CuisinierProfileActivity.class);
+        startActivityForResult(intent, 0);
+    }
+
+    public void OnDemande(View view){
+        Intent intent = new Intent(getApplicationContext(),CuisinierVosDemandesActivity.class);
+        startActivityForResult(intent,0);
+    }
+
 }

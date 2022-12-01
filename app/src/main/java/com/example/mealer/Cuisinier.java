@@ -74,11 +74,28 @@ public class Cuisinier extends User{
     public void setInfo(String email, String password, String usr,
                         String lastName, String addresse, String description ){
         this.email = email;
+        myRef = database.getReference("Cuisinier/"+usr+"/email");
+        myRef.setValue(email);
+
         this.password = password;
+        myRef = database.getReference("Cuisinier/"+usr+"/password");
+        myRef.setValue(password);
+
         this.firstName = usr;
+        myRef = database.getReference("Cuisinier/"+usr+"/firstName");
+        myRef.setValue(usr);
+
         this.lastName = lastName;
+        myRef = database.getReference("Cuisinier/"+usr+"/lastName");
+        myRef.setValue(lastName);
+
         this.adresse = addresse;
+        myRef = database.getReference("Cuisinier/"+usr+"/adresse");
+        myRef.setValue(adresse);
+
         this.description = description;
+        myRef = database.getReference("Cuisinier/"+usr+"/description");
+        myRef.setValue(description);
     }
 
     public void signUp(String email, String password, String usr,
@@ -152,5 +169,14 @@ public class Cuisinier extends User{
         return connected;
     }
 
-    public boolean isSuspended(){return suspended;};
+    public boolean isSuspended(){return suspended;}
+
+    public String getFirstName(){return firstName;}
+    public String getLastName(){return lastName;}
+    public String getEmail(){return email;}
+    public String getPassword(){return password;}
+    public String getAdresse(){return adresse;}
+    public String getDescription(){return description;}
+
+
 }
