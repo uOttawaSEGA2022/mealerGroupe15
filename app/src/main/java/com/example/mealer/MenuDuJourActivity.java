@@ -23,13 +23,15 @@ import java.util.ArrayList;
 public class MenuDuJourActivity extends AppCompatActivity implements RecyclerViewInterface{
     MenuModel menu;
     static RepasModel repas;
+    String idCuisinier = MainActivity.cuisinier.id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_du_jour);
         menu = MenuModel.getInstance();
         menu.refresh();
-        menu.ShowMenuDuJour(this, this);
+        RecyclerView recyclerView= findViewById(R.id.RecyclerView);
+        menu.ShowMenuDuJour(idCuisinier, recyclerView, this, this);
     }
     public  void goBack(View view){
         Intent intent = new Intent(getApplicationContext(), MainActivityCuisinier.class);

@@ -51,17 +51,20 @@ public class CuisinierProfileActivity extends AppCompatActivity {
 
         Intent intent = new Intent(getApplicationContext(), MainActivityCuisinier.class);
         startActivityForResult(intent, 0);
+        finish();
 
     }
 
     public void OnBack(View view){
         Intent intent = new Intent(getApplicationContext(), MainActivityCuisinier.class);
         startActivityForResult(intent, 0);
+        finish();
     }
 
     public void OnDeconnecter(View view) {
         c.disconnect();
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivityForResult(intent, 0);
+        finish();
     }
 }

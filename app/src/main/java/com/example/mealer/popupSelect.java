@@ -1,6 +1,7 @@
 package com.example.mealer;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,12 +13,14 @@ public class popupSelect extends AppCompatActivity implements RecyclerViewInterf
 
     MenuModel menu;
     RepasModel repas;
+    String idCuisinier = MainActivity.cuisinier.id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.popup_select);
         menu = MenuModel.getInstance();
-        menu.ShowMenu(this, this);
+        RecyclerView recyclerView= findViewById(R.id.RecyclerView);
+        menu.ShowMenu(idCuisinier, recyclerView, this, this);
 
     }
 
@@ -28,7 +31,7 @@ public class popupSelect extends AppCompatActivity implements RecyclerViewInterf
 
     public void onAdd(View view){
         if(repas != null){
-            menu.addToRepasDujour(repas);
+            menu.addToRepasDujour(idCuisinier, repas);
             Intent intent = new Intent(getApplicationContext(), MainActivityCuisinier.class);
             startActivityForResult(intent, 0);
         }else{

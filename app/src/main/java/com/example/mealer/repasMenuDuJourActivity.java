@@ -14,6 +14,7 @@ public class repasMenuDuJourActivity extends AppCompatActivity {
 
     RepasModel repas = MenuDuJourActivity.getRepas();
     MenuModel menu = MenuModel.getInstance();
+    String idCuisinier = MainActivity.cuisinier.id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +46,7 @@ public class repasMenuDuJourActivity extends AppCompatActivity {
 
     public void onDelete(View view){
         if(repas != null){
-            menu.deleteFromMenuDuJour(repas);
+            menu.deleteFromMenuDuJour(idCuisinier, repas);
             Intent intent = new Intent(getApplicationContext(), MenuDuJourActivity.class);
             startActivityForResult(intent, 0);
 

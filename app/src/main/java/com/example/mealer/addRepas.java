@@ -9,6 +9,8 @@ import android.widget.EditText;
 
 public class addRepas extends AppCompatActivity {
 
+    String idCuisinier = MainActivity.cuisinier.id;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +43,7 @@ public class addRepas extends AppCompatActivity {
         String foodDescription = description.getText().toString();
 
         RepasModel repas = new RepasModel(name,typeRepas,typeCuisine,ingredient,allergene,price,foodDescription);
-        menu.addToMenu(repas);
+        menu.addToMenu(idCuisinier, repas);
 
         Intent intent = new Intent(getApplicationContext(), MainActivityCuisinier.class);
         startActivityForResult(intent, 0);

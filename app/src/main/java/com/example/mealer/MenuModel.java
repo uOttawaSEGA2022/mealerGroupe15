@@ -34,27 +34,31 @@ public class MenuModel {
         database = FirebaseDatabase.getInstance();
     }
 
-    public void save(RepasModel ancien, RepasModel nouveau, AppCompatActivity activity){
+    public void setCuisinierId(String s){
+        cuisinierId = s;
+    }
+
+    public void save(String idCuisinier, RepasModel ancien, RepasModel nouveau, AppCompatActivity activity){
         assert !cuisinierId.isEmpty();
 
         nouveau.setInRepasDuJour(ancien.isInRepasDuJour());
 
         //Deleting the old one
-        deleteFromMenuDuJour(ancien);
-        deleteFromMenu(ancien, activity);
+        deleteFromMenuDuJour(idCuisinier, ancien);
+        deleteFromMenu(idCuisinier, ancien, activity);
 
         // Adding the new one
-        addToMenu(nouveau);
+        addToMenu(idCuisinier, nouveau);
     }
 
-    public void addToMenu(RepasModel r){
-        assert !cuisinierId.isEmpty();
+    public void addToMenu(String idCuisinier, RepasModel r){
+        assert !idCuisinier.isEmpty();
 
         // Adding to the array
         menuArray.add(r);
 
         // Adding to the database
-        myRef = database.getReference("Cuisinier/" + cuisinierId + "/menu");
+        myRef = database.getReference("Cuisinier/" + idCuisinier + "/menu");
 
         //Getting an id
         String key = myRef.push().getKey();
@@ -66,13 +70,11 @@ public class MenuModel {
 
     }
 
-    public void deleteFromMenu(RepasModel r, AppCompatActivity activity){
+    public void deleteFromMenu(String idCuisinier, RepasModel r, AppCompatActivity activity){
         if(r.isInRepasDuJour()){
             Toast.makeText(activity, "Vous ne pouvez pas supprimer cet éléments, il est dans vos repas du jour!", Toast.LENGTH_SHORT).show();
         }else {
-
-
-            assert !cuisinierId.isEmpty();
+            assert !idCuisinier.isEmpty();
 
             // Deleting from the Array
             menuArray.remove(r);
@@ -86,9 +88,9 @@ public class MenuModel {
 
     }
 
-    public void addToRepasDujour(RepasModel r){
+    public void addToRepasDujour(String idCuisinier, RepasModel r){
         //Putting it in repas du jour in the database
-        myRef = database.getReference("Cuisinier/" + cuisinierId + "/menu");
+        myRef = database.getReference("Cuisinier/" + idCuisinier + "/menu");
         myRef.child(r.repasId).child("inRepasDuJour").setValue(true);
 
         //Putting it to the repas du jour in the array and in the object
@@ -96,14 +98,9 @@ public class MenuModel {
         menuDuJourArray.add(r);
     }
 
-    public void refresh(){
-        menuArray = new ArrayList<RepasModel>();
-        menuDuJourArray = new ArrayList<RepasModel>();
-    }
-
-    public void deleteFromMenuDuJour(@NonNull RepasModel r){
+    public void deleteFromMenuDuJour(String idCuisinier, @NonNull RepasModel r){
         //setting inRepasDuJour false in the database
-        myRef = database.getReference("Cuisinier/" + cuisinierId + "/menu/" + r.repasId);
+        myRef = database.getReference("Cuisinier/" + idCuisinier + "/menu/" + r.repasId);
         myRef.child("inRepasDuJour").setValue(false);
 
         //Setting inRepasDuJour false in the array and in the object
@@ -112,14 +109,13 @@ public class MenuModel {
 
     }
 
-    public void ShowMenu(RecyclerViewInterface repasRecycleView, AppCompatActivity activity){
-        assert !cuisinierId.isEmpty();
+    public void ShowMenu(@NonNull String idCuisinier,RecyclerView recyclerView, RecyclerViewInterface repasRecycleView, AppCompatActivity activity){
+        assert !idCuisinier.isEmpty();
 
-        Toast.makeText(activity, getCuisinierId().toString(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(activity, idCuisinier.toString(), Toast.LENGTH_SHORT).show();
         //show the repas
-        RecyclerView recyclerView= activity.findViewById(R.id.RecyclerView);
         recyclerView.setHasFixedSize(true);
-        myRef= FirebaseDatabase.getInstance().getReference("Cuisinier/" + cuisinierId + "/menu");
+        myRef= FirebaseDatabase.getInstance().getReference("Cuisinier/" + idCuisinier + "/menu");
         RepasRecyclerViewAdapter adapter=new RepasRecyclerViewAdapter(activity,menuArray,repasRecycleView);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(activity));
@@ -127,9 +123,12 @@ public class MenuModel {
             @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                menuArray.clear();
                 for(DataSnapshot dataSnapshot:snapshot.getChildren( )){
                     RepasModel repas=dataSnapshot.getValue(RepasModel.class);
-                    menuArray.add(repas);
+                    if(!menuArray.contains(repas)){
+                        menuArray.add(repas);
+                    }
                 }
                 adapter.notifyDataSetChanged();
             }
@@ -141,11 +140,10 @@ public class MenuModel {
         });
     }
 
-    public void ShowMenuDuJour(RecyclerViewInterface repasDuJourRecycleView, AppCompatActivity activity){
+    public void ShowMenuDuJour(@NonNull String idCuisinier,RecyclerView recyclerView,RecyclerViewInterface repasDuJourRecycleView, AppCompatActivity activity){
 
         //shows the repas du jour
-        RecyclerView recyclerView= activity.findViewById(R.id.RecyclerView);
-        myRef= FirebaseDatabase.getInstance().getReference("Cuisinier/" + getCuisinierId() + "/menu");
+        myRef= FirebaseDatabase.getInstance().getReference("Cuisinier/" + idCuisinier + "/menu");
         RepasDuJourRecyclerViewAdapter adapter=new RepasDuJourRecyclerViewAdapter(activity,menuDuJourArray,repasDuJourRecycleView);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(activity));
@@ -166,6 +164,11 @@ public class MenuModel {
 
             }
         });
+    }
+
+    public void refresh(){
+        menuArray.clear();
+        menuDuJourArray.clear();
     }
 
     public String getCuisinierId(){

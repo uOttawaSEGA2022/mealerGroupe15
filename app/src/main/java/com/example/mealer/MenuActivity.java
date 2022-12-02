@@ -5,17 +5,19 @@ import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class MenuActivity extends AppCompatActivity implements RecyclerViewInterface{
 
     RepasModel repas;
     MenuModel menu = MenuModel.getInstance();
+    String idCuisinier = MainActivity.cuisinier.id;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-        menu.refresh();
-        menu.ShowMenu(this, this);
+        RecyclerView recyclerView= findViewById(R.id.RecyclerView);
+        menu.ShowMenu(idCuisinier, recyclerView,this, this);
     }
 
     public void onClickAdd(View view){
