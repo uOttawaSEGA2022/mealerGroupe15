@@ -47,8 +47,15 @@ public class ClientPlainteActivity extends AppCompatActivity {
         myRef.setValue("test");
         myRef = database.getReference("Plainte/"+ titre1+"/nameOfCuisinier");
         myRef.setValue("test");
-        Intent intent = new Intent(getApplicationContext(), MainActivityClient.class);
+        Intent intent = new Intent(getApplicationContext(), ClientMesRepasActivity.class);
+        startActivityForResult(intent, 0);
     }
+    public void OnBackToVotreCommande(View view) {
+        Intent intent = new Intent(getApplicationContext(), ClientVotreCommandeActivity.class);
+        startActivityForResult(intent, 0);
+
+    }
+
 
 
 }

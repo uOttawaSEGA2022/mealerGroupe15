@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".ClientRechercheActivity">
+    tools:context=".ClientRechercheActivity"
+    android:background="@drawable/backgroundk">
 
     <TextView
         android:id="@+id/textView27"
@@ -37,7 +38,8 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nom du repas" />
+                android:hint="Nom du repas"
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Space

@@ -23,6 +23,8 @@ public class MainActivityClient extends AppCompatActivity {
     }
 
     public void OnMesCommandes (View view){
+        Intent intent=new Intent(getApplicationContext(),ClientMesRepasActivity.class);
+        startActivityForResult(intent,0);
 
     }
 

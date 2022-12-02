@@ -10,16 +10,25 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:background="@drawable/logodemealerremove"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/textView27"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Plainte"
             android:layout_marginLeft="150dp"
-            android:textSize="35dp"
-            android:textColor="@color/black"/>
+            android:text="Plainte"
+            android:textColor="@color/black"
+            android:textSize="35dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="27dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -44,6 +53,7 @@
                 android:inputType="textPersonName"
                 android:text="" />
         </LinearLayout>
+
         <Space
             android:layout_width="match_parent"
             android:layout_height="20dp" />
@@ -60,7 +70,7 @@
                 android:layout_weight="1"
                 android:text="Description:"
                 android:textColor="@color/black"
-                android:textSize="20dp"/>
+                android:textSize="20dp" />
 
             <EditText
                 android:id="@+id/editTextTextPersonName3"
@@ -72,31 +82,32 @@
                 android:text="" />
 
         </LinearLayout>
+
         <Space
             android:layout_width="match_parent"
-            android:layout_height="100dp" />
+            android:layout_height="309dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:layout_marginTop="100dp">
+            android:layout_marginTop="100dp"
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/button3"
                 android:layout_width="20dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Retour" />
+                android:text="Retour"
+                android:onClick="OnBackToVotreCommande"/>
 
             <Button
                 android:id="@+id/button4"
                 android:layout_width="20dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Envoyer la plainte"
                 android:onClick="OnClickEnvoyerPlainte"
-                />
+                android:text="Envoyer la plainte" />
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
