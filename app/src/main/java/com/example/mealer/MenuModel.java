@@ -23,7 +23,7 @@ public class MenuModel {
     ArrayList<RepasModel> allMenuDuJourArray;
     private static final MenuModel menu = new MenuModel();
 
-    String cuisinierId = MainActivity.cuisinier.id;
+    String cuisinierId = Cuisinier.getInstance().id;
 
     // database reference and others
     FirebaseDatabase database;
