@@ -65,8 +65,8 @@ public class ClientRechercheActivity extends AppCompatActivity implements Recycl
         // running a for loop to compare elements.
         for (RepasModel item : menu.allMenuDuJourArray) {
             // checking if the entered string matched with any item of our recycler view.
-            if (item.getNom().toLowerCase().contains(text.toLowerCase()) |
-                    item.getTypeDeCuisine().toLowerCase().contains(text.toLowerCase()) |
+            if (item.getNom().toLowerCase().contains(text.toLowerCase()) ||
+                    item.getTypeDeCuisine().toLowerCase().contains(text.toLowerCase()) ||
                     item.getTypeDeRepas().toLowerCase().contains(text.toLowerCase())) {
                 // if the item is matched we are
                 // adding it to our filtered list.

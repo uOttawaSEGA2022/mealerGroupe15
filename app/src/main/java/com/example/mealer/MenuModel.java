@@ -182,7 +182,7 @@ public class MenuModel {
                 for (DataSnapshot s : snapshot.getChildren()) {
                     for (DataSnapshot dataSnapshot : s.child("menu").getChildren()) {
                         RepasModel repas = dataSnapshot.getValue(RepasModel.class);
-                        if (!allMenuDuJourArray.contains(repas)) {
+                        if (!allMenuDuJourArray.contains(repas) && repas.isInRepasDuJour()) {
                             allMenuDuJourArray.add(repas);
                         }
                     }
