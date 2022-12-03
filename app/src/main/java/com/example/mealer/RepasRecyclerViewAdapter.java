@@ -23,6 +23,16 @@ public class RepasRecyclerViewAdapter extends RecyclerView.Adapter<RepasRecycler
         this.recyclerViewInterface=recyclerViewInterface;
     }
 
+    // method for filtering our recyclerview items.
+    public void filterList(ArrayList<RepasModel> filterlist) {
+        // below line is to add our filtered
+        // list in our course array list.
+        menuArray = filterlist;
+        // below line is to notify our adapter
+        // as change in recycler view data.
+        notifyDataSetChanged();
+    }
+
     @NonNull
     @Override
     public RepasRecyclerViewAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

@@ -23,6 +23,7 @@ public class RepasDuJourRecyclerViewAdapter extends RecyclerView.Adapter<RepasDu
         this.recyclerViewInterface=recyclerViewInterface;
     }
 
+
     @NonNull
     @Override
     public RepasDuJourRecyclerViewAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

@@ -57,7 +57,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
-                android:text="Voici la liste des cuisiniers: "
+                android:text="Voici tout les repas du jour :"
                 android:textColor="@color/black"
                 android:textSize="20dp"
                 android:typeface="serif" />
@@ -65,6 +65,7 @@
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/allRepasDujour"
             android:layout_width="399dp"
             android:layout_height="391dp"
             android:layout_marginStart="10dp"

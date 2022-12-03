@@ -1,20 +1,30 @@
 package com.example.mealer;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.View;
+import android.widget.TextView;
 
-public class MainActivityClient extends AppCompatActivity {
+public class MainActivityClient extends AppCompatActivity implements RecyclerViewInterface{
 
     Client client;
+    MenuModel menu;
+    RecyclerView r;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_client);
         client = Client.getInstance();
+        menu = MenuModel.getInstance();
+        r = (RecyclerView) findViewById(R.id.allRepasDujour) ;
+        //menu.showAllMenuDuJour(r,this, this);
     }
 
     public void OnClickRecherche (View view){
@@ -36,6 +46,8 @@ public class MainActivityClient extends AppCompatActivity {
     }
 
 
+    @Override
+    public void OnItemClick(int position) {
 
-
+    }
 }
