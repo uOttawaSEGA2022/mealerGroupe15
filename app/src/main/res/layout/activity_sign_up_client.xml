@@ -95,9 +95,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
+                        android:minHeight="48dp"
                         android:hint="Ex: Wendaabo"
                         android:background="#30ffffff"
-                        android:minHeight="48dp" />
+                         />
 
                 </LinearLayout>
 
