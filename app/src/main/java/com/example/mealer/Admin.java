@@ -29,8 +29,9 @@ public class Admin implements Account{
     private static int id;
     FirebaseDatabase database;
     DatabaseReference myRef;
+    static Admin a = new Admin();
 
-    public Admin(){
+    private Admin(){
         id = 0;
         firstNames = new String[1];
         lastNames = new String[1];
@@ -41,6 +42,11 @@ public class Admin implements Account{
         myRef = database.getReference("Admin");
 
     }
+
+    public static Admin getInstance() {
+        return a;
+    }
+
     public void setInfo(String email, String password){
         emails[id] = email;
         passwords[id] = password;

@@ -14,6 +14,7 @@ public class MainActivityClient extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_client);
+        client = Client.getInstance();
     }
 
     public void OnClickRecherche (View view){

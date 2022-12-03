@@ -46,7 +46,7 @@ public class SignUpClientActivity extends AppCompatActivity {
 
 
         //On crée une nouvelle instance client
-        Client c = new Client();
+        Client c = Client.getInstance();
 
         //On vérifie que aucun champs n'es null, soit que l'utilisateur a bien rentrer quelque chose dans tout les champs
         if(email.isEmpty() || email == null ||
@@ -63,6 +63,7 @@ public class SignUpClientActivity extends AppCompatActivity {
             c.signUp(email, password, usr, lastName, adress, cardNumber);
             Intent intent = new Intent(getApplicationContext(), MainActivityClient.class);
             startActivityForResult(intent, 0);
+            finish();
         }
 
     }

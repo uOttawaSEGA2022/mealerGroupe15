@@ -37,9 +37,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         TextView connectionState = findViewById(R.id.stateAfterConnection);
         connectionState.setText("");
-        admin = new Admin();
-        client = new Client();
-        cuisinier = new Cuisinier();
 
     }
     public void OnLogin(View view) {
@@ -48,6 +45,10 @@ public class MainActivity extends AppCompatActivity {
         finish();
     }
     public void OnSeconnecter(View view) {
+        admin = Admin.getInstance();
+        client = Client.getInstance();
+        cuisinier = Cuisinier.getInstance();
+
         EditText editEmail = findViewById(R.id.loginEmail);
         EditText editPassword = findViewById(R.id.loginPassword);
 
@@ -56,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
         TextView connectionState = findViewById(R.id.stateAfterConnection);
 
-        Log.println(Log.DEBUG, "INFO", "email : " + email+ " passeword : " + password);
+        Log.println(Log.DEBUG, "TYPED", "email : " + email+ " passeword : " + password);
         // Read from the database
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -79,51 +80,7 @@ public class MainActivity extends AppCompatActivity {
                             Log.d(TAG, "ON NE PEUT PAS TROUVER L'INFORMATION DANS " + key);
                         }
                     }
-
-
                 }
-
-
-                // ON VERIFIE QUI EST CONNECTÉ PUIS ON LOAD LA NOUVELLE PAGE EN FONCTION DE SI C'EST UN CLIENT, UN ADMIN OU UN CUISINIER
-                if(admin.isConnected()
-                        && !client.isConnected()
-                        && !cuisinier.isConnected()){
-                    state = ConnectionStates.CONNECTED;
-                    Log.println(Log.DEBUG, "INFO", "SUCCESS: VOUS ETES CONNECTE");
-                    connectionState.setText("Connected");
-                    connectionState.setTextColor(Color.green(255));
-                    Intent intent = new Intent(getApplicationContext(), MainActivityAdmin.class);
-                    startActivityForResult(intent, 0);
-                    finish();
-                }else if(client.isConnected()
-                && !admin.isConnected()
-                && !cuisinier.isConnected()){
-                    state = ConnectionStates.CONNECTED;
-                    Log.println(Log.DEBUG, "INFO", "SUCCESS: VOUS ETES CONNECTE");
-                    connectionState.setText("Connected");
-                    connectionState.setTextColor(Color.green(255));
-                    Intent intent = new Intent(getApplicationContext(), MainActivityClient.class);
-                    startActivityForResult(intent, 0);
-                    finish();
-                }else if(cuisinier.isConnected()
-                && !admin.isConnected()
-                && !client.isConnected()){
-                    state = ConnectionStates.CONNECTED;
-                    Log.println(Log.DEBUG, "INFO", "SUCCESS: VOUS ETES CONNECTE");
-                    connectionState.setText("Connected");
-                    connectionState.setTextColor(Color.green(255));
-
-                    Intent intent = new Intent(getApplicationContext(), MainActivityCuisinier.class);
-                    startActivityForResult(intent, 0);
-                    finish();
-                }else{
-                    connectionState.setText("Veuillez verifier votre mot de passe ou votre adresse email");
-                    connectionState.setTextColor(Color.parseColor("#FF0000"));
-                    Log.println(Log.DEBUG, "INFO", "PROBLEM: VOUS AVEZ RENTREZ UN MAUVAIS MOT DE PASSE");
-                    state = ConnectionStates.FAILED;
-                }
-
-
             }
 
             @Override
@@ -132,6 +89,45 @@ public class MainActivity extends AppCompatActivity {
                 Log.w(TAG, "Failed to read value.", error.toException());
             }
         });
+
+        // ON VERIFIE QUI EST CONNECTÉ PUIS ON LOAD LA NOUVELLE PAGE EN FONCTION DE SI C'EST UN CLIENT, UN ADMIN OU UN CUISINIER
+        if(admin.isConnected()
+                && !client.isConnected()
+                && !cuisinier.isConnected()){
+            state = ConnectionStates.CONNECTED;
+            Log.println(Log.DEBUG, "INFO", "SUCCESS: VOUS ETES CONNECTE");
+            connectionState.setText("Connected");
+            connectionState.setTextColor(Color.green(255));
+            Intent intent = new Intent(getApplicationContext(), MainActivityAdmin.class);
+            startActivityForResult(intent, 0);
+            finish();
+        }else if(client.isConnected()
+                && !admin.isConnected()
+                && !cuisinier.isConnected()){
+            state = ConnectionStates.CONNECTED;
+            Log.println(Log.DEBUG, "INFO", "SUCCESS: VOUS ETES CONNECTE");
+            connectionState.setText("Connected");
+            connectionState.setTextColor(Color.green(255));
+            Intent intent = new Intent(getApplicationContext(), MainActivityClient.class);
+            startActivityForResult(intent, 0);
+            finish();
+        }else if(cuisinier.isConnected()
+                && !admin.isConnected()
+                && !client.isConnected()){
+            state = ConnectionStates.CONNECTED;
+            Log.println(Log.DEBUG, "INFO", "SUCCESS: VOUS ETES CONNECTE");
+            connectionState.setText("Connected");
+            connectionState.setTextColor(Color.green(255));
+
+            Intent intent = new Intent(getApplicationContext(), MainActivityCuisinier.class);
+            startActivityForResult(intent, 0);
+            finish();
+        }else{
+            connectionState.setText("Veuillez verifier votre mot de passe ou votre adresse email");
+            connectionState.setTextColor(Color.parseColor("#FF0000"));
+            Log.println(Log.DEBUG, "INFO", "PROBLEM: VOUS AVEZ RENTREZ UN MAUVAIS MOT DE PASSE");
+            state = ConnectionStates.FAILED;
+        }
 
         Log.println(Log.DEBUG, "TEST", "Valeur de connected :" + admin.isConnected().toString());
 

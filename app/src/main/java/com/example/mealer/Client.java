@@ -18,19 +18,22 @@ public class Client extends User{
     String lastName;
     String email;
     String password;
-    String adress;
+    String address;
     String creditCardInfo;
     Boolean connected;
-    Boolean found;
     String id;
     int orderID;
     private static FirebaseDatabase database = FirebaseDatabase.getInstance();
     private static DatabaseReference myRef = database.getReference("Client");
+    static Client c = new Client();
 
 
-    public Client(){
+    private Client(){
         connected =  false;
-        found = false;
+    }
+
+    public static Client getInstance() {
+        return c;
     }
 
 //    public Client(String firstName, String lastName, String email, String password, String creditCardInfo){
@@ -44,35 +47,42 @@ public class Client extends User{
 //    }
 
     public void signUp(String email, String password, String usr,
-                       String lastName, String adress, String card){
-        //Enregistrer le email dans la database
-        myRef = database.getReference("Client/"+usr+"/email");
-        myRef.setValue(email);
-        //Enregistrer le mot de passe dans la database
-        myRef = database.getReference("Client/"+usr+"/password");
-        myRef.setValue(password);
-        //Enregistrer le first name dans la database
-        myRef = database.getReference("Client/"+usr+"/firstName");
-        myRef.setValue(usr);
-        //Enregistrer le last name dans la database
-        myRef = database.getReference("Client/"+usr+"/lastName");
-        myRef.setValue(lastName);
-        //Enregistrer l'addresse dans la database
-        myRef = database.getReference("Client/"+usr+"/adress");
-        myRef.setValue(adress);
-        //Enregistrer le card number dans la database
-        myRef = database.getReference("Client/"+usr+"/cardNumber");
-        myRef.setValue(card);
-        setInfo(email, password, usr, lastName, adress, card);
+                       String lastName, String address, String card){
+        //Generating a random id and saving it
+        id = myRef.push().getKey();
+        myRef = database.getReference("Client/"+id+"/id");
+        myRef.setValue(id);
+
+        //Stocking all the information temporally internally and forever in the database
+        setInfo(email, password, usr, lastName, address, card);
+        connected = true;
     }
     public void setInfo(String email, String password, String usr,
                         String lastName, String adress, String card ){
         this.email = email;
+        myRef = database.getReference("Client/"+id+"/email");
+        myRef.setValue(email);
+
         this.password = password;
+        myRef = database.getReference("Client/"+id+"/password");
+        myRef.setValue(password);
+
         this.firstName = usr;
+        myRef = database.getReference("Client/"+id+"/firstName");
+        myRef.setValue(usr);
+
         this.lastName = lastName;
-        this.adress = adress;
+        myRef = database.getReference("Client/"+id+"/lastName");
+        myRef.setValue(lastName);
+
+        this.address = adress;
+        myRef = database.getReference("Client/"+id+"/address");
+        myRef.setValue(address);
+
         this.creditCardInfo = card;
+        myRef = database.getReference("Client/"+id+"/cardNumber");
+        myRef.setValue(card);
+
     }
 
     public void sendOrderRequest(Cuisinier c){
@@ -91,33 +101,36 @@ public class Client extends User{
     @Override
     public void connect(String email, String pswd, DataSnapshot snapshot, Context applicationContext) {
         connected = false;
-        found = false;
         for(DataSnapshot children : snapshot.getChildren()){
             if(!connected){
                 Log.println(Log.INFO, "TEST", " KEYSTONE : " + children.getKey());
                 if(children.child("email").getValue().toString().equals(email)){
-                    found = true;
                     if(children.child("password").getValue().toString().equals(pswd)) {
                         connected = true;
                         this.email = children.child("email").getValue().toString();
                         this.password = children.child("password").getValue().toString();
                         firstName = children.child("firstName").getValue().toString();
                         lastName = children.child("lastName").getValue().toString();
-                        adress = children.child("address").getValue().toString();
-                        creditCardInfo = children.child("creditCard").getValue().toString();
+                        address = children.child("address").getValue().toString();
+                        creditCardInfo = children.child("cardNumber").getValue().toString();
                         id = children.getKey().toString();
                     }
                 }
                 Log.println(Log.DEBUG, "TEST", " Valeur de connected :" + connected.toString());
             }
         }
-        Toast.makeText(applicationContext, "BRAVO ! L'utilisateur : " + firstName + "s'est connecté", Toast.LENGTH_SHORT).show();
+        Toast.makeText(applicationContext, "BRAVO ! L'utilisateur : " + firstName + " s'est connecté", Toast.LENGTH_SHORT).show();
     }
 
 
     @Override
     public void disconnect() {
         connected = false;
+        refresh();
+    }
+
+    private void refresh() {
+        c = new Client();
     }
 
     @Override
@@ -129,7 +142,7 @@ public class Client extends User{
     public String getLastName(){return lastName;}
     public String getEmail(){return email;}
     public String getPassword(){return password;}
-    public String getAdress(){return adress;}
+    public String getAdress(){return address;}
     public String getCreditCardInfo(){return creditCardInfo;}
 
 }

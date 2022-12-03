@@ -9,7 +9,7 @@ import android.widget.EditText;
 
 public class CuisinierProfileActivity extends AppCompatActivity {
 
-    Cuisinier c= MainActivity.cuisinier;
+    Cuisinier c= Cuisinier.getInstance();
 
     EditText lastnameBox;
     EditText nameBox;
