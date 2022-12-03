@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MenuDuJourActivity">
+    tools:context=".MenuDuJourActivity"
+    android:background="@drawable/backgroundk">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,21 +20,26 @@
             android:id="@+id/textView6"
             android:layout_width="399dp"
             android:layout_height="62dp"
+            android:layout_marginLeft="20dp"
             android:text="Voici le menu du jour proposé"
             android:textSize="30dp"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/RecyclerView"
+
             android:layout_width="match_parent"
-            android:layout_height="458dp"
+            android:layout_height="440dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginBottom="140dp"
             android:orientation="vertical"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginLeft="20dp"
+            >
 
             <Button
                 android:id="@+id/button"

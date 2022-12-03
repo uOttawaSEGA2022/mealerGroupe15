@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ClientRepasDuJourActivity"
+    android:background="@drawable/backgroundk">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="373dp"
+            android:layout_height="84dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView47"
+                style="@style/Theme.AppCompat.DayNight"
+                android:layout_width="wrap_content"
+                android:layout_height="47dp"
+                android:text="Plat du jour de:"
+
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/nomCuisinierPlatduJour"
+                android:layout_width="wrap_content"
+                android:layout_height="59dp"
+                android:layout_weight="1"
+                android:textSize="30dp"
+
+                android:text="XXXX" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:background="@drawable/logodemealerremove"
+            android:layout_width="match_parent"
+            android:layout_height="525dp"
+
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp" />
+
+        <Button
+            android:id="@+id/button11"
+            android:layout_width="158dp"
+            android:layout_height="wrap_content"
+            android:onClick="onBackToMainClient2"
+            android:text="Back"
+            android:layout_marginLeft="20dp"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

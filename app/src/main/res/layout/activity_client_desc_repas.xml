@@ -7,8 +7,8 @@
     android:background="@android:color/holo_blue_bright">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="311dp"
+        android:layout_height="593dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,20 +25,18 @@
             android:textSize="20sp"
             android:textStyle="bold|italic" />
 
-        <LinearLayout
+        <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="666dp"
-            android:orientation="vertical">
+            android:layout_height="378dp">
 
-            <LinearLayout
+            <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:orientation="horizontal">
+                android:layout_height="match_parent">
 
                 <TextView
                     android:id="@+id/textView54"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_width="243dp"
+                    android:layout_height="45dp"
                     android:layout_weight="1"
                     android:text="Nom du repas  :"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
@@ -49,17 +47,17 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="TextView" />
-            </LinearLayout>
 
-            <LinearLayout
+            </TableRow>
+
+            <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="58dp"
-                android:orientation="horizontal">
+                android:layout_height="match_parent">
 
                 <TextView
                     android:id="@+id/textView56"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_width="146dp"
+                    android:layout_height="62dp"
                     android:layout_weight="1"
                     android:text="Type de repas :"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
@@ -70,17 +68,17 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="TextView" />
-            </LinearLayout>
 
-            <LinearLayout
+            </TableRow>
+
+            <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:orientation="horizontal">
+                android:layout_height="match_parent">
 
                 <TextView
                     android:id="@+id/textView58"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_width="222dp"
+                    android:layout_height="39dp"
                     android:layout_weight="1"
                     android:text="Type de cuisine :"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
@@ -91,17 +89,16 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="TextView" />
-            </LinearLayout>
+            </TableRow>
 
-            <LinearLayout
+            <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="57dp"
-                android:orientation="horizontal">
+                android:layout_height="match_parent">
 
                 <TextView
                     android:id="@+id/textView60"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_width="242dp"
+                    android:layout_height="40dp"
                     android:layout_weight="1"
                     android:text="Ingrédients :"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
@@ -112,17 +109,16 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="TextView" />
-            </LinearLayout>
+            </TableRow>
 
-            <LinearLayout
+            <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="69dp"
-                android:orientation="horizontal">
+                android:layout_height="match_parent">
 
                 <TextView
                     android:id="@+id/textView62"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="55dp"
                     android:layout_weight="1"
                     android:text="Allergènes :"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
@@ -133,17 +129,17 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="TextView" />
-            </LinearLayout>
+            </TableRow>
 
-            <LinearLayout
+            <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="71dp"
-                android:orientation="horizontal">
+                android:layout_height="match_parent">
 
                 <TextView
                     android:id="@+id/textView64"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_width="179dp"
+                    android:layout_height="50dp"
+                    android:layout_marginRight="40dp"
                     android:layout_weight="1"
                     android:text="Prix :"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
@@ -153,18 +149,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="TextView" />
-            </LinearLayout>
+                    android:text="TextView"
+                    />
+            </TableRow>
 
-            <LinearLayout
+            <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_height="match_parent">
 
                 <TextView
                     android:id="@+id/textView66"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="222dp"
+                    android:layout_height="71dp"
                     android:layout_weight="1"
                     android:text="Description : "
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
@@ -174,26 +170,27 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="TextView" />
-            </LinearLayout>
-        </LinearLayout>
+                    android:text="TextView"
+                    />
+            </TableRow>
+        </TableLayout>
 
-        <LinearLayout
+        <TableRow
             android:layout_width="match_parent"
-            android:layout_height="89dp"
-            android:orientation="horizontal">
+            android:layout_height="match_parent">
 
             <Button
                 android:id="@+id/button12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Back" />
+                android:text="Back"
+                android:onClick="OnBackToRepasDuJourClient"/>
 
             <Space
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="3" />
+                android:layout_width="68dp"
+                android:layout_height="37dp"
+                android:layout_weight="1" />
 
             <Button
                 android:id="@+id/button13"
@@ -201,7 +198,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Commander" />
-        </LinearLayout>
+        </TableRow>
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
 
