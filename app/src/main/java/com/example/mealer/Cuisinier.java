@@ -33,9 +33,10 @@ public class Cuisinier extends User{
     int orderID;
     private static FirebaseDatabase database = FirebaseDatabase.getInstance();
     private DatabaseReference myRef = database.getReference();
+    static Cuisinier c = new Cuisinier();
 
 
-    public Cuisinier(){
+    private Cuisinier(){
         found = false;
         connected =  false;
         suspensionTime = "0";
@@ -71,60 +72,52 @@ public class Cuisinier extends User{
         //}
     }
 
+    private void refresh(){
+        c = new Cuisinier();
+
+    }
+
     public void setInfo(String email, String password, String usr,
                         String lastName, String addresse, String description ){
         this.email = email;
-        myRef = database.getReference("Cuisinier/"+usr+"/email");
+        myRef = database.getReference("Cuisinier/"+id+"/email");
         myRef.setValue(email);
 
         this.password = password;
-        myRef = database.getReference("Cuisinier/"+usr+"/password");
+        myRef = database.getReference("Cuisinier/"+id+"/password");
         myRef.setValue(password);
 
         this.firstName = usr;
-        myRef = database.getReference("Cuisinier/"+usr+"/firstName");
+        myRef = database.getReference("Cuisinier/"+id+"/firstName");
         myRef.setValue(usr);
 
         this.lastName = lastName;
-        myRef = database.getReference("Cuisinier/"+usr+"/lastName");
+        myRef = database.getReference("Cuisinier/"+id+"/lastName");
         myRef.setValue(lastName);
 
         this.adresse = addresse;
-        myRef = database.getReference("Cuisinier/"+usr+"/adresse");
+        myRef = database.getReference("Cuisinier/"+id+"/adresse");
         myRef.setValue(adresse);
 
         this.description = description;
-        myRef = database.getReference("Cuisinier/"+usr+"/description");
+        myRef = database.getReference("Cuisinier/"+id+"/description");
         myRef.setValue(description);
     }
 
     public void signUp(String email, String password, String usr,
                        String lastName, String adress, String description){
-        //Enregistrer le email dans la database
-        myRef = database.getReference("Cuisinier/"+usr+"/email");
-        myRef.setValue(email);
-        //Enregistrer le mot de passe dans la database
-        myRef = database.getReference("Cuisinier/"+usr+"/password");
-        myRef.setValue(password);
-        //Enregistrer le first name dans la database
-        myRef = database.getReference("Cuisinier/"+usr+"/firstName");
-        myRef.setValue(usr);
-        //Enregistrer le last name dans la database
-        myRef = database.getReference("Cuisinier/"+usr+"/lastName");
-        myRef.setValue(lastName);
-        //Enregistrer l'addresse dans la database
-        myRef = database.getReference("Cuisinier/"+usr+"/adresse");
-        myRef.setValue(adress);
-        //Enregistrer le card number dans la database
-        myRef = database.getReference("Cuisinier/"+usr+"/description");
-        myRef.setValue(description);
+        //information par rapport a l'id
+        id = myRef.push().getKey();
+        myRef = database.getReference("Cuisinier/"+id+"/id");
+        myRef.setValue(id);
 
         //Information par rapport a la suspension
-        myRef = database.getReference("Cuisinier/"+usr+"/suspended");
+        myRef = database.getReference("Cuisinier/"+id+"/suspended");
         myRef.setValue(suspended);
-        myRef = database.getReference("Cuisinier/"+usr+"/suspensionTime");
+        myRef = database.getReference("Cuisinier/"+id+"/suspensionTime");
         myRef.setValue(suspensionTime);
         setInfo(email, password, usr, lastName, adress, description);
+        connected = true;
     }
     
     @Override
@@ -155,13 +148,13 @@ public class Cuisinier extends User{
 
         Log.println(Log.INFO, "TEST", "addresse is : " + adresse + " descrition : "+ description);
 
-        Toast.makeText(applicationContext, "BRAVO ! L'utilisateur : " + firstName + "s'est connecté", Toast.LENGTH_SHORT).show();
+        Toast.makeText(applicationContext, "BRAVO ! L'utilisateur : " + firstName + " s'est connecté", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void disconnect() {
-
         connected = false;
+        refresh();
     }
 
     @Override
@@ -177,6 +170,10 @@ public class Cuisinier extends User{
     public String getPassword(){return password;}
     public String getAdresse(){return adresse;}
     public String getDescription(){return description;}
+
+    public static Cuisinier getInstance(){
+        return c;
+    }
 
 
 }

@@ -41,8 +41,8 @@ public class SignUpCuisinierActivity extends AppCompatActivity {
 
         TextView incTextView = findViewById(R.id.incTextView);
 
-        //On crée une nouvelle instance client
-        Cuisinier c = new Cuisinier();
+        //On cherche l'instance de cuisinier
+        Cuisinier c = Cuisinier.getInstance();
 
         //On vérifie que aucun champs n'es null, soit que l'utilisateur a bien rentrer quelque chose dans tout les champs
         if(email.isEmpty() || email == null ||
@@ -59,6 +59,7 @@ public class SignUpCuisinierActivity extends AppCompatActivity {
             c.signUp(email, password, firstName, lastName, address, description);
             Intent intent = new Intent(getApplicationContext(), MainActivityCuisinier.class);
             startActivityForResult(intent, 0);
+            finish();
         }
     }
 
