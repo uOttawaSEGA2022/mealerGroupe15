@@ -46,6 +46,7 @@ public class RepasRecyclerViewAdapter extends RecyclerView.Adapter<RepasRecycler
 
         holder.textViewRepasName.setText(menuArray.get(position).getNom());
         holder.textViewRepasPrix.setText(String.valueOf(menuArray.get(position).getPrix()));
+        holder.textViewRepasRate.setText(String.valueOf(menuArray.get(position).getRate()));
     }
 
     @Override
@@ -53,10 +54,12 @@ public class RepasRecyclerViewAdapter extends RecyclerView.Adapter<RepasRecycler
         return menuArray.size();
     }
     public static class MyViewHolder extends RecyclerView.ViewHolder{
-        TextView textViewRepasName, textViewRepasPrix;
+        TextView textViewRepasName, textViewRepasPrix, textViewRepasRate;
         public MyViewHolder(@NonNull View itemView,RecyclerViewInterface recyclerViewInterface) {
             super(itemView);
             textViewRepasName=itemView.findViewById(R.id.NomPlat);
+            textViewRepasRate=itemView.findViewById(R.id.RateMenu);
+           // textViewRepasNamneCuisinier=itemView.findViewById(R.id.NomCuisinierMenu);
             textViewRepasPrix = itemView.findViewById(R.id.PrixPlat);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

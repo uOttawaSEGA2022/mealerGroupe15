@@ -10,6 +10,8 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
 
+//import com.example.mealer.databinding.RecyclerviewRowBinding;
+
 public class MainActivityClient extends AppCompatActivity implements RecyclerViewInterface{
 
     Client client;
@@ -24,7 +26,8 @@ public class MainActivityClient extends AppCompatActivity implements RecyclerVie
         client = Client.getInstance();
         menu = MenuModel.getInstance();
         r = (RecyclerView) findViewById(R.id.allRepasDujour) ;
-        //menu.showAllMenuDuJour(r,this, this);
+        //menu.showAllMenuDuJour(r,this, this );
+
     }
 
     public void OnClickRecherche (View view){
@@ -35,6 +38,8 @@ public class MainActivityClient extends AppCompatActivity implements RecyclerVie
 
     public void OnMesCommandes (View view){
         Intent intent=new Intent(getApplicationContext(),ClientMesRepasActivity.class);
+        //Intent intent=new Intent(getApplicationContext(),ClientVotreCommandeActivity.class);
+
         startActivityForResult(intent,0);
 
     }

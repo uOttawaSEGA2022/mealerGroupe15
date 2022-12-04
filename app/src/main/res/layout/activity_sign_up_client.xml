@@ -10,6 +10,8 @@
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -64,9 +66,9 @@
                         android:id="@+id/FirstNameField"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="#30ffffff"
                         android:ems="10"
                         android:hint="Ex: Roxy"
-                        android:background="#30ffffff"
                         android:minHeight="48dp" />
 
 
@@ -94,11 +96,10 @@
                         android:id="@+id/LastNameField"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:minHeight="48dp"
-                        android:hint="Ex: Wendaabo"
                         android:background="#30ffffff"
-                         />
+                        android:ems="10"
+                        android:hint="Ex: Wendaabo"
+                        android:minHeight="48dp" />
 
                 </LinearLayout>
 
@@ -124,9 +125,9 @@
                         android:id="@+id/editTextTextPostalAddress"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="#30ffffff"
                         android:ems="10"
                         android:hint="Veuillez entrer votre adresse postale"
-                        android:background="#30ffffff"
                         android:inputType="textPostalAddress"
                         android:minHeight="48dp" />
                 </LinearLayout>
@@ -153,9 +154,9 @@
                         android:id="@+id/editTextTextEmailAddress"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="#30ffffff"
                         android:ems="10"
                         android:hint="Ex: personne@domaine.ca"
-                        android:background="#30ffffff"
                         android:inputType="textEmailAddress"
                         android:minHeight="48dp" />
                 </LinearLayout>
@@ -182,9 +183,9 @@
                         android:id="@+id/editTextTextPassword2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="#30ffffff"
                         android:ems="10"
                         android:hint="Créez votre mot de passe"
-                        android:background="#30ffffff"
                         android:inputType="textPassword"
                         android:minHeight="48dp" />
 
@@ -212,9 +213,9 @@
                         android:id="@+id/editTextNumber"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="#30ffffff"
                         android:ems="10"
                         android:hint="Entrer votre numéro de carte:"
-                        android:background="#30ffffff"
 
                         android:inputType="number"
                         android:minHeight="48dp"

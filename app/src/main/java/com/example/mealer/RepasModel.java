@@ -5,7 +5,8 @@ public class RepasModel {
     String repasId, nom, typeDeRepas, typeDeCuisine,
             ingredients, allergenes, description;
     boolean inRepasDuJour;
-    double prix;
+    double prix,rate;
+
 
 
 
@@ -23,11 +24,20 @@ public class RepasModel {
         this.prix = prix;
         this.description = description;
         this.inRepasDuJour = false;
+       // this.rate=rate;
 
     }
 
     protected void setRepasId(String key){
         repasId = key;
+    }
+
+    public double getRate() {
+        return rate;
+    }
+
+    public void setRate(double rate) {
+        this.rate = rate;
     }
 
     public String getRepasId(){

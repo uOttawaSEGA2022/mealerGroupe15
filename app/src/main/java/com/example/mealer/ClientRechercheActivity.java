@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+//import com.example.mealer.databinding.ActivityClientDescRepasBinding;
+
 import java.util.ArrayList;
 
 public class ClientRechercheActivity extends AppCompatActivity implements RecyclerViewInterface{
@@ -87,6 +89,8 @@ public class ClientRechercheActivity extends AppCompatActivity implements Recycl
 
     @Override
     public void OnItemClick(int position) {
+        Intent intent=new Intent(getApplicationContext(),ClientDescRepasActivity.class);
+        startActivity(intent);
 
     }
 }

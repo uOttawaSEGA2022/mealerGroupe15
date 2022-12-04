@@ -3,54 +3,27 @@ package com.example.mealer;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class ClientVotreCommandeActivity extends AppCompatActivity {
-    RatingBar myRatingStar;
-    TextView AfficheRate;
-    int MyRate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_client_votre_commande);
-        myRatingStar=findViewById(R.id.ratingBar);
-        AfficheRate=findViewById(R.id.Note);
-        myRatingStar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
-            @Override
-            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-                String mess=null;
-                MyRate=(int) rating;
-                switch (MyRate){
-
-                    case 1:
-                        mess="Sorry to hear that! :(";
-                        break;
-                    case 2:
-                        mess="We always accept suggetions";
-                        break;
-                    case 3:
-                        mess="Good enough!";
-                        break;
-                    case 4:
-                        mess="Great! Thank you!";
-                        break;
-                    case 5:
-                        mess="Awesome!";
-                        break;
 
 
-                }
-                AfficheRate.setText(Integer.toString(MyRate));
-                Toast.makeText(ClientVotreCommandeActivity.this,mess , Toast.LENGTH_SHORT).show();
 
-            }
-        });
     }
 
     public void OnBackToMesRepas(View view) {
@@ -67,4 +40,14 @@ public class ClientVotreCommandeActivity extends AppCompatActivity {
     }
 
 
+    public void onGotoDialogu(View view) {
+        RateDialogu rateDialogu=new RateDialogu(ClientVotreCommandeActivity.this);
+        rateDialogu.getWindow().setBackgroundDrawable(new ColorDrawable(getResources().getColor(android.R.color.transparent)));
+        rateDialogu.setCancelable(true);
+        rateDialogu.show();
+
+        //Intent intent =new Intent(getApplicationContext(),RateDialogu.class);
+        //startActivityForResult(intent, 0);
+
+    }
 }
