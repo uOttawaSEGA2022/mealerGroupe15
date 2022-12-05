@@ -1,5 +1,7 @@
 package com.example.mealer;
 
+//import static com.example.mealer.ClientRechercheActivity.repas;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,33 +13,39 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ClientDescRepasActivity extends AppCompatActivity {
     ImageView plus,minus;
-    TextView Quantites;
+    TextView Quantites,nooom;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_client_desc_repas);
         Quantites=findViewById(R.id.Quantite);
-        /*plus=findViewById(R.id.btn_plus);
-        plus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int nbr=Integer.parseInt((String) Quantites.getText());
-                Quantites.setText(nbr+1);
 
-            }
-        });
-        minus=findViewById(R.id.btn_minus);
-        minus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int nbr=Integer.parseInt((String) Quantites.getText());
-                Quantites.setText(nbr-1);
+        TextView typeeRepas = findViewById(R.id.textView57);
+        TextView typeCuisinee = findViewById(R.id.textView59);
+        TextView ingredientListe = findViewById(R.id.textView61);
+        TextView allergenee = findViewById(R.id.textView63);
+        TextView foodPricee = findViewById(R.id.textView65);
+        TextView foo0dDescription = findViewById(R.id.textView67);
 
-            }
-        });*/
+        nooom=findViewById(R.id.textView55);
+        Bundle extra=getIntent().getExtras();
+        String n= extra.getString("nomRepas");
+        nooom.setText(n);
+        typeeRepas.setText(extra.getString("TypeRepas"));
+        typeCuisinee.setText(extra.getString("TypeCuisi"));
+        ingredientListe.setText(extra.getString("Ingredients"));
+        allergenee.setText(extra.getString("Allergene"));
+        foodPricee.setText(""+(Double) extra.getDouble("Prix"));
+        foo0dDescription.setText(extra.getString("Description"));
+
+
+
+
 
 
     }
+
     public void OnBackToRepasDuJourClient(View view){
         Intent intent =new Intent(getApplicationContext(),ClientRechercheActivity.class);
         startActivityForResult(intent,0);

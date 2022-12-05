@@ -37,8 +37,8 @@ public class MainActivityClient extends AppCompatActivity implements RecyclerVie
     }
 
     public void OnMesCommandes (View view){
-        Intent intent=new Intent(getApplicationContext(),ClientMesRepasActivity.class);
-        //Intent intent=new Intent(getApplicationContext(),ClientVotreCommandeActivity.class);
+       Intent intent=new Intent(getApplicationContext(),ClientMesRepasActivity.class);
+       // Intent intent=new Intent(getApplicationContext(),ClientVotreCommandeActivity.class);
 
         startActivityForResult(intent,0);
 

@@ -17,6 +17,7 @@ import java.util.ArrayList;
 public class ClientRechercheActivity extends AppCompatActivity implements RecyclerViewInterface{
 
     MenuModel menu;
+    static RepasModel repas;
     RepasRecyclerViewAdapter adapter;
 
     @SuppressLint("MissingInflatedId")
@@ -25,6 +26,7 @@ public class ClientRechercheActivity extends AppCompatActivity implements Recycl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_client_recherche);
         menu = MenuModel.getInstance();
+
         adapter=new RepasRecyclerViewAdapter(this,menu.allMenuDuJourArray,this);
         menu.showAllMenuDuJour(adapter, (RecyclerView) findViewById(R.id.rechercheRecylclerView), this, this);
         // getting search view of our item.
@@ -87,10 +89,31 @@ public class ClientRechercheActivity extends AppCompatActivity implements Recycl
         }
     }
 
+    @SuppressLint("SuspiciousIndentation")
     @Override
     public void OnItemClick(int position) {
-        Intent intent=new Intent(getApplicationContext(),ClientDescRepasActivity.class);
-        startActivity(intent);
+        //repas = menu.menuDuJourArray.get(position);
+        //RepasMenuActivity.position = position;
+       // menu.allMenuDuJourArray.get(position).getNom();
+       //Intent intent=new Intent(getApplicationContext(),ClientDescRepasActivity.class);
+
+        Intent intent=new Intent(ClientRechercheActivity.this,ClientDescRepasActivity.class);
+        //for (RepasModel item : menu.allMenuDuJourArray)
+
+       intent.putExtra("nomRepas",menu.allMenuDuJourArray.get(position).getNom());
+        intent.putExtra("TypeRepas",menu.allMenuDuJourArray.get(position).getTypeDeRepas());
+        intent.putExtra("TypeCuisi",menu.allMenuDuJourArray.get(position).getTypeDeCuisine());
+        intent.putExtra("Ingredients",menu.allMenuDuJourArray.get(position).getIngredients());
+        intent.putExtra("Allergene",menu.allMenuDuJourArray.get(position).getAllergenes());
+        //intent.putExtra("Prix",(int)menu.allMenuDuJourArray.get(position).getPrix());
+        intent.putExtra("Prix",menu.allMenuDuJourArray.get(position).getPrix());
+        intent.putExtra("Description",menu.allMenuDuJourArray.get(position).getDescription());
+
+
+
+
+
+        startActivityForResult(intent,0);
 
     }
 }
