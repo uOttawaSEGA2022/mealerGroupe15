@@ -57,6 +57,7 @@
             android:layout_height="wrap_content"
             android:onClick="onBackToMainClient2"
             android:text="Back"
+            android:background="@color/purple_200"
             android:layout_marginLeft="20dp"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

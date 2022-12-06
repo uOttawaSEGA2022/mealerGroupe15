@@ -191,7 +191,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="onClickBack"
-                android:text="BACK" />
+                android:text="BACK"
+                android:background="@color/purple_200"/>
 
             <Button
                 android:id="@+id/saveButton"
@@ -199,7 +200,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="onClickSave"
-                android:text="SAVE" />
+                android:text="SAVE"
+                android:background="@color/purple_200"/>
 
             <Button
                 android:id="@+id/deleteButton"
@@ -207,7 +209,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="onClickDelete"
-                android:text="DELETE" />
+                android:text="DELETE"
+                android:background="@color/purple_200"/>
         </LinearLayout>
 
     </LinearLayout>

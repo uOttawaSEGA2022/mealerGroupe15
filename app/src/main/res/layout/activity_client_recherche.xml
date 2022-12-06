@@ -10,7 +10,8 @@
     <Space
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        tools:ignore="MissingConstraints" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,19 +24,14 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
-            <Button
+            <ImageButton
                 android:id="@+id/button4"
                 android:layout_width="63dp"
                 android:layout_height="70dp"
                 android:layout_marginLeft="0dp"
                 android:layout_marginBottom="20dp"
                 android:onClick="OnBack"
-                android:text="back"
-                android:textSize="18sp"
-                app:icon="@drawable/leftarrow"
-                app:iconGravity="textStart"
-                app:iconPadding="0dp"
-                app:iconSize="50dp" />
+                android:background="@drawable/leftarrow"/>
 
             <SearchView
                 android:id="@+id/searchView"

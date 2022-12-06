@@ -185,6 +185,7 @@
                 android:minHeight="50dip"
                 android:onClick="OnDeconnecter"
                 android:text="Se déconnecter"
+                android:background="@color/purple_200"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <LinearLayout
@@ -200,6 +201,7 @@
                     android:layout_weight="1"
                     android:minHeight="50dip"
                     android:onClick="OnBack"
+                    android:background="@color/purple_200"
                     android:text="BACK" />
 
                 <Space
@@ -214,6 +216,7 @@
                     android:layout_weight="1"
                     android:minHeight="50dip"
                     android:onClick="OnSave"
+                    android:background="@color/purple_200"
                     android:text="SAVE" />
 
             </LinearLayout>

@@ -203,6 +203,7 @@
                 android:layout_weight="1"
                 android:onClick="onBack"
                 android:text="BACK"
+                android:background="@color/purple_200"
                 android:textSize="20sp" />
 
             <Space
@@ -217,6 +218,7 @@
                 android:layout_weight="1"
                 android:onClick="onDelete"
                 android:text="DELETE"
+                android:background="@color/purple_200"
                 android:textSize="19sp" />
         </LinearLayout>
 

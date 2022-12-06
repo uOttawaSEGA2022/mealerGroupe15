@@ -87,6 +87,7 @@
             android:layout_height="wrap_content"
             android:text="Soumettre une plainte"
             android:onClick="onSoumettrePlainte"
+            android:background="@color/purple_200"
             app:cornerRadius="40dp"/>
 
         <Space
@@ -98,6 +99,7 @@
             android:layout_width="123dp"
             android:layout_height="wrap_content"
             android:text="Back"
+            android:background="@color/purple_200"
             android:onClick="OnBackToMesRepas"
             app:cornerRadius="40dp" />
 

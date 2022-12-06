@@ -41,7 +41,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="onClickBack"
-                android:text="BACK" />
+                android:text="BACK"
+                android:background="@color/purple_200"/>
 
             <Space
                 android:layout_width="wrap_content"
@@ -54,6 +55,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="onClickAdd"
+                android:background="@color/purple_200"
                 android:text="ADD" />
         </LinearLayout>
 

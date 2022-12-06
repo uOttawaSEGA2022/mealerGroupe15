@@ -141,6 +141,7 @@ tools:context=".addRepas">
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="onClickBack"
+                android:background="@color/purple_200"
                 android:text="BACK" />
 
             <Space
@@ -154,6 +155,7 @@ tools:context=".addRepas">
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="onClickAdd"
+                android:background="@color/purple_200"
                 android:text="ADD" />
         </LinearLayout>
     </LinearLayout>

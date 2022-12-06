@@ -70,6 +70,13 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".ClientVotreCommandeActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".ClientPlainteActivity"
             android:exported="false">
             <meta-data

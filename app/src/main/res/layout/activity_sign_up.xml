@@ -247,7 +247,8 @@
                             android:layout_weight="1"
                             android:insetLeft="10dp"
                             android:onClick="OnClickReturnEntantque"
-                            android:text="Retour" />
+                            android:text="Retour"
+                            android:background="@color/purple_200"/>
 
                         <Space
                             android:layout_width="50dp"
@@ -260,6 +261,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:insetRight="10dp"
+                            android:background="@color/purple_200"
                             android:onClick="OnClickinscrire"
                             android:text="S'inscrire" />
 

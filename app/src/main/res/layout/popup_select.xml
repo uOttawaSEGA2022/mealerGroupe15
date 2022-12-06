@@ -45,14 +45,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="onBack"
-                android:text="Back" />
+                android:text="Back"
+                android:background="@color/purple_200"/>
 
             <Button
                 android:id="@+id/addToMenuDuJour"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="onAdd"
-                android:text="Add Selected" />
+                android:text="Add Selected"
+                android:background="@color/purple_200"/>
         </LinearLayout>
 
     </LinearLayout>

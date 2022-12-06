@@ -38,7 +38,7 @@
             android:id="@+id/buttonRetPlainte"
             android:layout_width="96dp"
             android:layout_height="49dp"
-            android:background="@drawable/backgroundk"
+            android:background=""
             android:foreground="@drawable/leftarrow"
             android:onClick="OnReturnToAdmin"
             android:src="@drawable/leftarrow"

@@ -98,6 +98,7 @@
                 android:layout_width="20dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@color/purple_200"
                 android:text="Retour"
                 android:onClick="OnBackToVotreCommande"/>
 
@@ -107,6 +108,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="OnClickEnvoyerPlainte"
+                android:background="@color/purple_200"
                 android:text="Envoyer la plainte" />
         </LinearLayout>
     </LinearLayout>
