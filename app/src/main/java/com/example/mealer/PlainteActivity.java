@@ -48,8 +48,10 @@ public class PlainteActivity extends AppCompatActivity implements RecyclerViewIn
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot dataSnapshot:snapshot.getChildren( )){
-                    PlainteModel user=dataSnapshot.getValue(PlainteModel.class);
-                    modeeldeplainte.add(user);
+                    PlainteModel p=dataSnapshot.getValue(PlainteModel.class);
+                    if(!modeeldeplainte.contains(p)){
+                        modeeldeplainte.add(p);
+                    }
 
                 }
                 adapter.notifyDataSetChanged();
@@ -61,22 +63,12 @@ public class PlainteActivity extends AppCompatActivity implements RecyclerViewIn
             }
         });
     }
-   /*private void setupModeeldeplainte(){
-        String [] ClientNamess= getResources().getStringArray(R.array.Full_listplainte_nomClient);
-        String [] CuisiniersNames= getResources().getStringArray(R.array.Full_listplainte_nomCuisinier);
-        String [] Descrip= getResources().getStringArray(R.array.Full_listplainte_Desc);
-        for (int i=0; i<ClientNamess.length;i++){
-            modeeldeplainte.add(new PlainteModel(ClientNamess[i],CuisiniersNames[i],Descrip[i]));
-
-
-        }
-    }*/
 
     @Override
     public void OnItemClick(int position) {
-        dialogue.setPlainteid(modeeldeplainte.get(position).getId());
-        Toast.makeText(getApplicationContext(), "PlaintId is "+ modeeldeplainte.get(position).getId(), Toast.LENGTH_LONG).show();
         Intent intent=new Intent(PlainteActivity.this,dialogue.class);
+        intent.putExtra("idCuisinier", modeeldeplainte.get(position).getIdCuisinier());
+        intent.putExtra("id", modeeldeplainte.get(position).getId());
         startActivity(intent);
 
     }

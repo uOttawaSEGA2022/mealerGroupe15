@@ -12,53 +12,68 @@ public class PlainteModel {
 
         private String nameOfClient;
         private String nameOfCuisinier;
-        private String Description;
-        private String id;
+        private String titre, description;
+        private String id, idCuisinier;
 
-        public PlainteModel(String nameOfClient, String nameOfCuisinier,String Description, String id){
-            this.nameOfClient=nameOfClient;
-            this.nameOfCuisinier=nameOfCuisinier;
-            this.Description=Description;
-            this.id = id;
-        }
-        public PlainteModel(){}
+    public PlainteModel(String nameOfClient, String nameOfCuisinier, String titre, String description, String id, String idCuisinier) {
+        this.nameOfClient = nameOfClient;
+        this.nameOfCuisinier = nameOfCuisinier;
+        this.titre = titre;
+        this.description = description;
+        this.id = id;
+        this.idCuisinier = idCuisinier;
+    }
 
+    public PlainteModel(){}
 
+    public String getNameOfClient() {
+        return nameOfClient;
+    }
 
+    public void setNameOfClient(String nameOfClient) {
+        this.nameOfClient = nameOfClient;
+    }
 
+    public String getNameOfCuisinier() {
+        return nameOfCuisinier;
+    }
 
-        public String getNameOfClient() {
-            return nameOfClient;
-        }
+    public void setNameOfCuisinier(String nameOfCuisinier) {
+        this.nameOfCuisinier = nameOfCuisinier;
+    }
 
-        public String getNameOfCuisinier() {
-            return nameOfCuisinier;
-        }
+    public String getTitre() {
+        return titre;
+    }
 
-        public String getDescription() {
-            return Description;
-        }
+    public void setTitre(String titre) {
+        this.titre = titre;
+    }
 
-        public String getId() {
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getId() {
         return id;
     }
 
-
-        public void setNameOfClient(String NameClientt) {
-            nameOfClient= NameClientt;
-        }
-
-        public void setNameOfCuisinier(String nameOfCuisinierr) {
-            nameOfCuisinier = nameOfCuisinierr;
-        }
-
-        public void setDescription(String description) {
-            Description = description;
-        }
-        public void setId(String Id) {
-            id = Id;
-        }
+    public void setId(String id) {
+        this.id = id;
     }
+
+    public String getIdCuisinier() {
+        return idCuisinier;
+    }
+
+    public void setIdCuisinier(String idCuisinier) {
+        this.idCuisinier = idCuisinier;
+    }
+}
 
 
 

@@ -23,30 +23,41 @@ import com.google.firebase.database.ValueEventListener;
 
 
 public class ClientPlainteActivity extends AppCompatActivity {
-    private static FirebaseDatabase database = FirebaseDatabase.getInstance();
-    private static DatabaseReference myRef = database.getReference("Plainte");
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference("Plainte");
+
+    int pos;
+    MenuModel commandes;
+    commandeModel c;
+    Client client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_client_plainte);
+        Bundle intentExtras = getIntent().getExtras();
+        pos = intentExtras.getInt("position");
+        commandes = MenuModel.getInstance();
+        c = commandes.commandeArray.get(pos);
+        client = Client.getInstance();
     }
 
     public void OnClickEnvoyerPlainte(View view) {
 
-        EditText description = findViewById(R.id.editTextTextPersonName3);
-        String description1=description.getText().toString();
-        EditText titre = findViewById(R.id.editTextTextPersonName2);
-        String titre1=titre.getText().toString();
-        myRef = database.getReference("Plainte/"+ titre1+"/description");
-        myRef.setValue(description1);
+        EditText descriptionTextView = findViewById(R.id.editTextTextPersonName3);
+        String description=descriptionTextView.getText().toString();
+        EditText titreTextView = findViewById(R.id.editTextTextPersonName2);
+        String titre = titreTextView.getText().toString();
+        String key=c.getIdDeLaCommande();
 
-        myRef = database.getReference("Plainte/"+ titre1+"/id");
-        myRef.setValue("xuw");
-        myRef = database.getReference("Plainte/"+ titre1+"/nameOfClient");
-        myRef.setValue("test");
-        myRef = database.getReference("Plainte/"+ titre1+"/nameOfCuisinier");
-        myRef.setValue("test");
+        myRef = database.getReference("Plainte/"+ key);
+        myRef.child("titre").setValue(titre);
+        myRef.child("description").setValue(description);
+        myRef.child("id").setValue(c.getIdDeLaCommande());
+        myRef.child("nameOfClient").setValue(client.getFirstName());
+        myRef.child("nameOfCuisinier").setValue(c.getNomDuCuisinier());
+        myRef.child("idDuCuisinier").setValue(c.getIdDuCuisinier());
+
         Intent intent = new Intent(getApplicationContext(), ClientMesRepasActivity.class);
         startActivityForResult(intent, 0);
     }

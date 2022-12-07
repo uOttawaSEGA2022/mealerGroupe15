@@ -144,5 +144,6 @@ public class Client extends User{
     public String getPassword(){return password;}
     public String getAdress(){return address;}
     public String getCreditCardInfo(){return creditCardInfo;}
+    public String getId(){return id;}
 
 }

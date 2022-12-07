@@ -79,6 +79,12 @@ public class Admin implements Account{
 
     @Override
     public void disconnect() {
+        id = 0;
+        firstNames = new String[1];
+        lastNames = new String[1];
+        usernames = new String[1];
+        connected = false;
+        found = false;
         connected = false;
         // Disconnect the user
     }
@@ -88,11 +94,10 @@ public class Admin implements Account{
         return  connected;
     }
 
-    private void suspend(Cuisinier c){
-
-    }
-
-    private void fetchComplaints(){
+    private void suspend(String cuisinnierId, String suspensionTime){
+        DatabaseReference suspensionRef = FirebaseDatabase.getInstance().getReference("Cuisinier/" + cuisinnierId);
+        suspensionRef.child("suspended").setValue(true);
+        suspensionRef.child("suspensionTime").setValue(suspensionTime);
 
     }
 

@@ -20,13 +20,15 @@ public class ClientVotreCommandeActivity extends AppCompatActivity {
 
     MenuModel commandes;
     commandeModel c;
+    int pos;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_client_votre_commande);
         Bundle intentExtras = getIntent().getExtras();
+        pos = intentExtras.getInt("position");
         commandes = MenuModel.getInstance();
-        c = commandes.commandeArray.get(intentExtras.getInt("position"));
+        c = commandes.commandeArray.get(pos);
 
         TextView status = findViewById(R.id.StatutCommande);
         status.setText(c.getStatutDeLaCommande());
@@ -42,6 +44,7 @@ public class ClientVotreCommandeActivity extends AppCompatActivity {
 
     public void onSoumettrePlainte(View view) {
         Intent intent =new Intent(getApplicationContext(),ClientPlainteActivity.class);
+        intent.putExtra("position", pos);
         startActivityForResult(intent, 0);
 
 

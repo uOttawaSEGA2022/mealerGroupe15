@@ -27,10 +27,9 @@ import java.util.Calendar;
 public class dialogue extends AppCompatActivity {
 
     private DatePickerDialog datePickerDialog;
-    private Button dateButton;
-    private static String plainteid;
-    private boolean found;
-    private String nameOfCuisinier;
+    String id;
+    String idCuisinier;
+
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -39,8 +38,10 @@ public class dialogue extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.popup_suspension);
         initDatePicker();
-        found = false;
-        nameOfCuisinier = "";
+        Bundle b = getIntent().getExtras();
+        id = b.getString("id");
+        idCuisinier = b.getString("idCuisinier");
+
 
     }
 
@@ -63,7 +64,6 @@ public class dialogue extends AppCompatActivity {
             {
                 month = month + 1;
                 String date = makeDateString(day, month, year);
-                dateButton.setText(date);
             }
         };
 
@@ -117,42 +117,16 @@ public class dialogue extends AppCompatActivity {
 
     public void openDatePicker(View view)
     {
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Cuisinier/");
         datePickerDialog.show();
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             datePickerDialog.setOnDateSetListener(new DatePickerDialog.OnDateSetListener() {
                 @Override
                 public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                    DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Plainte/"+plainteid);
-                    ref.addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            String nameOfCuisinier = "";
-                            for(DataSnapshot snap : snapshot.getChildren()){
-                                if(snap.getKey().toString().equals("nameOfCuisinier")){
-                                    if(!snap.getValue().toString().isEmpty()){
-                                        nameOfCuisinier = snap.getValue().toString();
-                                    }
-
-                                }
-                            }
-                            if(!plainteid.isEmpty() && !nameOfCuisinier.isEmpty()){
-                                Toast.makeText(getApplicationContext(), "name is " + nameOfCuisinier, Toast.LENGTH_SHORT).show();
-                                FirebaseDatabase.getInstance().getReference("Cuisinier/"+nameOfCuisinier+"/suspended").setValue(true);
-                                FirebaseDatabase.getInstance().getReference("Cuisinier/"+nameOfCuisinier+"/suspensionTime").setValue(makeDateString(day, month, year));
-                                ref.removeValue();
-                                plainteid = "";
-                                nameOfCuisinier = "";
-                                onListe(view);
-                            }
-                        }
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-                        }
-                    });
+                    DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Cuisinier/"+idCuisinier);
+                    ref.child("suspended").setValue(true);
+                    ref.child("suspensionTime").setValue(makeDateString(day, month, year));
+                    onReject(view);
                 }
             });
-        }
 
     }
     public void onListe(View view){
@@ -161,48 +135,18 @@ public class dialogue extends AppCompatActivity {
     }
 
     public void onReject(View view){
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Plainte/" + plainteid);
-        if(!plainteid.isEmpty()){
-            ref.removeValue();
-        }
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Plainte/" + id);
+        ref.removeValue();
         onListe(view);
 
     }
 
     public void onDefinitiveSusupension(View view){
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Plainte/"+plainteid);
-        ref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String nameOfCuisinier = "";
-                for(DataSnapshot snap : snapshot.getChildren()){
-                    if(snap.getKey().toString().equals("nameOfCuisinier")){
-                        if(!snap.getValue().toString().isEmpty()){
-                            nameOfCuisinier = snap.getValue().toString();
-                        }
-
-                    }
-                }
-                if(!plainteid.isEmpty() && !nameOfCuisinier.isEmpty()){
-                    Toast.makeText(getApplicationContext(), "name is " + nameOfCuisinier, Toast.LENGTH_SHORT).show();
-                    FirebaseDatabase.getInstance().getReference("Cuisinier/"+nameOfCuisinier+"/suspended").setValue(true);
-                    FirebaseDatabase.getInstance().getReference("Cuisinier/"+nameOfCuisinier+"/suspensionTime").setValue("-1");
-                    ref.removeValue();
-                    plainteid = "";
-                    nameOfCuisinier = "";
-                    onListe(view);
-                }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-            }
-        });
-
-
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Cuisinier/"+idCuisinier);
+        ref.child("suspended").setValue(true);
+        ref.child("suspensionTime").setValue("-1");
+        onReject(view);
     }
 
-    public static void setPlainteid(String id){
-        plainteid = id;
-    }
 
 }

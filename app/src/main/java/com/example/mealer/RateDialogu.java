@@ -62,6 +62,9 @@ public class RateDialogu extends Dialog {
                 myRef.setValue(c.idDuRepas);
                 myRef = database.getReference("Rate/"+key+"/RateValue");
                 myRef.setValue((int) myRatingStar.getRating());
+                c.myRate = (int) myRatingStar.getRating();
+                myRef = database.getReference("Client/" + client.getId()+"/Commande/" + c.getIdDeLaCommande());
+                myRef.child("myRate").setValue((int) myRatingStar.getRating());
                 myRef = database.getReference("Rate/"+key+"/nomCuisinier");
                 myRef.setValue(c.getNomDuCuisinier());
                 dismiss();

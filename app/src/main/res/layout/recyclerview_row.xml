@@ -36,18 +36,17 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/plainteid"
-                        android:text="Plainte Id: "
-                        android:textColor="@color/white"
-                        android:textSize="20dp"
-                        android:textStyle="bold"
-
+                        android:id="@+id/plaintetitre"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                         />
+                        android:text="Titre"
+                        android:textColor="@color/white"
+
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/id"
+                        android:id="@+id/titre"
                         android:text="TextView"
                         android:textColor="@color/white"
                         android:textSize="20dp"

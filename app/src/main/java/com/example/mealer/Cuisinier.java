@@ -124,7 +124,7 @@ public class Cuisinier extends User{
     public void connect(String email, String pswd, DataSnapshot snapshot, Context applicationContext) {
         connected = false;
         found = false;
-        for(DataSnapshot children : snapshot.getChildren()){
+        DataSnapshot children = snapshot.child("Cuisinier");
             if(!connected){
                 Log.println(Log.INFO, "TEST", " KEYSTONE : " + children.getKey());
                     if(children.child("email").getValue().toString().equals(email)){
@@ -144,7 +144,6 @@ public class Cuisinier extends User{
                     }
                     Log.println(Log.DEBUG, "TEST", " Valeur de connected :" + connected.toString());
             }
-        }
 
         Log.println(Log.INFO, "TEST", "addresse is : " + adresse + " descrition : "+ description);
 

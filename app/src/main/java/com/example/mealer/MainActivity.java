@@ -28,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
     public enum AccountType{ADMIN, CUISINIER, CLIENT, DISCONNECTED};
     ConnectionStates state = ConnectionStates.WAITING;
     AccountType accountType = AccountType.DISCONNECTED;
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference();
+    FirebaseDatabase database;
+    DatabaseReference myRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         TextView connectionState = findViewById(R.id.stateAfterConnection);
         connectionState.setText("");
+        database = FirebaseDatabase.getInstance();
+        myRef = database.getReference();
 
     }
     public void OnLogin(View view) {
