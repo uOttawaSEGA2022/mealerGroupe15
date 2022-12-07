@@ -31,7 +31,27 @@ public class ClientVotreCommandeActivity extends AppCompatActivity {
         c = commandes.commandeArray.get(pos);
 
         TextView status = findViewById(R.id.StatutCommande);
-        status.setText(c.getStatutDeLaCommande());
+
+            String a="";
+                switch (c.getStatutDeLaCommande()) {
+            case (-1):
+                a= "Désolé votre commande a été rejeté.";
+                status.setText(a);
+            case(0):
+                a="En attente d'une réponse du cuisinier";
+                status.setText(a);
+            case(1):
+                a="le cuisinier est entrain de préparer votre commande";
+                status.setText(a);
+            case(2):
+                a="Votre commande est prête";
+                status.setText(a);
+            default:
+                a="le cuisinier est entrain de préparer votre commande";
+                status.setText(a);
+        }
+
+
 
 
     }

@@ -48,7 +48,7 @@ public class ClientPlainteActivity extends AppCompatActivity {
         String description=descriptionTextView.getText().toString();
         EditText titreTextView = findViewById(R.id.editTextTextPersonName2);
         String titre = titreTextView.getText().toString();
-        String key=c.getIdDeLaCommande();
+        String key=c.getIdDeLaCommande().toString();
 
         myRef = database.getReference("Plainte/"+ key);
         myRef.child("titre").setValue(titre);

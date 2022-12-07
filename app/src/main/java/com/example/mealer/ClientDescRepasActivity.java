@@ -22,12 +22,14 @@ public class ClientDescRepasActivity extends AppCompatActivity {
     ImageView plus,minus;
     TextView Quantites,nooom;
     String ParentRepas="";
+    Client c;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_client_desc_repas);
         Quantites=findViewById(R.id.Quantite);
+        c = Client.getInstance();
 
         TextView typeeRepas = findViewById(R.id.textView57);
         TextView typeCuisinee = findViewById(R.id.textView59);
@@ -85,6 +87,30 @@ public class ClientDescRepasActivity extends AppCompatActivity {
 
     }
     public void onCommander(View view){
+        Bundle extra=getIntent().getExtras();
+        String idCUISi= extra.getString("IDduCuisinier");
+        DatabaseReference myRef= FirebaseDatabase.getInstance().getReference("Client/" + c.id + "/Commande/");
+        //String key=myRef.ge
+        String key  = myRef.push().getKey();
+
+        // DatabaseReference myRef= FirebaseDatabase.getInstance().getReference("Client/"+Client.getInstance().id+"/Commande");
+        //myRef.child("Commande").child("commande1");
+        //String key=myRef.push().getKey();
+
+
+
+
+         String IdREPAS=extra.getString("RepasID");
+         String nomCui=extra.getString("nomCuisinier");
+        String nomREPAS= extra.getString("nomRepas");
+        double lePrix=(Double) extra.getDouble("Prix");
+
+
+
+
+        commandeModel Mycommand=new commandeModel( IdREPAS,  idCUISi,  nomCui,  nomREPAS,  lePrix,  0,  0,
+         0);
+        myRef.child(key).setValue(Mycommand);
         Intent intent =new Intent(getApplicationContext(),ClientEnvoieCommandeActivity.class);
         startActivityForResult(intent,0);
     }
