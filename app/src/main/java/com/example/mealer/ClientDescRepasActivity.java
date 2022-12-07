@@ -9,11 +9,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.VideoView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class ClientDescRepasActivity extends AppCompatActivity {
     ImageView plus,minus;
     TextView Quantites,nooom;
+    String ParentRepas="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +45,15 @@ public class ClientDescRepasActivity extends AppCompatActivity {
         ingredientListe.setText(extra.getString("Ingredients"));
         allergenee.setText(extra.getString("Allergene"));
         foodPricee.setText(""+(Double) extra.getDouble("Prix"));
+        String idCUI= extra.getString("IDduCuisinier");
+
+
         foo0dDescription.setText(extra.getString("Description"));
+
+
+
+
+
 
 
 

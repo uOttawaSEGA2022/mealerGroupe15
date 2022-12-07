@@ -107,7 +107,11 @@ public class ClientRechercheActivity extends AppCompatActivity implements Recycl
         intent.putExtra("Allergene",menu.allMenuDuJourArray.get(position).getAllergenes());
         //intent.putExtra("Prix",(int)menu.allMenuDuJourArray.get(position).getPrix());
         intent.putExtra("Prix",menu.allMenuDuJourArray.get(position).getPrix());
+        intent.putExtra("RepasID",menu.allMenuDuJourArray.get(position).getRepasId());
         intent.putExtra("Description",menu.allMenuDuJourArray.get(position).getDescription());
+        intent.putExtra("IDduCuisinier",menu.allMenuDuJourArray.get(position).getIdDuCuisinier());
+
+
 
 
 

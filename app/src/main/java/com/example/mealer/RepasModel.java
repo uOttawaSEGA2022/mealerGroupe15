@@ -1,9 +1,17 @@
 package com.example.mealer;
 
+import androidx.annotation.NonNull;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 public class RepasModel {
 
     String repasId, nom, typeDeRepas, typeDeCuisine,
-            ingredients, allergenes, description;
+            ingredients, allergenes,IdDuCuisinier, description, nomDuCuisinier;
     boolean inRepasDuJour;
     double prix,rate;
 
@@ -15,18 +23,31 @@ public class RepasModel {
     }
 
     public RepasModel(String nom, String typeDeRepas, String typeDeCuisine, String ingredients,
-                      String allergenes, Double prix, String description){
+                      String allergenes, Double prix, String description,String IdDuCuisinier, String nomDuCuisinier){
         this.nom = nom;
+        this.IdDuCuisinier=IdDuCuisinier;
         this.typeDeRepas = typeDeRepas;
         this.typeDeCuisine = typeDeCuisine;
         this.ingredients = ingredients;
         this.allergenes = allergenes;
         this.prix = prix;
         this.description = description;
+        this.nomDuCuisinier=nomDuCuisinier;
+
         this.inRepasDuJour = false;
        // this.rate=rate;
 
     }
+    public String getNameCuisinier(){
+
+       return nomDuCuisinier;
+    }
+
+    public String getIdDuCuisinier() {
+        return IdDuCuisinier;
+    }
+
+
 
     protected void setRepasId(String key){
         repasId = key;

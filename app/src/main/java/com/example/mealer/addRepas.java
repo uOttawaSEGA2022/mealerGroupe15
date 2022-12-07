@@ -9,7 +9,7 @@ import android.widget.EditText;
 
 public class addRepas extends AppCompatActivity {
 
-    String idCuisinier = MainActivity.cuisinier.id;
+    String idCuisinier = Cuisinier.getInstance().id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +42,7 @@ public class addRepas extends AppCompatActivity {
         EditText description = findViewById(R.id.description);
         String foodDescription = description.getText().toString();
 
-        RepasModel repas = new RepasModel(name,typeRepas,typeCuisine,ingredient,allergene,price,foodDescription);
+        RepasModel repas = new RepasModel(name,typeRepas,typeCuisine,ingredient,allergene,price,foodDescription,idCuisinier,foodDescription);
         menu.addToMenu(idCuisinier, repas);
 
         Intent intent = new Intent(getApplicationContext(), MainActivityCuisinier.class);
