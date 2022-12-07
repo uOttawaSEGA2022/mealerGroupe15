@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
                         }else{
                             connectionState.setText("Veuillez verifier votre mot de passe ou votre adresse email");
                             connectionState.setTextColor(Color.parseColor("#FF0000"));
-                            Log.println(Log.DEBUG, "INFO", "PROBLEM: VOUS AVEZ RENTREZ UN MAUVAIS MOT DE PASSE");
+                            Log.println(Log.DEBUG, "INFO", "PROBLEM: VOUS AVEZ ENTRÉ UN MAUVAIS MOT DE PASSE");
                             state = ConnectionStates.FAILED;
                         }
                     }
