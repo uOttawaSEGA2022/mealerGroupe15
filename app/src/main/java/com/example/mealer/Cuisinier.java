@@ -26,7 +26,6 @@ public class Cuisinier extends User{
     String description;
     //String cheque;
     Boolean connected;
-    Boolean found;
     boolean suspended;
     String suspensionTime;
     String id;
@@ -37,7 +36,6 @@ public class Cuisinier extends User{
 
 
     private Cuisinier(){
-        found = false;
         connected =  false;
         suspensionTime = "0";
         suspended = false;
@@ -123,31 +121,29 @@ public class Cuisinier extends User{
     @Override
     public void connect(String email, String pswd, DataSnapshot snapshot, Context applicationContext) {
         connected = false;
-        found = false;
-        DataSnapshot children = snapshot.child("Cuisinier");
-            if(!connected){
+        for(DataSnapshot children : snapshot.getChildren()) {
+            if (!connected) {
                 Log.println(Log.INFO, "TEST", " KEYSTONE : " + children.getKey());
-                    if(children.child("email").getValue().toString().equals(email)){
-                        found = true;
-                        if(children.child("password").getValue().toString().equals(pswd)) {
-                            connected = true;
-                            this.email = children.child("email").getValue().toString();
-                            this.password = children.child("password").getValue().toString();
-                            firstName = children.child("firstName").getValue().toString();
-                            lastName = children.child("lastName").getValue().toString();
-                            adresse = children.child("adresse").getValue().toString();
-                            description = children.child("description").getValue().toString();
-                            suspended = (boolean) children.child("suspended").getValue();
-                            suspensionTime = children.child("suspensionTime").getValue().toString();
-                            id = children.getKey().toString();
-                        }
+                if (children.getValue() != null && children.child("email").getValue().toString().equals(email)) {
+                    if (children.child("password").getValue().toString().equals(pswd)) {
+                        connected = true;
+                        this.email = children.child("email").getValue().toString();
+                        this.password = children.child("password").getValue().toString();
+                        firstName = children.child("firstName").getValue().toString();
+                        lastName = children.child("lastName").getValue().toString();
+                        adresse = children.child("adresse").getValue().toString();
+                        description = children.child("description").getValue().toString();
+                        suspended = (boolean) children.child("suspended").getValue();
+                        suspensionTime = children.child("suspensionTime").getValue().toString();
+                        id = children.getKey().toString();
                     }
-                    Log.println(Log.DEBUG, "TEST", " Valeur de connected :" + connected.toString());
+                }
+                Log.println(Log.DEBUG, "TEST", " Valeur de connected :" + connected.toString());
+            } else {
+                Log.println(Log.INFO, "TEST", "addresse is : " + adresse + " descrition : " + description);
+                Toast.makeText(applicationContext, "BRAVO ! L'utilisateur : " + firstName + " s'est connecté", Toast.LENGTH_SHORT).show();
             }
-
-        Log.println(Log.INFO, "TEST", "addresse is : " + adresse + " descrition : "+ description);
-
-        Toast.makeText(applicationContext, "BRAVO ! L'utilisateur : " + firstName + " s'est connecté", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
