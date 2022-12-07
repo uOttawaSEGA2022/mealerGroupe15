@@ -140,6 +140,7 @@ public class Cuisinier extends User{
                             suspended = (boolean) children.child("suspended").getValue();
                             suspensionTime = children.child("suspensionTime").getValue().toString();
                             id = children.getKey().toString();
+
                         }
                     }
                     Log.println(Log.DEBUG, "TEST", " Valeur de connected :" + connected.toString());
