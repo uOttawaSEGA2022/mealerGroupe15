@@ -19,15 +19,19 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class RateDialogu extends Dialog {
 
-    public RateDialogu(@NonNull Context context) {
-        super(context);
-    }
-
     RatingBar myRatingStar;
     String mess=null;
+    commandeModel c;
+    Client client;
 
 
     int MyRate;
+
+    public RateDialogu(@NonNull Context context, commandeModel c) {
+        super(context);
+        this.c = c;
+        client = Client.getInstance();
+    }
 
 
     private static FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -41,22 +45,25 @@ public class RateDialogu extends Dialog {
         @SuppressLint("WrongViewCast") final AppCompatButton ConfirmBtn=findViewById(R.id.ConfirmerRate);
         myRatingStar=findViewById(R.id.ratingBar);
 
+        myRatingStar.setRating((float) c.getMyRate());
+//        DatabaseReference ratingRef = FirebaseDatabase.getInstance().getReference("Client/" + );
+
+
         ConfirmBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getContext().getApplicationContext(),"Merci d'avoir noter votre repas" , Toast.LENGTH_SHORT).show();
 
 
-
-                String key = myRef.push().getKey();
+                String key = c.idDeLaCommande;
 
 
                 myRef = database.getReference("Rate/"+key+"/IdRepas");
-                myRef.setValue("monid");
+                myRef.setValue(c.idDuRepas);
                 myRef = database.getReference("Rate/"+key+"/RateValue");
                 myRef.setValue((int) myRatingStar.getRating());
                 myRef = database.getReference("Rate/"+key+"/nomCuisinier");
-                myRef.setValue("cuisinieeer");
+                myRef.setValue(c.getNomDuCuisinier());
                 dismiss();
 
             }
@@ -87,7 +94,7 @@ public class RateDialogu extends Dialog {
 
 
                 }
-                AfficheRate.setText(""+Integer.toString(MyRate));
+                AfficheRate.setText(Integer.toString(MyRate));
 
 
 

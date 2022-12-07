@@ -7,6 +7,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.View;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -17,11 +18,18 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class ClientVotreCommandeActivity extends AppCompatActivity {
 
+    MenuModel commandes;
+    commandeModel c;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_client_votre_commande);
+        Bundle intentExtras = getIntent().getExtras();
+        commandes = MenuModel.getInstance();
+        c = commandes.commandeArray.get(intentExtras.getInt("position"));
 
+        TextView status = findViewById(R.id.StatutCommande);
+        status.setText(c.getStatutDeLaCommande());
 
 
     }
@@ -41,7 +49,7 @@ public class ClientVotreCommandeActivity extends AppCompatActivity {
 
 
     public void onGotoDialogu(View view) {
-        RateDialogu rateDialogu=new RateDialogu(ClientVotreCommandeActivity.this);
+        RateDialogu rateDialogu=new RateDialogu(ClientVotreCommandeActivity.this, c);
         rateDialogu.getWindow().setBackgroundDrawable(new ColorDrawable(getResources().getColor(android.R.color.transparent)));
         rateDialogu.setCancelable(true);
         rateDialogu.show();

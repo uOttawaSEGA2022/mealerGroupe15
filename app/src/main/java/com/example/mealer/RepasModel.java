@@ -127,4 +127,8 @@ public class RepasModel {
     public void setPrix(double prix) {
         this.prix = prix;
     }
+
+    public void setIdDuCuisinier(String idDuCuisinier) {
+        this.IdDuCuisinier = idDuCuisinier;
+    }
 }

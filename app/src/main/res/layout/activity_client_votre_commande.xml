@@ -45,7 +45,7 @@
             <TextView
                 android:id="@+id/StatutCommande"
                 android:layout_width="match_parent"
-                android:layout_height="77dp"
+                android:layout_height="119dp"
                 android:text="Votre commande est en preparation"
                 android:textSize="30dp" />
 

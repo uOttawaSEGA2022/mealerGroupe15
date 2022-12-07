@@ -1,6 +1,10 @@
 package com.example.mealer;
 
+import static android.content.ContentValues.TAG;
+
 import android.annotation.SuppressLint;
+import android.provider.ContactsContract;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -21,9 +25,11 @@ public class MenuModel {
     ArrayList<RepasModel> menuArray;
     ArrayList<RepasModel> menuDuJourArray;
     ArrayList<RepasModel> allMenuDuJourArray;
+    ArrayList<commandeModel> commandeArray;
     private static final MenuModel menu = new MenuModel();
 
     String cuisinierId = Cuisinier.getInstance().id;
+    String clientId = Client.getInstance().id;
 
     // database reference and others
     FirebaseDatabase database;
@@ -33,6 +39,7 @@ public class MenuModel {
         menuArray = new ArrayList<RepasModel>();
         menuDuJourArray = new ArrayList<RepasModel>();
         allMenuDuJourArray = new ArrayList<RepasModel>();
+        commandeArray = new ArrayList<commandeModel>();
         database = FirebaseDatabase.getInstance();
     }
 
@@ -197,14 +204,82 @@ public class MenuModel {
         });
     }
 
+    public void addCommande(String idClient, commandeModel m){
+        assert !idClient.isEmpty();
+
+        // Adding to the array
+        commandeArray.add(m);
+
+        // Adding to the database
+        myRef = database.getReference("Client/" + idClient + "/Commande");
+
+        //Getting an id
+        String key = myRef.push().getKey();
+        m.setIdDeLaCommande(key);
+
+        // Adding the repas to the database
+        assert key != null;
+        myRef.child(key).setValue(m);
+    }
+
+    public void showCommande(@NonNull String idClient,RecyclerView recyclerView, RecyclerViewInterface RecycleView, AppCompatActivity activity){
+        assert !idClient.isEmpty();
+
+        Toast.makeText(activity, idClient.toString(), Toast.LENGTH_SHORT).show();
+        //show the Orders
+        recyclerView.setHasFixedSize(true);
+        DatabaseReference comRef= FirebaseDatabase.getInstance().getReference("Client/" + idClient + "/Commande");
+        CommandeRecyclerViewAdapter adapter=new CommandeRecyclerViewAdapter(activity,commandeArray,RecycleView);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(activity));
+        ValueEventListener commandeListener = new ValueEventListener() {
+            @SuppressLint("NotifyDataSetChanged")
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                commandeArray.clear();
+                for(DataSnapshot dataSnapshot:snapshot.getChildren( )){
+                    commandeModel commande=dataSnapshot.getValue(commandeModel.class);
+//                    DatabaseReference repasRef = FirebaseDatabase.getInstance().getReference("Cuisinier/" + commande.idDuCuisinier + "/menu");
+//                    repasRef.addValueEventListener(new ValueEventListener() {
+//                        @Override
+//                        public void onDataChange(@NonNull DataSnapshot snap) {
+//                            Log.d(TAG, "commande.idducuisinier : " + commande.idDuCuisinier + " onDataChange: " + snap.child("firstName"));
+//
+//                                for(DataSnapshot place : snap.getChildren()) {
+//                                    if(place.getKey() == commande.idDuRepas){
+//                                        commande.setRepas(place.getValue(RepasModel.class));
+//                                    }
+//                                    Log.d(TAG, "onDataChange: " + place.getValue(RepasModel.class).getNom());
+//
+//                                }
+//                        }
+//
+//                        @Override
+//                        public void onCancelled(@NonNull DatabaseError error) {
+//
+//                        }
+//                    });
+
+                    if(!commandeArray.contains(commande)){
+                        commandeArray.add(commande);
+                    }
+                }
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        };
+        comRef.addValueEventListener(commandeListener);
+    }
+
     public void refresh(){
         menuArray.clear();
         menuDuJourArray.clear();
         allMenuDuJourArray.clear();
-    }
-
-    public String getCuisinierId(){
-        return cuisinierId;
+        commandeArray.clear();
     }
 
     public static MenuModel getInstance(){
