@@ -28,7 +28,7 @@
                 style="@style/Theme.AppCompat.DayNight"
                 android:layout_width="wrap_content"
                 android:layout_height="47dp"
-                android:text="Plat du jour de:"
+                android:text="Plats du jour de:"
 
                 android:textSize="30dp"
                 android:textStyle="bold" />

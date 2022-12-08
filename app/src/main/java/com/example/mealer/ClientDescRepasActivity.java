@@ -52,16 +52,6 @@ public class ClientDescRepasActivity extends AppCompatActivity {
 
         foo0dDescription.setText(extra.getString("Description"));
 
-
-
-
-
-
-
-
-
-
-
     }
 
     public void OnBackToRepasDuJourClient(View view){
@@ -72,19 +62,14 @@ public class ClientDescRepasActivity extends AppCompatActivity {
         int nbr=Integer.parseInt((String) Quantites.getText());
         int a=nbr+1;
         Quantites.setText(""+a);
-
-
     }
 
     public void onclickMinus(View view){
         int nbr=Integer.parseInt((String) Quantites.getText());
         if((nbr-1)>=1){
             int a=nbr-1;
-
             Quantites.setText(""+a);
         }
-
-
     }
     public void onCommander(View view){
         Bundle extra=getIntent().getExtras();

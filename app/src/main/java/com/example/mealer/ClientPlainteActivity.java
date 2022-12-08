@@ -48,7 +48,14 @@ public class ClientPlainteActivity extends AppCompatActivity {
         String description=descriptionTextView.getText().toString();
         EditText titreTextView = findViewById(R.id.editTextTextPersonName2);
         String titre = titreTextView.getText().toString();
-        String key=c.getIdDeLaCommande().toString();
+        String key=c.getIdDeLaCommande();
+        TextView incTextView3 = findViewById(R.id.incTextView3);
+
+
+        if (titre.isEmpty() || titre == null || description.isEmpty() || description == null){
+
+            incTextView3.setText("Veuillez entrer toutes les informations correctement s'il vous plait!");
+        }
 
         myRef = database.getReference("Plainte/"+ key);
         myRef.child("titre").setValue(titre);

@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class addRepas extends AppCompatActivity {
 
@@ -41,6 +42,19 @@ public class addRepas extends AppCompatActivity {
 
         EditText description = findViewById(R.id.description);
         String foodDescription = description.getText().toString();
+
+        TextView incTextView2 = findViewById(R.id.incTextView2);
+
+        if (name.isEmpty() || name == null ||
+                typeRepas.isEmpty() || typeRepas == null ||
+                typeCuisine.isEmpty() || typeCuisine == null ||
+                ingredient.isEmpty() || ingredient == null ||
+                allergene.isEmpty() || allergene == null ||
+                price.isNaN() || price == null ||
+                foodDescription.isEmpty() || foodDescription == null){
+
+            incTextView2.setText("Veuillez entrer toutes les informations correctement s'il vous plait!");
+        }
 
         RepasModel repas = new RepasModel(name,typeRepas,typeCuisine,ingredient,allergene,price,foodDescription,idCuisinier,foodDescription);
         menu.addToMenu(idCuisinier, repas);

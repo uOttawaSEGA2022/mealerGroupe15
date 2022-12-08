@@ -48,7 +48,7 @@ public class SignUpClientActivity extends AppCompatActivity {
         //On crée une nouvelle instance client
         Client c = Client.getInstance();
 
-        //On vérifie que aucun champs n'es null, soit que l'utilisateur a bien rentrer quelque chose dans tout les champs
+        //On vérifie qu'aucun champs n'est null, soit que l'utilisateur a bien rentré quelque chose dans tout les champs
         if(email.isEmpty() || email == null ||
         password.isEmpty() || password == null ||
         usr.isEmpty() || usr == null ||
@@ -57,9 +57,9 @@ public class SignUpClientActivity extends AppCompatActivity {
                 cardNumber.isEmpty() || cardNumber == null){
             // sinon on affiche ce message dans incTextView qui est un TextView au juste
             // en dessous du grand Sign up label
-            incTextView.setText("Veuillez entrez toutes les informations s'il vous plait!");
+            incTextView.setText("Veuillez entrer toutes les informations s'il vous plait!");
         }else{
-            // Si tout est respecter on peut entamer la création du compte
+            // Si tout est respecté on peut entamer la création du compte
             c.signUp(email, password, usr, lastName, adress, cardNumber);
             Intent intent = new Intent(getApplicationContext(), MainActivityClient.class);
             startActivityForResult(intent, 0);
