@@ -15,7 +15,6 @@ import android.widget.TextView;
 public class MainActivityClient extends AppCompatActivity implements RecyclerViewInterface{
 
     Client client;
-    MenuModel menu;
     RecyclerView r;
 
     @SuppressLint("MissingInflatedId")
@@ -24,9 +23,7 @@ public class MainActivityClient extends AppCompatActivity implements RecyclerVie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_client);
         client = Client.getInstance();
-        menu = MenuModel.getInstance();
         r = (RecyclerView) findViewById(R.id.allRepasDujour) ;
-        //menu.showAllMenuDuJour(r,this, this );
 
     }
 
@@ -41,6 +38,7 @@ public class MainActivityClient extends AppCompatActivity implements RecyclerVie
        // Intent intent=new Intent(getApplicationContext(),ClientVotreCommandeActivity.class);
 
         startActivityForResult(intent,0);
+        finish();
 
     }
 
@@ -48,6 +46,7 @@ public class MainActivityClient extends AppCompatActivity implements RecyclerVie
         client.disconnect();
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivityForResult(intent, 0);
+        finish();
     }
 
 

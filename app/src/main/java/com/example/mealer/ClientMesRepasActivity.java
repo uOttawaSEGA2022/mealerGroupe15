@@ -26,7 +26,7 @@ public class ClientMesRepasActivity extends AppCompatActivity implements Recycle
 
     @Override
     public void OnItemClick(int position) {
-        Intent i = new Intent(this, ClientVotreCommandeActivity.class);
+        Intent i = new Intent(ClientMesRepasActivity.this, ClientVotreCommandeActivity.class);
         i.putExtra("position", position);
         startActivityForResult(i, 0);
 

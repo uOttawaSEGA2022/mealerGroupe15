@@ -41,6 +41,7 @@ public class MainActivityCuisinier extends AppCompatActivity {
         c.disconnect();
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivityForResult(intent, 0);
+        finish();
     }
 
     ////code pour creer un popup

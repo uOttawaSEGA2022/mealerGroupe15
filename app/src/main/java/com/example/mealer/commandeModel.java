@@ -97,19 +97,22 @@ public class commandeModel {
         this.idDuRepas = idDuRepas;
     }
 
-    public String getStatutDeLaCommande() {
-        switch (statutDeLaCommande) {
-            case (-1):
-                return "Désolé votre commande a été rejeté.";
-            case(0):
-                return "En attente d'une réponse du cuisinier";
-            case(1):
-                return "le cuisinier est entrain de préparer votre commande";
-            case(2):
-                return "Votre commande est prête";
-            default:
-                return "le cuisinier est entrain de préparer votre commande";
-        }
+
+
+    public int getStatutDeLaCommande() {
+//        switch (statutDeLaCommande) {
+//            case (-1):
+//                return "Désolé votre commande a été rejeté.";
+//            case(0):
+//                return "En attente d'une réponse du cuisinier";
+//            case(1):
+//                return "le cuisinier est entrain de préparer votre commande";
+//            case(2):
+//                return "Votre commande est prête";
+//            default:
+//                return "le cuisinier est entrain de préparer votre commande";
+//        }
+        return statutDeLaCommande;
     }
 
     public void setStatutDeLaCommande(int statutDeLaCommande) {

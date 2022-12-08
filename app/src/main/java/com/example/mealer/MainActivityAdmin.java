@@ -30,6 +30,7 @@ public class MainActivityAdmin extends AppCompatActivity {
         Admin.getInstance().disconnect();
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivityForResult(intent, 0);
+        finish();
     }
      /*public void OnGotoComplains(View view) {
         Intent intent = new Intent(getApplicationContext(), PlainteActivity.class);
