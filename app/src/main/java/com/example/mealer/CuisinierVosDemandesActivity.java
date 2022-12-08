@@ -1,7 +1,9 @@
 package com.example.mealer;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -11,12 +13,19 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 
-public class CuisinierVosDemandesActivity extends AppCompatActivity {
+public class CuisinierVosDemandesActivity extends AppCompatActivity implements RecyclerViewInterface{
 
+    MenuModel demandes;
+    Cuisinier c;
+
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cuisinier_vos_demandes);
+        demandes = MenuModel.getInstance();
+        c = Cuisinier.getInstance();
+        demandes.showDemandes(c.id, (RecyclerView) findViewById(R.id.demandesRecyclerview), this, this);
     }
 
     public void OnBack(View view){
@@ -52,4 +61,8 @@ public class CuisinierVosDemandesActivity extends AppCompatActivity {
         //}
     }
 
+    @Override
+    public void OnItemClick(int position) {
+
+    }
 }

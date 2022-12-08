@@ -26,6 +26,8 @@ public class MenuModel {
     ArrayList<RepasModel> menuDuJourArray;
     ArrayList<RepasModel> allMenuDuJourArray;
     ArrayList<commandeModel> commandeArray;
+    ArrayList<commandeModel> demandesArray;
+
     private static final MenuModel menu = new MenuModel();
 
     String cuisinierId = Cuisinier.getInstance().id;
@@ -40,6 +42,7 @@ public class MenuModel {
         menuDuJourArray = new ArrayList<RepasModel>();
         allMenuDuJourArray = new ArrayList<RepasModel>();
         commandeArray = new ArrayList<commandeModel>();
+        demandesArray = new ArrayList<commandeModel>();
         database = FirebaseDatabase.getInstance();
     }
 
@@ -202,6 +205,43 @@ public class MenuModel {
 
             }
         });
+    }
+
+    public void showDemandes(@NonNull String idCuisinier,RecyclerView recyclerView,
+                             RecyclerViewInterface recyclerViewInterface, AppCompatActivity activity){
+
+        assert !idCuisinier.isEmpty();
+        Toast.makeText(activity, idCuisinier.toString(), Toast.LENGTH_SHORT).show();
+
+        //show the Orders
+        recyclerView.setHasFixedSize(true);
+        DatabaseReference demandesRef= FirebaseDatabase.getInstance().getReference("Cuisinier/" + idCuisinier + "/Demandes");
+        CommandeRecyclerViewAdapter adapter=new CommandeRecyclerViewAdapter(activity,demandesArray,recyclerViewInterface);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(activity));
+
+        ValueEventListener demandeListener = new ValueEventListener() {
+            @SuppressLint("NotifyDataSetChanged")
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                demandesArray.clear();
+
+                for(DataSnapshot dataSnapshot:snapshot.getChildren( )){
+                    commandeModel demande = dataSnapshot.getValue(commandeModel.class);
+                    if(!demandesArray.contains(demande)){
+                        demandesArray.add(demande);
+                    }
+                }
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                throw error.toException();
+            }
+        };
+        demandesRef.addValueEventListener(demandeListener);
     }
 
     public void addCommande(String idClient, commandeModel m){
