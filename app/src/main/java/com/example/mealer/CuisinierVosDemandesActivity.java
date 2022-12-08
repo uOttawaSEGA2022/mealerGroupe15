@@ -61,8 +61,31 @@ public class CuisinierVosDemandesActivity extends AppCompatActivity implements R
         //}
     }
 
+    public void traiterDemande(View view){
+        //inflate the layout of the popup window
+        LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
+        View popupView = inflater.inflate(R.layout.activity_popup_traiter_demande, null);
+
+        // create the popup window
+        int width = LinearLayout.LayoutParams.WRAP_CONTENT;
+        int height = LinearLayout.LayoutParams.WRAP_CONTENT;
+        final PopupWindow popupWindow = new PopupWindow(popupView, width, height);
+
+        //show the popup window
+        popupWindow.showAtLocation(view, Gravity.CENTER, 0,0);
+
+
+        // dismiss the popup window when touched
+        popupView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                popupWindow.dismiss();
+                return true;}
+        });
+    }
+
     @Override
     public void OnItemClick(int position) {
-
+        traiterDemande(new View(this));
     }
 }

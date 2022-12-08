@@ -24,15 +24,11 @@ public class PopupTraiterDemandeActivity extends AppCompatActivity {
     }
 
     public void OnRejeter(View view){
-
-
         Intent intent = new Intent(getApplicationContext(), CuisinierVosDemandesActivity.class);
         startActivityForResult(intent, 0);
     }
 
     public void OnApprouver(View view){
-
-
         Intent intent = new Intent(getApplicationContext(), CuisinierVosDemandesActivity.class);
         startActivityForResult(intent, 0);
     }
