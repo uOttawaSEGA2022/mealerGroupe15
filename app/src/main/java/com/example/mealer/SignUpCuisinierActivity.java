@@ -53,7 +53,7 @@ public class SignUpCuisinierActivity extends AppCompatActivity {
                 description.isEmpty() || description == null){
             // sinon on affiche ce message dans incTextView qui est un TextView au juste
             // en dessous du grand Sign up label
-            incTextView.setText("Veuillez entrez toutes les informations s'il vous plait!");
+            incTextView.setText("Veuillez entrer toutes les informations s'il vous plait!");
         }else{
             // Si tout est respecter on peut entamer la création du compte
             c.signUp(email, password, firstName, lastName, address, description);
