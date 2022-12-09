@@ -72,6 +72,7 @@ public class MenuModel {
         // Adding to the database
         myRef = database.getReference("Cuisinier/" + idCuisinier + "/menu");
 
+
         //Getting an id
         String key = myRef.push().getKey();
         r.setRepasId(key);

@@ -15,6 +15,7 @@ import java.util.ArrayList;
 public class RepasRecyclerViewAdapter extends RecyclerView.Adapter<RepasRecyclerViewAdapter.MyViewHolder> {
     private final RecyclerViewInterface recyclerViewInterface;
     AppCompatActivity context;
+    Cuisinier cui;
 
     static ArrayList<RepasModel> menuArray;
     public RepasRecyclerViewAdapter(AppCompatActivity context, ArrayList<RepasModel> menuArray, RecyclerViewInterface recyclerViewInterface) {
@@ -37,6 +38,7 @@ public class RepasRecyclerViewAdapter extends RecyclerView.Adapter<RepasRecycler
     @Override
     public RepasRecyclerViewAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater=LayoutInflater.from(context);
+        cui=Cuisinier.getInstance();
         View view=inflater.inflate(R.layout.daily_meal_model,parent,false);
         return new RepasRecyclerViewAdapter.MyViewHolder(view,recyclerViewInterface);
     }
@@ -47,6 +49,7 @@ public class RepasRecyclerViewAdapter extends RecyclerView.Adapter<RepasRecycler
         holder.textViewRepasName.setText(menuArray.get(position).getNom());
         holder.textViewRepasPrix.setText(String.valueOf(menuArray.get(position).getPrix()));
         holder.textViewRepasRate.setText(String.valueOf(menuArray.get(position).getRate()));
+        holder.textViewRepasNamneCuisinier.setText(cui.firstName);
     }
 
     @Override
@@ -54,12 +57,12 @@ public class RepasRecyclerViewAdapter extends RecyclerView.Adapter<RepasRecycler
         return menuArray.size();
     }
     public static class MyViewHolder extends RecyclerView.ViewHolder{
-        TextView textViewRepasName, textViewRepasPrix, textViewRepasRate;
+        TextView textViewRepasName, textViewRepasPrix,textViewRepasNamneCuisinier, textViewRepasRate;
         public MyViewHolder(@NonNull View itemView,RecyclerViewInterface recyclerViewInterface) {
             super(itemView);
             textViewRepasName=itemView.findViewById(R.id.NomPlat);
             textViewRepasRate=itemView.findViewById(R.id.RateMenu);
-           // textViewRepasNamneCuisinier=itemView.findViewById(R.id.NomCuisinierMenu);
+           textViewRepasNamneCuisinier=itemView.findViewById(R.id.NomCuisinierMenu);
             textViewRepasPrix = itemView.findViewById(R.id.PrixPlat);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

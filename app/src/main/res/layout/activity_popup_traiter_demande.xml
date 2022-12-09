@@ -30,7 +30,7 @@
                 android:layout_marginEnd="10dp"
                 android:text="NOM DU REPAS"
                 android:textAlignment="center"
-                android:textSize="20sp"
+                android:textSize="40sp"
                 android:textStyle="bold" />
         </LinearLayout>
 

@@ -141,7 +141,7 @@ public class Cuisinier extends User{
                 Log.println(Log.DEBUG, "TEST", " Valeur de connected :" + connected.toString());
             } else {
                 Log.println(Log.INFO, "TEST", "addresse is : " + adresse + " descrition : " + description);
-                Toast.makeText(applicationContext, "BRAVO ! L'utilisateur : " + firstName + " s'est connecté", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(applicationContext, "BRAVO ! L'utilisateur : " + firstName + " s'est connecté", Toast.LENGTH_SHORT).show();
             }
         }
     }

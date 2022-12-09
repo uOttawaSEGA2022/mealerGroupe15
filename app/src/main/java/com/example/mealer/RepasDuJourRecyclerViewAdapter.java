@@ -15,6 +15,7 @@ import java.util.ArrayList;
 public class RepasDuJourRecyclerViewAdapter extends RecyclerView.Adapter<RepasDuJourRecyclerViewAdapter.MyViewHolder> {
     private final RecyclerViewInterface recyclerViewInterface;
     Context context;
+    Cuisinier c;
 
     static ArrayList<RepasModel> menuArray;
     public RepasDuJourRecyclerViewAdapter(Context context, ArrayList<RepasModel> menuArray, RecyclerViewInterface recyclerViewInterface) {
@@ -27,6 +28,8 @@ public class RepasDuJourRecyclerViewAdapter extends RecyclerView.Adapter<RepasDu
     @NonNull
     @Override
     public RepasDuJourRecyclerViewAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
+        c = Cuisinier.getInstance();
         LayoutInflater inflater=LayoutInflater.from(context);
         View view=inflater.inflate(R.layout.daily_meal_model,parent,false);
         return new RepasDuJourRecyclerViewAdapter.MyViewHolder(view,recyclerViewInterface);
@@ -37,6 +40,7 @@ public class RepasDuJourRecyclerViewAdapter extends RecyclerView.Adapter<RepasDu
 
         holder.textViewRepasName.setText(menuArray.get(position).getNom());
         holder.textViewRepasPrix.setText(String.valueOf(menuArray.get(position).getPrix()));
+        holder.TextVCuisiName.setText(String.valueOf(c.getFirstName()));
     }
 
     @Override
@@ -44,11 +48,12 @@ public class RepasDuJourRecyclerViewAdapter extends RecyclerView.Adapter<RepasDu
         return menuArray.size();
     }
     public static class MyViewHolder extends RecyclerView.ViewHolder{
-        TextView textViewRepasName, textViewRepasPrix;
+        TextView textViewRepasName, textViewRepasPrix,TextVCuisiName;
         public MyViewHolder(@NonNull View itemView,RecyclerViewInterface recyclerViewInterface) {
             super(itemView);
             textViewRepasName=itemView.findViewById(R.id.NomPlat);
             textViewRepasPrix = itemView.findViewById(R.id.PrixPlat);
+            TextVCuisiName=itemView.findViewById(R.id.NomCuisinierMenu);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

@@ -5,12 +5,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class RepasMenuActivity extends AppCompatActivity{
 
     public static int position = 0;
+    Cuisinier cui;
 
     RepasModel repas = new RepasModel();
     MenuModel menu = MenuModel.getInstance();
@@ -23,6 +25,7 @@ public class RepasMenuActivity extends AppCompatActivity{
     EditText allergene;
     EditText foodPrice;
     EditText foodDescription;
+    //TextView  NOMCUISI;
 
 
     @SuppressLint("MissingInflatedId")
@@ -30,6 +33,7 @@ public class RepasMenuActivity extends AppCompatActivity{
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_repas_menu);
+        //cui=Cuisinier.getInstance();
 
 
         foodName = findViewById(R.id.foodName);
@@ -39,18 +43,22 @@ public class RepasMenuActivity extends AppCompatActivity{
         allergene = findViewById(R.id.allergenes);
         foodPrice = findViewById(R.id.foodPrice);
         foodDescription = findViewById(R.id.foodDescr);
+        //NOMCUISI=findViewById(R.id.NomCuisinierMenu);
+
 
 
         repas = menu.menuArray.get(position);
 
 
         foodName.setText(repas.getNom());
+        //NOMCUISI.setText(""+cui.firstName);
         typeRepas.setText(repas.getTypeDeRepas());
         typeCuisine.setText(repas.getTypeDeCuisine());
         ingredientList.setText(repas.getIngredients());
         allergene.setText(repas.getAllergenes());
         foodPrice.setText(String.valueOf(repas.getPrix()));
         foodDescription.setText(repas.getDescription());
+
     }
 
     public void onClickBack(View view){

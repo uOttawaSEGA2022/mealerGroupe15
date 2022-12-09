@@ -11,16 +11,20 @@ import android.widget.TextView;
 public class addRepas extends AppCompatActivity {
 
     String idCuisinier = Cuisinier.getInstance().id;
+    //Cuisinier cuii;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_repas);
+        //cuii=Cuisinier.getInstance();
     }
 
     public void onClickAdd(View view){
 
         MenuModel menu = MenuModel.getInstance();
+
+
 
         EditText mealname = findViewById(R.id.mealname);
         String name = mealname.getText().toString();
@@ -42,6 +46,9 @@ public class addRepas extends AppCompatActivity {
 
         EditText description = findViewById(R.id.description);
         String foodDescription = description.getText().toString();
+        //TextView nooooom=findViewById(R.id.NomCuisinierMenu);
+        //nooooom.setText(""+cuii.firstName);
+
 
         TextView incTextView2 = findViewById(R.id.incTextView2);
 

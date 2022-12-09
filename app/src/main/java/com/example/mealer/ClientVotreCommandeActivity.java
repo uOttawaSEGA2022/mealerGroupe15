@@ -1,6 +1,7 @@
 package com.example.mealer;
 
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -13,13 +14,17 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class ClientVotreCommandeActivity extends AppCompatActivity {
 
     MenuModel commandes;
     commandeModel c;
+  String b;
     int pos;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,11 +34,22 @@ public class ClientVotreCommandeActivity extends AppCompatActivity {
         pos = intentExtras.getInt("position");
         commandes = MenuModel.getInstance();
         c = commandes.commandeArray.get(pos);
+        b=String.valueOf(c.statutDeLaCommande);
+        //Toast.makeText(this, b, Toast.LENGTH_SHORT).show();
 
         TextView status = findViewById(R.id.StatutCommande);
-
-            String a="";
-                switch (c.getStatutDeLaCommande()) {
+        String a="";
+        int aa=c.statutDeLaCommande;
+        if (aa==-1){
+            status.setText("Désolé votre commande a été rejeté");
+        }
+        else if(aa==0){
+            status.setText("En attente d'une réponse du cuisinier");
+        }
+        else if(aa==1){
+            status.setText("Le cuisinier a accepté votre commande.Vous pouvez aller le recupérer");
+        }
+       /* switch (aa) {
             case (-1):
                 a= "Désolé votre commande a été rejeté.";
                 status.setText(a);
@@ -41,7 +57,7 @@ public class ClientVotreCommandeActivity extends AppCompatActivity {
                 a="En attente d'une réponse du cuisinier";
                 status.setText(a);
             case(1):
-                a="le cuisinier est entrain de préparer votre commande";
+                a="Le cuisinier a accepté votre commande.Vous pouvez aller le recupérer";
                 status.setText(a);
             case(2):
                 a="Votre commande est prête";
@@ -49,7 +65,21 @@ public class ClientVotreCommandeActivity extends AppCompatActivity {
             default:
                 a="le cuisinier est entrain de préparer votre commande";
                 status.setText(a);
-        }
+        }*/
+
+        /*DatabaseReference myRef= FirebaseDatabase.getInstance().getReference("Client/"+Client.getInstance().id+"/Commande/"+c.idDeLaCommande+"/statutDeLaCommande");
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                b= (String) snapshot.getValue();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });*/
+
 
 
 

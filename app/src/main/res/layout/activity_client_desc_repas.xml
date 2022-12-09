@@ -7,13 +7,9 @@
     android:background="@drawable/backgroundk">
 
     <LinearLayout
-        android:layout_width="413dp"
-        android:layout_height="728dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/textView53"
@@ -25,194 +21,223 @@
             android:textSize="50sp"
             android:textStyle="bold|italic" />
 
-        <TableLayout
+        <ScrollView
+            android:id="@+id/scrollView2"
             android:layout_width="match_parent"
-            android:layout_height="482dp">
+            android:layout_height="518dp">
 
-            <TableRow
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="451dp">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/textView54"
+                            android:layout_width="243dp"
+                            android:layout_height="64dp"
+                            android:layout_weight="1"
+                            android:text="Nom du repas  :"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                            android:textSize="25dp" />
+
+                        <TextView
+                            android:id="@+id/textView55"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="XXXX"
+
+                            android:textSize="25dp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/textView56"
+                            android:layout_width="163dp"
+                            android:layout_height="63dp"
+                            android:layout_weight="1"
+                            android:text="Type de repas :"
+
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                            android:textSize="25dp" />
+
+                        <TextView
+                            android:id="@+id/textView57"
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="XXXX"
+                            android:textSize="25dp" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/textView58"
+
+                            android:layout_width="222dp"
+                            android:layout_height="67dp"
+                            android:layout_weight="1"
+                            android:text="Type de cuisine :"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                            android:textSize="25dp" />
+
+                        <TextView
+                            android:id="@+id/textView59"
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="XXXX"
+                            android:textSize="25dp" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/textView60"
+
+                            android:layout_width="242dp"
+                            android:layout_height="66dp"
+                            android:layout_weight="1"
+                            android:text="Ingrédients :"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                            android:textSize="25dp" />
+
+                        <TextView
+                            android:id="@+id/textView61"
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="XXXX"
+                            android:textSize="25dp" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/textView62"
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="64dp"
+                            android:layout_weight="1"
+                            android:text="Allergènes :"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                            android:textSize="25dp" />
+
+                        <TextView
+                            android:id="@+id/textView63"
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="XXXX"
+                            android:textSize="25dp" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/textView64"
+
+                            android:layout_width="179dp"
+                            android:layout_height="59dp"
+                            android:layout_marginRight="40dp"
+                            android:layout_weight="1"
+                            android:text="Prix :"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                            android:textSize="25dp" />
+
+                        <TextView
+                            android:id="@+id/textView65"
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="XXXX"
+                            android:textSize="25dp" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/textView66"
+
+                            android:layout_width="222dp"
+                            android:layout_height="71dp"
+                            android:layout_weight="1"
+                            android:text="Description : "
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                            android:textSize="25dp" />
+
+                        <TextView
+                            android:id="@+id/textView67"
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="XXXX"
+                            android:textSize="25dp" />
+                    </TableRow>
+
+
+                </TableLayout>
 
                 <TextView
-                    android:id="@+id/textView54"
-                    android:layout_width="243dp"
-                    android:layout_height="64dp"
-                    android:layout_weight="1"
-                    android:text="Nom du repas  :"
+                    android:id="@+id/timeButton"
+                    android:onClick="popTimePicker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:clickable="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.1"
+                    android:background="#6A1E88E5"
+                    android:text=" Choisir l'heure de cueillete"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                     android:textSize="25dp" />
 
-                <TextView
-                    android:id="@+id/textView55"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="XXXX"
-
-                    android:textSize="25dp" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/textView56"
-                    android:layout_width="163dp"
-                    android:layout_height="63dp"
-                    android:layout_weight="1"
-                    android:text="Type de repas :"
-
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    android:textSize="25dp" />
-
-                <TextView
-                    android:id="@+id/textView57"
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="XXXX"
-                    android:textSize="25dp" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/textView58"
-
-                    android:layout_width="222dp"
-                    android:layout_height="67dp"
-                    android:layout_weight="1"
-                    android:text="Type de cuisine :"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    android:textSize="25dp" />
-
-                <TextView
-                    android:id="@+id/textView59"
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="XXXX"
-                    android:textSize="25dp" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/textView60"
-
-                    android:layout_width="242dp"
-                    android:layout_height="66dp"
-                    android:layout_weight="1"
-                    android:text="Ingrédients :"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    android:textSize="25dp" />
-
-                <TextView
-                    android:id="@+id/textView61"
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="XXXX"
-                    android:textSize="25dp" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/textView62"
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="64dp"
-                    android:layout_weight="1"
-                    android:text="Allergènes :"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    android:textSize="25dp" />
-
-                <TextView
-                    android:id="@+id/textView63"
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="XXXX"
-                    android:textSize="25dp" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/textView64"
-
-                    android:layout_width="179dp"
-                    android:layout_height="59dp"
-                    android:layout_marginRight="40dp"
-                    android:layout_weight="1"
-                    android:text="Prix :"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    android:textSize="25dp" />
-
-                <TextView
-                    android:id="@+id/textView65"
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="XXXX"
-                    android:textSize="25dp" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/textView66"
-
-                    android:layout_width="222dp"
-                    android:layout_height="71dp"
-                    android:layout_weight="1"
-                    android:text="Description : "
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    android:textSize="25dp" />
-
-                <TextView
-                    android:id="@+id/textView67"
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="XXXX"
-                    android:textSize="25dp" />
-            </TableRow>
-
-
-        </TableLayout>
+            </LinearLayout>
+        </ScrollView>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="89dp"
-            android:layout_marginLeft="115dp"
+            android:layout_height="76dp"
             android:orientation="horizontal">
 
             <ImageButton
                 android:id="@+id/btn_minus"
                 android:layout_width="50dp"
                 android:layout_height="36dp"
-                android:layout_marginTop="3dp"
+
                 android:backgroundTint="#009A60CD"
                 android:clickable="true"
 
@@ -225,8 +250,8 @@
 
                 android:layout_width="36dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="3dp"
-                android:layout_marginTop="1dp"
+
+
                 android:text="1"
                 android:textColor="@color/white"
                 android:textSize="30dp" />
@@ -235,7 +260,7 @@
                 android:id="@+id/btn_plus"
                 android:layout_width="wrap_content"
                 android:layout_height="41dp"
-                android:layout_marginTop="1dp"
+
                 android:backgroundTint="#009A60CD"
                 android:clickable="true"
                 android:focusable="true"
@@ -245,17 +270,17 @@
         </LinearLayout>
 
         <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="79dp">
+            android:layout_width="405dp"
+            android:layout_height="69dp">
 
             <Button
                 android:id="@+id/button12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@color/purple_200"
                 android:onClick="OnBackToRepasDuJourClient"
-                android:text="Back"
-                android:background="@color/purple_200"/>
+                android:text="Back" />
 
             <Space
                 android:layout_width="68dp"
@@ -267,11 +292,12 @@
                 android:layout_width="90dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="onCommander"
                 android:background="@color/purple_200"
+                android:onClick="onCommander"
                 android:text="Commander" />
         </TableRow>
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 

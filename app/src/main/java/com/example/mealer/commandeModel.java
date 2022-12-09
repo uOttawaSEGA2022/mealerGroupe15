@@ -12,25 +12,65 @@ import com.google.firebase.database.ValueEventListener;
 
 public class commandeModel {
 
-    String idDuRepas, idDuCuisinier, idDeLaCommande, nomDuCuisinier, nomDuRepas;
+    String idDuRepas, idDuCuisinier, idDeLaCommande, nomDuCuisinier, nomDuRepas,HeuredeCeuillette;
+    String IDduClient,NomDUClient;
     double prix, rate, myRate;
-    int statutDeLaCommande;
+    int statutDeLaCommande,Quantite;
 
 
     public commandeModel() {
     }
 
     public commandeModel(String idDuRepas, String idDuCuisinier,
-                         String nomDuCuisinier, String nomDuRepas, double prix, double rate, double myRate,
+                         String nomDuCuisinier, String nomDuRepas, double prix, double rate, double myRate,int Quantite,String HeuredeCeuillette,String IDduClient,String idDeLaCommande,String NomDUClient,
                          int statutDeLaCommande) {
         this.idDuRepas = idDuRepas;
         this.idDuCuisinier = idDuCuisinier;
         this.nomDuCuisinier = nomDuCuisinier;
         this.nomDuRepas = nomDuRepas;
+        this.HeuredeCeuillette=HeuredeCeuillette;
         this.prix = prix;
         this.rate = rate;
+        this.idDeLaCommande=idDeLaCommande;
         this.myRate = myRate;
+        this.Quantite=Quantite;
+        this.NomDUClient=NomDUClient;
         this.statutDeLaCommande = statutDeLaCommande;
+         this.IDduClient=IDduClient;
+
+
+    }
+
+    public double getQuantite() {
+        return Quantite;
+    }
+
+    public String getIDduClient() {
+        return IDduClient;
+    }
+
+    public void setIDduClient(String IDduClient) {
+        this.IDduClient = IDduClient;
+    }
+
+    public String getNomDUClient() {
+        return NomDUClient;
+    }
+
+    public void setNomDUClient(String nomDUClient) {
+        NomDUClient = nomDUClient;
+    }
+
+    public void setQuantite(int quantite) {
+        Quantite = quantite;
+    }
+
+    public String getHeuredeCeuillette() {
+        return HeuredeCeuillette;
+    }
+
+    public void setHeuredeCeuillette(String heuredeCeuillette) {
+        HeuredeCeuillette = heuredeCeuillette;
     }
 
     public double getMyRate() {

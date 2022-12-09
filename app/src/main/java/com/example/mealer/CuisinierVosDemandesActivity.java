@@ -12,11 +12,13 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
+import android.widget.Toast;
 
 public class CuisinierVosDemandesActivity extends AppCompatActivity implements RecyclerViewInterface{
 
     MenuModel demandes;
     Cuisinier c;
+    //Client cli;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -24,6 +26,9 @@ public class CuisinierVosDemandesActivity extends AppCompatActivity implements R
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cuisinier_vos_demandes);
         demandes = MenuModel.getInstance();
+
+
+        //cli=Client.getInstance();
         c = Cuisinier.getInstance();
         demandes.showDemandes(c.id, (RecyclerView) findViewById(R.id.demandesRecyclerview), this, this);
     }
@@ -32,8 +37,8 @@ public class CuisinierVosDemandesActivity extends AppCompatActivity implements R
         Intent intent = new Intent(getApplicationContext(), MainActivityCuisinier.class);
         startActivityForResult(intent, 0);
     }
-
     public void OnClickItem(View view){
+
 
         // inflate the layout of the popup window
         LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
@@ -86,6 +91,24 @@ public class CuisinierVosDemandesActivity extends AppCompatActivity implements R
 
     @Override
     public void OnItemClick(int position) {
-        traiterDemande(new View(this));
+
+        Intent intent=new Intent(CuisinierVosDemandesActivity.this,PopupTraiterDemandeActivity.class);
+        //Bundle extra=intent.getExtras();
+        intent.putExtra("nomduRepas",demandes.demandesArray.get(position).nomDuRepas);
+        intent.putExtra("Quantite",demandes.demandesArray.get(position).getQuantite());
+        intent.putExtra("IdClient",demandes.demandesArray.get(position).getIDduClient());
+        intent.putExtra("IdDeLaCommande",demandes.demandesArray.get(position).idDeLaCommande);
+        //Toast.makeText(this, demandes.demandesArray.get(position).getIdDeLaCommande(), Toast.LENGTH_SHORT).show();
+
+        intent.putExtra("nomduClient",demandes.demandesArray.get(position).getNomDUClient());
+
+
+        //String a="19H";
+
+        intent.putExtra("HeureDeCueillete",demandes.demandesArray.get(position).HeuredeCeuillette);
+        //traiterDemande(new View(this));
+        startActivityForResult(intent,0);
+
+
     }
 }

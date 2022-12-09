@@ -10,7 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-
+import android.widget.Toast;
 
 
 import com.google.firebase.database.DataSnapshot;
@@ -61,6 +61,7 @@ public class ClientPlainteActivity extends AppCompatActivity {
         myRef.child("titre").setValue(titre);
         myRef.child("description").setValue(description);
         myRef.child("id").setValue(c.getIdDeLaCommande());
+
         myRef.child("nameOfClient").setValue(client.getFirstName());
         myRef.child("nameOfCuisinier").setValue(c.getNomDuCuisinier());
         myRef.child("idDuCuisinier").setValue(c.getIdDuCuisinier());
@@ -69,6 +70,8 @@ public class ClientPlainteActivity extends AppCompatActivity {
         startActivityForResult(intent, 0);
     }
     public void OnBackToVotreCommande(View view) {
+
+
         Intent intent = new Intent(getApplicationContext(), ClientVotreCommandeActivity.class);
         startActivityForResult(intent, 0);
 
