@@ -25,6 +25,7 @@ public class RepasMenuActivity extends AppCompatActivity{
     EditText allergene;
     EditText foodPrice;
     EditText foodDescription;
+    TextView text;
     //TextView  NOMCUISI;
 
 
@@ -43,6 +44,7 @@ public class RepasMenuActivity extends AppCompatActivity{
         allergene = findViewById(R.id.allergenes);
         foodPrice = findViewById(R.id.foodPrice);
         foodDescription = findViewById(R.id.foodDescr);
+        text = findViewById(R.id.textView45);
         //NOMCUISI=findViewById(R.id.NomCuisinierMenu);
 
 
@@ -75,12 +77,22 @@ public class RepasMenuActivity extends AppCompatActivity{
         Double prixRepas = Double.parseDouble(foodPrice.getText().toString());
         String descrRepas = foodDescription.getText().toString();
 
-        RepasModel nouveauRepas = new RepasModel(nomRepas,foodType,cookingType,listeIngredients,allergenes,prixRepas,descrRepas,idCuisinier,Cuisinier.getInstance().firstName);
-        menu.save(idCuisinier, repas, nouveauRepas, this);
+        if (nomRepas.isEmpty() || nomRepas == null ||
+                foodType.isEmpty() || foodType == null ||
+                cookingType.isEmpty() || cookingType == null ||
+                listeIngredients.isEmpty() || listeIngredients == null ||
+                allergenes.isEmpty() || allergenes == null ||
+                prixRepas.isNaN() || prixRepas == null ||
+                descrRepas.isEmpty() || descrRepas == null){
+
+            text.setText("Veuillez remplir toutes les cases d'informations svp");
+        }else {
+            RepasModel nouveauRepas = new RepasModel(nomRepas, foodType, cookingType, listeIngredients, allergenes, prixRepas, descrRepas, idCuisinier, Cuisinier.getInstance().firstName);
+            menu.save(idCuisinier, repas, nouveauRepas, this);
+        }
     }
 
     public void onClickDelete(View view){
         menu.deleteFromMenu(idCuisinier, repas, this);
     }
-
 }

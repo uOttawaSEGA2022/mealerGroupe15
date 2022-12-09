@@ -17,7 +17,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class PopupTraiterDemandeActivity extends AppCompatActivity {
-    String IdClient,IdDelaCommande;
+    String IdClient,IdDelaCommande, IdCuisinier;
     //commandeModel macommande;
     @SuppressLint("SetTextI18n")
     @Override
@@ -47,6 +47,9 @@ public class PopupTraiterDemandeActivity extends AppCompatActivity {
     public void OnRejeter(View view){
         DatabaseReference myRef= FirebaseDatabase.getInstance().getReference("Client/"+IdClient+"/Commande/"+IdDelaCommande);
         myRef.child("statutDeLaCommande").setValue(-1);
+
+        DatabaseReference demandeRef = FirebaseDatabase.getInstance().getReference("Cuisinier/"+IdCuisinier+"/Demandes/"+IdDelaCommande);
+        demandeRef.removeValue();
         Intent intent = new Intent(getApplicationContext(), CuisinierVosDemandesActivity.class);
         startActivityForResult(intent, 0);
     }
@@ -55,6 +58,9 @@ public class PopupTraiterDemandeActivity extends AppCompatActivity {
        // Toast.makeText(this, , Toast.LENGTH_SHORT).show();
         DatabaseReference myRef= FirebaseDatabase.getInstance().getReference("Client/"+IdClient+"/Commande/"+IdDelaCommande);
         myRef.child("statutDeLaCommande").setValue(1);
+
+        DatabaseReference demandeRef = FirebaseDatabase.getInstance().getReference("Cuisinier/"+IdCuisinier+"/Demandes/"+IdDelaCommande);
+        demandeRef.removeValue();
         Intent intent = new Intent(getApplicationContext(), CuisinierVosDemandesActivity.class);
         startActivityForResult(intent, 0);
     }
