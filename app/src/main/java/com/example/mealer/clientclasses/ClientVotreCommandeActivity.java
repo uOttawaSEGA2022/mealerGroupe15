@@ -7,6 +7,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.mealer.models.MenuModel;
 import com.example.mealer.R;
@@ -18,6 +19,7 @@ public class ClientVotreCommandeActivity extends AppCompatActivity {
     commandeModel c;
   String b;
     static int pos;
+    TextView status;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,11 +29,11 @@ public class ClientVotreCommandeActivity extends AppCompatActivity {
         b=String.valueOf(c.getStatutDeLaCommande());
         //Toast.makeText(this, b, Toast.LENGTH_SHORT).show();
 
-        TextView status = findViewById(R.id.StatutCommande);
+         status = findViewById(R.id.StatutCommande);
         String a="";
         int aa= c.getStatutDeLaCommande();
         if (aa==-1){
-            status.setText("Désolé votre commande a été rejeté");
+            status.setText("Désolé votre commande a été rejetée");
         }
         else if(aa==0){
             status.setText("En attente d'une réponse du cuisinier");
@@ -96,10 +98,18 @@ public class ClientVotreCommandeActivity extends AppCompatActivity {
 
 
     public void onGotoDialogu(View view) {
+        if(status.getText().equals("Désolé votre commande a été rejetée")){
+            Toast.makeText(this, "Vous ne pouvez pas evaluer car votre commande est rejétée", Toast.LENGTH_SHORT).show();
+        }
+        else if (status.getText().equals("En attente d'une réponse du cuisinier")){
+            Toast.makeText(this, "Votre commande doit être acceptée pour pouvoir l'evaluer", Toast.LENGTH_SHORT).show();
+
+        }
+        else{
         RateDialogu rateDialogu=new RateDialogu(ClientVotreCommandeActivity.this, c);
         rateDialogu.getWindow().setBackgroundDrawable(new ColorDrawable(getResources().getColor(android.R.color.transparent)));
         rateDialogu.setCancelable(true);
-        rateDialogu.show();
+        rateDialogu.show();}
 
         //Intent intent =new Intent(getApplicationContext(),RateDialogu.class);
         //startActivityForResult(intent, 0);
