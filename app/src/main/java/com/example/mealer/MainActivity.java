@@ -65,8 +65,8 @@ public class MainActivity extends AppCompatActivity {
 
         TextView connectionState = findViewById(R.id.stateAfterConnection);
 
-        if (email.isEmpty() || email == null ||
-                password.isEmpty() || password == null){
+        if (email == null || email.isEmpty() ||
+                password == null || password.isEmpty()){
 
             connectionState.setText("Veuillez entrer toutes les informations correctement s'il vous plait!");
         }
