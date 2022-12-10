@@ -140,15 +140,15 @@ public class RateDialogu extends Dialog {
                                 rates.child("idDuCuisinier").exists() && rates.child("idDuCuisinier").getValue().toString() == c.getIdDuCuisinier()) {
                             realAverage = realAverage + Double.parseDouble(rates.child("RateValue").getValue().toString());
                             i += 1;
-                            Toast.makeText(getContext(), String.valueOf(realAverage), Toast.LENGTH_SHORT).show();
                         }
                     }
 
-                    realAverage = realAverage / i;
+                    realAverage = Math.round(realAverage / i);
                     DataSnapshot clientIterator = snapshot.child("Client");
                     for (DataSnapshot clients : clientIterator.getChildren()) {
                         if (clients.child("Commande").exists() && clients.child("Commande/" + c.getIdDeLaCommande()).exists()) {
                             DatabaseReference ref = clients.child("Commande/" + c.getIdDeLaCommande() + "/rate").getRef();
+//                            if(!Double.isNaN(realAverage) && Double.isFinite())
                             ref.setValue(realAverage);
                         }
                     }
