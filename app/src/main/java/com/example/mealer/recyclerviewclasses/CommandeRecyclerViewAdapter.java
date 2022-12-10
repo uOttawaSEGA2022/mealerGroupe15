@@ -1,5 +1,7 @@
 package com.example.mealer.recyclerviewclasses;
 
+import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,20 +41,30 @@ public class CommandeRecyclerViewAdapter extends RecyclerView.Adapter<CommandeRe
         holder.textViewRepasPrix.setText(String.valueOf(Array.get(position).getPrix()));
         holder.textViewRepasRate.setText(String.valueOf(Array.get(position).getRate()));
         holder.textViewRepasNamneCuisinier.setText(String.valueOf(Array.get(position).getNomDuCuisinier()));
+        //if rejected
+        if (Array.get(position).getStatutDeLaCommande() == -1){
+            holder.itemBackground.setBackgroundColor(Color.RED);
+        }else if (Array.get(position).getStatutDeLaCommande() == 1){
+            holder.itemBackground.setBackgroundColor(Color.GREEN);
+        }else{
+            holder.itemBackground.setBackgroundColor(-2511400);
+        }
     }
+
 
     @Override
     public int getItemCount() {
         return Array.size();
     }
     public static class MyViewHolder extends RecyclerView.ViewHolder{
-        TextView textViewRepasName, textViewRepasPrix, textViewRepasRate, textViewRepasNamneCuisinier;
+        TextView textViewRepasName, textViewRepasPrix, textViewRepasRate, textViewRepasNamneCuisinier,itemBackground;
         public MyViewHolder(@NonNull View itemView,RecyclerViewInterface recyclerViewInterface) {
             super(itemView);
             textViewRepasName=itemView.findViewById(R.id.NomPlat);
             textViewRepasRate=itemView.findViewById(R.id.RateMenu);
             textViewRepasNamneCuisinier=itemView.findViewById(R.id.NomCuisinierMenu);
             textViewRepasPrix = itemView.findViewById(R.id.PrixPlat);
+            itemBackground = itemView.findViewById(R.id.item);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -60,6 +72,7 @@ public class CommandeRecyclerViewAdapter extends RecyclerView.Adapter<CommandeRe
 
                         int pos=getAdapterPosition();
                         if(pos!=RecyclerView.NO_POSITION){
+
                             recyclerViewInterface.OnItemClick(pos);
                         }
                     }

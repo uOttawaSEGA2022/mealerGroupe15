@@ -37,6 +37,7 @@ public class PlainteActivity extends AppCompatActivity implements RecyclerViewIn
         finish();
     }
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,14 +68,16 @@ public class PlainteActivity extends AppCompatActivity implements RecyclerViewIn
         });
     }
 
+
     @Override
     public void OnItemClick(int position) {
         Intent intent=new Intent(PlainteActivity.this, dialogue.class);
         intent.putExtra("idCuisinier", modeeldeplainte.get(position).getIdCuisinier());
         intent.putExtra("id", modeeldeplainte.get(position).getId());
         startActivity(intent);
-
     }
+
+
     public void OnReturnToAdmin(View view) {
         Intent intent = new Intent(getApplicationContext(), MainActivityAdmin.class);
         startActivityForResult(intent, 0);

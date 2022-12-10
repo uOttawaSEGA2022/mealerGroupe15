@@ -20,9 +20,9 @@
             android:id="@+id/textView6"
             android:layout_width="399dp"
             android:layout_height="62dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="10dp"
             android:text="Voici le menu du jour proposé"
-            android:textSize="30dp"/>
+            android:textSize="30dp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/RecyclerView"

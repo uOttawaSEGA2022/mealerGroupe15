@@ -34,7 +34,6 @@ public class Admin implements Account {
         found = false;
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference("Admin");
-
     }
 
     public static Admin getInstance() {
