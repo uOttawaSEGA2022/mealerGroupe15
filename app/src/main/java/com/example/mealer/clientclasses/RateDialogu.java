@@ -33,6 +33,9 @@ public class RateDialogu extends Dialog {
         client = Client.getInstance();
     }
 
+    public RateDialogu(@NonNull Context context) {
+        super(context);
+    }
 
     private static FirebaseDatabase database = FirebaseDatabase.getInstance();
     private static DatabaseReference myRef = database.getReference("Rate");
