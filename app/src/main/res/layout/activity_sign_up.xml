@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:onClick="OnClickinscrire"
     android:background="@drawable/backgroundk"
-    tools:context=".SignUpCuisinierActivity">
+    tools:context=".cuisinierclasses.SignUpCuisinierActivity">
 
     <ScrollView
         android:id="@+id/scrollbar"

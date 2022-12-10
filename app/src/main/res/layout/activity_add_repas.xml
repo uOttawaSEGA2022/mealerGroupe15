@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/backgroundk"
 
-tools:context=".addRepas">
+tools:context=".cuisinierclasses.addRepas">
 
     <LinearLayout
         android:layout_width="match_parent"
