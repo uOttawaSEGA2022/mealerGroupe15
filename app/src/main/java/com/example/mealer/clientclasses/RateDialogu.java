@@ -94,6 +94,9 @@ public class RateDialogu extends Dialog {
                     case 5:
                         mess="Awesome!";
                         break;
+                    default:
+                        mess="Sorry to hear that! :(";
+                        break;
 
 
                 }
