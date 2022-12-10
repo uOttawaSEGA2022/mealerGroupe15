@@ -92,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
                             cuisinier.connect(email, password, snapshot, getApplicationContext());
                         } else {
                             Log.d(TAG, "ON NE PEUT PAS TROUVER L'INFORMATION DANS " + key);
+
                         }
                     }else{
                         // ON VERIFIE QUI EST CONNECTÉ PUIS ON LOAD LA NOUVELLE PAGE EN FONCTION DE SI C'EST UN CLIENT, UN ADMIN OU UN CUISINIER
@@ -126,11 +127,6 @@ public class MainActivity extends AppCompatActivity {
                             Intent intent = new Intent(getApplicationContext(), MainActivityCuisinier.class);
                             startActivityForResult(intent, 0);
                             finish();
-                        }else{
-                            connectionState.setText("Veuillez verifier votre mot de passe ou votre adresse email");
-                            connectionState.setTextColor(Color.parseColor("#FF0000"));
-                            Log.println(Log.DEBUG, "INFO", "PROBLEM: VOUS AVEZ ENTRÉ UN MAUVAIS MOT DE PASSE");
-                            state = ConnectionStates.FAILED;
                         }
                     }
                 }
@@ -144,8 +140,12 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        Log.println(Log.DEBUG, "TEST", "Valeur de connected :" + admin.isConnected().toString());
-
+        if(!(admin.isConnected()|| cuisinier.isConnected()|| client.isConnected())){
+            connectionState.setTextColor(Color.parseColor("#FF0000"));
+            connectionState.setText("Veuillez verifier votre mot de passe ou votre adresse email");
+            Log.println(Log.DEBUG, "INFO", "PROBLEM: VOUS AVEZ ENTRÉ UN MAUVAIS MOT DE PASSE");
+            state = ConnectionStates.FAILED;
+        }
 //        if(admin.isConnected()){
 //                state = ConnectionStates.CONNECTED;
 //                Log.println(Log.DEBUG, "INFO", "SUCCESS: VOUS ETES CONNECTE");
