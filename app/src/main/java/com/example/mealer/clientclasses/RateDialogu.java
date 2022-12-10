@@ -1,6 +1,7 @@
 package com.example.mealer.clientclasses;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
 
 import android.annotation.SuppressLint;
@@ -14,8 +15,14 @@ import android.widget.Toast;
 
 import com.example.mealer.R;
 import com.example.mealer.models.commandeModel;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 public class RateDialogu extends Dialog {
 
@@ -57,6 +64,7 @@ public class RateDialogu extends Dialog {
             public void onClick(View v) {
                 Toast.makeText(getContext().getApplicationContext(),"Merci d'avoir noter votre repas" , Toast.LENGTH_SHORT).show();
 
+                ArrayList<Double> average = new ArrayList<Double>();
 
                 String key = myRef.push().getKey();
 
@@ -71,6 +79,45 @@ public class RateDialogu extends Dialog {
                 myRef = database.getReference("Rate/"+key+"/idDuCuisinier");
                 myRef.setValue(c.getIdDuCuisinier());
                 dismiss();
+                myRef = database.getReference();
+                myRef.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        double realAverage = 0.0;
+                        int i=0;
+                        if(snapshot.hasChild("Rate")) {
+                            DataSnapshot rateSnapshot = snapshot.child("Rate");
+                            for (DataSnapshot rates : rateSnapshot.getChildren()) {
+                                if (rates.child("IdRepas").getValue().toString() == c.getIdDuRepas() &&
+                                        rates.child("idDuCuisinier").getValue().toString() == c.getIdDuCuisinier()) {
+                                    realAverage = realAverage + (double) (rates.child("RateValue").getValue());
+                                    i += 1;
+                                }
+                            }
+
+                            realAverage = realAverage / i;
+                            DataSnapshot clientIterator = snapshot.child("Client");
+                            for (DataSnapshot clients : clientIterator.getChildren()) {
+                                if (clients.child("Commande") != null && clients.child("Commande/" + c.getIdDeLaCommande()).exists()) {
+                                    DatabaseReference ref = clients.child("Commande/" + c.getIdDeLaCommande() + "/Rate").getRef();
+                                    ref.setValue(realAverage);
+                                }
+                            }
+                            DataSnapshot cuisinierIterator = snapshot.child("Cuisinier");
+                            for (DataSnapshot cooks : cuisinierIterator.getChildren()) {
+                                if (cooks.child("Demandes") != null && cooks.child("Demandes/" + c.getIdDeLaCommande()).exists()) {
+                                    DatabaseReference ref = cooks.child("Demandes/" + c.getIdDeLaCommande() + "/rate").getRef();
+                                    ref.setValue(realAverage);
+                                }
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
 
             }
         });
