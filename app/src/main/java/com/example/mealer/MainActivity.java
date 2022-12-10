@@ -12,6 +12,12 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.mealer.adminclasses.Admin;
+import com.example.mealer.adminclasses.MainActivityAdmin;
+import com.example.mealer.clientclasses.Client;
+import com.example.mealer.clientclasses.MainActivityClient;
+import com.example.mealer.cuisinierclasses.Cuisinier;
+import com.example.mealer.cuisinierclasses.MainActivityCuisinier;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

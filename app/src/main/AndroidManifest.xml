@@ -14,147 +14,147 @@
         android:theme="@style/Theme.Mealer"
         tools:targetApi="31">
         <activity
-            android:name=".RateDialogu"
+            android:name=".clientclasses.RateDialogu"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ClientRepasDuJourActivity"
+            android:name=".clientclasses.ClientRepasDuJourActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ClientEnvoieCommandeActivity"
+            android:name=".clientclasses.ClientEnvoieCommandeActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ClientDescRepasActivity"
+            android:name=".clientclasses.ClientDescRepasActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ClientMesRepasActivity"
+            android:name=".clientclasses.ClientMesRepasActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ClientVotreCommandeActivity"
+            android:name=".clientclasses.ClientVotreCommandeActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".PopupTraiterDemandeActivity"
+            android:name=".cuisinierclasses.PopupTraiterDemandeActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".CuisinierVosDemandesActivity"
+            android:name=".cuisinierclasses.CuisinierVosDemandesActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ClientVotreCommandeActivity"
+            android:name=".clientclasses.ClientVotreCommandeActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ClientPlainteActivity"
+            android:name=".clientclasses.ClientPlainteActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".CuisinierProfileActivity"
+            android:name=".cuisinierclasses.CuisinierProfileActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ClientRechercheFiltreActivity"
+            android:name=".clientclasses.ClientRechercheFiltreActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ClientRechercheActivity"
+            android:name=".clientclasses.ClientRechercheActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".popupSelect"
+            android:name=".cuisinierclasses.popupSelect"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".repasMenuDuJourActivity"
+            android:name=".cuisinierclasses.repasMenuDuJourActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".RepasMenuActivity"
+            android:name=".cuisinierclasses.RepasMenuActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".addRepas"
+            android:name=".cuisinierclasses.addRepas"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".MenuActivity"
+            android:name=".cuisinierclasses.MenuActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".MenuDuJourActivity"
+            android:name=".cuisinierclasses.MenuDuJourActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".PlainteActivity"
+            android:name=".adminclasses.PlainteActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivityAdmin"
+            android:name=".adminclasses.MainActivityAdmin"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -174,28 +174,28 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".SignUpClientActivity"
+            android:name=".clientclasses.SignUpClientActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".dialogue"
+            android:name=".adminclasses.dialogue"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivityClient"
+            android:name=".clientclasses.MainActivityClient"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivityCuisinier"
+            android:name=".cuisinierclasses.MainActivityCuisinier"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -216,7 +216,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".SignUpCuisinierActivity"
+            android:name=".cuisinierclasses.SignUpCuisinierActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.mealer.clientclasses.SignUpClientActivity;
+import com.example.mealer.cuisinierclasses.SignUpCuisinierActivity;
+
 public class Activity2 extends AppCompatActivity {
 
     @Override

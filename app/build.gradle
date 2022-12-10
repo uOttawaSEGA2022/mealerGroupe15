@@ -34,6 +34,13 @@ android {
     buildFeatures {
         viewBinding true
     }
+    sourceSets {
+        main {
+            java {
+                srcDirs 'src/main/java', 'src/main/java/client', 'src/main/java/com.example.mealer/client.files'
+            }
+        }
+    }
 }
 
 dependencies {
