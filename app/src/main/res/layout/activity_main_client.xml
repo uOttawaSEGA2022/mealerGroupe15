@@ -19,6 +19,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
             <TextView
@@ -34,48 +35,25 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="110dp"
-            android:orientation="vertical">
+        <TextView
+            android:id="@+id/welcomText2"
 
-            <TextView
-                android:id="@+id/welcomText"
-
-                android:layout_width="wrap_content"
-                android:layout_height="77dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:text="Bienvenue vous êtes connecté en tant que client."
-                android:textColor="@color/black"
-                android:textSize="25dp"
-                android:typeface="serif" />
-
-            <TextView
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:text="Voici tout les repas du jour :"
-                android:textColor="@color/black"
-                android:textSize="20dp"
-                android:typeface="serif" />
-
-        </LinearLayout>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/allRepasDujour"
-            android:layout_width="399dp"
-            android:layout_height="391dp"
+            android:layout_width="wrap_content"
+            android:layout_height="180dp"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="200dp"
             android:layout_marginEnd="10dp"
-            android:background="@drawable/logodemealerremove" />
+            android:text="Bienvenue vous êtes connecté en tant que client."
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:typeface="serif" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="125dp"
             android:layout_marginEnd="10dp"
             android:orientation="vertical">
 
@@ -87,9 +65,9 @@
                 android:background="@color/purple_200"
                 android:onClick="OnMesCommandes"
                 android:text="Mes commandes"
-                app:cornerRadius="40dp"
                 android:textColor="@color/white"
                 android:textColorLink="@color/white"
+                app:cornerRadius="40dp"
                 tools:ignore="TextContrastCheck" />
 
             <Space
@@ -106,8 +84,7 @@
                 android:text="Se déconnecter"
 
                 android:textColor="@color/white"
-                android:textColorLink="@color/white"
-                 />
+                android:textColorLink="@color/white" />
 
         </LinearLayout>
 
