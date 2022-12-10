@@ -27,7 +27,7 @@ public class PopupTraiterDemandeActivity extends AppCompatActivity {
         Bundle extra=getIntent().getExtras();
         String n= extra.getString("nomduRepas");
         nomREPAS.setText(""+n);
-        Quantite.setText(""+(Double) extra.getDouble("Quantite"));
+        Quantite.setText(""+extra.getInt("Quantite"));
        HeureCeuillete.setText(""+extra.getString("HeureDeCueillete"));
        IdClient= extra.getString("IdClient");
         IdDelaCommande= String.valueOf(extra.getString("IdDeLaCommande"));
