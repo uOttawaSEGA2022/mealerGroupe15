@@ -15,7 +15,6 @@ import android.widget.TextView;
 public class MainActivityClient extends AppCompatActivity implements RecyclerViewInterface{
 
     Client client;
-    RecyclerView r;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -23,8 +22,6 @@ public class MainActivityClient extends AppCompatActivity implements RecyclerVie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_client);
         client = Client.getInstance();
-        r = (RecyclerView) findViewById(R.id.allRepasDujour) ;
-
     }
 
     public void OnClickRecherche (View view){
