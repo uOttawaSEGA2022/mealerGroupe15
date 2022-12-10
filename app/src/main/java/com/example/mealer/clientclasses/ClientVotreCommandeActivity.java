@@ -17,13 +17,11 @@ public class ClientVotreCommandeActivity extends AppCompatActivity {
     MenuModel commandes;
     commandeModel c;
   String b;
-    int pos;
+    static int pos;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_client_votre_commande);
-        Bundle intentExtras = getIntent().getExtras();
-        pos = intentExtras.getInt("position");
         commandes = MenuModel.getInstance();
         c = commandes.commandeArray.get(pos);
         b=String.valueOf(c.getStatutDeLaCommande());
@@ -90,6 +88,10 @@ public class ClientVotreCommandeActivity extends AppCompatActivity {
         startActivityForResult(intent, 0);
 
 
+    }
+
+    public static void setPos(int position){
+        pos = position;
     }
 
 

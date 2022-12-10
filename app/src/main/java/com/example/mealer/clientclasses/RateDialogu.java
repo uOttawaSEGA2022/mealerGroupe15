@@ -69,8 +69,10 @@ public class RateDialogu extends Dialog {
                 String key = myRef.push().getKey();
 
 
-                myRef = database.getReference("Rate/"+key+"/IdRepas");
+                myRef = database.getReference("Rate/"+key+"/id");
                 myRef.setValue(key);
+                myRef = database.getReference("Rate/"+key+"/IdRepas");
+                myRef.setValue(c.getIdDuRepas());
                 myRef = database.getReference("Rate/"+key+"/RateValue");
                 myRef.setValue((int) myRatingStar.getRating());
                 c.setMyRate((int) myRatingStar.getRating());
@@ -88,9 +90,9 @@ public class RateDialogu extends Dialog {
                         if(snapshot.hasChild("Rate")) {
                             DataSnapshot rateSnapshot = snapshot.child("Rate");
                             for (DataSnapshot rates : rateSnapshot.getChildren()) {
-                                if (rates.child("IdRepas").getValue().toString() == c.getIdDuRepas() &&
-                                        rates.child("idDuCuisinier").getValue().toString() == c.getIdDuCuisinier()) {
-                                    realAverage = realAverage + (double) (rates.child("RateValue").getValue());
+                                if (rates.child("IdRepas").exists() && rates.child("IdRepas").getValue().toString() == c.getIdDuRepas() &&
+                                        rates.child("idDuCuisinier").exists() && rates.child("idDuCuisinier").getValue().toString() == c.getIdDuCuisinier()) {
+                                    realAverage = realAverage + Double.parseDouble(rates.child("RateValue").getValue().toString());
                                     i += 1;
                                 }
                             }
@@ -98,14 +100,14 @@ public class RateDialogu extends Dialog {
                             realAverage = realAverage / i;
                             DataSnapshot clientIterator = snapshot.child("Client");
                             for (DataSnapshot clients : clientIterator.getChildren()) {
-                                if (clients.child("Commande") != null && clients.child("Commande/" + c.getIdDeLaCommande()).exists()) {
+                                if (clients.child("Commande").exists() && clients.child("Commande/" + c.getIdDeLaCommande()).exists()) {
                                     DatabaseReference ref = clients.child("Commande/" + c.getIdDeLaCommande() + "/Rate").getRef();
                                     ref.setValue(realAverage);
                                 }
                             }
                             DataSnapshot cuisinierIterator = snapshot.child("Cuisinier");
                             for (DataSnapshot cooks : cuisinierIterator.getChildren()) {
-                                if (cooks.child("Demandes") != null && cooks.child("Demandes/" + c.getIdDeLaCommande()).exists()) {
+                                if (cooks.child("Demandes").exists() && cooks.child("Demandes/" + c.getIdDeLaCommande()).exists()) {
                                     DatabaseReference ref = cooks.child("Demandes/" + c.getIdDeLaCommande() + "/rate").getRef();
                                     ref.setValue(realAverage);
                                 }
