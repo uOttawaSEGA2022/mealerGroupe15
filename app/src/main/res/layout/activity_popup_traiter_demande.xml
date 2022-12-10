@@ -8,10 +8,15 @@
     tools:context=".PopupTraiterDemandeActivity">
 
     <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/logodemealerremove"
-        android:orientation="vertical"></LinearLayout>
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></LinearLayout>
 
     <LinearLayout
         android:layout_width="350dp"
@@ -59,38 +64,40 @@
 
                 <TextView
                     android:id="@+id/textView17"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="167dp"
+                    android:layout_height="46dp"
                     android:text="NOM DU CLIENT:"
-                    android:textSize="15sp" />
+                    android:textSize="20sp" />
 
                 <TextView
+                    android:textSize="20sp"
                     android:id="@+id/textView18"
                     android:layout_width="150dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="46dp"
                     android:layout_marginStart="20dp" />
             </LinearLayout>
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="25dp" />
+                android:layout_height="16dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="34dp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/textView19"
                     android:layout_width="150dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:text="QUANTITE: "
-                    android:textSize="15sp" />
+                    android:textSize="20sp"  />
 
                 <TextView
                     android:id="@+id/textView37"
                     android:layout_width="150dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="34dp"
+                    android:textSize="20sp"
                     android:layout_marginStart="20dp" />
 
             </LinearLayout>
@@ -101,21 +108,22 @@
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="36dp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/textView33"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="246dp"
+                    android:layout_height="50dp"
                     android:layout_weight="1"
                     android:text="HEURE DE CUEILLETE: "
-                    android:textSize="15sp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/textView35"
+                    android:textSize="20sp"
                     android:layout_width="150dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="40dp"
                     android:layout_marginStart="20dp"
                     android:layout_weight="1" />
             </LinearLayout>
@@ -124,7 +132,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="50dp" />
+            android:layout_height="24dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -137,28 +145,31 @@
                 android:id="@+id/button5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#FFFFFF"
                 android:onClick="OnApprouver"
+                android:background="#DF7272"
+
                 android:text="APPROUVER"
                 app:cornerRadius="40dp" />
 
             <Button
+                android:background="#DF7272"
+
                 android:id="@+id/button8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#FFFFFF"
                 android:onClick="OnRejeter"
                 android:text="REJETER"
                 app:cornerRadius="40dp" />
         </LinearLayout>
 
         <Button
+            android:background="#DF7272"
             android:id="@+id/button9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="100dp"
             android:layout_marginEnd="100dp"
-            android:background="#FFFFFF"
+
             android:onClick="OnBack"
             android:text="RETOUR"
             app:cornerRadius="40dp" />

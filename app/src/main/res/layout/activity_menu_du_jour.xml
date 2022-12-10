@@ -28,9 +28,8 @@
             android:id="@+id/RecyclerView"
 
             android:layout_width="match_parent"
-            android:layout_height="440dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginBottom="140dp"
+            android:layout_height="609dp"
+
             android:orientation="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 

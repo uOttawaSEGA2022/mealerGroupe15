@@ -117,6 +117,7 @@ public class Client implements Account {
                 Log.println(Log.DEBUG, "TEST", " Valeur de connected :" + connected.toString());
             }
         }
+    //    Toast.makeText(applicationContext, "BRAVO ! L'utilisateur : " + firstName + " s'est connecté", Toast.LENGTH_SHORT).show();
     }
 
 

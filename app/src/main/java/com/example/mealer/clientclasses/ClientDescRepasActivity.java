@@ -84,7 +84,7 @@ public class ClientDescRepasActivity extends AppCompatActivity {
                 minute = selectedMinute;
                 timeButton.setText(String.format(Locale.getDefault(), "%02d:%02d",hour, minute));
                 heure=String.format(String.format(Locale.getDefault(), "%02d:%02d",hour, minute));
-                Toast.makeText(ClientDescRepasActivity.this, heure, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(ClientDescRepasActivity.this, heure, Toast.LENGTH_SHORT).show();
             }
         };
 
@@ -120,6 +120,7 @@ public class ClientDescRepasActivity extends AppCompatActivity {
 
     }
     public void onCommander(View view){
+
         int laQuantité=Integer.parseInt((String) Quantites.getText());
         Bundle extra=getIntent().getExtras();
         String idCUISi= extra.getString("IDduCuisinier");
@@ -147,6 +148,9 @@ public class ClientDescRepasActivity extends AppCompatActivity {
          laQuantité);
         REF.child(key).setValue(Mycommand);
         myRef.child(key).setValue(Mycommand);
+
+
+
         Intent intent =new Intent(getApplicationContext(),ClientEnvoieCommandeActivity.class);
         startActivityForResult(intent,0);
     }

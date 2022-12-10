@@ -134,7 +134,7 @@ public class MenuModel {
     public void ShowMenu(@NonNull String idCuisinier, RecyclerView recyclerView, RecyclerViewInterface repasRecycleView, AppCompatActivity activity){
         assert !idCuisinier.isEmpty();
 
-        Toast.makeText(activity, idCuisinier.toString(), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(activity, idCuisinier.toString(), Toast.LENGTH_SHORT).show();
         //show the repas
         recyclerView.setHasFixedSize(true);
         myRef= FirebaseDatabase.getInstance().getReference("Cuisinier/" + idCuisinier + "/menu");
@@ -221,7 +221,7 @@ public class MenuModel {
                              RecyclerViewInterface recyclerViewInterface, AppCompatActivity activity){
 
         assert !idCuisinier.isEmpty();
-        Toast.makeText(activity, idCuisinier.toString(), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(activity, idCuisinier.toString(), Toast.LENGTH_SHORT).show();
 
         //show the Orders
         recyclerView.setHasFixedSize(true);
@@ -275,7 +275,7 @@ public class MenuModel {
     public void showCommande(@NonNull String idClient,RecyclerView recyclerView, RecyclerViewInterface RecycleView, AppCompatActivity activity){
         assert !idClient.isEmpty();
 
-        Toast.makeText(activity, idClient.toString(), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(activity, idClient.toString(), Toast.LENGTH_SHORT).show();
         //show the Orders
         recyclerView.setHasFixedSize(true);
         DatabaseReference comRef= FirebaseDatabase.getInstance().getReference("Client/" + idClient + "/Commande");

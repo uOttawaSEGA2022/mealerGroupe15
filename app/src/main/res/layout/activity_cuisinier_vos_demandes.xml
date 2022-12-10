@@ -38,7 +38,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/demandesRecyclerview"
         android:layout_width="match_parent"
-        android:layout_height="497dp"
+        android:layout_height="526dp"
         android:background="@drawable/logodemealerremove">
 
     </androidx.recyclerview.widget.RecyclerView>

@@ -44,12 +44,12 @@
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:background="@drawable/logodemealerremove"
             android:layout_width="match_parent"
-            android:layout_height="525dp"
-
+            android:layout_height="530dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp" />
+
+            android:layout_marginRight="20dp"
+            android:background="@drawable/logodemealerremove" />
 
         <Button
             android:id="@+id/button11"

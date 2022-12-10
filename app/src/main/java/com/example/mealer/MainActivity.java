@@ -101,8 +101,8 @@ public class MainActivity extends AppCompatActivity {
                                 && !cuisinier.isConnected()){
                             state = ConnectionStates.CONNECTED;
                             Log.println(Log.DEBUG, "INFO", "SUCCESS: VOUS ETES CONNECTE");
-                            connectionState.setText("Connected");
-                            connectionState.setTextColor(Color.green(255));
+                            //connectionState.setText("Connected");
+                            //connectionState.setTextColor(Color.green(255));
                             Intent intent = new Intent(getApplicationContext(), MainActivityAdmin.class);
                             startActivityForResult(intent, 0);
                             finish();
