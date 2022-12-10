@@ -1,0 +1,4830 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="5" by="lint Dolphin | 2021.3.1 Patch 1">
+
+    <issue
+        id="ScrollViewSize"
+        message="This LinearLayout should use `android:layout_height=&quot;wrap_content&quot;`">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="31"/>
+    </issue>
+
+    <issue
+        id="TextViewEdits"
+        message="Attribute `android:inputType` should not be used with `&lt;TextView>`: Change element type to `&lt;EditText>` ?">
+        <location
+            file="src/main/res/layout/activity_sign_up.xml"
+            line="43"/>
+    </issue>
+
+    <issue
+        id="TextViewEdits"
+        message="Attribute `android:inputType` should not be used with `&lt;TextView>`: Change element type to `&lt;EditText>` ?">
+        <location
+            file="src/main/res/layout/activity_sign_up_client.xml"
+            line="34"/>
+    </issue>
+
+    <issue
+        id="MissingConstraints"
+        message="This view is not constrained. It only has designtime positions, so it will jump to (0,0) at runtime unless you add the constraints">
+        <location
+            file="src/main/res/layout/popup_select.xml"
+            line="9"/>
+    </issue>
+
+    <issue
+        id="MissingDefaultResource"
+        message="The layout &quot;activity_login&quot; in layout-w1240dp has no declaration in the base `layout` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <location
+            file="src/main/res/layout-w1240dp/activity_login.xml"
+            line="2"/>
+    </issue>
+
+    <issue
+        id="MissingDefaultResource"
+        message="The layout &quot;activity_login&quot; in layout-w936dp has no declaration in the base `layout` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <location
+            file="src/main/res/layout-w936dp/activity_login.xml"
+            line="2"/>
+    </issue>
+
+    <issue
+        id="UnusedAttribute"
+        message="Attribute `outlineAmbientShadowColor` is only used in API level 28 and higher (current min is 24)">
+        <location
+            file="src/main/res/layout/activity_splash.xml"
+            line="39"/>
+    </issue>
+
+    <issue
+        id="UnusedAttribute"
+        message="Attribute `outlineSpotShadowColor` is only used in API level 28 and higher (current min is 24)">
+        <location
+            file="src/main/res/layout/activity_splash.xml"
+            line="40"/>
+    </issue>
+
+    <issue
+        id="CustomSplashScreen"
+        message="The application should not provide its own launch screen">
+        <location
+            file="src/main/java/com/example/mealer/SplashActivity.java"
+            line="9"/>
+    </issue>
+
+    <issue
+        id="CustomSplashScreen"
+        message="The application should not provide its own launch screen">
+        <location
+            file="src/main/java/com/example/mealer/SplashActivity.java"
+            line="9"/>
+    </issue>
+
+    <issue
+        id="InflateParams"
+        message="Avoid passing `null` as the view root (needed to resolve layout parameters on the inflated layout&apos;s root element)">
+        <location
+            file="src/main/java/com/example/mealer/cuisinierclasses/CuisinierVosDemandesActivity.java"
+            line="48"/>
+    </issue>
+
+    <issue
+        id="InflateParams"
+        message="Avoid passing `null` as the view root (needed to resolve layout parameters on the inflated layout&apos;s root element)">
+        <location
+            file="src/main/java/com/example/mealer/cuisinierclasses/CuisinierVosDemandesActivity.java"
+            line="75"/>
+    </issue>
+
+    <issue
+        id="ExtraText"
+        message="Unexpected text found in layout file: &quot;>&quot;">
+        <location
+            file="src/main/res/layout/activity_add_repas.xml"
+            line="16"/>
+    </issue>
+
+    <issue
+        id="ExtraText"
+        message="Unexpected text found in layout file: &quot;>&quot;">
+        <location
+            file="src/main/res/layout/activity_client_mes_repas.xml"
+            line="10"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/activity_2.xml"
+            line="32"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/activity_2.xml"
+            line="61"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/activity_add_repas.xml"
+            line="29"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="49"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="58"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="74"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="83"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="99"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="108"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="123"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="132"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="147"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="156"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="172"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="181"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="196"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="205"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="226"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="257"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/activity_client_envoie_commande.xml"
+            line="25"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/activity_client_envoie_commande.xml"
+            line="43"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/activity_client_envoie_commande.xml"
+            line="53"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/activity_client_mes_repas.xml"
+            line="30"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/activity_client_plainte.xml"
+            line="49"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/activity_client_plainte.xml"
+            line="77"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/activity_client_repas_du_jour.xml"
+            line="33"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/activity_client_repas_du_jour.xml"
+            line="41"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/activity_client_votre_commande.xml"
+            line="30"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/activity_client_votre_commande.xml"
+            line="43"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/activity_client_votre_commande.xml"
+            line="50"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/activity_cuisinier_vos_demandes.xml"
+            line="29"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="47"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="121"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="136"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/activity_main_admin.xml"
+            line="46"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/activity_main_client.xml"
+            line="34"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/activity_menu.xml"
+            line="20"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/activity_menu_du_jour.xml"
+            line="25"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/activity_plainte.xml"
+            line="34"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/activity_rate_dialogu.xml"
+            line="41"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/activity_rate_dialogu.xml"
+            line="70"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/activity_rate_dialogu.xml"
+            line="79"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/daily_meal_model.xml"
+            line="61"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/daily_meal_model.xml"
+            line="76"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/popup_select.xml"
+            line="21"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/popup_suspension.xml"
+            line="14"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/recyclerview_row.xml"
+            line="45"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/recyclerview_row.xml"
+            line="52"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/recyclerview_row.xml"
+            line="68"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/recyclerview_row.xml"
+            line="80"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/recyclerview_row.xml"
+            line="98"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/recyclerview_row.xml"
+            line="113"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/recyclerview_row.xml"
+            line="131"/>
+    </issue>
+
+    <issue
+        id="SpUsage"
+        message="Should use &quot;`sp`&quot; instead of &quot;`dp`&quot; for text sizes">
+        <location
+            file="src/main/res/layout/recyclerview_row.xml"
+            line="146"/>
+    </issue>
+
+    <issue
+        id="Deprecated"
+        message="`android:password` is deprecated: Use `inputType` instead">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="81"/>
+    </issue>
+
+    <issue
+        id="Deprecated"
+        message="`android:password` is deprecated: Use `inputType` instead">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="81"/>
+    </issue>
+
+    <issue
+        id="UseCompatTextViewDrawableXml"
+        message="Use `app:drawableEndCompat` instead of `android:drawableEnd`">
+        <location
+            file="src/main/res/layout/activity_main_client.xml"
+            line="30"/>
+    </issue>
+
+    <issue
+        id="UseCompatTextViewDrawableXml"
+        message="Use `app:drawableRightCompat` instead of `android:drawableRight`">
+        <location
+            file="src/main/res/layout/activity_main_cuisinier.xml"
+            line="36"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_2.xml"
+            line="39"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_2.xml"
+            line="47"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_2.xml"
+            line="58"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_add_repas.xml"
+            line="151"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_add_repas.xml"
+            line="165"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="213"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="245"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="268"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="282"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="296"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_client_envoie_commande.xml"
+            line="61"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_client_mes_repas.xml"
+            line="43"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_client_plainte.xml"
+            line="107"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_client_plainte.xml"
+            line="114"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_client_recherche.xml"
+            line="33"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_client_recherche.xml"
+            line="40"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_client_recherche_filtre.xml"
+            line="62"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_client_repas_du_jour.xml"
+            line="58"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_client_votre_commande.xml"
+            line="65"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_client_votre_commande.xml"
+            line="89"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_client_votre_commande.xml"
+            line="103"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_cuisinier_profile.xml"
+            line="189"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_cuisinier_profile.xml"
+            line="205"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_cuisinier_profile.xml"
+            line="220"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_cuisinier_vos_demandes.xml"
+            line="52"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="105"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="137"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_main_admin.xml"
+            line="84"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_main_client.xml"
+            line="31"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_main_client.xml"
+            line="66"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_main_client.xml"
+            line="83"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_main_cuisinier.xml"
+            line="37"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_main_cuisinier.xml"
+            line="85"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_main_cuisinier.xml"
+            line="94"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_main_cuisinier.xml"
+            line="103"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_menu.xml"
+            line="43"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_menu.xml"
+            line="57"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_menu_du_jour.xml"
+            line="50"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_menu_du_jour.xml"
+            line="62"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_plainte.xml"
+            line="43"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_popup_traiter_demande.xml"
+            line="141"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_popup_traiter_demande.xml"
+            line="150"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_popup_traiter_demande.xml"
+            line="162"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_repas_menu.xml"
+            line="198"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_repas_menu.xml"
+            line="207"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_repas_menu.xml"
+            line="217"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_repas_menu_du_jour.xml"
+            line="204"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_repas_menu_du_jour.xml"
+            line="219"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_sign_up.xml"
+            line="8"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_sign_up.xml"
+            line="249"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_sign_up.xml"
+            line="265"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_sign_up_client.xml"
+            line="222"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_sign_up_client.xml"
+            line="240"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/activity_sign_up_client.xml"
+            line="255"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/popup_select.xml"
+            line="47"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/popup_select.xml"
+            line="55"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/popup_suspension.xml"
+            line="23"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/popup_suspension.xml"
+            line="37"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/popup_suspension.xml"
+            line="52"/>
+    </issue>
+
+    <issue
+        id="UsingOnClickInXml"
+        message="Use databinding or explicit wiring of click listener in code">
+        <location
+            file="src/main/res/layout/popup_suspension.xml"
+            line="68"/>
+    </issue>
+
+    <issue
+        id="NotifyDataSetChanged"
+        message="It will always be more efficient to use more specific change events if you can. Rely on `notifyDataSetChanged` as a last resort.">
+        <location
+            file="src/main/java/com/example/mealer/models/MenuModel.java"
+            line="181"/>
+    </issue>
+
+    <issue
+        id="NotifyDataSetChanged"
+        message="It will always be more efficient to use more specific change events if you can. Rely on `notifyDataSetChanged` as a last resort.">
+        <location
+            file="src/main/java/com/example/mealer/adminclasses/PlainteActivity.java"
+            line="61"/>
+    </issue>
+
+    <issue
+        id="NotifyDataSetChanged"
+        message="It will always be more efficient to use more specific change events if you can. Rely on `notifyDataSetChanged` as a last resort.">
+        <location
+            file="src/main/java/com/example/mealer/recyclerviewclasses/RepasRecyclerViewAdapter.java"
+            line="38"/>
+    </issue>
+
+    <issue
+        id="ObsoleteSdkInt"
+        message="Unnecessary; SDK_INT is always >= 31">
+        <location
+            file="src/main/AndroidManifest.xml"
+            line="15"/>
+    </issue>
+
+    <issue
+        id="ObsoleteSdkInt"
+        message="This folder configuration (`v24`) is unnecessary; `minSdkVersion` is 24. Merge all the resources in this folder into `drawable`.">
+        <location
+            file="src/main/res/drawable-v24"/>
+    </issue>
+
+    <issue
+        id="UseCompoundDrawables"
+        message="This tag and its children can be replaced by one `&lt;TextView/>` and a compound drawable">
+        <location
+            file="src/main/res/layout/activity_main_admin.xml"
+            line="21"/>
+    </issue>
+
+    <issue
+        id="InefficientWeight"
+        message="Use a `layout_width` of `0dp` instead of `wrap_content` for better performance">
+        <location
+            file="src/main/res/layout/activity_client_repas_du_jour.xml"
+            line="38"/>
+    </issue>
+
+    <issue
+        id="InefficientWeight"
+        message="Use a `layout_height` of `0dp` instead of `450dp` for better performance">
+        <location
+            file="src/main/res/layout/activity_repas_menu_du_jour.xml"
+            line="34"/>
+    </issue>
+
+    <issue
+        id="NestedWeights"
+        message="Nested weights are bad for performance">
+        <location
+            file="src/main/res/layout/activity_cuisinier_profile.xml"
+            line="203"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        message="Possible overdraw: Root element paints background `@drawable/backgroundk` with a theme that also paints a background (inferred theme is `@style/Theme.Mealer`)">
+        <location
+            file="src/main/res/layout/activity_2.xml"
+            line="7"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        message="Possible overdraw: Root element paints background `@drawable/backgroundk` with a theme that also paints a background (inferred theme is `@style/Theme.Mealer`)">
+        <location
+            file="src/main/res/layout/activity_add_repas.xml"
+            line="7"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        message="Possible overdraw: Root element paints background `@drawable/backgroundk` with a theme that also paints a background (inferred theme is `@style/Theme.Mealer`)">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="7"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        message="Possible overdraw: Root element paints background `@drawable/backgroundk` with a theme that also paints a background (inferred theme is `@style/Theme.Mealer`)">
+        <location
+            file="src/main/res/layout/activity_client_envoie_commande.xml"
+            line="8"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        message="Possible overdraw: Root element paints background `@drawable/backgroundk` with a theme that also paints a background (inferred theme is `@style/Theme.Mealer`)">
+        <location
+            file="src/main/res/layout/activity_client_plainte.xml"
+            line="8"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        message="Possible overdraw: Root element paints background `@drawable/backgroundk` with a theme that also paints a background (inferred theme is `@style/Theme.Mealer`)">
+        <location
+            file="src/main/res/layout/activity_client_recherche_filtre.xml"
+            line="8"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        message="Possible overdraw: Root element paints background `@drawable/backgroundk` with a theme that also paints a background (inferred theme is `@style/Theme.Mealer`)">
+        <location
+            file="src/main/res/layout/activity_client_repas_du_jour.xml"
+            line="8"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        message="Possible overdraw: Root element paints background `@drawable/jus` with a theme that also paints a background (inferred theme is `@style/Theme.Mealer`)">
+        <location
+            file="src/main/res/layout/activity_main_admin.xml"
+            line="8"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        message="Possible overdraw: Root element paints background `@drawable/backgroundk` with a theme that also paints a background (inferred theme is `@style/Theme.Mealer`)">
+        <location
+            file="src/main/res/layout/activity_main_client.xml"
+            line="7"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        message="Possible overdraw: Root element paints background `@drawable/backgroundk` with a theme that also paints a background (inferred theme is `@style/Theme.Mealer`)">
+        <location
+            file="src/main/res/layout/activity_main_cuisinier.xml"
+            line="7"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        message="Possible overdraw: Root element paints background `@drawable/backgroundk` with a theme that also paints a background (inferred theme is `@style/Theme.Mealer`)">
+        <location
+            file="src/main/res/layout/activity_menu.xml"
+            line="7"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        message="Possible overdraw: Root element paints background `@drawable/backgroundk` with a theme that also paints a background (inferred theme is `@style/Theme.Mealer`)">
+        <location
+            file="src/main/res/layout/activity_menu_du_jour.xml"
+            line="8"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        message="Possible overdraw: Root element paints background `@drawable/backgroundk` with a theme that also paints a background (inferred theme is `@style/Theme.Mealer`)">
+        <location
+            file="src/main/res/layout/activity_plainte.xml"
+            line="7"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        message="Possible overdraw: Root element paints background `@drawable/backgroundk` with a theme that also paints a background (inferred theme is `@style/Theme.Mealer`)">
+        <location
+            file="src/main/res/layout/activity_popup_traiter_demande.xml"
+            line="7"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        message="Possible overdraw: Root element paints background `@drawable/backgroundk` with a theme that also paints a background (inferred theme is `@style/Theme.Mealer`)">
+        <location
+            file="src/main/res/layout/activity_repas_menu.xml"
+            line="7"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        message="Possible overdraw: Root element paints background `@drawable/backgroundk` with a theme that also paints a background (inferred theme is `@style/Theme.Mealer`)">
+        <location
+            file="src/main/res/layout/activity_repas_menu_du_jour.xml"
+            line="7"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        message="Possible overdraw: Root element paints background `@drawable/backgroundk` with a theme that also paints a background (inferred theme is `@style/Theme.Mealer`)">
+        <location
+            file="src/main/res/layout/activity_sign_up.xml"
+            line="9"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        message="Possible overdraw: Root element paints background `@drawable/backgroundk` with a theme that also paints a background (inferred theme is `@style/Theme.Mealer`)">
+        <location
+            file="src/main/res/layout/activity_sign_up_client.xml"
+            line="7"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        message="Possible overdraw: Root element paints background `@drawable/backgroundk` with a theme that also paints a background (inferred theme is `@style/Theme.Mealer`)">
+        <location
+            file="src/main/res/layout/popup_suspension.xml"
+            line="8"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.layout.activity_login` appears to be unused">
+        <location
+            file="src/main/res/layout-w1240dp/activity_login.xml"
+            line="2"/>
+        <location
+            file="src/main/res/layout-w936dp/activity_login.xml"
+            line="2"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.calendar48` appears to be unused">
+        <location
+            file="src/main/res/drawable/calendar48.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.Rate_dialogu2` appears to be unused">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="11"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.layout.content_scrolling` appears to be unused">
+        <location
+            file="src/main/res/layout/content_scrolling.xml"
+            line="2"/>
+        <location
+            file="src/main/res/layout-w1240dp/content_scrolling.xml"
+            line="2"/>
+        <location
+            file="src/main/res/layout-w936dp/content_scrolling.xml"
+            line="2"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.layout.cuisinier_model` appears to be unused">
+        <location
+            file="src/main/res/layout/cuisinier_model.xml"
+            line="2"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.customercomplaint` appears to be unused">
+        <location
+            file="src/main/res/drawable/customercomplaint.JPG"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.dimen.activity_horizontal_margin` appears to be unused">
+        <location
+            file="src/main/res/values/dimens.xml"
+            line="3"/>
+        <location
+            file="src/main/res/values-land/dimens.xml"
+            line="2"/>
+        <location
+            file="src/main/res/values-w1240dp/dimens.xml"
+            line="2"/>
+        <location
+            file="src/main/res/values-w600dp/dimens.xml"
+            line="2"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.dimen.activity_vertical_margin` appears to be unused">
+        <location
+            file="src/main/res/values/dimens.xml"
+            line="4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.dimen.text_margin` appears to be unused">
+        <location
+            file="src/main/res/values/dimens.xml"
+            line="5"/>
+        <location
+            file="src/main/res/values-land/dimens.xml"
+            line="4"/>
+        <location
+            file="src/main/res/values-w600dp/dimens.xml"
+            line="4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.dimen.app_bar_height` appears to be unused">
+        <location
+            file="src/main/res/values/dimens.xml"
+            line="6"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.dimen.fab_margin` appears to be unused">
+        <location
+            file="src/main/res/values/dimens.xml"
+            line="7"/>
+        <location
+            file="src/main/res/values-land/dimens.xml"
+            line="3"/>
+        <location
+            file="src/main/res/values-w1240dp/dimens.xml"
+            line="3"/>
+        <location
+            file="src/main/res/values-w600dp/dimens.xml"
+            line="3"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.envelope24` appears to be unused">
+        <location
+            file="src/main/res/drawable/envelope24.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.mipmap.ic_launcher` appears to be unused">
+        <location
+            file="src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
+            line="2"/>
+        <location
+            file="src/main/res/mipmap-hdpi/ic_launcher.webp"/>
+        <location
+            file="src/main/res/mipmap-mdpi/ic_launcher.webp"/>
+        <location
+            file="src/main/res/mipmap-xhdpi/ic_launcher.webp"/>
+        <location
+            file="src/main/res/mipmap-xxhdpi/ic_launcher.webp"/>
+        <location
+            file="src/main/res/mipmap-xxxhdpi/ic_launcher.webp"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.ic_launcher_background` appears to be unused">
+        <location
+            file="src/main/res/drawable/ic_launcher_background.xml"
+            line="2"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.ic_launcher_foreground` appears to be unused">
+        <location
+            file="src/main/res/drawable-v24/ic_launcher_foreground.xml"
+            line="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.mipmap.ic_launcher_round` appears to be unused">
+        <location
+            file="src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"
+            line="2"/>
+        <location
+            file="src/main/res/mipmap-hdpi/ic_launcher_round.webp"/>
+        <location
+            file="src/main/res/mipmap-mdpi/ic_launcher_round.webp"/>
+        <location
+            file="src/main/res/mipmap-xhdpi/ic_launcher_round.webp"/>
+        <location
+            file="src/main/res/mipmap-xxhdpi/ic_launcher_round.webp"/>
+        <location
+            file="src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.menu.menu_scrolling` appears to be unused">
+        <location
+            file="src/main/res/menu/menu_scrolling.xml"
+            line="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.menuburger` appears to be unused">
+        <location
+            file="src/main/res/drawable/menuburger.jpeg"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.minus_botton` appears to be unused">
+        <location
+            file="src/main/res/drawable/minus_botton.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.pizza` appears to be unused">
+        <location
+            file="src/main/res/drawable/pizza.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.plus_button` appears to be unused">
+        <location
+            file="src/main/res/drawable/plus_button.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.round_back` appears to be unused">
+        <location
+            file="src/main/res/drawable/round_back.xml"
+            line="2"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.page_title` appears to be unused">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="3"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.title_activity_login` appears to be unused">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="4"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.prompt_email` appears to be unused">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="5"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.prompt_password` appears to be unused">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="6"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.action_sign_in` appears to be unused">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="7"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.action_sign_in_short` appears to be unused">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="8"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.welcome` appears to be unused">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="9"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.invalid_username` appears to be unused">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="10"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.invalid_password` appears to be unused">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="11"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.login_failed` appears to be unused">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.title_activity_list_des_plaintes` appears to be unused">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="14"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.action_settings` appears to be unused">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="17"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.hello_blank_fragment` appears to be unused">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="19"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.title_activity_adminacceuil` appears to be unused">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="20"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.title_home` appears to be unused">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="21"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.title_dashboard` appears to be unused">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="22"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.title_notifications` appears to be unused">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="23"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.title_activity_scrolling` appears to be unused">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="24"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.large_text` appears to be unused">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="25"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.style.Theme_Mealer_NoActionBar` appears to be unused">
+        <location
+            file="src/main/res/values/themes.xml"
+            line="17"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.style.Theme_Mealer_AppBarOverlay` appears to be unused">
+        <location
+            file="src/main/res/values/themes.xml"
+            line="22"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.style.Theme_Mealer_PopupOverlay` appears to be unused">
+        <location
+            file="src/main/res/values/themes.xml"
+            line="24"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.useradd` appears to be unused">
+        <location
+            file="src/main/res/drawable/useradd.png"/>
+    </issue>
+
+    <issue
+        id="UselessLeaf"
+        message="This `LinearLayout` view is unnecessary (no children, no `background`, no `id`, no `style`)">
+        <location
+            file="src/main/res/layout/activity_client_votre_commande.xml"
+            line="68"/>
+    </issue>
+
+    <issue
+        id="UselessParent"
+        message="This `LinearLayout` layout or its `LinearLayout` parent is unnecessary">
+        <location
+            file="src/main/res/layout/activity_2.xml"
+            line="19"/>
+    </issue>
+
+    <issue
+        id="UselessParent"
+        message="This `LinearLayout` layout or its `LinearLayout` parent is unnecessary; transfer the `background` attribute to the other view">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="23"/>
+    </issue>
+
+    <issue
+        id="UselessParent"
+        message="This `LinearLayout` layout or its `LinearLayout` parent is possibly unnecessary">
+        <location
+            file="src/main/res/layout/activity_sign_up.xml"
+            line="32"/>
+    </issue>
+
+    <issue
+        id="UselessParent"
+        message="This `LinearLayout` layout or its `LinearLayout` parent is possibly unnecessary">
+        <location
+            file="src/main/res/layout/activity_sign_up_client.xml"
+            line="23"/>
+    </issue>
+
+    <issue
+        id="TypographyEllipsis"
+        message="Replace &quot;...&quot; with ellipsis character (…, &amp;#8230;) ?">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="13"/>
+    </issue>
+
+    <issue
+        id="IconLauncherShape"
+        message="Launcher icon used as round icon did not have a circular shape">
+        <location
+            file="src/main/res/drawable/logodemealerremove.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/boncheckbox.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/boncheckbox.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/burgermain.jpg` in densityless folder">
+        <location
+            file="src/main/res/drawable/burgermain.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/calendar48.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/calendar48.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/chicken.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/chicken.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/cuisi_image.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/cuisi_image.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/cuisto.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/cuisto.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/customer.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/customer.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/customercomplaint.JPG` in densityless folder">
+        <location
+            file="src/main/res/drawable/customercomplaint.JPG"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/envelope24.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/envelope24.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/icon_close.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/icon_close.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/jus.jpg` in densityless folder">
+        <location
+            file="src/main/res/drawable/jus.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/leftarrow.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/leftarrow.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/lock24.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/lock24.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/logodemealer.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/logodemealer.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/logodemealerremove.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/logodemealerremove.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/menuburger.jpeg` in densityless folder">
+        <location
+            file="src/main/res/drawable/menuburger.jpeg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/minus_botton.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/minus_botton.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/minuuus.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/minuuus.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/notification22.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/notification22.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/pizza.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/pizza.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/plus_button.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/plus_button.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/pluus.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/pluus.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/signoutoption.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/signoutoption.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/user224.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/user224.png"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/useradd.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/useradd.png"/>
+    </issue>
+
+    <issue
+        id="ButtonStyle"
+        message="Buttons in button bars should be borderless; use `style=&quot;?android:attr/buttonBarButtonStyle&quot;` (and `?android:attr/buttonBarStyle` on the parent)">
+        <location
+            file="src/main/res/layout/activity_client_plainte.xml"
+            line="100"/>
+    </issue>
+
+    <issue
+        id="ButtonStyle"
+        message="Buttons in button bars should be borderless; use `style=&quot;?android:attr/buttonBarButtonStyle&quot;` (and `?android:attr/buttonBarStyle` on the parent)">
+        <location
+            file="src/main/res/layout/activity_client_plainte.xml"
+            line="109"/>
+    </issue>
+
+    <issue
+        id="ButtonStyle"
+        message="Buttons in button bars should be borderless; use `style=&quot;?android:attr/buttonBarButtonStyle&quot;` (and `?android:attr/buttonBarStyle` on the parent)">
+        <location
+            file="src/main/res/layout/activity_menu_du_jour.xml"
+            line="43"/>
+    </issue>
+
+    <issue
+        id="ButtonStyle"
+        message="Buttons in button bars should be borderless; use `style=&quot;?android:attr/buttonBarButtonStyle&quot;` (and `?android:attr/buttonBarStyle` on the parent)">
+        <location
+            file="src/main/res/layout/activity_menu_du_jour.xml"
+            line="54"/>
+    </issue>
+
+    <issue
+        id="ButtonStyle"
+        message="Buttons in button bars should be borderless; use `style=&quot;?android:attr/buttonBarButtonStyle&quot;` (and `?android:attr/buttonBarStyle` on the parent)">
+        <location
+            file="src/main/res/layout/activity_repas_menu.xml"
+            line="193"/>
+    </issue>
+
+    <issue
+        id="ButtonStyle"
+        message="Buttons in button bars should be borderless; use `style=&quot;?android:attr/buttonBarButtonStyle&quot;` (and `?android:attr/buttonBarStyle` on the parent)">
+        <location
+            file="src/main/res/layout/activity_repas_menu.xml"
+            line="202"/>
+    </issue>
+
+    <issue
+        id="ButtonStyle"
+        message="Buttons in button bars should be borderless; use `style=&quot;?android:attr/buttonBarButtonStyle&quot;` (and `?android:attr/buttonBarStyle` on the parent)">
+        <location
+            file="src/main/res/layout/activity_repas_menu.xml"
+            line="211"/>
+    </issue>
+
+    <issue
+        id="TextFields"
+        message="This text field does not specify an `inputType`">
+        <location
+            file="src/main/res/layout/activity_add_repas.xml"
+            line="40"/>
+    </issue>
+
+    <issue
+        id="TextFields"
+        message="This text field does not specify an `inputType`">
+        <location
+            file="src/main/res/layout/activity_add_repas.xml"
+            line="54"/>
+    </issue>
+
+    <issue
+        id="TextFields"
+        message="This text field does not specify an `inputType`">
+        <location
+            file="src/main/res/layout/activity_add_repas.xml"
+            line="68"/>
+    </issue>
+
+    <issue
+        id="TextFields"
+        message="This text field does not specify an `inputType`">
+        <location
+            file="src/main/res/layout/activity_add_repas.xml"
+            line="82"/>
+    </issue>
+
+    <issue
+        id="TextFields"
+        message="This text field does not specify an `inputType`">
+        <location
+            file="src/main/res/layout/activity_add_repas.xml"
+            line="96"/>
+    </issue>
+
+    <issue
+        id="TextFields"
+        message="This text field does not specify an `inputType`">
+        <location
+            file="src/main/res/layout/activity_add_repas.xml"
+            line="125"/>
+    </issue>
+
+    <issue
+        id="TextFields"
+        message="This text field does not specify an `inputType`">
+        <location
+            file="src/main/res/layout/activity_repas_menu.xml"
+            line="49"/>
+    </issue>
+
+    <issue
+        id="TextFields"
+        message="This text field does not specify an `inputType`">
+        <location
+            file="src/main/res/layout/activity_repas_menu.xml"
+            line="70"/>
+    </issue>
+
+    <issue
+        id="TextFields"
+        message="This text field does not specify an `inputType`">
+        <location
+            file="src/main/res/layout/activity_repas_menu.xml"
+            line="90"/>
+    </issue>
+
+    <issue
+        id="TextFields"
+        message="This text field does not specify an `inputType`">
+        <location
+            file="src/main/res/layout/activity_repas_menu.xml"
+            line="110"/>
+    </issue>
+
+    <issue
+        id="TextFields"
+        message="This text field does not specify an `inputType`">
+        <location
+            file="src/main/res/layout/activity_repas_menu.xml"
+            line="130"/>
+    </issue>
+
+    <issue
+        id="TextFields"
+        message="This text field does not specify an `inputType`">
+        <location
+            file="src/main/res/layout/activity_repas_menu.xml"
+            line="171"/>
+    </issue>
+
+    <issue
+        id="TextFields"
+        message="This text field does not specify an `inputType`">
+        <location
+            file="src/main/res/layout/activity_sign_up.xml"
+            line="75"/>
+    </issue>
+
+    <issue
+        id="TextFields"
+        message="This text field does not specify an `inputType`">
+        <location
+            file="src/main/res/layout/activity_sign_up.xml"
+            line="105"/>
+    </issue>
+
+    <issue
+        id="TextFields"
+        message="This text field does not specify an `inputType`">
+        <location
+            file="src/main/res/layout/activity_sign_up_client.xml"
+            line="65"/>
+    </issue>
+
+    <issue
+        id="TextFields"
+        message="This text field does not specify an `inputType`">
+        <location
+            file="src/main/res/layout/activity_sign_up_client.xml"
+            line="95"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src/main/res/layout/activity_add_repas.xml"
+            line="40"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src/main/res/layout/activity_add_repas.xml"
+            line="54"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src/main/res/layout/activity_add_repas.xml"
+            line="68"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src/main/res/layout/activity_add_repas.xml"
+            line="82"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src/main/res/layout/activity_add_repas.xml"
+            line="96"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src/main/res/layout/activity_add_repas.xml"
+            line="110"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src/main/res/layout/activity_add_repas.xml"
+            line="125"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src/main/res/layout/activity_client_plainte.xml"
+            line="51"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src/main/res/layout/activity_client_plainte.xml"
+            line="79"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src/main/res/layout/activity_cuisinier_profile.xml"
+            line="47"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src/main/res/layout/activity_cuisinier_profile.xml"
+            line="70"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src/main/res/layout/activity_cuisinier_profile.xml"
+            line="93"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src/main/res/layout/activity_cuisinier_profile.xml"
+            line="116"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src/main/res/layout/activity_cuisinier_profile.xml"
+            line="139"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src/main/res/layout/activity_cuisinier_profile.xml"
+            line="162"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src/main/res/layout-w1240dp/activity_login.xml"
+            line="14"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src/main/res/layout-w936dp/activity_login.xml"
+            line="20"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src/main/res/layout-w1240dp/activity_login.xml"
+            line="26"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src/main/res/layout-w936dp/activity_login.xml"
+            line="32"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="54"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="72"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src/main/res/layout/activity_repas_menu.xml"
+            line="49"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src/main/res/layout/activity_repas_menu.xml"
+            line="70"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src/main/res/layout/activity_repas_menu.xml"
+            line="90"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src/main/res/layout/activity_repas_menu.xml"
+            line="110"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src/main/res/layout/activity_repas_menu.xml"
+            line="130"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src/main/res/layout/activity_repas_menu.xml"
+            line="150"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src/main/res/layout/activity_repas_menu.xml"
+            line="171"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src/main/res/layout/activity_sign_up.xml"
+            line="75"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src/main/res/layout/activity_sign_up.xml"
+            line="105"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src/main/res/layout/activity_sign_up.xml"
+            line="134"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src/main/res/layout/activity_sign_up.xml"
+            line="163"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src/main/res/layout/activity_sign_up.xml"
+            line="192"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src/main/res/layout/activity_sign_up.xml"
+            line="228"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src/main/res/layout/activity_sign_up_client.xml"
+            line="65"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src/main/res/layout/activity_sign_up_client.xml"
+            line="95"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src/main/res/layout/activity_sign_up_client.xml"
+            line="124"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src/main/res/layout/activity_sign_up_client.xml"
+            line="153"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src/main/res/layout/activity_sign_up_client.xml"
+            line="182"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src/main/res/layout/activity_sign_up_client.xml"
+            line="212"/>
+    </issue>
+
+    <issue
+        id="ClickableViewAccessibility"
+        message="`onTouch` should call `View#performClick` when a click is detected">
+        <location
+            file="src/main/java/com/example/mealer/cuisinierclasses/CuisinierVosDemandesActivity.java"
+            line="62"/>
+    </issue>
+
+    <issue
+        id="ClickableViewAccessibility"
+        message="`onTouch` should call `View#performClick` when a click is detected">
+        <location
+            file="src/main/java/com/example/mealer/cuisinierclasses/CuisinierVosDemandesActivity.java"
+            line="89"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image">
+        <location
+            file="src/main/res/layout/activity_2.xml"
+            line="35"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image">
+        <location
+            file="src/main/res/layout/activity_2.xml"
+            line="43"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="236"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="259"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image">
+        <location
+            file="src/main/res/layout/activity_client_envoie_commande.xml"
+            line="30"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image">
+        <location
+            file="src/main/res/layout/activity_client_recherche.xml"
+            line="27"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="29"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image">
+        <location
+            file="src/main/res/layout/activity_main_admin.xml"
+            line="29"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image">
+        <location
+            file="src/main/res/layout/activity_main_admin.xml"
+            line="75"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image">
+        <location
+            file="src/main/res/layout/activity_plainte.xml"
+            line="37"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image">
+        <location
+            file="src/main/res/layout/activity_splash.xml"
+            line="27"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image">
+        <location
+            file="src/main/res/layout/cuisinier_model.xml"
+            line="28"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image">
+        <location
+            file="src/main/res/layout/cuisinier_model.xml"
+            line="41"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image">
+        <location
+            file="src/main/res/layout/daily_meal_model.xml"
+            line="29"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image">
+        <location
+            file="src/main/res/layout/daily_meal_model.xml"
+            line="42"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image">
+        <location
+            file="src/main/res/layout/daily_meal_model.xml"
+            line="114"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image">
+        <location
+            file="src/main/res/layout/popup_suspension.xml"
+            line="19"/>
+    </issue>
+
+    <issue
+        id="KeyboardInaccessibleWidget"
+        message="&apos;clickable&apos; attribute found, please also add &apos;focusable&apos;">
+        <location
+            file="src/main/res/layout/activity_2.xml"
+            line="57"/>
+    </issue>
+
+    <issue
+        id="KeyboardInaccessibleWidget"
+        message="&apos;clickable&apos; attribute found, please also add &apos;focusable&apos;">
+        <location
+            file="src/main/res/layout/activity_2.xml"
+            line="57"/>
+    </issue>
+
+    <issue
+        id="KeyboardInaccessibleWidget"
+        message="&apos;clickable&apos; attribute found, please also add &apos;focusable&apos;">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="217"/>
+    </issue>
+
+    <issue
+        id="KeyboardInaccessibleWidget"
+        message="&apos;clickable&apos; attribute found, please also add &apos;focusable&apos;">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="217"/>
+    </issue>
+
+    <issue
+        id="KeyboardInaccessibleWidget"
+        message="&apos;clickable&apos; attribute found, please also add &apos;focusable&apos;">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="242"/>
+    </issue>
+
+    <issue
+        id="KeyboardInaccessibleWidget"
+        message="&apos;clickable&apos; attribute found, please also add &apos;focusable&apos;">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="242"/>
+    </issue>
+
+    <issue
+        id="KeyboardInaccessibleWidget"
+        message="&apos;clickable&apos; attribute found, please also add &apos;focusable&apos;">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="104"/>
+    </issue>
+
+    <issue
+        id="KeyboardInaccessibleWidget"
+        message="&apos;clickable&apos; attribute found, please also add &apos;focusable&apos;">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="104"/>
+    </issue>
+
+    <issue
+        id="KeyboardInaccessibleWidget"
+        message="&apos;clickable&apos; attribute found, please also add &apos;focusable&apos;">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="134"/>
+    </issue>
+
+    <issue
+        id="KeyboardInaccessibleWidget"
+        message="&apos;clickable&apos; attribute found, please also add &apos;focusable&apos;">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="134"/>
+    </issue>
+
+    <issue
+        id="KeyboardInaccessibleWidget"
+        message="&apos;clickable&apos; attribute found, please also add &apos;focusable&apos;">
+        <location
+            file="src/main/res/layout/activity_rate_dialogu.xml"
+            line="50"/>
+    </issue>
+
+    <issue
+        id="KeyboardInaccessibleWidget"
+        message="&apos;clickable&apos; attribute found, please also add &apos;focusable&apos;">
+        <location
+            file="src/main/res/layout/activity_rate_dialogu.xml"
+            line="50"/>
+    </issue>
+
+    <issue
+        id="LabelFor"
+        message="Missing accessibility label: provide either a view with an `android:labelFor` that references this view or provide an `android:hint`">
+        <location
+            file="src/main/res/layout/activity_client_plainte.xml"
+            line="51"/>
+    </issue>
+
+    <issue
+        id="LabelFor"
+        message="Missing accessibility label: provide either a view with an `android:labelFor` that references this view or provide an `android:hint`">
+        <location
+            file="src/main/res/layout/activity_client_plainte.xml"
+            line="79"/>
+    </issue>
+
+    <issue
+        id="LabelFor"
+        message="Missing accessibility label: provide either a view with an `android:labelFor` that references this view or provide an `android:hint`">
+        <location
+            file="src/main/res/layout/activity_cuisinier_profile.xml"
+            line="47"/>
+    </issue>
+
+    <issue
+        id="LabelFor"
+        message="Missing accessibility label: provide either a view with an `android:labelFor` that references this view or provide an `android:hint`">
+        <location
+            file="src/main/res/layout/activity_cuisinier_profile.xml"
+            line="70"/>
+    </issue>
+
+    <issue
+        id="LabelFor"
+        message="Missing accessibility label: provide either a view with an `android:labelFor` that references this view or provide an `android:hint`">
+        <location
+            file="src/main/res/layout/activity_cuisinier_profile.xml"
+            line="93"/>
+    </issue>
+
+    <issue
+        id="LabelFor"
+        message="Missing accessibility label: provide either a view with an `android:labelFor` that references this view or provide an `android:hint`">
+        <location
+            file="src/main/res/layout/activity_cuisinier_profile.xml"
+            line="116"/>
+    </issue>
+
+    <issue
+        id="LabelFor"
+        message="Missing accessibility label: provide either a view with an `android:labelFor` that references this view or provide an `android:hint`">
+        <location
+            file="src/main/res/layout/activity_cuisinier_profile.xml"
+            line="139"/>
+    </issue>
+
+    <issue
+        id="LabelFor"
+        message="Missing accessibility label: provide either a view with an `android:labelFor` that references this view or provide an `android:hint`">
+        <location
+            file="src/main/res/layout/activity_cuisinier_profile.xml"
+            line="162"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="src/main/java/com/example/mealer/clientclasses/ClientDescRepasActivity.java"
+            line="57"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="src/main/java/com/example/mealer/clientclasses/ClientDescRepasActivity.java"
+            line="107"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="src/main/java/com/example/mealer/clientclasses/ClientDescRepasActivity.java"
+            line="117"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="src/main/java/com/example/mealer/clientclasses/ClientPlainteActivity.java"
+            line="51"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="src/main/java/com/example/mealer/clientclasses/ClientVotreCommandeActivity.java"
+            line="36"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="src/main/java/com/example/mealer/clientclasses/ClientVotreCommandeActivity.java"
+            line="39"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="src/main/java/com/example/mealer/clientclasses/ClientVotreCommandeActivity.java"
+            line="42"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="src/main/java/com/example/mealer/MainActivity.java"
+            line="71"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="src/main/java/com/example/mealer/MainActivity.java"
+            line="103"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="src/main/java/com/example/mealer/MainActivity.java"
+            line="113"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="src/main/java/com/example/mealer/MainActivity.java"
+            line="123"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="src/main/java/com/example/mealer/MainActivity.java"
+            line="130"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="src/main/java/com/example/mealer/cuisinierclasses/MainActivityCuisinier.java"
+            line="28"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="src/main/java/com/example/mealer/cuisinierclasses/MainActivityCuisinier.java"
+            line="28"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="src/main/java/com/example/mealer/cuisinierclasses/MainActivityCuisinier.java"
+            line="28"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="src/main/java/com/example/mealer/cuisinierclasses/MainActivityCuisinier.java"
+            line="32"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="src/main/java/com/example/mealer/cuisinierclasses/MainActivityCuisinier.java"
+            line="32"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="src/main/java/com/example/mealer/cuisinierclasses/MainActivityCuisinier.java"
+            line="32"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="src/main/java/com/example/mealer/cuisinierclasses/MainActivityCuisinier.java"
+            line="34"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="src/main/java/com/example/mealer/cuisinierclasses/MainActivityCuisinier.java"
+            line="34"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="src/main/java/com/example/mealer/cuisinierclasses/MainActivityCuisinier.java"
+            line="34"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="src/main/java/com/example/mealer/cuisinierclasses/MainActivityCuisinier.java"
+            line="34"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="Number formatting does not take into account locale settings. Consider using `String.format` instead.">
+        <location
+            file="src/main/java/com/example/mealer/clientclasses/RateDialogu.java"
+            line="106"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="src/main/java/com/example/mealer/clientclasses/SignUpClientActivity.java"
+            line="63"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="src/main/java/com/example/mealer/cuisinierclasses/SignUpCuisinierActivity.java"
+            line="59"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="src/main/java/com/example/mealer/cuisinierclasses/addRepas.java"
+            line="72"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;⬅️Retour&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_2.xml"
+            line="59"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Repas&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_add_repas.xml"
+            line="27"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Nom du repas&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_add_repas.xml"
+            line="49"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Type de repas&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_add_repas.xml"
+            line="63"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Type de cuisine&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_add_repas.xml"
+            line="77"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Liste des ingrédients&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_add_repas.xml"
+            line="91"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Allergènes&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_add_repas.xml"
+            line="105"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Prix&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_add_repas.xml"
+            line="119"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Description&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_add_repas.xml"
+            line="134"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;BACK&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_add_repas.xml"
+            line="153"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;ADD&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_add_repas.xml"
+            line="167"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;REPAS&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="18"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Nom du repas  :&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="47"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;XXXX&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="56"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Type de repas :&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="71"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;XXXX&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="82"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Type de cuisine :&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="97"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;XXXX&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="107"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Ingrédients :&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="121"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;XXXX&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="131"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Allergènes :&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="145"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;XXXX&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="155"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Prix :&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="170"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;XXXX&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="180"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Description : &quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="194"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;XXXX&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="204"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot; Choisir l&apos;heure de cueillete&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="224"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;1&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="255"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Back&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="283"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Commander&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="297"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Confirmation de la commande&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_client_envoie_commande.xml"
+            line="24"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Commande passée&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_client_envoie_commande.xml"
+            line="42"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;En attende de la reponse du Cuisinier&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_client_envoie_commande.xml"
+            line="51"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Back&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_client_envoie_commande.xml"
+            line="59"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;         Mes Repas&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_client_mes_repas.xml"
+            line="29"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Back&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_client_mes_repas.xml"
+            line="45"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Plainte&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_client_plainte.xml"
+            line="25"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Titre de la plainte:&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_client_plainte.xml"
+            line="47"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Description:&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_client_plainte.xml"
+            line="75"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Retour&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_client_plainte.xml"
+            line="106"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Envoyer la plainte&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_client_plainte.xml"
+            line="116"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Repas commençant par ....&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_client_recherche_filtre.xml"
+            line="28"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;BACK&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_client_recherche_filtre.xml"
+            line="63"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Plats du jour de:&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_client_repas_du_jour.xml"
+            line="31"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;XXXX&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_client_repas_du_jour.xml"
+            line="43"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Back&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_client_repas_du_jour.xml"
+            line="59"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Votre commande&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_client_votre_commande.xml"
+            line="29"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Statut:&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_client_votre_commande.xml"
+            line="42"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Votre commande est en preparation&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_client_votre_commande.xml"
+            line="49"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Evaluer votre repas&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_client_votre_commande.xml"
+            line="66"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Soumettre une plainte&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_client_votre_commande.xml"
+            line="88"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Back&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_client_votre_commande.xml"
+            line="101"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;PROFILE&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_cuisinier_profile.xml"
+            line="25"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Nom&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_cuisinier_profile.xml"
+            line="44"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Prénom&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_cuisinier_profile.xml"
+            line="67"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;E-mail&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_cuisinier_profile.xml"
+            line="90"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Password&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_cuisinier_profile.xml"
+            line="113"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Adresse&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_cuisinier_profile.xml"
+            line="136"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Description&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_cuisinier_profile.xml"
+            line="159"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Se déconnecter&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_cuisinier_profile.xml"
+            line="190"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;BACK&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_cuisinier_profile.xml"
+            line="207"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;SAVE&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_cuisinier_profile.xml"
+            line="222"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;VOS DEMANDES&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_cuisinier_vos_demandes.xml"
+            line="27"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;BACK&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_cuisinier_vos_demandes.xml"
+            line="53"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;C&apos;est bon de te revoir!&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="44"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;  Entrer votre addresse e-mail:&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="63"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;   Entrer votre mot de passe:&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="79"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;TextView&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="90"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Se connecter&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="106"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Vous n&apos;avez pas de compte?&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="122"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;S&apos;inscrire&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="138"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Bienvenue, vous êtes connecté en tant qu&apos; admin.&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_main_admin.xml"
+            line="43"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Voir les plaintes&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_main_admin.xml"
+            line="65"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Se déconnecter&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_main_admin.xml"
+            line="85"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;MEALER        &quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_main_client.xml"
+            line="32"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Bienvenue vous êtes connecté en tant que client.&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_main_client.xml"
+            line="46"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Mes commandes&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_main_client.xml"
+            line="67"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Se déconnecter&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_main_client.xml"
+            line="84"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;MEALER    &quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_main_cuisinier.xml"
+            line="38"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Bienvenue vous êtes connecté en tant que cuisinier.&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_main_cuisinier.xml"
+            line="51"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;MENU COMPLET&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_main_cuisinier.xml"
+            line="86"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;MENU DU JOUR&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_main_cuisinier.xml"
+            line="95"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;DEMANDES D&apos;ACHATS&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_main_cuisinier.xml"
+            line="105"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;MENU&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_menu.xml"
+            line="18"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;BACK&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_menu.xml"
+            line="44"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;ADD&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_menu.xml"
+            line="59"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Voici le menu du jour proposé&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_menu_du_jour.xml"
+            line="24"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Back&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_menu_du_jour.xml"
+            line="51"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Add&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_menu_du_jour.xml"
+            line="63"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Voici la liste des plaintes:&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_plainte.xml"
+            line="33"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Retour&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_plainte.xml"
+            line="45"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;NOM DU REPAS&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_popup_traiter_demande.xml"
+            line="38"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;NOM DU CLIENT:&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_popup_traiter_demande.xml"
+            line="64"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;QUANTITE: &quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_popup_traiter_demande.xml"
+            line="87"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;HEURE DE CUEILLETE: &quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_popup_traiter_demande.xml"
+            line="112"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;APPROUVER&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_popup_traiter_demande.xml"
+            line="142"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;REJETER&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_popup_traiter_demande.xml"
+            line="151"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;RETOUR&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_popup_traiter_demande.xml"
+            line="163"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Comment était votre repas?&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_rate_dialogu.xml"
+            line="40"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;NOTE:&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_rate_dialogu.xml"
+            line="68"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Continuer&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_rate_dialogu.xml"
+            line="97"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;EDIT MEAL&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_repas_menu.xml"
+            line="26"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Nom du repas&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_repas_menu.xml"
+            line="58"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Type de repas&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_repas_menu.xml"
+            line="79"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Type de cuisine&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_repas_menu.xml"
+            line="99"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Liste des ingrédients&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_repas_menu.xml"
+            line="119"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Allergènes&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_repas_menu.xml"
+            line="139"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Prix&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_repas_menu.xml"
+            line="159"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Description&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_repas_menu.xml"
+            line="180"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;BACK&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_repas_menu.xml"
+            line="199"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;SAVE&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_repas_menu.xml"
+            line="208"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;DELETE&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_repas_menu.xml"
+            line="218"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;VIEW MEAL&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_repas_menu_du_jour.xml"
+            line="27"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Nom du repas&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_repas_menu_du_jour.xml"
+            line="48"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Type de repas&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_repas_menu_du_jour.xml"
+            line="70"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Type de cuisine&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_repas_menu_du_jour.xml"
+            line="92"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Ingrédients&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_repas_menu_du_jour.xml"
+            line="114"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Allergènes&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_repas_menu_du_jour.xml"
+            line="136"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Prix du repas&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_repas_menu_du_jour.xml"
+            line="158"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Description&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_repas_menu_du_jour.xml"
+            line="180"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;BACK&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_repas_menu_du_jour.xml"
+            line="205"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;DELETE&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_repas_menu_du_jour.xml"
+            line="220"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;sign up page&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_sign_up.xml"
+            line="17"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;S&apos;inscrire&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_sign_up.xml"
+            line="45"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Prénom&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_sign_up.xml"
+            line="71"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Ex: Roxy&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_sign_up.xml"
+            line="80"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Nom de famille&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_sign_up.xml"
+            line="101"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Ex: Wendaabo&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_sign_up.xml"
+            line="110"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Adresse&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_sign_up.xml"
+            line="130"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Veuillez entrer votre adresse postale&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_sign_up.xml"
+            line="139"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;E-mail&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_sign_up.xml"
+            line="159"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Ex: personne@domaine.ca&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_sign_up.xml"
+            line="168"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Mot de passe&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_sign_up.xml"
+            line="188"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Créez votre mot de passe&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_sign_up.xml"
+            line="197"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Brève description de soi meme&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_sign_up.xml"
+            line="218"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Qui êtes vous?&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_sign_up.xml"
+            line="233"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Retour&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_sign_up.xml"
+            line="250"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;S&apos;inscrire&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_sign_up.xml"
+            line="266"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;S&apos;inscrire&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_sign_up_client.xml"
+            line="36"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Prénom&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_sign_up_client.xml"
+            line="61"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Ex: Roxy&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_sign_up_client.xml"
+            line="71"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Nom de famille&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_sign_up_client.xml"
+            line="91"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Ex: Wendaabo&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_sign_up_client.xml"
+            line="101"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Adresse&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_sign_up_client.xml"
+            line="120"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Veuillez entrer votre adresse postale&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_sign_up_client.xml"
+            line="130"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;E-mail&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_sign_up_client.xml"
+            line="149"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Ex: personne@domaine.ca&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_sign_up_client.xml"
+            line="159"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Mot de passe&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_sign_up_client.xml"
+            line="178"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Créez votre mot de passe&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_sign_up_client.xml"
+            line="188"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Information carte de credit&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_sign_up_client.xml"
+            line="208"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Entrer votre numéro de carte:&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_sign_up_client.xml"
+            line="218"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Retour&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_sign_up_client.xml"
+            line="241"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;S&apos;inscrire&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/activity_sign_up_client.xml"
+            line="256"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;4,5&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/cuisinier_model.xml"
+            line="56"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;NomCuisinier&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/cuisinier_model.xml"
+            line="70"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Nom du plat&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/daily_meal_model.xml"
+            line="60"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Prix :&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/daily_meal_model.xml"
+            line="75"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;0.00&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/daily_meal_model.xml"
+            line="92"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;$&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/daily_meal_model.xml"
+            line="109"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;4,5&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/daily_meal_model.xml"
+            line="130"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;NomCuisinier&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/daily_meal_model.xml"
+            line="143"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;MENU&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/popup_select.xml"
+            line="19"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Back&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/popup_select.xml"
+            line="48"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Add Selected&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/popup_select.xml"
+            line="56"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Traitement de la plainte&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/popup_suspension.xml"
+            line="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Rejeter la plainte&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/popup_suspension.xml"
+            line="38"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Suspendre définitivement&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/popup_suspension.xml"
+            line="53"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Suspendre temporairement&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/popup_suspension.xml"
+            line="69"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Titre&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/recyclerview_row.xml"
+            line="42"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;TextView&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/recyclerview_row.xml"
+            line="50"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Nom Client : &quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/recyclerview_row.xml"
+            line="66"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;TextView&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/recyclerview_row.xml"
+            line="78"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Nom Cuisinier: &quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/recyclerview_row.xml"
+            line="96"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;TextView&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/recyclerview_row.xml"
+            line="111"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Description: &quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/recyclerview_row.xml"
+            line="129"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;TextView&quot;, should use `@string` resource">
+        <location
+            file="src/main/res/layout/recyclerview_row.xml"
+            line="144"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginRight` with `android:layout_marginEnd=&quot;40dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="168"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginRight` with `android:layout_marginEnd=&quot;40dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_client_desc_repas.xml"
+            line="168"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;20dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_client_envoie_commande.xml"
+            line="41"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;20dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_client_envoie_commande.xml"
+            line="41"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;20dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_client_envoie_commande.xml"
+            line="50"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;20dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_client_envoie_commande.xml"
+            line="50"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;150dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_client_plainte.xml"
+            line="24"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;150dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_client_plainte.xml"
+            line="24"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;0dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_client_recherche.xml"
+            line="31"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;0dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_client_recherche.xml"
+            line="31"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;20dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_client_repas_du_jour.xml"
+            line="22"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;20dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_client_repas_du_jour.xml"
+            line="22"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;20dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_client_repas_du_jour.xml"
+            line="61"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;20dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_client_repas_du_jour.xml"
+            line="61"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;50dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_client_votre_commande.xml"
+            line="26"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;50dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_client_votre_commande.xml"
+            line="26"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginRight` with `android:layout_marginEnd=&quot;20dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_client_votre_commande.xml"
+            line="28"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginRight` with `android:layout_marginEnd=&quot;20dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_client_votre_commande.xml"
+            line="28"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;35dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_client_votre_commande.xml"
+            line="58"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;35dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_client_votre_commande.xml"
+            line="58"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginRight` with `android:layout_marginEnd=&quot;20dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_client_votre_commande.xml"
+            line="62"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginRight` with `android:layout_marginEnd=&quot;20dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_client_votre_commande.xml"
+            line="62"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:drawableLeft` with `android:drawableStart=&quot;@android:drawable/btn_star_big_on&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_client_votre_commande.xml"
+            line="64"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:drawableLeft` with `android:drawableStart=&quot;@android:drawable/btn_star_big_on&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_client_votre_commande.xml"
+            line="64"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:drawableLeft` with `android:drawableStart=&quot;@drawable/user224&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="60"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:drawableLeft` with `android:drawableStart=&quot;@drawable/user224&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="60"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:drawableLeft` with `android:drawableStart=&quot;@drawable/lock24&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="82"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:drawableLeft` with `android:drawableStart=&quot;@drawable/lock24&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="82"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;190dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="133"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;190dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_main.xml"
+            line="133"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;10dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_main_admin.xml"
+            line="40"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;10dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_main_admin.xml"
+            line="40"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;10dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_main_admin.xml"
+            line="61"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;10dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_main_admin.xml"
+            line="61"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;10dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_main_admin.xml"
+            line="76"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;10dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_main_admin.xml"
+            line="76"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;80dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_main_client.xml"
+            line="29"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;80dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_main_client.xml"
+            line="29"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:drawableRight` with `android:drawableEnd=&quot;@drawable/user224&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_main_cuisinier.xml"
+            line="36"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:drawableRight` with `android:drawableEnd=&quot;@drawable/user224&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_main_cuisinier.xml"
+            line="36"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;10dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_menu_du_jour.xml"
+            line="23"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;10dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_menu_du_jour.xml"
+            line="23"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;20dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_menu_du_jour.xml"
+            line="32"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;20dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_menu_du_jour.xml"
+            line="32"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;20dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_plainte.xml"
+            line="31"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;20dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_plainte.xml"
+            line="31"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;30dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_rate_dialogu.xml"
+            line="38"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;30dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_rate_dialogu.xml"
+            line="38"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;65dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_rate_dialogu.xml"
+            line="48"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;65dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_rate_dialogu.xml"
+            line="48"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;150dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_rate_dialogu.xml"
+            line="67"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;150dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_rate_dialogu.xml"
+            line="67"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;10dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_rate_dialogu.xml"
+            line="76"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;10dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_rate_dialogu.xml"
+            line="76"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;95dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_rate_dialogu.xml"
+            line="91"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;95dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_rate_dialogu.xml"
+            line="91"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginRight` with `android:layout_marginEnd=&quot;8dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_rate_dialogu.xml"
+            line="94"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginRight` with `android:layout_marginEnd=&quot;8dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/activity_rate_dialogu.xml"
+            line="94"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;25dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/recyclerview_row.xml"
+            line="31"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:layout_marginLeft` with `android:layout_marginStart=&quot;25dp&quot;` to better support right-to-left layouts">
+        <location
+            file="src/main/res/layout/recyclerview_row.xml"
+            line="31"/>
+    </issue>
+
+</issues>
