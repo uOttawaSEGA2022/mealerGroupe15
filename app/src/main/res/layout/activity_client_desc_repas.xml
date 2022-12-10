@@ -266,7 +266,7 @@
                 android:focusable="true"
 
                 android:onClick="onclickPlus"
-                android:src="@drawable/ic_add" />
+                android:src="@drawable/pluus" />
         </LinearLayout>
 
         <TableRow
