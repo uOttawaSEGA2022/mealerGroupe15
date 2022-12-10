@@ -1,6 +1,5 @@
 package com.example.mealer.recyclerviewclasses;
 
-import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +8,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mealer.R;
@@ -57,7 +57,8 @@ public class CommandeRecyclerViewAdapter extends RecyclerView.Adapter<CommandeRe
         return Array.size();
     }
     public static class MyViewHolder extends RecyclerView.ViewHolder{
-        TextView textViewRepasName, textViewRepasPrix, textViewRepasRate, textViewRepasNamneCuisinier,itemBackground;
+        TextView textViewRepasName, textViewRepasPrix, textViewRepasRate, textViewRepasNamneCuisinier;
+        View itemBackground;
         public MyViewHolder(@NonNull View itemView,RecyclerViewInterface recyclerViewInterface) {
             super(itemView);
             textViewRepasName=itemView.findViewById(R.id.NomPlat);
