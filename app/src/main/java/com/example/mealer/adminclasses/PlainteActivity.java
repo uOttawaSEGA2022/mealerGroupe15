@@ -51,6 +51,7 @@ public class PlainteActivity extends AppCompatActivity implements RecyclerViewIn
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                modeeldeplainte.clear();
                 for(DataSnapshot dataSnapshot:snapshot.getChildren( )){
                     PlainteModel p=dataSnapshot.getValue(PlainteModel.class);
                     if(!modeeldeplainte.contains(p)){
@@ -72,7 +73,7 @@ public class PlainteActivity extends AppCompatActivity implements RecyclerViewIn
     @Override
     public void OnItemClick(int position) {
         Intent intent=new Intent(PlainteActivity.this, dialogue.class);
-        dialogue.setIds(modeeldeplainte.get(position).getId(), modeeldeplainte.get(position).getIdCuisinier());
+        dialogue.setIds(modeeldeplainte.get(position).getId(), modeeldeplainte.get(position).getIdDuCuisinier());
         startActivity(intent);
     }
 
