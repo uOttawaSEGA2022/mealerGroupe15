@@ -72,8 +72,7 @@ public class PlainteActivity extends AppCompatActivity implements RecyclerViewIn
     @Override
     public void OnItemClick(int position) {
         Intent intent=new Intent(PlainteActivity.this, dialogue.class);
-        intent.putExtra("idCuisinier", modeeldeplainte.get(position).getIdCuisinier());
-        intent.putExtra("id", modeeldeplainte.get(position).getId());
+        dialogue.setIds(modeeldeplainte.get(position).getId(), modeeldeplainte.get(position).getIdCuisinier());
         startActivity(intent);
     }
 

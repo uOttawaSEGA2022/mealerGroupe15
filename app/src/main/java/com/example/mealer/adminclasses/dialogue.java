@@ -20,8 +20,8 @@ import java.util.Calendar;
 public class dialogue extends AppCompatActivity {
 
     private DatePickerDialog datePickerDialog;
-    String id;
-    String idCuisinier;
+    static String id;
+    static String idCuisinier;
 
 
     @SuppressLint("MissingInflatedId")
@@ -31,9 +31,6 @@ public class dialogue extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.popup_suspension);
         initDatePicker();
-        Bundle b = getIntent().getExtras();
-        id = b.getString("id");
-        idCuisinier = b.getString("idCuisinier");
 
 
     }
@@ -139,6 +136,11 @@ public class dialogue extends AppCompatActivity {
         ref.child("suspended").setValue(true);
         ref.child("suspensionTime").setValue("-1");
         onReject(view);
+    }
+
+    public static void setIds(String id, String idCuisinier){
+        dialogue.id = id;
+        dialogue.idCuisinier = idCuisinier;
     }
 
 
