@@ -13,15 +13,15 @@ public class PlainteModel {
         private String nameOfClient;
         private String nameOfCuisinier;
         private String titre, description;
-        private String id, idCuisinier;
+        private String id, idDuCuisinier;
 
-    public PlainteModel(String nameOfClient, String nameOfCuisinier, String titre, String description, String id, String idCuisinier) {
+    public PlainteModel(String nameOfClient, String nameOfCuisinier, String titre, String description, String id, String idDuCuisinier) {
         this.nameOfClient = nameOfClient;
         this.nameOfCuisinier = nameOfCuisinier;
         this.titre = titre;
         this.description = description;
         this.id = id;
-        this.idCuisinier = idCuisinier;
+        this.idDuCuisinier = idDuCuisinier;
     }
 
     public PlainteModel(){}
@@ -66,12 +66,12 @@ public class PlainteModel {
         this.id = id;
     }
 
-    public String getIdCuisinier() {
-        return idCuisinier;
+    public String getIdDuCuisinier() {
+        return idDuCuisinier;
     }
 
-    public void setIdCuisinier(String idCuisinier) {
-        this.idCuisinier = idCuisinier;
+    public void setIdDuCuisinier(String idCuisinier) {
+        this.idDuCuisinier = idCuisinier;
     }
 }
 
