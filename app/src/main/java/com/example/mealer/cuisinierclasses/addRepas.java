@@ -53,8 +53,10 @@ public class addRepas extends AppCompatActivity {
 
         EditText description = findViewById(R.id.description);
         String foodDescription = description.getText().toString();
-        //TextView nooooom=findViewById(R.id.NomCuisinierMenu);
-        //nooooom.setText(""+cuii.firstName);
+        /*
+        TextView nooooom=findViewById(R.id.NomCuisinierMenu);
+        nooooom.setText(""+cuii.firstName);
+        */
 
 
         TextView incTextView2 = findViewById(R.id.incTextView2);

@@ -55,18 +55,18 @@ public class RateDialogu extends Dialog {
                 Toast.makeText(getContext().getApplicationContext(),"Merci d'avoir noter votre repas" , Toast.LENGTH_SHORT).show();
 
 
-                String key = c.getIdDeLaCommande();
+                String key = myRef.push().getKey();
 
 
                 myRef = database.getReference("Rate/"+key+"/IdRepas");
-                myRef.setValue(c.getIdDuRepas());
+                myRef.setValue(key);
                 myRef = database.getReference("Rate/"+key+"/RateValue");
                 myRef.setValue((int) myRatingStar.getRating());
                 c.setMyRate((int) myRatingStar.getRating());
                 myRef = database.getReference("Client/" + client.getId()+"/Commande/" + c.getIdDeLaCommande());
                 myRef.child("myRate").setValue((int) myRatingStar.getRating());
-                myRef = database.getReference("Rate/"+key+"/nomCuisinier");
-                myRef.setValue(c.getNomDuCuisinier());
+                myRef = database.getReference("Rate/"+key+"/idDuCuisinier");
+                myRef.setValue(c.getIdDuCuisinier());
                 dismiss();
 
             }
