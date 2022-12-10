@@ -48,18 +48,17 @@
                     app:srcCompat="@drawable/customer"
                     tools:ignore="SpeakableTextPresentCheck" />
 
-                <TextView
+                <ImageButton
                     android:id="@+id/retour2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="68dp"
+                    android:layout_width="86dp"
+                    android:layout_height="57dp"
                     android:layout_marginStart="20dp"
-                    android:background="#0C8B9DAC"
-                    android:clickable="true"
+
+                    android:background="@drawable/leftarrow"
                     android:onClick="OnClickReturnMain"
-                    android:text="⬅️Retour"
-                    android:textAllCaps="true"
-                    android:textSize="30dp"
-                    android:textStyle="bold" />
+
+
+                    />
 
             </LinearLayout>
         </LinearLayout>
