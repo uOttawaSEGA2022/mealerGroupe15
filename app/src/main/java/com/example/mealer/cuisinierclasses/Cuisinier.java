@@ -116,8 +116,8 @@ public class Cuisinier implements Account {
         for(DataSnapshot children : snapshot.getChildren()) {
             if (!connected) {
                 Log.println(Log.INFO, "TEST", " KEYSTONE : " + children.getKey());
-                if (children != null && children.child("email").getValue().toString().equals(email)) {
-                    if (children.child("password").getValue().toString().equals(pswd)) {
+                if (children.child("email").exists() && children.child("email").getValue().toString().equals(email)) {
+                    if (children.child("password").exists() && children.child("password").getValue().toString().equals(pswd)) {
                         connected = true;
                         this.email = children.child("email").getValue().toString();
                         this.password = children.child("password").getValue().toString();
