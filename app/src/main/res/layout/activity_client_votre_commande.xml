@@ -52,18 +52,22 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/confirmerRate"
+            android:id="@+id/GotoMap"
+
             android:layout_width="341dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="35dp"
             android:layout_marginTop="20dp"
 
 
+
+
             android:layout_marginRight="20dp"
             android:background="#3C000000"
-            android:drawableLeft="@android:drawable/btn_star_big_on"
-            android:onClick="onGotoDialogu"
-            android:text="Evaluer votre repas" />
+            android:drawableLeft="@android:drawable/ic_dialog_map"
+            android:drawableTint="#3571B1"
+            android:onClick="OnOpenInGoogleMaps"
+            android:text="Voir l'addresse de recuperation" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -71,10 +75,19 @@
             android:orientation="horizontal">
 
 
+            <Button
+                android:id="@+id/confirmerRate"
+                android:layout_width="341dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="20dp"
 
 
-
-
+                android:layout_marginRight="20dp"
+                android:background="#3C000000"
+                android:drawableLeft="@android:drawable/btn_star_big_on"
+                android:onClick="onGotoDialogu"
+                android:text="Evaluer votre repas" />
         </LinearLayout>
 
         <Space

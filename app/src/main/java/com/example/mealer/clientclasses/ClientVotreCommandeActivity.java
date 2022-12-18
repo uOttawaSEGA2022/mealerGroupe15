@@ -1,21 +1,32 @@
 package com.example.mealer.clientclasses;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mealer.models.MenuModel;
 import com.example.mealer.R;
 import com.example.mealer.models.commandeModel;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.Objects;
 
 public class ClientVotreCommandeActivity extends AppCompatActivity {
 
     MenuModel commandes;
+    String AddresseCuisinier="aa";
     commandeModel c;
   String b;
     static int pos;
@@ -114,5 +125,53 @@ public class ClientVotreCommandeActivity extends AppCompatActivity {
         //Intent intent =new Intent(getApplicationContext(),RateDialogu.class);
         //startActivityForResult(intent, 0);
 
+    }
+    public void OnOpenInGoogleMaps(View view) {
+     //DatabaseReference myref= FirebaseDatabase.getInstance().getReference("Cuisinier/"+c.getIdDuCuisinier());
+
+        //AddresseCuisinier=myref.child("adresse").
+       /* if(snapshot.hasChild("Rate")) {
+            DataSnapshot rateSnapshot = snapshot.child("Rate");
+            for (DataSnapshot rates : rateSnapshot.getChildren()) {
+                if (rates.child("IdRepas").exists() && rates.child("IdRepas").getValue().toString() == c.getIdDuRepas() &&
+                        rates.child("idDuCuisinier").exists() && rates.child("idDuCuisinier").getValue().toString() == c.getIdDuCuisinier()) {
+                    realAverage = realAverage + Double.parseDouble(rates.child("RateValue").getValue().toString());
+                    i += 1;
+                }
+            }*/
+
+        /*myref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.hasChild("adresse")){
+
+                    AddresseCuisinier=(String) snapshot.child("adresse").getValue();
+
+
+                }
+
+
+                        //AddresseCuisinier= snapshot.getValue().toString();
+                        //Toast.makeText(this, ""+snapshot.getValue().toString(), Toast.LENGTH_SHORT).show();
+
+
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });*/
+        //Toast.makeText(this, ""+c.getIdDuCuisinier(), Toast.LENGTH_SHORT).show();
+        //Create a Uri from an intent string. Use the result to create an Intent.
+        Uri gmmIntentUri = Uri.parse("http://maps.google.co.in/maps?q="+commandes.commandeArray.get(pos).getCuisinierAdresse());
+        //Create an Intent from emmIntentUri. Set the action to ACTION_VIEW
+        Intent MainActivityMap = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+        // Make the Intent explicit by setting the Google Maps package
+        MainActivityMap.setPackage("com.google.android.apps.maps");
+        // Altempt to start an activity that can handle the Intent
+        startActivity(MainActivityMap);
     }
 }

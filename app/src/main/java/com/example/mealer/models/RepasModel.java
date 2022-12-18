@@ -14,6 +14,7 @@ public class RepasModel {
             ingredients, allergenes,IdDuCuisinier, description, nameCuisinier;
     boolean inRepasDuJour;
     double prix,rate;
+    String AdresseDuCuisinier;
 
 
 
@@ -22,7 +23,7 @@ public class RepasModel {
 
     }
 
-    public RepasModel(String nom, String typeDeRepas, String typeDeCuisine, String ingredients, String allergenes, String idDuCuisinier, String description, String nameCuisinier, boolean inRepasDuJour, double prix, double rate) {
+    public RepasModel(String nom, String typeDeRepas, String typeDeCuisine, String ingredients, String allergenes, String idDuCuisinier, String description, String nameCuisinier, boolean inRepasDuJour, double prix, double rate,String AdresseDuCuisinier) {
         this.nom = nom;
         this.typeDeRepas = typeDeRepas;
         this.typeDeCuisine = typeDeCuisine;
@@ -34,6 +35,15 @@ public class RepasModel {
         this.inRepasDuJour = inRepasDuJour;
         this.prix = prix;
         this.rate = rate;
+        this.AdresseDuCuisinier=AdresseDuCuisinier;
+    }
+
+    public String getAdresseDuCuisinier() {
+        return AdresseDuCuisinier;
+    }
+
+    public void setAdresseDuCuisinier(String adresseDuCuisinier) {
+        AdresseDuCuisinier = adresseDuCuisinier;
     }
 
     public String getNameCuisinier(){

@@ -132,7 +132,7 @@ public class ClientDescRepasActivity extends AppCompatActivity {
 
         // DatabaseReference myRef= FirebaseDatabase.getInstance().getReference("Client/"+Client.getInstance().id+"/Commande");
         //myRef.child("Commande").child("commande1");
-        //String key=myRef.push().getKey();
+        // /String key=myRef.push().getKey();
 
 
 
@@ -141,11 +141,12 @@ public class ClientDescRepasActivity extends AppCompatActivity {
          String nomCui=extra.getString("nomCuisinier");
         String nomREPAS= extra.getString("nomRepas");
         double lePrix=(Double) extra.getDouble("Prix");
+        String AddresseDuCui= extra.getString("AdrCuisinier");
 
 
-        Toast.makeText(this, c.id, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, c.id, Toast.LENGTH_SHORT).show();
         commandeModel Mycommand=new commandeModel( IdREPAS,  idCUISi,  key,  nomCui,  nomREPAS,  heure,  c.getId(),c.getFirstName(), lePrix, 0 /*generalRate*/,0,0,
-         laQuantité);
+         laQuantité,AddresseDuCui);
         REF.child(key).setValue(Mycommand);
         myRef.child(key).setValue(Mycommand);
 

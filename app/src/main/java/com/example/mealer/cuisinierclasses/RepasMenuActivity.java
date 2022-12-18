@@ -78,7 +78,7 @@ public class RepasMenuActivity extends AppCompatActivity{
         Double prixRepas = Double.parseDouble(foodPrice.getText().toString());
         String descrRepas = foodDescription.getText().toString();
 
-        RepasModel nouveauRepas = new RepasModel(nomRepas,foodType,cookingType,listeIngredients,allergenes,idCuisinier,descrRepas,Cuisinier.getInstance().getFirstName(), repas.isInRepasDuJour(), prixRepas, repas.getRate());
+        RepasModel nouveauRepas = new RepasModel(nomRepas,foodType,cookingType,listeIngredients,allergenes,idCuisinier,descrRepas,Cuisinier.getInstance().getFirstName(), repas.isInRepasDuJour(), prixRepas, repas.getRate(),cui.adresse);
         menu.save(idCuisinier, repas, nouveauRepas, this);
     }
 

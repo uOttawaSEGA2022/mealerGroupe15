@@ -16,12 +16,13 @@ public class commandeModel {
     String IDduClient,NomDUClient;
     double prix, rate, myRate;
     int statutDeLaCommande,Quantite;
+    String CuisinierAdresse;
 
 
     public commandeModel() {
     }
 
-    public commandeModel(String idDuRepas, String idDuCuisinier, String idDeLaCommande, String nomDuCuisinier, String nomDuRepas, String heuredeCeuillette, String IDduClient, String nomDUClient, double prix, double rate, double myRate, int statutDeLaCommande, int quantite) {
+    public commandeModel(String idDuRepas, String idDuCuisinier, String idDeLaCommande, String nomDuCuisinier, String nomDuRepas, String heuredeCeuillette, String IDduClient, String nomDUClient, double prix, double rate, double myRate, int statutDeLaCommande, int quantite,String CuisinierAdresse) {
         this.idDuRepas = idDuRepas;
         this.idDuCuisinier = idDuCuisinier;
         this.idDeLaCommande = idDeLaCommande;
@@ -35,6 +36,14 @@ public class commandeModel {
         this.myRate = myRate;
         this.statutDeLaCommande = statutDeLaCommande;
         Quantite = quantite;
+        this.CuisinierAdresse=CuisinierAdresse;
+    }
+    public String getCuisinierAdresse() {
+        return CuisinierAdresse;
+    }
+
+    public void setCuisinierAdresse(String cuisinierAdresse) {
+        CuisinierAdresse = cuisinierAdresse;
     }
 
     public String getIdDuRepas() {

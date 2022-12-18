@@ -72,7 +72,7 @@ public class addRepas extends AppCompatActivity {
             incTextView2.setText("Veuillez entrer toutes les informations correctement s'il vous plait!");
         }
 
-        RepasModel repas = new RepasModel(name,typeRepas,typeCuisine,ingredient,allergene,idCuisinier,foodDescription,cuii.getFirstName(), false, price, 0);
+        RepasModel repas = new RepasModel(name,typeRepas,typeCuisine,ingredient,allergene,idCuisinier,foodDescription,cuii.getFirstName(), false, price, 0,cuii.adresse);
         menu.addToMenu(idCuisinier, repas);
 
         Intent intent = new Intent(getApplicationContext(), MainActivityCuisinier.class);
