@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.mealer.R;
+import com.example.mealer.models.MenuModel;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -32,7 +33,7 @@ public class PopupTraiterDemandeActivity extends AppCompatActivity {
        IdClient= extra.getString("IdClient");
         IdDelaCommande= String.valueOf(extra.getString("IdDeLaCommande"));
 
-        nomDuClient.setText(""+extra.getString("nomduClient"));
+        nomDuClient.setText(""+extra.getString("nomduClient").toUpperCase());
 
         //Faire que quand on ouvre la page, ca affiche le nom du client, la quantite, et l'heure de cueillete
         //Ceci veut dire qu'il faut que le client entre ces infos quand il commande

@@ -7,7 +7,7 @@
     android:background="@drawable/backgroundk"
     tools:context=".clientclasses.MainActivityClient">
     <LinearLayout
-
+        android:background="@drawable/logodemealerremove"
         android:layout_width="413dp"
         android:layout_height="728dp"
         android:orientation="vertical"

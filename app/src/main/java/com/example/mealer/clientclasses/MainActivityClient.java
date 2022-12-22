@@ -7,6 +7,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import com.example.mealer.MainActivity;
 import com.example.mealer.R;
@@ -18,6 +19,7 @@ public class MainActivityClient extends AppCompatActivity implements RecyclerVie
 
     Client client;
     RecyclerView r;
+    TextView welcomeText2;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -25,6 +27,9 @@ public class MainActivityClient extends AppCompatActivity implements RecyclerVie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_client);
         client = Client.getInstance();
+        welcomeText2=findViewById(R.id.welcomText2);
+        welcomeText2.setText("Bienvenue "+client.firstName.toUpperCase()+" , vous êtes connectés en tant que client");
+
 
     }
 

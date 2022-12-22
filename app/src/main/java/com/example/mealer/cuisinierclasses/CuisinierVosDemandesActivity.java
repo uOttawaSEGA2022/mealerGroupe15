@@ -106,6 +106,7 @@ public class CuisinierVosDemandesActivity extends AppCompatActivity implements R
         intent.putExtra("nomduClient",demandes.demandesArray.get(position).getNomDUClient());
 
 
+
         //String a="19H";
 
         intent.putExtra("HeureDeCueillete", demandes.demandesArray.get(position).getHeuredeCeuillette());

@@ -8,6 +8,7 @@
     tools:context=".cuisinierclasses.MainActivityCuisinier">
 
     <LinearLayout
+        android:background="@drawable/logodemealerremove"
         android:layout_width="413dp"
         android:layout_height="728dp"
         android:orientation="vertical"

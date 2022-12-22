@@ -25,13 +25,13 @@ public class MainActivityCuisinier extends AppCompatActivity {
         if(c.connected) {
             @SuppressLint({"MissingInflatedId", "LocalSuppress"})
             TextView welcome = findViewById(R.id.welcomText);
-            welcome.setText("Bienvenue," + c.firstName +" vous êtes connecté en tant que cuisinier.");
+            welcome.setText("Bienvenue, " + c.firstName.toUpperCase() +" vous êtes connecté en tant que cuisinier.");
 
             if(c.isSuspended()){
                 if(c.suspensionTime.equalsIgnoreCase("-1")){
-                    welcome.setText("Bienvenue," + c.firstName +" vous êtes suspendu indéfiniment. Veuillez vous deconnecter!");
+                    welcome.setText("Bienvenue," + c.firstName.toUpperCase() +" vous êtes suspendu indéfiniment. Veuillez vous deconnecter!");
                 }else{
-                    welcome.setText("Bienvenue," + c.firstName +" vous êtes suspendu jusqu'au " + c.suspensionTime + " reconnecté vous ultèrieurement.");
+                    welcome.setText("Bienvenue," + c.firstName.toUpperCase() +" vous êtes suspendu jusqu'au " + c.suspensionTime + " reconnecté vous ultèrieurement.");
                 }
                 LinearLayout linearLayout = (LinearLayout) findViewById(R.id.optLayout);
                 linearLayout.setVisibility(View.INVISIBLE);

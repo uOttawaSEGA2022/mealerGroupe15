@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,6 +17,7 @@ public class RepasMenuActivity extends AppCompatActivity{
 
     public static int position = 0;
     Cuisinier cui;
+    String drawa;
 
     RepasModel repas = new RepasModel();
     MenuModel menu = MenuModel.getInstance();
@@ -77,9 +79,15 @@ public class RepasMenuActivity extends AppCompatActivity{
         String allergenes = allergene.getText().toString();
         Double prixRepas = Double.parseDouble(foodPrice.getText().toString());
         String descrRepas = foodDescription.getText().toString();
-
-        RepasModel nouveauRepas = new RepasModel(nomRepas,foodType,cookingType,listeIngredients,allergenes,idCuisinier,descrRepas,Cuisinier.getInstance().getFirstName(), repas.isInRepasDuJour(), prixRepas, repas.getRate(),cui.adresse);
-        menu.save(idCuisinier, repas, nouveauRepas, this);
+        Bundle extra=getIntent().getExtras();
+        drawa= extra.getString("DrawableNAME");
+        if(nomRepas==null||nomRepas.isEmpty()||foodType==null||foodType.isEmpty()||cookingType==null||cookingType.isEmpty()||
+        listeIngredients==null||listeIngredients.isEmpty()||allergenes==null||allergenes.isEmpty()||prixRepas==null||descrRepas==null||descrRepas.isEmpty()){
+            Toast.makeText(this, "Veuillez d'abord remplir tous les champs  ", Toast.LENGTH_SHORT).show();
+        }
+        else{
+        RepasModel nouveauRepas = new RepasModel(nomRepas,foodType,cookingType,listeIngredients,allergenes,idCuisinier,descrRepas,Cuisinier.getInstance().getFirstName(), repas.isInRepasDuJour(), prixRepas, repas.getRate(),cui.adresse,drawa);
+        menu.save(idCuisinier, repas, nouveauRepas, this);}
     }
 
     public void onClickDelete(View view){

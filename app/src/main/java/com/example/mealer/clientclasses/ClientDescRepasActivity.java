@@ -142,11 +142,12 @@ public class ClientDescRepasActivity extends AppCompatActivity {
         String nomREPAS= extra.getString("nomRepas");
         double lePrix=(Double) extra.getDouble("Prix");
         String AddresseDuCui= extra.getString("AdrCuisinier");
+        String PHOTO= extra.getString("Tof");
 
 
         //Toast.makeText(this, c.id, Toast.LENGTH_SHORT).show();
         commandeModel Mycommand=new commandeModel( IdREPAS,  idCUISi,  key,  nomCui,  nomREPAS,  heure,  c.getId(),c.getFirstName(), lePrix, 0 /*generalRate*/,0,0,
-         laQuantité,AddresseDuCui);
+         laQuantité,AddresseDuCui,PHOTO);
         REF.child(key).setValue(Mycommand);
         myRef.child(key).setValue(Mycommand);
 

@@ -1,12 +1,15 @@
 package com.example.mealer.recyclerviewclasses;
 
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 
@@ -15,6 +18,7 @@ import com.example.mealer.models.RepasModel;
 import com.example.mealer.cuisinierclasses.Cuisinier;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class RepasRecyclerViewAdapter extends RecyclerView.Adapter<RepasRecyclerViewAdapter.MyViewHolder> {
     private final RecyclerViewInterface recyclerViewInterface;
@@ -54,6 +58,27 @@ public class RepasRecyclerViewAdapter extends RecyclerView.Adapter<RepasRecycler
         holder.textViewRepasPrix.setText(String.valueOf(menuArray.get(position).getPrix()));
         holder.textViewRepasRate.setText(String.valueOf(menuArray.get(position).getRate()));
         holder.textViewRepasNamneCuisinier.setText(menuArray.get(position).getNameCuisinier());
+        if (Objects.equals(menuArray.get(position).getPhotoRepas(), "cafe")){
+
+        holder.TextVPhoto.setBackgroundResource(R.drawable.cafe);}
+        else if (Objects.equals(menuArray.get(position).getPhotoRepas(), "burgerhori")){
+
+            holder.TextVPhoto.setBackgroundResource(R.drawable.burgerhori);}
+        else if (Objects.equals(menuArray.get(position).getPhotoRepas(), "pizzahori")){
+
+            holder.TextVPhoto.setBackgroundResource(R.drawable.pizzahori);}
+        else if (Objects.equals(menuArray.get(position).getPhotoRepas(), "cocahori")){
+
+            holder.TextVPhoto.setBackgroundResource(R.drawable.cocahori);}
+        else if (Objects.equals(menuArray.get(position).getPhotoRepas(), "rizfrit")){
+
+            holder.TextVPhoto.setBackgroundResource(R.drawable.rizfrit);}
+        else if (Objects.equals(menuArray.get(position).getPhotoRepas(), "dejeuner")){
+
+            holder.TextVPhoto.setBackgroundResource(R.drawable.dejeuner);}
+        else{
+            holder.TextVPhoto.setBackgroundResource(R.drawable.cafe);
+        }
     }
 
     @Override
@@ -62,12 +87,14 @@ public class RepasRecyclerViewAdapter extends RecyclerView.Adapter<RepasRecycler
     }
     public static class MyViewHolder extends RecyclerView.ViewHolder{
         TextView textViewRepasName, textViewRepasPrix,textViewRepasNamneCuisinier, textViewRepasRate;
+        ConstraintLayout TextVPhoto;
         public MyViewHolder(@NonNull View itemView,RecyclerViewInterface recyclerViewInterface) {
             super(itemView);
             textViewRepasName=itemView.findViewById(R.id.NomPlat);
             textViewRepasRate=itemView.findViewById(R.id.RateMenu);
            textViewRepasNamneCuisinier=itemView.findViewById(R.id.NomCuisinierMenu);
             textViewRepasPrix = itemView.findViewById(R.id.PrixPlat);
+            TextVPhoto=itemView.findViewById(R.id.BackGroundModel);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.example.mealer.models.MenuModel;
@@ -59,7 +60,7 @@ public class ClientPlainteActivity extends AppCompatActivity {
         myRef.child("nameOfClient").setValue(client.getFirstName());
         myRef.child("nameOfCuisinier").setValue(c.getNomDuCuisinier());
         myRef.child("idDuCuisinier").setValue(c.getIdDuCuisinier());
-
+        Toast.makeText(this, "Plainte envoyée! ", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(getApplicationContext(), ClientMesRepasActivity.class);
         startActivityForResult(intent, 0);
     }

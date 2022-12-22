@@ -1,13 +1,5 @@
 package com.example.mealer.models;
 
-import androidx.annotation.NonNull;
-
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
 public class RepasModel {
 
     String repasId, nom, typeDeRepas, typeDeCuisine,
@@ -15,6 +7,7 @@ public class RepasModel {
     boolean inRepasDuJour;
     double prix,rate;
     String AdresseDuCuisinier;
+    String photoRepas;
 
 
 
@@ -23,7 +16,7 @@ public class RepasModel {
 
     }
 
-    public RepasModel(String nom, String typeDeRepas, String typeDeCuisine, String ingredients, String allergenes, String idDuCuisinier, String description, String nameCuisinier, boolean inRepasDuJour, double prix, double rate,String AdresseDuCuisinier) {
+    public RepasModel(String nom, String typeDeRepas, String typeDeCuisine, String ingredients, String allergenes, String idDuCuisinier, String description, String nameCuisinier, boolean inRepasDuJour, double prix, double rate,String AdresseDuCuisinier,String photoRepas) {
         this.nom = nom;
         this.typeDeRepas = typeDeRepas;
         this.typeDeCuisine = typeDeCuisine;
@@ -33,9 +26,19 @@ public class RepasModel {
         this.description = description;
         this.nameCuisinier = nameCuisinier;
         this.inRepasDuJour = inRepasDuJour;
+
         this.prix = prix;
         this.rate = rate;
         this.AdresseDuCuisinier=AdresseDuCuisinier;
+        this.photoRepas=photoRepas;
+    }
+
+    public String getPhotoRepas() {
+        return photoRepas;
+    }
+
+    public void setPhotoRepas(String photoRepas) {
+        this.photoRepas = photoRepas;
     }
 
     public String getAdresseDuCuisinier() {
