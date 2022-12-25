@@ -65,87 +65,86 @@ public class MainActivity extends AppCompatActivity {
 
         TextView connectionState = findViewById(R.id.stateAfterConnection);
 
-        if (email == null || email.isEmpty() ||
-                password == null || password.isEmpty()){
+        if (email.isEmpty() || password.isEmpty()){
 
             connectionState.setText("Veuillez entrer toutes les informations correctement s'il vous plait!");
         }
+        else {
+            Log.println(Log.DEBUG, "TYPED", "email : " + email + " passeword : " + password);
+            // Read from the database
+            myRef.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    // This method is called once with the initial value and again
+                    // whenever data at this location is updated.
+                    //String value = dataSnapshot.getValue(String.class);
 
-        Log.println(Log.DEBUG, "TYPED", "email : " + email+ " passeword : " + password);
-        // Read from the database
-        myRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                //String value = dataSnapshot.getValue(String.class);
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        // while (snap.getChildren().iterator().hasNext()) {
+                        String key = snapshot.getRef().getKey().toString();
+                        if (!admin.isConnected() && !cuisinier.isConnected() && !client.isConnected()) {
+                            if (key.equals("Admin")) {
+                                admin.connect(email, password, snapshot, getApplicationContext());
+                            } else if (key.equals("Client")) {
+                                client.connect(email, password, snapshot, getApplicationContext());
+                            } else if (key.equals("Cuisinier")) {
+                                cuisinier.connect(email, password, snapshot, getApplicationContext());
+                            } else {
+                                Log.d(TAG, "ON NE PEUT PAS TROUVER L'INFORMATION DANS " + key);
 
-                for(DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    // while (snap.getChildren().iterator().hasNext()) {
-                    String key = snapshot.getRef().getKey().toString();
-                    if(!admin.isConnected() && !cuisinier.isConnected() && !client.isConnected()){
-                        if (key.equals("Admin")) {
-                            admin.connect(email, password, snapshot, getApplicationContext());
-                        } else if (key.equals("Client")) {
-                            client.connect(email, password, snapshot, getApplicationContext());
-                        } else if (key.equals("Cuisinier")) {
-                            cuisinier.connect(email, password, snapshot, getApplicationContext());
+                            }
                         } else {
-                            Log.d(TAG, "ON NE PEUT PAS TROUVER L'INFORMATION DANS " + key);
+                            // ON VERIFIE QUI EST CONNECTÉ PUIS ON LOAD LA NOUVELLE PAGE EN FONCTION DE SI C'EST UN CLIENT, UN ADMIN OU UN CUISINIER
+                            if (admin.isConnected()
+                                    && !client.isConnected()
+                                    && !cuisinier.isConnected()) {
+                                state = ConnectionStates.CONNECTED;
+                                Log.println(Log.DEBUG, "INFO", "SUCCESS: VOUS ETES CONNECTE");
+                                //connectionState.setText("Connected");
+                                //connectionState.setTextColor(Color.green(255));
+                                Intent intent = new Intent(getApplicationContext(), MainActivityAdmin.class);
+                                startActivityForResult(intent, 0);
+                                finish();
+                            } else if (client.isConnected()
+                                    && !admin.isConnected()
+                                    && !cuisinier.isConnected()) {
+                                state = ConnectionStates.CONNECTED;
+                                Log.println(Log.DEBUG, "INFO", "SUCCESS: VOUS ETES CONNECTE");
+                                connectionState.setText("Connected");
+                                connectionState.setTextColor(Color.green(255));
+                                Intent intent = new Intent(getApplicationContext(), MainActivityClient.class);
+                                startActivityForResult(intent, 0);
+                                finish();
+                            } else if (cuisinier.isConnected()
+                                    && !admin.isConnected()
+                                    && !client.isConnected()) {
+                                state = ConnectionStates.CONNECTED;
+                                Log.println(Log.DEBUG, "INFO", "SUCCESS: VOUS ETES CONNECTE");
+                                connectionState.setText("Connected");
+                                connectionState.setTextColor(Color.green(255));
 
-                        }
-                    }else{
-                        // ON VERIFIE QUI EST CONNECTÉ PUIS ON LOAD LA NOUVELLE PAGE EN FONCTION DE SI C'EST UN CLIENT, UN ADMIN OU UN CUISINIER
-                        if(admin.isConnected()
-                                && !client.isConnected()
-                                && !cuisinier.isConnected()){
-                            state = ConnectionStates.CONNECTED;
-                            Log.println(Log.DEBUG, "INFO", "SUCCESS: VOUS ETES CONNECTE");
-                            //connectionState.setText("Connected");
-                            //connectionState.setTextColor(Color.green(255));
-                            Intent intent = new Intent(getApplicationContext(), MainActivityAdmin.class);
-                            startActivityForResult(intent, 0);
-                            finish();
-                        }else if(client.isConnected()
-                                && !admin.isConnected()
-                                && !cuisinier.isConnected()){
-                            state = ConnectionStates.CONNECTED;
-                            Log.println(Log.DEBUG, "INFO", "SUCCESS: VOUS ETES CONNECTE");
-                            connectionState.setText("Connected");
-                            connectionState.setTextColor(Color.green(255));
-                            Intent intent = new Intent(getApplicationContext(), MainActivityClient.class);
-                            startActivityForResult(intent, 0);
-                            finish();
-                        }else if(cuisinier.isConnected()
-                                && !admin.isConnected()
-                                && !client.isConnected()){
-                            state = ConnectionStates.CONNECTED;
-                            Log.println(Log.DEBUG, "INFO", "SUCCESS: VOUS ETES CONNECTE");
-                            connectionState.setText("Connected");
-                            connectionState.setTextColor(Color.green(255));
-
-                            Intent intent = new Intent(getApplicationContext(), MainActivityCuisinier.class);
-                            startActivityForResult(intent, 0);
-                            finish();
+                                Intent intent = new Intent(getApplicationContext(), MainActivityCuisinier.class);
+                                startActivityForResult(intent, 0);
+                                finish();
+                            }
                         }
                     }
                 }
+
+                @Override
+                public void onCancelled(DatabaseError error) {
+                    // Failed to read value
+                    Log.w(TAG, "Failed to read value.", error.toException());
+                }
+            });
+
+
+            if (!(admin.isConnected() || cuisinier.isConnected() || client.isConnected())) {
+                connectionState.setTextColor(Color.parseColor("#FF0000"));
+                connectionState.setText("Veuillez verifier votre mot de passe ou votre adresse email");
+                Log.println(Log.DEBUG, "INFO", "PROBLEM: VOUS AVEZ ENTRÉ UN MAUVAIS MOT DE PASSE");
+                state = ConnectionStates.FAILED;
             }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-                Log.w(TAG, "Failed to read value.", error.toException());
-            }
-        });
-
-
-        if(!(admin.isConnected()|| cuisinier.isConnected()|| client.isConnected())){
-            connectionState.setTextColor(Color.parseColor("#FF0000"));
-            connectionState.setText("Veuillez verifier votre mot de passe ou votre adresse email");
-            Log.println(Log.DEBUG, "INFO", "PROBLEM: VOUS AVEZ ENTRÉ UN MAUVAIS MOT DE PASSE");
-            state = ConnectionStates.FAILED;
-        }
 //        if(admin.isConnected()){
 //                state = ConnectionStates.CONNECTED;
 //                Log.println(Log.DEBUG, "INFO", "SUCCESS: VOUS ETES CONNECTE");
@@ -165,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
 //                Log.println(Log.DEBUG, "INFO", "PROBLEM: VOUS AVEZ RENTREZ UN MAUVAIS MOT DE PASSE");
 //                state = ConnectionStates.FAILED;
 //        }
-
+        }
 
     }
 
