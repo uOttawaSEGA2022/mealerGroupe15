@@ -24,7 +24,7 @@
         <ScrollView
             android:id="@+id/scrollView2"
             android:layout_width="match_parent"
-            android:layout_height="518dp">
+            android:layout_height="574dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -210,64 +210,136 @@
 
                 <TextView
                     android:id="@+id/timeButton"
-                    android:onClick="popTimePicker"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="#6A1E88E5"
 
                     android:clickable="true"
+                    android:onClick="popTimePicker"
+                    android:text=" Choisir l'heure de cueillete"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="25dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.1"
-                    android:background="#6A1E88E5"
-                    android:text=" Choisir l'heure de cueillete"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    android:textSize="25dp" />
+                    app:layout_constraintVertical_bias="0.1" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/btn_minus"
+                        android:layout_width="50dp"
+                        android:layout_height="36dp"
+
+                        android:backgroundTint="#009A60CD"
+                        android:clickable="true"
+
+
+                        android:onClick="onclickMinus"
+                        android:src="@drawable/minuuus" />
+
+                    <TextView
+                        android:id="@+id/Quantite"
+
+                        android:layout_width="36dp"
+                        android:layout_height="wrap_content"
+
+
+                        android:text="1"
+                        android:textColor="@color/white"
+                        android:textSize="30dp" />
+
+                    <ImageButton
+                        android:id="@+id/btn_plus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="41dp"
+
+                        android:backgroundTint="#009A60CD"
+                        android:clickable="true"
+                        android:focusable="true"
+
+                        android:onClick="onclickPlus"
+                        android:src="@drawable/pluus" />
+                </LinearLayout>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView612"
+
+                        android:layout_width="13dp"
+                        android:layout_height="64dp"
+                        android:layout_weight="1"
+                        android:text="Sous-total :"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        android:textSize="25dp" />
+
+                    <TextView
+                        android:id="@+id/Sous_TotalTextView"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="XXXX"
+                        android:textSize="25dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView765"
+
+                        android:layout_width="231dp"
+                        android:layout_height="64dp"
+                        android:layout_weight="1"
+                        android:text="Taxes et frais de service:"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        android:textSize="25dp" />
+
+                    <TextView
+                        android:id="@+id/TaxextextView"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="XXXX"
+                        android:textSize="25dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView62654"
+
+                        android:layout_width="13dp"
+                        android:layout_height="64dp"
+                        android:layout_weight="1"
+                        android:text="Total :"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        android:textSize="25dp" />
+
+                    <TextView
+                        android:id="@+id/TotalTextview"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="XXXX"
+                        android:textSize="25dp" />
+                </TableRow>
 
             </LinearLayout>
         </ScrollView>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="76dp"
-            android:orientation="horizontal">
-
-            <ImageButton
-                android:id="@+id/btn_minus"
-                android:layout_width="50dp"
-                android:layout_height="36dp"
-
-                android:backgroundTint="#009A60CD"
-                android:clickable="true"
-
-
-                android:onClick="onclickMinus"
-                android:src="@drawable/minuuus" />
-
-            <TextView
-                android:id="@+id/Quantite"
-
-                android:layout_width="36dp"
-                android:layout_height="wrap_content"
-
-
-                android:text="1"
-                android:textColor="@color/white"
-                android:textSize="30dp" />
-
-            <ImageButton
-                android:id="@+id/btn_plus"
-                android:layout_width="wrap_content"
-                android:layout_height="41dp"
-
-                android:backgroundTint="#009A60CD"
-                android:clickable="true"
-                android:focusable="true"
-
-                android:onClick="onclickPlus"
-                android:src="@drawable/pluus" />
-        </LinearLayout>
 
         <TableRow
             android:layout_width="405dp"

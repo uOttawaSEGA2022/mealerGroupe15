@@ -46,7 +46,9 @@ public class CommandeRecyclerViewAdapter extends RecyclerView.Adapter<CommandeRe
         holder.textViewRepasPrix.setText(String.valueOf(Array.get(position).getPrix()));
         holder.textViewRepasRate.setText(String.valueOf(Array.get(position).getRate()));
         holder.textViewRepasNamneCuisinier.setText(String.valueOf(Array.get(position).getNomDuCuisinier()));
-        if (Objects.equals(Array.get(position).getPhotoRepas(), "cafe")){
+        holder.laDistance.setText(Array.get(position).getCuisinierAdresse());
+        holder.laDistance.setVisibility(VISIBLE);
+    if (Objects.equals(Array.get(position).getPhotoRepas(), "cafe")){
 
             holder.itemBackground.setBackgroundResource(R.drawable.cafe);}
         else if (Objects.equals(Array.get(position).getPhotoRepas(), "burgerhori")){
@@ -87,7 +89,7 @@ public class CommandeRecyclerViewAdapter extends RecyclerView.Adapter<CommandeRe
         return Array.size();
     }
     public static class MyViewHolder extends RecyclerView.ViewHolder{
-        TextView textViewRepasName, textViewRepasPrix, textViewRepasRate, textViewRepasNamneCuisinier;
+        TextView textViewRepasName, textViewRepasPrix, textViewRepasRate, textViewRepasNamneCuisinier,laDistance;
         ConstraintLayout itemBackground;
         ImageView Statuuuut;
         public MyViewHolder(@NonNull View itemView,RecyclerViewInterface recyclerViewInterface) {
@@ -98,6 +100,8 @@ public class CommandeRecyclerViewAdapter extends RecyclerView.Adapter<CommandeRe
             textViewRepasPrix = itemView.findViewById(R.id.PrixPlat);
             itemBackground = itemView.findViewById(R.id.BackGroundModel);
             Statuuuut=itemView.findViewById(R.id.StatutImage);
+            laDistance=itemView.findViewById(R.id.Distance);
+
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

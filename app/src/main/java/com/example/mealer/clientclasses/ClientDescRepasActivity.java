@@ -18,16 +18,20 @@ import com.example.mealer.models.commandeModel;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.DecimalFormat;
 import java.util.Locale;
 
 public class ClientDescRepasActivity extends AppCompatActivity {
     ImageView plus,minus;
     TextView Quantites,nooom;
     String ParentRepas="";
+    TextView SousTotal,Total,Taxes;
     TextView timeButton;
     String heure;
     int hour, minute;
+    double PrixUni;
     Client c;
+    DecimalFormat df = new DecimalFormat("0.00");
 
 
     @Override
@@ -44,10 +48,15 @@ public class ClientDescRepasActivity extends AppCompatActivity {
         TextView allergenee = findViewById(R.id.textView63);
         TextView foodPricee = findViewById(R.id.textView65);
         TextView foo0dDescription = findViewById(R.id.textView67);
+        SousTotal=findViewById(R.id.Sous_TotalTextView);
+        Total=findViewById(R.id.TotalTextview);
+        Taxes=findViewById(R.id.TaxextextView);
 
 
         nooom=findViewById(R.id.textView55);
         Bundle extra=getIntent().getExtras();
+         PrixUni=(Double) extra.getDouble("Prix");
+
         String n= extra.getString("nomRepas");
         nooom.setText(n);
         typeeRepas.setText(extra.getString("TypeRepas"));
@@ -55,10 +64,20 @@ public class ClientDescRepasActivity extends AppCompatActivity {
         ingredientListe.setText(extra.getString("Ingredients"));
         allergenee.setText(extra.getString("Allergene"));
         foodPricee.setText(""+(Double) extra.getDouble("Prix"));
+
+
         String idCUI= extra.getString("IDduCuisinier");
 
 
         foo0dDescription.setText(extra.getString("Description"));
+
+        double Soustot=PrixUni*1;
+
+        SousTotal.setText(""+df.format(Soustot)+" $");
+        double TaxesEtFrait=((Soustot*24.975)/100);
+        Taxes.setText(""+df.format(TaxesEtFrait)+" $");
+        double leTotal=Soustot+TaxesEtFrait;
+        Total.setText(""+df.format(leTotal)+" $");
 
 
 
@@ -105,7 +124,13 @@ public class ClientDescRepasActivity extends AppCompatActivity {
         int nbr=Integer.parseInt((String) Quantites.getText());
         int a=nbr+1;
         Quantites.setText(""+a);
+        double Soustot=PrixUni*a;
 
+        SousTotal.setText(""+df.format(Soustot)+" $");
+        double TaxesEtFrait=((Soustot*24.975)/100);
+        Taxes.setText(""+df.format(TaxesEtFrait)+" $");
+        double leTotal=Soustot+TaxesEtFrait;
+        Total.setText(""+df.format(leTotal)+" $");
 
     }
 
@@ -115,11 +140,24 @@ public class ClientDescRepasActivity extends AppCompatActivity {
             int a=nbr-1;
 
             Quantites.setText(""+a);
+            double Soustot=PrixUni*a;
+
+            SousTotal.setText(""+df.format(Soustot)+" $");
+            double TaxesEtFrait=((Soustot*24.975)/100);
+            Taxes.setText(""+df.format(TaxesEtFrait)+" $");
+            double leTotal=Soustot+TaxesEtFrait;
+            Total.setText(""+df.format(leTotal)+" $");
+
         }
 
 
     }
+
     public void onCommander(View view){
+        if(heure==null){
+            Toast.makeText(this, "Choisissez une heure de ceuillete s'il vous plait!", Toast.LENGTH_SHORT).show();
+        }
+        else{
 
         int laQuantité=Integer.parseInt((String) Quantites.getText());
         Bundle extra=getIntent().getExtras();
@@ -145,6 +183,7 @@ public class ClientDescRepasActivity extends AppCompatActivity {
         String PHOTO= extra.getString("Tof");
 
 
+
         //Toast.makeText(this, c.id, Toast.LENGTH_SHORT).show();
         commandeModel Mycommand=new commandeModel( IdREPAS,  idCUISi,  key,  nomCui,  nomREPAS,  heure,  c.getId(),c.getFirstName(), lePrix, 0 /*generalRate*/,0,0,
          laQuantité,AddresseDuCui,PHOTO);
@@ -154,7 +193,7 @@ public class ClientDescRepasActivity extends AppCompatActivity {
 
 
         Intent intent =new Intent(getApplicationContext(),ClientEnvoieCommandeActivity.class);
-        startActivityForResult(intent,0);
+        startActivityForResult(intent,0);}
     }
 
 

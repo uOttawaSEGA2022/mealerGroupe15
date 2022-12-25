@@ -54,6 +54,7 @@ public class MenuModel {
     public void save(String idCuisinier, RepasModel ancien, RepasModel nouveau, AppCompatActivity activity){
         assert !cuisinierId.isEmpty();
 
+
         nouveau.setRepasId(ancien.getRepasId());
 
         //Deleting the old one
